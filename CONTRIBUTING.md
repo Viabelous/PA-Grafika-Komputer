@@ -61,14 +61,14 @@ Apabila terdapat kesulitan atau terjadi error, dimohon segara menghubungi kontri
 Untuk memudahkan pembuatan item, buat file baru di suatu tempat dengan kodingan dasar dan WAJIB seperti di bawah ini:
 ```
 void setup(){
-	size(500, 500, P3D);
-	hint(DISABLE_OPTIMIZED_STROKE);
+    size(500, 500, P3D);
+    hint(DISABLE_OPTIMIZED_STROKE);
 }
 
 void draw(){
-	strokeWeight(2); // untuk tampilan 3D Menyesuaikan
+    strokeWeight(2); // untuk tampilan 3D Menyesuaikan
 	
-	// ... kodinganmu di sini
+    // ... kodinganmu di sini
 	
 }
 ```
@@ -86,7 +86,7 @@ class namaItem extends item {
   void preview(){
     pushMatrix();
     
-	// ... kodingan untuk preview    
+    // ... kodingan untuk preview    
 
     popMatrix();
     strokeWeight(1);
@@ -99,7 +99,7 @@ class namaItem extends item {
     pushMatrix();
     translate(x-50, y-50);
     
-	// ... kodingan untuk thumbnail
+    // ... kodingan untuk thumbnail
 
     popMatrix();
     strokeWeight(1);
@@ -108,14 +108,14 @@ class namaItem extends item {
   }
 
 
-	// buat fungsi di bawah ini jika dan hanya jika
-	// benda memiliki mode observe (3D)
-	void observe(){
-	pushMatrix();
+    // buat fungsi di bawah ini jika dan hanya jika
+    // benda memiliki mode observe (3D)
+    void observe(){
+    pushMatrix();
 
-	// ... kodingan untuk tampilan 3D
+    // ... kodingan untuk tampilan 3D
 
-	popMatrix();
+    popMatrix();
   }
 }
 ```
@@ -146,7 +146,7 @@ class namaItem extends item {
   void build(){
     pushMatrix();
 
-	// ... kodingan di sini
+    // ... kodingan di sini
 	
     popMatrix();
     strokeWeight(1);
@@ -155,14 +155,14 @@ class namaItem extends item {
   }
 
 
-	// buat fungsi di bawah ini jika dan hanya jika
-	// benda memiliki mode observe (3D)
-	void observe(){
-	pushMatrix();
+    // buat fungsi di bawah ini jika dan hanya jika
+    // benda memiliki mode observe (3D)
+    void observe(){
+    pushMatrix();
 
-	// ... kodingan untuk tampilan 3D
+    // ... kodingan untuk tampilan 3D
 
-	popMatrix();
+    popMatrix();
   }
 }
 ```
