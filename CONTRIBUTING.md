@@ -32,7 +32,7 @@ Mengurus alur, struktur program, dan GUI serta mencegah terjadinya error atau bu
 * **Front End 3D** `Natalie40`  
 Mengurus segala hal berkaitan dengan tampilan pada mode 3D (observe), baik dalam desain, tata letak, hingga koordinasi kepada anggota tim dalam penggunaan warna. Penugasan termasuk penggunaan Ray Tracing dasar pada item.
 
-* **Back End 3D** `Natalie40`
+* **Back End 3D** `Natalie40`  
 Mengurus alur, struktur program, dan GUI serta mencegah terjadinya error atau bug pada mode 3D (observe), dan hal-hal lainnya yang dapat memengaruhi pengalaman pengguna selama dijalankannya program.
 
 * **Design UX** `Yafi39`  
