@@ -44,7 +44,7 @@ Membuat Icon-icon yang akan digunakan di sepanjang kodingan.
 * **Pengaturan Sound Effect** `Hadie43`  
 Mengurus penggunaan efek suara atau lagu pada program dari awal peng-import-an library hingga penggunaan. Penugasan termasuk mengatur musik hingga tercapai kenyamanan audial untuk pengguna.
 
-* **Pembuatan Item** `Semua Kontributor`
+* **Pembuatan Item** `Semua Kontributor`  
 Setiap kontributor (4 orang) pada pembuatan program ini diberi tugas untuk membuat 5 sampai 7 item masing-masing (untuk tampilan thumbnail dan preview) dengan minimal salah satunya memiliki tampilan 3D.
 
 Ringkasan pembagian tugas dapat dibaca di file [README](README.md/#contributors). 
