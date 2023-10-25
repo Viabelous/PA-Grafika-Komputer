@@ -37,8 +37,9 @@ class places{
   
   void build(){
     rectMode(CENTER);
-    noFill();
-    stroke(150);
+    stroke(190,192,188);
+    strokeWeight(2);
+    fill(71,78,118);
     square(x, y, size);
   }
   
