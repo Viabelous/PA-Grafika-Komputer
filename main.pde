@@ -1,8 +1,8 @@
 int selected = -1; // Untuk mengakses item dengan mouse
 int viewItem = 0; // Untuk menampilkan item pada preview
 boolean firstGet = true; // Untuk mengatasi bug item terbawa
-                         // ketika mouse ditekan dan di-hover
-                         // ke item
+// ketika mouse ditekan dan di-hover
+// ke item
 boolean observeMode = false; // Untuk mengganti layar ke 3D
 int idxSelected = 0;
 
@@ -10,41 +10,49 @@ int idxSelected = 0;
 
 // List Daftar Slot Item
 places[] slots = {
-  new places(1, 125, 775, 100),
-  new places(2, 275, 775, 100),
-  new places(3, 425, 775, 100),
-  new places(4, 575, 775, 100),
-  new places(5, 725, 775, 100),
-  new places(6, 875, 775, 100),
-  new places(7, 1025, 775, 100),
-  new places(8, 1175, 775, 100),
-  new places(9, 1325, 775, 100),
-  new places(10, 1475, 775, 100),
-  new places(11, 125, 625, 100),
-  new places(12, 275, 625, 100),
-  new places(13, 425, 625, 100),
-  new places(14, 575, 625, 100),
-  new places(15, 725, 625, 100),
-  new places(16, 875, 625, 100),
-  new places(17, 1025, 625, 100),
-  new places(18, 1175, 625, 100),
-  new places(19, 1325, 625, 100),
-  new places(20, 1475, 625, 100),
-  new places(21, 125, 475, 100),
-  new places(22, 275, 475, 100),
-  new places(23, 425, 475, 100),
-  new places(24, 575, 475, 100),
-  new places(25, 725, 475, 100),
-  new places(26, 875, 475, 100),
-  new places(27, 1025, 475, 100),
-  new places(28, 1175, 475, 100),
-  new places(29, 1325, 475, 100),
-  new places(30, 1475, 475, 100)
+  new places(0, 125, 475, 100),
+  new places(1, 275, 475, 100),
+  new places(2, 425, 475, 100),
+  new places(3, 575, 475, 100),
+  new places(4, 725, 475, 100),
+  new places(5, 875, 475, 100),
+  new places(6, 1025, 475, 100),
+  new places(7, 1175, 475, 100),
+  new places(8, 1325, 475, 100),
+  new places(9, 1475, 475, 100),
+  new places(10, 125, 625, 100),
+  new places(11, 275, 625, 100),
+  new places(12, 425, 625, 100),
+  new places(13, 575, 625, 100),
+  new places(14, 725, 625, 100),
+  new places(15, 875, 625, 100),
+  new places(16, 1025, 625, 100),
+  new places(17, 1175, 625, 100),
+  new places(18, 1325, 625, 100),
+  new places(19, 1475, 625, 100),
+  new places(20, 125, 775, 100),
+  new places(21, 275, 775, 100),
+  new places(22, 425, 775, 100),
+  new places(23, 575, 775, 100),
+  new places(24, 725, 775, 100),
+  new places(25, 875, 775, 100),
+  new places(26, 1025, 775, 100),
+  new places(27, 1175, 775, 100),
+  new places(28, 1325, 775, 100),
+  new places(29, 1475, 775, 100)
 };
 
 item[] items = {
   addItem(1, 0), addItem(2, 1), addItem(0, 2),
   addItem(0, 3), addItem(0, 4), addItem(0, 5),
+  addItem(0, 6), addItem(0, 7), addItem(0, 8),
+  addItem(0, 9), addItem(0, 10), addItem(0, 11),
+  addItem(0, 12), addItem(0, 13), addItem(0, 14),
+  addItem(0, 15), addItem(0, 16), addItem(0, 17),
+  addItem(0, 18), addItem(0, 19), addItem(0, 20),
+  addItem(0, 21), addItem(0, 22), addItem(0, 23),
+  addItem(0, 24), addItem(0, 25), addItem(0, 26),
+  addItem(0, 27), addItem(0, 28), addItem(0, 29),
   new air(slots[6].x, slots[6].y, slots[6]),
   new air(slots[7].x, slots[7].y, slots[7]),
   new air(slots[8].x, slots[8].y, slots[8]),
@@ -121,7 +129,7 @@ void mouseReleased() {
     items[selected].x = items[selected].box.x;
     items[selected].y = items[selected].box.y;
   }
-  
+
   focus();
 
   selected = -1;
@@ -129,33 +137,29 @@ void mouseReleased() {
 
 
 
-void keyPressed(){
-  if(key == CODED || key == 'w' || key == 'a'
-      || key == 'd' || key == 'd'){
-    if(keyCode == UP || key == 'w'){
+void keyPressed() {
+  if (key == CODED || key == 'w' || key == 'a'
+    || key == 'd' || key == 'd') {
+    if (keyCode == UP || key == 'w') {
       slots[idxSelected].selected = false;
       idxSelected = (idxSelected - 9 <= 0) ?
-                    20 + idxSelected : idxSelected - 10;
-                    
-    } else if(keyCode == RIGHT || key == 'd'){
+        20 + idxSelected : idxSelected - 10;
+    } else if (keyCode == RIGHT || key == 'd') {
       slots[idxSelected].selected = false;
       idxSelected = ((idxSelected + 1) % 10 == 0) ?
-                    idxSelected - 9 : idxSelected + 1;
-                    
-    } else if(keyCode == LEFT || key == 'a'){
+        idxSelected - 9 : idxSelected + 1;
+    } else if (keyCode == LEFT || key == 'a') {
       slots[idxSelected].selected = false;
       idxSelected = ((idxSelected) % 10 == 0) ?
-                    idxSelected + 9 : idxSelected - 1;
-                    
-    } else if(keyCode == DOWN || key == 's'){
+        idxSelected + 9 : idxSelected - 1;
+    } else if (keyCode == DOWN || key == 's') {
       slots[idxSelected].selected = false;
       idxSelected = (idxSelected + 10 >= 30) ?
-                    idxSelected - 20 : idxSelected + 10;
+        idxSelected - 20 : idxSelected + 10;
     }
   }
-  
+
   focus();
-  
 }
 
 
@@ -189,16 +193,16 @@ void draw() {
     line(0, 0, 0, 200);
     line(0, 200, 200, 200);
     items[viewItem].preview();
-    
+
     // Membuat tombol Observe
     fill(52, 58, 106);
     stroke(159, 162, 185);
     strokeWeight(2);
     rect(90, 270, 220, 60);
-    fill(255); 
-    textSize(16); 
+    fill(255);
+    textSize(16);
     textSize(40);
-    text("OBSERVE", 10, 280); 
+    text("OBSERVE", 10, 280);
 
 
     // Menampilkan Box Desc
@@ -212,18 +216,24 @@ void draw() {
     line(245, -70, 245, 200);
     line(-190, -70, -190, 200);
     line(670, -70, 670, 200);
-    arc(-175, -80, 30, 30, radians(-41), radians(159));
-    arc(-170, 209, 34, 34, radians(-166), radians(88));
+    arc(-172, -80, 35, 38, radians(-38), radians(155));
+    arc(-172, 209, 38, 41, radians(-163), radians(70));
     arc(657, -80, 30, 30, radians(12), radians(211));
-    arc(652, 209, 34, 34, radians(-267), radians(-22));
+    arc(652, 207, 38, 38, radians(-267), radians(-22));
     line(-210, -20, -210, 150);
     line(690, -20, 690, 150);
     line(-230, -0, -230, 130);
     line(710, -0, 710, 130);
-    rect(250, 70, 70, 60, 100);
-    
-    
+    rect(250, 70, 43, 60, 100);
 
+
+    // membuat border di pinggir
+    stroke(49, 53, 85);
+    strokeWeight(30);
+    line(-700, -124, 900, -124);
+    line(885, -120, 885, 900);
+    line(-700, 746, 870, 746);
+    line(-686, -110, -686, 740);
   
     
   } else {

@@ -48,8 +48,7 @@ class places{
     if(!selected){
       stroke(190,192,188);
     } else{
-      // ... Selected Box Color
-      stroke(255, 255, 0);
+      stroke(241, 250, 15);
     }
     strokeWeight(2);
     fill(71,78,118);
