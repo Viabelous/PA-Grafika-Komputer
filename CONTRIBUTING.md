@@ -56,7 +56,7 @@ Beberapa item tidak dibuat 3D mengingat tidak perlunya beberapa item untuk dijad
 
 
 ## Catatan Tambahan
-Penerapan mode 3D dari item hanya berlaku jika dan hanya jika item tersebut berkategori *Quest Item*, jangan menambahkan mode 3D untuk item pada kategori lain.  
+Penerapan mode 3D dari item hanya berlaku jika dan hanya jika item tersebut berkategori **Quest Item**, jangan menambahkan mode 3D untuk item pada kategori lain.  
 Apabila terdapat kesulitan atau terjadi error, dimohon segara menghubungi kontributor lainnya untuk meminta bantuan agar waktu tidak terbuang sia-sia.  
 Untuk memudahkan pembuatan item, buat file baru di suatu tempat dengan kodingan dasar dan WAJIB seperti di bawah ini:
 ```
@@ -178,8 +178,8 @@ Lalu buka file [component](component.pde) dan scroll ke paling bawah dan tambahk
 ```
   if(id == idTerkini) return new namaItem(slots[ids].x, slots[ids].y, slots[ids]);
 ```
-Ubah *idTerkini* dengan id yang berbeda dengan item di atasnya dan ubah *namaItem* sesuai nama class dari item baru yang dibuat.  
-Jangan lupa untuk mendaftarkan item di list *items* di [main](main.pde).  
+Ubah **idTerkini** dengan id yang berbeda dengan item di atasnya dan ubah **namaItem** sesuai nama class dari item baru yang dibuat.  
+Jangan lupa untuk mendaftarkan item di list **items** di [main](main.pde).  
   
-Biasakan lakukan pull sebelum mulai melakukan koding.
+Biasakan lakukan pull sebelum mulai melakukan koding.  
 ***PASTIKAN KODINGAN YANG "SUDAH DI-PUSH" MASUK KE HISTORY GITHUB***

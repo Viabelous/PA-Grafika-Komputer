@@ -25,6 +25,7 @@ class pond_hammer extends item {
   void build(){
     stroke(0);
     pushMatrix();
+      strokeWeight(2);
       fill(206);
       quad(192, 291, 207, 301, 182, 432, 166, 426);
       
@@ -93,8 +94,8 @@ class kunai extends item {
   void build(){
     stroke(0);
     pushMatrix();
-      scale(1.1);
       strokeWeight(2);
+      scale(1.1);
       
       fill(180);
       quad(236, 220, 316, 326, 288, 351, 201, 248);

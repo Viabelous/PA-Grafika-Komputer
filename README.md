@@ -25,7 +25,7 @@ Hal-hal yang dapat dilakukan di mode tampilan inventory di antaranya:
 ### Tampilan Observe (3D)
 Tampilan Observe memperlihatkan detil dari item yang dipilih untuk di-observe di inventory.
 Hal-hal yang dapat dilakukan di mode tampilan observe di antaranya:
-* **Berpindah ke Tampilan 2D** dengan mengeklik tombol silang di pojok atas kanan layar.
+* **Berpindah ke Tampilan Inventory** dengan mengeklik tombol silang di pojok atas kanan layar.
 
 
 ## Contributors
