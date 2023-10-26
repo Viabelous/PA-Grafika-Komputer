@@ -56,8 +56,8 @@ Beberapa item tidak dibuat 3D mengingat tidak perlunya beberapa item untuk dijad
 
 
 ## Catatan Tambahan
-Apabila terdapat kesulitan atau terjadi error, dimohon segara menghubungi kontributor lainnya untuk meminta bantuan agar waktu tidak terbuang sia-sia.
-
+Penerapan mode 3D dari item hanya berlaku jika dan hanya jika item tersebut berkategori *Quest Item*, jangan menambahkan mode 3D untuk item pada kategori lain.  
+Apabila terdapat kesulitan atau terjadi error, dimohon segara menghubungi kontributor lainnya untuk meminta bantuan agar waktu tidak terbuang sia-sia.  
 Untuk memudahkan pembuatan item, buat file baru di suatu tempat dengan kodingan dasar dan WAJIB seperti di bawah ini:
 ```
 void setup(){
@@ -77,7 +77,11 @@ lalu buat class baru pada file sesuai dengan kategori item dibuat seperti beriku
 ```
 class namaItem extends item {
   namaItem(int xI, int yI, places boxI){
-    super(xI, yI, boxI, false);
+    super(xI, yI, boxI, 
+    "namaItem",  // Sesuaikan
+    "statsItem", // Sesuaikan
+    "infoItem",  // Sesuaikan
+    false);
     // isikan parameter terakhir dengan "true" apabila
     // benda memiliki versi 3D / observable
   }
@@ -123,7 +127,11 @@ Atau apabila item pada versi preview dan thumbnail memiliki bentuk yang sama, ma
 ```
 class namaItem extends item {
   namaItem(int xI, int yI, places boxI){
-    super(xI, yI, boxI, false);
+    super(xI, yI, boxI, 
+    "namaItem",  // Sesuaikan
+    "statsItem", // Sesuaikan
+    "infoItem",  // Sesuaikan
+    false);
     // isikan parameter terakhir dengan "true" apabila
     // benda memiliki versi 3D / observable
   }
@@ -166,7 +174,12 @@ class namaItem extends item {
   }
 }
 ```
-
+Lalu buka file [component](component.pde) dan scroll ke paling bawah dan tambahkan kodingan di dalam fungsi addItem di bawah if dan di atas seperti berikut:
+```
+  if(id == idTerkini) return new namaItem(slots[ids].x, slots[ids].y, slots[ids]);
+```
+Ubah *idTerkini* dengan id yang berbeda dengan item di atasnya dan ubah *namaItem* sesuai nama class dari item baru yang dibuat.  
+Jangan lupa untuk mendaftarkan item di list *items* di [main](main.pde).  
+  
 Biasakan lakukan pull sebelum mulai melakukan koding.
-
 ***PASTIKAN KODINGAN YANG "SUDAH DI-PUSH" MASUK KE HISTORY GITHUB***

@@ -1,6 +1,10 @@
 class pond_hammer extends item {
   pond_hammer(int xI, int yI, places boxI){
-    super(xI, yI, boxI, false);
+    super(xI, yI, boxI,
+    "Pond Hammer",
+    "test1",
+    "test2",
+    false);
   }
   
   void preview(){
@@ -64,7 +68,11 @@ class pond_hammer extends item {
 
 class kunai extends item {
   kunai(int xI, int yI, places boxI){
-    super(xI, yI, boxI, false);
+    super(xI, yI, boxI,
+    "Kunai",
+    "test3",
+    "test4",
+    false);
   }
   
   void preview(){

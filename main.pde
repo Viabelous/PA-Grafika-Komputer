@@ -1,9 +1,10 @@
 int selected = -1; // Untuk mengakses item dengan mouse
 int viewItem = 0; // Untuk menampilkan item pada preview
 boolean firstGet = true; // Untuk mengatasi bug item terbawa
-// ketika mouse ditekan dan di-hover
-// ke item
+                         // ketika mouse ditekan dan di-hover
+                         // ke item
 boolean observeMode = false; // Untuk mengganti layar ke 3D
+int idxSelected = 0;
 
 
 
@@ -42,12 +43,8 @@ places[] slots = {
 };
 
 item[] items = {
-  new pond_hammer(slots[0].x, slots[0].y, slots[0]),
-  new kunai(slots[1].x, slots[1].y, slots[1]),
-  new air(slots[2].x, slots[2].y, slots[2]),
-  new air(slots[3].x, slots[3].y, slots[3]),
-  new air(slots[4].x, slots[4].y, slots[4]),
-  new air(slots[5].x, slots[5].y, slots[5]),
+  addItem(1, 0), addItem(2, 1), addItem(0, 2),
+  addItem(0, 3), addItem(0, 4), addItem(0, 5),
   new air(slots[6].x, slots[6].y, slots[6]),
   new air(slots[7].x, slots[7].y, slots[7]),
   new air(slots[8].x, slots[8].y, slots[8]),
@@ -80,6 +77,8 @@ void mouseClicked() {
   for (int i = items.length - 1; i > -1; i--) {
     if (items[i].getBox()) {
       viewItem = i;
+      slots[idxSelected].selected = false;
+      idxSelected = items[i].box.id;
       break;
     }
   }
@@ -122,9 +121,44 @@ void mouseReleased() {
     items[selected].x = items[selected].box.x;
     items[selected].y = items[selected].box.y;
   }
+  
+  focus();
 
   selected = -1;
 }
+
+
+
+void keyPressed(){
+  if(key == CODED || key == 'w' || key == 'a'
+      || key == 'd' || key == 'd'){
+    if(keyCode == UP || key == 'w'){
+      slots[idxSelected].selected = false;
+      idxSelected = (idxSelected - 9 <= 0) ?
+                    20 + idxSelected : idxSelected - 10;
+                    
+    } else if(keyCode == RIGHT || key == 'd'){
+      slots[idxSelected].selected = false;
+      idxSelected = ((idxSelected + 1) % 10 == 0) ?
+                    idxSelected - 9 : idxSelected + 1;
+                    
+    } else if(keyCode == LEFT || key == 'a'){
+      slots[idxSelected].selected = false;
+      idxSelected = ((idxSelected) % 10 == 0) ?
+                    idxSelected + 9 : idxSelected - 1;
+                    
+    } else if(keyCode == DOWN || key == 's'){
+      slots[idxSelected].selected = false;
+      idxSelected = (idxSelected + 10 >= 30) ?
+                    idxSelected - 20 : idxSelected + 10;
+    }
+  }
+  
+  focus();
+  
+}
+
+
 
 void setup() {
   hint(DISABLE_OPTIMIZED_STROKE);
@@ -137,7 +171,7 @@ void draw() {
   if (!observeMode) {
     // ... kodingan untuk tampilan 2D
     background(114, 120, 152);
-    slots[0].selected = true;
+    slots[idxSelected].selected = true;
 
     for (places slot : slots) slot.build(); // menampilkan slot item
     for (item item : items) item.thumbnail(); // menampilkan thumbnail
