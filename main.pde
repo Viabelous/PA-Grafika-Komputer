@@ -137,6 +137,7 @@ void draw() {
   if (!observeMode) {
     // ... kodingan untuk tampilan 2D
     background(114, 120, 152);
+    slots[0].selected = true;
 
     for (places slot : slots) slot.build(); // menampilkan slot item
     for (item item : items) item.thumbnail(); // menampilkan thumbnail

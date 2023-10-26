@@ -27,6 +27,7 @@ class places{
   int x;
   int y;
   int size;
+  boolean selected = false;
   
   places(int idI, int xI, int yI, int sizeI){
     id = idI;
@@ -37,7 +38,11 @@ class places{
   
   void build(){
     rectMode(CENTER);
-    stroke(190,192,188);
+    if(!selected){
+      stroke(190,192,188);
+    } else{
+      // ... Selected Box Color
+    }
     strokeWeight(2);
     fill(71,78,118);
     square(x, y, size);
