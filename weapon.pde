@@ -2,8 +2,6 @@ class pond_hammer extends item {
   pond_hammer(int xI, int yI, places boxI){
     super(xI, yI, boxI,
     "Pond Hammer",
-    "test1",
-    "test2",
     false);
   }
   
@@ -63,6 +61,14 @@ class pond_hammer extends item {
     stroke(0);
     fill(0);
   }
+  
+  void stats(){
+    text("test1", 0, 0);
+  }
+  
+  void desc(){
+    text("test2", 0, 0);
+  }
 }
 
 
@@ -71,8 +77,6 @@ class kunai extends item {
   kunai(int xI, int yI, places boxI){
     super(xI, yI, boxI,
     "Kunai",
-    "test3",
-    "test4",
     false);
   }
   
@@ -127,5 +131,13 @@ class kunai extends item {
     strokeWeight(1);
     stroke(0);
     fill(0);
+  }
+  
+  void stats(){
+    text("test3", 0, 0);
+  }
+  
+  void desc(){
+    text("test4", 0, 0);
   }
 }

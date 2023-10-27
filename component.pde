@@ -3,24 +3,22 @@ abstract class item {
   int y;
   places box;
   String name;
-  String stats;
-  String desc;
   boolean observable;
   
-  item(int xI, int yI, places boxI, String nameI,
-       String statsI, String descI, boolean obsI){
+  item(int xI, int yI, places boxI,
+       String nameI, boolean obsI){
     x = xI;
     y = yI;
     box = boxI;
     name = nameI;
-    stats = statsI;
-    desc = descI;
     observable = obsI;
   }
   
   abstract void thumbnail();
   abstract void preview();
   void observe(){}
+  abstract void stats();
+  abstract void desc();
   
 
   
@@ -84,13 +82,13 @@ class air extends item {
   air(int xI, int yI, places boxI){
     super(xI, yI, boxI,
     "",
-    "",
-    "",
      false);
   }
   
   void preview(){}
   void thumbnail(){}
+  void stats(){}
+  void desc(){}
 }
 
 

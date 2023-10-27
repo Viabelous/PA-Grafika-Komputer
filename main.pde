@@ -52,31 +52,7 @@ item[] items = {
   addItem(0, 18), addItem(0, 19), addItem(0, 20),
   addItem(0, 21), addItem(0, 22), addItem(0, 23),
   addItem(0, 24), addItem(0, 25), addItem(0, 26),
-  addItem(0, 27), addItem(0, 28), addItem(0, 29),
-  new air(slots[6].x, slots[6].y, slots[6]),
-  new air(slots[7].x, slots[7].y, slots[7]),
-  new air(slots[8].x, slots[8].y, slots[8]),
-  new air(slots[9].x, slots[9].y, slots[9]),
-  new air(slots[10].x, slots[10].y, slots[10]),
-  new air(slots[11].x, slots[11].y, slots[11]),
-  new air(slots[12].x, slots[12].y, slots[12]),
-  new air(slots[13].x, slots[13].y, slots[13]),
-  new air(slots[14].x, slots[14].y, slots[14]),
-  new air(slots[15].x, slots[15].y, slots[15]),
-  new air(slots[16].x, slots[16].y, slots[16]),
-  new air(slots[17].x, slots[17].y, slots[17]),
-  new air(slots[18].x, slots[18].y, slots[18]),
-  new air(slots[19].x, slots[19].y, slots[19]),
-  new air(slots[20].x, slots[20].y, slots[20]),
-  new air(slots[21].x, slots[21].y, slots[21]),
-  new air(slots[22].x, slots[22].y, slots[22]),
-  new air(slots[23].x, slots[23].y, slots[23]),
-  new air(slots[24].x, slots[24].y, slots[24]),
-  new air(slots[25].x, slots[25].y, slots[25]),
-  new air(slots[26].x, slots[26].y, slots[26]),
-  new air(slots[27].x, slots[27].y, slots[27]),
-  new air(slots[28].x, slots[28].y, slots[28]),
-  new air(slots[29].x, slots[29].y, slots[29])
+  addItem(0, 27), addItem(0, 28), addItem(0, 29)
 };
 
 
@@ -146,12 +122,12 @@ void keyPressed() {
         20 + idxSelected : idxSelected - 10;
     } else if (keyCode == RIGHT || key == 'd') {
       slots[idxSelected].selected = false;
-      idxSelected = ((idxSelected + 1) % 10 == 0) ?
-        idxSelected - 9 : idxSelected + 1;
+      idxSelected = (idxSelected == 29) ?
+        0 : idxSelected + 1;
     } else if (keyCode == LEFT || key == 'a') {
       slots[idxSelected].selected = false;
-      idxSelected = ((idxSelected) % 10 == 0) ?
-        idxSelected + 9 : idxSelected - 1;
+      idxSelected = (idxSelected == 0) ?
+        29 : idxSelected - 1;
     } else if (keyCode == DOWN || key == 's') {
       slots[idxSelected].selected = false;
       idxSelected = (idxSelected + 10 >= 30) ?
@@ -194,23 +170,25 @@ void draw() {
     line(0, 200, 200, 200);
     items[viewItem].preview();
 
-    // Membuat tombol Observe
-    fill(52, 58, 106);
-    stroke(159, 162, 185);
-    strokeWeight(2);
-    rect(90, 270, 220, 60);
-    fill(255);
-    textSize(16);
-    textSize(40);
-    text("OBSERVE", 10, 280);
+    // tombol Observe
+    if(items[viewItem].observable){
+      fill(52, 58, 106);
+      stroke(159, 162, 185);
+      strokeWeight(2);
+      rect(90, 270, 220, 60);
+      fill(255);
+      textSize(16);
+      textSize(40);
+      text("OBSERVE", 10, 280);
+    }
 
 
     // Menampilkan Box Desc
     fill(65, 71, 124);
     translate(550, 70);
-    rect(250, 70, 1000, 350, 200);
     stroke(159, 162, 185);
     strokeWeight(5);
+    rect(250, 70, 1000, 350, 200);
     line(-160, -90, 650, -90);
     line(-160, 230, 650, 230);
     line(245, -70, 245, 200);

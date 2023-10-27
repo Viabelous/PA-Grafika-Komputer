@@ -79,8 +79,6 @@ class namaItem extends item {
   namaItem(int xI, int yI, places boxI){
     super(xI, yI, boxI, 
     "namaItem",  // Sesuaikan
-    "statsItem", // Sesuaikan
-    "infoItem",  // Sesuaikan
     false);
     // isikan parameter terakhir dengan "true" apabila
     // benda memiliki versi 3D / observable
@@ -112,15 +110,35 @@ class namaItem extends item {
   }
 
 
-    // buat fungsi di bawah ini jika dan hanya jika
-    // benda memiliki mode observe (3D)
-    void observe(){
+  // buat fungsi di bawah ini jika dan hanya jika
+  // benda memiliki mode observe (3D)
+  void observe(){
     pushMatrix();
 
     // ... kodingan untuk tampilan 3D
 
     popMatrix();
   }
+
+
+
+  void stats(){
+
+    // ... kodingan untuk teks stat
+
+  }
+
+
+
+  void desc(){
+
+    // ... kodingan untuk teks deskripsi
+
+  }
+
+
+
+  
 }
 ```
 Atau apabila item pada versi preview dan thumbnail memiliki bentuk yang sama, maka dapat pula ditulis seperti berikut:
@@ -129,8 +147,6 @@ class namaItem extends item {
   namaItem(int xI, int yI, places boxI){
     super(xI, yI, boxI, 
     "namaItem",  // Sesuaikan
-    "statsItem", // Sesuaikan
-    "infoItem",  // Sesuaikan
     false);
     // isikan parameter terakhir dengan "true" apabila
     // benda memiliki versi 3D / observable
@@ -163,14 +179,30 @@ class namaItem extends item {
   }
 
 
-    // buat fungsi di bawah ini jika dan hanya jika
-    // benda memiliki mode observe (3D)
-    void observe(){
+  // buat fungsi di bawah ini jika dan hanya jika
+  // benda memiliki mode observe (3D)
+  void observe(){
     pushMatrix();
 
     // ... kodingan untuk tampilan 3D
 
     popMatrix();
+  }
+
+
+
+  void stats(){
+
+    // ... kodingan untuk teks stat
+
+  }
+
+
+
+  void desc(){
+
+    // ... kodingan untuk teks deskripsi
+
   }
 }
 ```
