@@ -3,7 +3,7 @@ int viewItem = 0; // Untuk menampilkan item pada preview
 boolean firstGet = true; // Untuk mengatasi bug item terbawa
 // ketika mouse ditekan dan di-hover
 // ke item
-boolean observeMode = false; // Untuk mengganti layar ke 3D
+String mode = "inventory"; // Untuk mengganti layar {inventory, observe}
 int idxSelected = 0;
 
 
@@ -43,7 +43,7 @@ places[] slots = {
 };
 
 item[] items = {
-  addItem(1, 0), addItem(2, 1), addItem(0, 2),
+  addItem(1, 0), addItem(2, 1), addItem(3, 2),
   addItem(0, 3), addItem(0, 4), addItem(0, 5),
   addItem(0, 6), addItem(0, 7), addItem(0, 8),
   addItem(0, 9), addItem(0, 10), addItem(0, 11),
@@ -71,71 +71,83 @@ void mouseClicked() {
 
 
 void mouseDragged() {
-  if (selected == -1) {
-    if (!firstGet) return;
-    for (int i = items.length - 1; i > -1; i--) {
-      if (items[i].getBox() &&
-        items[i].getClass() != new air(0, 0, null).getClass()) {
-        selected = i;
-        break;
+  if(mode == "inventory"){
+    if (selected == -1) {
+      if (!firstGet) return;
+      for (int i = items.length - 1; i > -1; i--) {
+        if (items[i].getBox() &&
+          items[i].getClass() != new air(0, 0, null).getClass()) {
+          selected = i;
+          break;
+        }
+        firstGet = false;
       }
-      firstGet = false;
+    } else {
+      items[selected].x = mouseX;
+      items[selected].y = mouseY;
     }
-  } else {
-    items[selected].x = mouseX;
-    items[selected].y = mouseY;
+  } else if (mode == "observe"){
+  
   }
 }
 
 
 
 void mouseReleased() {
-  firstGet = true;
-  if (selected != -1) {
-    for (places slot : slots) {
-      if (slot.getPos()) {
-        int item = getPlaceOwner(slot);
-        items[item].box = items[selected].box;
-        items[item].x = items[item].box.x;
-        items[item].y = items[item].box.y;
-        items[selected].box = slot;
-        break;
+  if(mode == "inventory"){
+    firstGet = true;
+    if (selected != -1) {
+      for (places slot : slots) {
+        if (slot.getPos()) {
+          int item = getPlaceOwner(slot);
+          items[item].box = items[selected].box;
+          items[item].x = items[item].box.x;
+          items[item].y = items[item].box.y;
+          items[selected].box = slot;
+          break;
+        }
       }
+      items[selected].x = items[selected].box.x;
+      items[selected].y = items[selected].box.y;
     }
-    items[selected].x = items[selected].box.x;
-    items[selected].y = items[selected].box.y;
+  
+    focus();
+  
+    selected = -1;
+  } else if (mode == "observe"){
+  
   }
-
-  focus();
-
-  selected = -1;
 }
 
 
 
 void keyPressed() {
-  if (key == CODED || key == 'w' || key == 'a'
-    || key == 'd' || key == 'd') {
-    if (keyCode == UP || key == 'w') {
-      slots[idxSelected].selected = false;
-      idxSelected = (idxSelected - 9 <= 0) ?
-        20 + idxSelected : idxSelected - 10;
-    } else if (keyCode == RIGHT || key == 'd') {
-      slots[idxSelected].selected = false;
-      idxSelected = (idxSelected == 29) ?
-        0 : idxSelected + 1;
-    } else if (keyCode == LEFT || key == 'a') {
-      slots[idxSelected].selected = false;
-      idxSelected = (idxSelected == 0) ?
-        29 : idxSelected - 1;
-    } else if (keyCode == DOWN || key == 's') {
-      slots[idxSelected].selected = false;
-      idxSelected = (idxSelected + 10 >= 30) ?
-        idxSelected - 20 : idxSelected + 10;
+  if(mode == "inventory"){
+    if (key == CODED || key == 'w' || key == 'a'
+      || key == 'd' || key == 's') {
+      if (keyCode == UP || key == 'w') {
+        slots[idxSelected].selected = false;
+        idxSelected = (idxSelected - 9 <= 0) ?
+          20 + idxSelected : idxSelected - 10;
+      } else if (keyCode == RIGHT || key == 'd') {
+        slots[idxSelected].selected = false;
+        idxSelected = (idxSelected == 29) ?
+          0 : idxSelected + 1;
+      } else if (keyCode == LEFT || key == 'a') {
+        slots[idxSelected].selected = false;
+        idxSelected = (idxSelected == 0) ?
+          29 : idxSelected - 1;
+      } else if (keyCode == DOWN || key == 's') {
+        slots[idxSelected].selected = false;
+        idxSelected = (idxSelected + 10 >= 30) ?
+          idxSelected - 20 : idxSelected + 10;
+      }
     }
+  
+    focus();
+  } else if(mode == "observe"){
+  
   }
-
-  focus();
 }
 
 
@@ -148,7 +160,7 @@ void setup() {
 }
 
 void draw() {
-  if (!observeMode) {
+  if (mode == "inventory") {
     // ... kodingan untuk tampilan 2D
     background(114, 120, 152);
     slots[idxSelected].selected = true;
@@ -214,7 +226,7 @@ void draw() {
     line(-686, -110, -686, 740);
   
     
-  } else {
+  } else if (mode == "observe") {
     // ... kodingan untuk tampilan 3D
     // your code goes here.
   }

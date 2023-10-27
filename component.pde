@@ -125,5 +125,6 @@ item addItem(int id, int ids){
   if(id == 0) return new air(slots[ids].x, slots[ids].y, slots[ids]);
   if(id == 1) return new pond_hammer(slots[ids].x, slots[ids].y, slots[ids]);
   if(id == 2) return new kunai(slots[ids].x, slots[ids].y, slots[ids]);
+  if(id == 3) return new bsoj(slots[ids].x, slots[ids].y, slots[ids]);
   return null;
 }
