@@ -266,6 +266,7 @@ Lalu buka file [component](component.pde) dan scroll ke paling bawah dan tambahk
   if(id == idTerkini) return new namaItem(slots[ids].x, slots[ids].y, slots[ids]);
 ```
 Ubah **idTerkini** dengan id yang berbeda dengan item di atasnya dan ubah **namaItem** sesuai nama class dari item baru yang dibuat.  
+tambahkan "quan" setelah parameter terakhir apabila memiliki jumlah.  
 Jangan lupa untuk mendaftarkan item di list **items** di [main](main.pde).  
   
 Biasakan lakukan pull sebelum mulai melakukan koding.  
