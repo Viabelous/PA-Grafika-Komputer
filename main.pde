@@ -72,18 +72,7 @@ item[] items = {
 
 
 void mouseClicked() {
-  if(items[viewItem].observable){
-    if(mouseX >= 130 && mouseX <= 345
-      && mouseY >= 310 && mouseY <= 365){
-        mode = "observe";
-    }
-    if(mode == "observe"){
-      if(mouseX >= 20 && mouseX <= 60
-        && mouseY >= 25 && mouseY <= 70){
-          mode = "inventory";
-      }
-    }
-  } else {
+  if(mode == "inventory"){
     for (int i = items.length - 1; i > -1; i--) {
       if (items[i].getBox()) {
         viewItem = i;
@@ -92,6 +81,12 @@ void mouseClicked() {
         break;
       }
     }
+    
+    if(items[viewItem].observable && 
+       mousePos(130, 345, 310, 365)) mode = "observe";
+       
+  } else if (mode == "observe"){
+    if(mousePos(20, 60, 25, 70)) mode = "inventory";
   }
 }
 
@@ -244,9 +239,8 @@ void draw() {
       strokeWeight(2);
       rect(90, 270, 220, 60);
       fill(255);
-      textSize(16);
       textSize(40);
-      text("OBSERVE", 10, 280);
+      text("OBSERVE", 10, 283);
     }
 
 
@@ -320,7 +314,6 @@ void draw() {
     fill(255);
     stroke(255);
     translate(0, 250, 0);
-    //box(150);
     beginShape();
     vertex(100, 100);
     endShape();
