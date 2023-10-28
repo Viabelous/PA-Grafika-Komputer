@@ -72,21 +72,21 @@ item[] items = {
 
 
 void mouseClicked() {
-  if(mode == "inventory"){
+  if (mode == "inventory") {
     for (int i = items.length - 1; i > -1; i--) {
       if (items[i].getBox()) {
         viewItem = i;
         slots[idxSelected].selected = false;
         idxSelected = items[i].box.id;
+        audioClick.play();
         break;
       }
     }
-    
-    if(items[viewItem].observable && 
-       mousePos(130, 345, 310, 365)) mode = "observe";
-       
-  } else if (mode == "observe"){
-    if(mousePos(20, 60, 25, 70)) mode = "inventory";
+
+    if (items[viewItem].observable &&
+      mousePos(130, 345, 310, 365)) mode = "observe";
+  } else if (mode == "observe") {
+    if (mousePos(20, 60, 25, 70)) mode = "inventory";
   }
 }
 
@@ -94,7 +94,7 @@ void mouseClicked() {
 
 
 void mouseDragged() {
-  if(mode == "inventory"){
+  if (mode == "inventory") {
     if (selected == -1) {
       if (!firstGet) return;
       for (int i = items.length - 1; i > -1; i--) {
@@ -109,15 +109,15 @@ void mouseDragged() {
       items[selected].x = mouseX;
       items[selected].y = mouseY;
     }
-  } else if (mode == "observe"){
-    if(!dragObserve){
+  } else if (mode == "observe") {
+    if (!dragObserve) {
       xNow = mouseX;
       rotYNow = rotY;
     }
     dragObserve = true;
     rotY = rotYNow + (xNow - mouseX)/100;
-    
-    if(!dragObserve){
+
+    if (!dragObserve) {
       yNow = mouseY;
       rotXNow = rotX;
     }
@@ -129,7 +129,7 @@ void mouseDragged() {
 
 
 void mouseReleased() {
-  if(mode == "inventory"){
+  if (mode == "inventory") {
     firstGet = true;
     if (selected != -1) {
       for (places slot : slots) {
@@ -145,11 +145,11 @@ void mouseReleased() {
       items[selected].x = items[selected].box.x;
       items[selected].y = items[selected].box.y;
     }
-  
+
     focus();
-  
+
     selected = -1;
-  } else if (mode == "observe"){
+  } else if (mode == "observe") {
     dragObserve = false;
     xNow = 0;
     yNow = 0;
@@ -159,43 +159,48 @@ void mouseReleased() {
 
 
 void mouseWheel(MouseEvent e) {
-    float delta = e.getCount() > 0 ? 1.05 : e.getCount() < 0 ? 1.0/1.05 : 1.0;
-    scaleFactor *= delta;
-    translateX = (delta*translateX) + mouseX * (1 - delta);
-    translateY = (delta*translateY) + mouseY * (1 - delta);
+  float delta = e.getCount() > 0 ? 1.05 : e.getCount() < 0 ? 1.0/1.05 : 1.0;
+  scaleFactor *= delta;
+  translateX = (delta*translateX) + mouseX * (1 - delta);
+  translateY = (delta*translateY) + mouseY * (1 - delta);
 }
 
 
 void keyPressed() {
-  if(mode == "inventory"){
+  if (mode == "inventory") {
     if (key == CODED || key == 'w' || key == 'a'
       || key == 'd' || key == 's') {
       if (keyCode == UP || key == 'w') {
         slots[idxSelected].selected = false;
         idxSelected = (idxSelected - 9 <= 0) ?
           20 + idxSelected : idxSelected - 10;
+        audioClick.play();
       } else if (keyCode == RIGHT || key == 'd') {
         slots[idxSelected].selected = false;
         idxSelected = (idxSelected == 29) ?
           0 : idxSelected + 1;
+        audioClick.play();
       } else if (keyCode == LEFT || key == 'a') {
         slots[idxSelected].selected = false;
         idxSelected = (idxSelected == 0) ?
           29 : idxSelected - 1;
+        audioClick.play();
       } else if (keyCode == DOWN || key == 's') {
         slots[idxSelected].selected = false;
         idxSelected = (idxSelected + 10 >= 30) ?
           idxSelected - 20 : idxSelected + 10;
+        audioClick.play();
       }
     }
-  
+
     focus();
-  } else if(mode == "observe"){
+  } else if (mode == "observe") {
     if (key == 'r') {
       scaleFactor = 1;
       translateX = 0.0;
       translateY = 0.0;
-  }
+      audioClick.play();
+    }
   }
 }
 
@@ -233,7 +238,7 @@ void draw() {
     items[viewItem].preview();
 
     // tombol Observe
-    if(items[viewItem].observable){
+    if (items[viewItem].observable) {
       fill(52, 58, 106);
       stroke(159, 162, 185);
       strokeWeight(2);
@@ -273,43 +278,41 @@ void draw() {
     line(885, -120, 885, 900);
     line(-700, 746, 870, 746);
     line(-686, -110, -686, 740);
-  
-    
   } else if (mode == "observe") {
     // ... kodingan untuk tampilan 3D
     // your code goes here.
     background(0);
-    
+
     // tombol kembali ke tampilan 2d
     pushMatrix();
     translate(30, 50, 10);
-    
+
     noStroke();
     fill(150, 0, 0);
     quad(40, -18, 45, -14, 45, 24, 40, 20);
     quad(4, 25, 0, 20, 45, 20, 44, 25);
     fill(215, 0, 0);
     rect(20, 0, 40, 40);
-    
+
     fill(255);
     textSize(26);
     text("x", 13, 7);
     popMatrix();
-    
-    // 
+
+    //
     pushMatrix();
     strokeWeight(2);
     stroke(150);
     translate(width/2, height/2, 0);
     rotateY(rotY);
     rotateX(rotX);
-    
+
     scale(scaleFactor);
-    
+
     noFill();
     stroke(50);
     box(1000);
-    
+
     pushMatrix();
     fill(255);
     stroke(255);
@@ -318,7 +321,7 @@ void draw() {
     vertex(100, 100);
     endShape();
     popMatrix();
-    
+
     items[viewItem].observe();
     popMatrix();
   }
