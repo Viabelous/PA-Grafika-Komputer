@@ -62,11 +62,15 @@ class places{
 
 abstract class consumable extends item{
   int quantity = 0;
+  boolean foodItem;
+  
   consumable(int xI, int yI, places boxI,
-       String nameI, boolean obsI, int quanI){
+       String nameI, boolean obsI, int quanI,
+       boolean foodItemI){
     super(xI, yI, boxI, nameI, obsI);
     super.consumable = true;
     quantity = quanI;
+    foodItem = foodItemI;
   }
 }
 
@@ -143,6 +147,7 @@ item addItem(int id, int ids, int quan){
   if(id == 2) return new kunai(slots[ids].x, slots[ids].y, slots[ids]);
   if(id == 3) return new bsoj(slots[ids].x, slots[ids].y, slots[ids]);
   if(id == 4) return new squamaManitis(slots[ids].x, slots[ids].y, slots[ids], quan);
+  if(id == 5) return new carrot(slots[ids].x, slots[ids].y, slots[ids], quan);
   return null;
 }
 

@@ -58,7 +58,7 @@ places[] slots = {
 
 item[] items = {
   addItem(1, 0), addItem(2, 1), addItem(3, 2),
-  addItem(4, 3, 10), addItem(0, 4), addItem(0, 5),
+  addItem(4, 3, 10), addItem(5, 4, 5), addItem(0, 5),
   addItem(0, 6), addItem(0, 7), addItem(0, 8),
   addItem(0, 9), addItem(0, 10), addItem(0, 11),
   addItem(0, 12), addItem(0, 13), addItem(0, 14),
@@ -198,10 +198,12 @@ void keyPressed() {
         if (items[i].box.id == idxSelected) {
           
           if(items[i].consumable == true){
-            ((consumable)items[i]).quantity -= 1;
-            
-            if(((consumable)items[i]).quantity == 0){
-              items[i] = addItem(0, idxSelected);
+            if(((consumable)items[i]).foodItem){
+              ((consumable)items[i]).quantity -= 1;
+              
+              if(((consumable)items[i]).quantity == 0){
+                items[i] = addItem(0, idxSelected);
+              }
             }
           }
           break;

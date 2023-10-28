@@ -2,7 +2,7 @@ class squamaManitis extends consumable {
   squamaManitis(int xI, int yI, places boxI, int quanI) {
     super(xI, yI, boxI,
       "Squama Manitis",
-      false, quanI);
+      false, quanI, false);
   }
 
   void preview() {
