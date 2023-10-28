@@ -160,10 +160,18 @@ void mouseReleased() {
 
 
 
+void mouseWheel(MouseEvent e) {
+    float delta = e.getCount() > 0 ? 1.05 : e.getCount() < 0 ? 1.0/1.05 : 1.0;
+    scaleFactor *= delta;
+    translateX = (delta*translateX) + mouseX * (1 - delta);
+    translateY = (delta*translateY) + mouseY * (1 - delta);
+}
+
+
 void keyPressed() {
   if(mode == "inventory"){
     if (key == CODED || key == 'w' || key == 'a'
-      || key == 'd' || key == 's' || key == 'r') {
+      || key == 'd' || key == 's') {
       if (keyCode == UP || key == 'w') {
         slots[idxSelected].selected = false;
         idxSelected = (idxSelected - 9 <= 0) ?
@@ -180,16 +188,16 @@ void keyPressed() {
         slots[idxSelected].selected = false;
         idxSelected = (idxSelected + 10 >= 30) ?
           idxSelected - 20 : idxSelected + 10;
-      } else if (key == 'r') {
-        scaleFactor = 1;
-        translateX = 0.0;
-        translateY = 0.0;
-    }
+      }
     }
   
     focus();
   } else if(mode == "observe"){
-  
+    if (key == 'r') {
+      scaleFactor = 1;
+      translateX = 0.0;
+      translateY = 0.0;
+  }
   }
 }
 
