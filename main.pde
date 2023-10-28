@@ -1,6 +1,9 @@
+import processing.sound.*;
+
 int selected = -1; // Untuk mengakses item dengan mouse
 int viewItem = 0; // Untuk menampilkan item pada preview
 boolean firstGet = true; // Untuk mengatasi bug item terbawa
+SoundFile audioClick; // Untuk menggunakan sound saat berpindah2 item
 // ketika mouse ditekan dan di-hover
 // ke item
 String mode = "inventory"; // Untuk mengganti layar {inventory, observe}
@@ -208,6 +211,7 @@ void setup() {
   size(1600, 900, P3D);
   surface.setTitle("Item Inventory");
   surface.setLocation(0, 0);
+  audioClick = new SoundFile(this, "./audio/click_item.wav");
 }
 
 void draw() {
