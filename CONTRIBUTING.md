@@ -58,7 +58,7 @@ Beberapa item tidak dibuat 3D mengingat tidak perlunya beberapa item untuk dijad
 ## Catatan Tambahan
 Penerapan mode 3D dari item hanya berlaku jika dan hanya jika item tersebut berkategori **Quest Item**, jangan menambahkan mode 3D untuk item pada kategori lain.  
 Apabila terdapat kesulitan atau terjadi error, dimohon segara menghubungi kontributor lainnya untuk meminta bantuan agar waktu tidak terbuang sia-sia.  
-Untuk memudahkan pembuatan item, buat file baru di suatu tempat dengan kodingan dasar dan WAJIB seperti di bawah ini:
+Untuk memudahkan pembuatan item 2D, buat file baru di suatu tempat dengan kodingan dasar dan WAJIB seperti di bawah ini:
 ```
 void setup(){
     size(500, 500, P3D);
@@ -66,22 +66,74 @@ void setup(){
 }
 
 void draw(){
-    strokeWeight(2); // untuk tampilan 3D Menyesuaikan
+    strokeWeight(2);
 	
     // ... kodinganmu di sini
 	
 }
 ```
+dan untuk 3D adalah sebagai berikut:
+```
+void setup(){
+  hint(DISABLE_OPTIMIZED_STROKE);
+  size(500, 500, P3D);
+}
+
+void draw(){
+  translate(width/2, height/2);
+  rotateY(-rotY);
+  rotateX(rotX);
+  stroke(0);
+  background(#6d6d6d);
+  
+  build();
+}
+
+boolean drag = false;
+float rotY = 0;
+float rotYNow = 0;
+float xNow = 0;
+float rotX = 0;
+float rotXNow = 0;
+float yNow = 0;
+
+
+void mouseDragged(){
+  if(!drag){
+    xNow = mouseX;
+    rotYNow = rotY;
+    yNow = mouseY;
+    rotXNow = rotX;
+  }
+    drag = true;
+    rotY = rotYNow + (xNow - mouseX)/100;
+    rotX = rotXNow + (yNow - mouseY)/100;
+}
+
+void mouseReleased(){
+  drag = false;
+}
+
+void build(){
+
+   // ... kodinganmu di sini
+
+}
+```
+
 
 lalu buat class baru pada file sesuai dengan kategori item dibuat seperti berikut:
 ```
-class namaItem extends item {
+class namaItem extends item { // untuk item dengan jumlah, pakai consumable ketimbang item
   namaItem(int xI, int yI, places boxI){
     super(xI, yI, boxI, 
     "namaItem",  // Sesuaikan
     false);
     // isikan parameter terakhir dengan "true" apabila
-    // benda memiliki versi 3D / observable
+    // benda memiliki versi 3D / observable.
+    // tambahkan param quan di konstruktor dan setelah param terakhir
+    // apabila item memiliki jumlah, lalu tambah lagi param "true" jika bisa dimakan
+    // atau sebaliknya.
   }
   
   
@@ -143,13 +195,16 @@ class namaItem extends item {
 ```
 Atau apabila item pada versi preview dan thumbnail memiliki bentuk yang sama, maka dapat pula ditulis seperti berikut:
 ```
-class namaItem extends item {
+class namaItem extends item { // untuk item dengan jumlah, pakai consumable ketimbang item
   namaItem(int xI, int yI, places boxI){
     super(xI, yI, boxI, 
     "namaItem",  // Sesuaikan
     false);
     // isikan parameter terakhir dengan "true" apabila
-    // benda memiliki versi 3D / observable
+    // benda memiliki versi 3D / observable.
+    // tambahkan param quan di konstruktor dan setelah param terakhir
+    // apabila item memiliki jumlah, lalu tambah lagi param "true" jika bisa dimakan
+    // atau sebaliknya.
   }
   
   void preview(){
