@@ -58,7 +58,7 @@ places[] slots = {
 
 item[] items = {
   addItem(1, 0), addItem(2, 1), addItem(3, 2),
-  addItem(0, 3), addItem(0, 4), addItem(0, 5),
+  addItem(4, 3, 10), addItem(0, 4), addItem(0, 5),
   addItem(0, 6), addItem(0, 7), addItem(0, 8),
   addItem(0, 9), addItem(0, 10), addItem(0, 11),
   addItem(0, 12), addItem(0, 13), addItem(0, 14),
@@ -171,27 +171,43 @@ void keyPressed() {
     if (key == CODED || key == 'w' || key == 'a'
       || key == 'd' || key == 's') {
       if (keyCode == UP || key == 'w') {
-        slots[idxSelected].selected = false;
-        idxSelected = (idxSelected - 9 <= 0) ?
-          20 + idxSelected : idxSelected - 10;
-        audioClick.play();
+        keyNav(idxSelected - 9 <= 0,
+               20 + idxSelected,
+               idxSelected - 10);
+               
       } else if (keyCode == RIGHT || key == 'd') {
-        slots[idxSelected].selected = false;
-        idxSelected = (idxSelected == 29) ?
-          0 : idxSelected + 1;
-        audioClick.play();
+        keyNav(idxSelected == 29,
+               0,
+               idxSelected + 1);
+               
       } else if (keyCode == LEFT || key == 'a') {
-        slots[idxSelected].selected = false;
-        idxSelected = (idxSelected == 0) ?
-          29 : idxSelected - 1;
-        audioClick.play();
+        keyNav(idxSelected == 0,
+               29,
+               idxSelected - 1);
+               
       } else if (keyCode == DOWN || key == 's') {
-        slots[idxSelected].selected = false;
-        idxSelected = (idxSelected + 10 >= 30) ?
-          idxSelected - 20 : idxSelected + 10;
-        audioClick.play();
+        keyNav(idxSelected + 10 >= 30,
+               idxSelected - 20,
+               idxSelected + 10);
+               
       }
     }
+    
+    if (key == 'q') {
+      for (int i = items.length - 1; i > -1; i--) {
+        if (items[i].box.id == idxSelected) {
+          
+          if(items[i].consumable == true){
+            ((consumable)items[i]).quantity -= 1;
+            
+            if(((consumable)items[i]).quantity == 0){
+              items[i] = addItem(0, idxSelected);
+            }
+          }
+          break;
+        }
+      }
+     }
 
     focus();
   } else if (mode == "observe") {
@@ -221,7 +237,17 @@ void draw() {
     slots[idxSelected].selected = true;
 
     for (places slot : slots) slot.build(); // menampilkan slot item
-    for (item item : items) item.thumbnail(); // menampilkan thumbnail
+    for (item item : items)
+    {
+      item.thumbnail();
+      if(item.consumable == true){
+        if(((consumable)item).quantity != 1){
+          textSize(20);
+          fill(255);
+          text(((consumable)item).quantity, item.box.x-45, item.box.y+40);
+        }
+      }
+    }; // menampilkan thumbnail
 
     // Menampilkan preview
     fill(71, 78, 118);
@@ -246,6 +272,7 @@ void draw() {
       fill(255);
       textSize(40);
       text("OBSERVE", 10, 283);
+      textSize(12);
     }
 
 

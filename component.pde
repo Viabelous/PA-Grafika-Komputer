@@ -3,6 +3,7 @@ abstract class item {
   int y;
   places box;
   String name;
+  boolean consumable = false;
   boolean observable;
   
   item(int xI, int yI, places boxI,
@@ -59,6 +60,15 @@ class places{
 }
 
 
+abstract class consumable extends item{
+  int quantity = 0;
+  consumable(int xI, int yI, places boxI,
+       String nameI, boolean obsI, int quanI){
+    super(xI, yI, boxI, nameI, obsI);
+    super.consumable = true;
+    quantity = quanI;
+  }
+}
 
 boolean mousePos(int xLeft, int xRight, int yUp, int yDown){
   return(mouseX >= xLeft && mouseX <= xRight &&
@@ -120,11 +130,22 @@ void focus(){
 }
 
 
+void keyNav(boolean con, int tr, int fs){
+  slots[idxSelected].selected = false;
+  idxSelected = con ? tr : fs;
+  audioClick.play();
+}
 
-item addItem(int id, int ids){
+
+item addItem(int id, int ids, int quan){
   if(id == 0) return new air(slots[ids].x, slots[ids].y, slots[ids]);
   if(id == 1) return new pond_hammer(slots[ids].x, slots[ids].y, slots[ids]);
   if(id == 2) return new kunai(slots[ids].x, slots[ids].y, slots[ids]);
   if(id == 3) return new bsoj(slots[ids].x, slots[ids].y, slots[ids]);
+  if(id == 4) return new squamaManitis(slots[ids].x, slots[ids].y, slots[ids], quan);
   return null;
+}
+
+item addItem(int id, int ids){
+  return addItem(id, ids, 1);
 }

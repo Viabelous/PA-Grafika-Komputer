@@ -1,8 +1,8 @@
-class carrot extends item {
-  carrot(int xI, int yI, places boxI) {
+class carrot extends consumable {
+  carrot(int xI, int yI, places boxI, int quanI) {
     super(xI, yI, boxI,
       "Carrot",
-      false);
+      false, quanI);
   }
 
   void preview() {
@@ -22,11 +22,13 @@ class carrot extends item {
 
   void build() {
   }
+  
   void stats() {
-    text("Tipe: Consumable Item", 0, 0);
+    text("Tipe: Sayuran", 0, 0);
   }
 
   void desc() {
-    text("Sebuah wortel yang akan menyelamatkanmu disaat masa2 kritis", 0, 0);
+    text("Bahkan sebuah wortel yang akan\n"+
+         "menyelamatkanmu disaat masa-masa kritis", 0, 0);
   }
 }
