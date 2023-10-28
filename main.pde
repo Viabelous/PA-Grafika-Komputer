@@ -6,6 +6,17 @@ boolean firstGet = true; // Untuk mengatasi bug item terbawa
 String mode = "inventory"; // Untuk mengganti layar {inventory, observe}
 int idxSelected = 0;
 
+boolean dragObserve = false; // untuk mouse pada mode 3D
+float rotY = 0;
+float rotYNow = 0;
+float xNow = 0;
+float rotX = 0;
+float rotXNow = 0;
+float yNow = 0;
+
+float scaleFactor = 1.0;
+float translateX = 0.0;
+float translateY = 0.0;
 
 
 // List Daftar Slot Item
@@ -58,15 +69,29 @@ item[] items = {
 
 
 void mouseClicked() {
-  for (int i = items.length - 1; i > -1; i--) {
-    if (items[i].getBox()) {
-      viewItem = i;
-      slots[idxSelected].selected = false;
-      idxSelected = items[i].box.id;
-      break;
+  if(items[viewItem].observable){
+    if(mouseX >= 130 && mouseX <= 345
+      && mouseY >= 310 && mouseY <= 365){
+        mode = "observe";
+    }
+    if(mode == "observe"){
+      if(mouseX >= 20 && mouseX <= 60
+        && mouseY >= 25 && mouseY <= 70){
+          mode = "inventory";
+      }
+    }
+  } else {
+    for (int i = items.length - 1; i > -1; i--) {
+      if (items[i].getBox()) {
+        viewItem = i;
+        slots[idxSelected].selected = false;
+        idxSelected = items[i].box.id;
+        break;
+      }
     }
   }
 }
+
 
 
 
@@ -87,7 +112,19 @@ void mouseDragged() {
       items[selected].y = mouseY;
     }
   } else if (mode == "observe"){
-  
+    if(!dragObserve){
+      xNow = mouseX;
+      rotYNow = rotY;
+    }
+    dragObserve = true;
+    rotY = rotYNow + (xNow - mouseX)/100;
+    
+    if(!dragObserve){
+      yNow = mouseY;
+      rotXNow = rotX;
+    }
+    dragObserve = true;
+    rotX = rotXNow + (yNow - mouseY)/100;
   }
 }
 
@@ -115,10 +152,20 @@ void mouseReleased() {
   
     selected = -1;
   } else if (mode == "observe"){
-  
+    dragObserve = false;
+    xNow = 0;
+    yNow = 0;
   }
 }
 
+
+
+void mouseWheel(MouseEvent e) {
+    float delta = e.getCount() > 0 ? 1.05 : e.getCount() < 0 ? 1.0/1.05 : 1.0;
+    scaleFactor *= delta;
+    translateX = (delta*translateX) + mouseX * (1 - delta);
+    translateY = (delta*translateY) + mouseY * (1 - delta);
+}
 
 
 void keyPressed() {
@@ -146,7 +193,11 @@ void keyPressed() {
   
     focus();
   } else if(mode == "observe"){
-  
+    if (key == 'r') {
+      scaleFactor = 1;
+      translateX = 0.0;
+      translateY = 0.0;
+  }
   }
 }
 
@@ -229,5 +280,49 @@ void draw() {
   } else if (mode == "observe") {
     // ... kodingan untuk tampilan 3D
     // your code goes here.
+    background(0);
+    
+    // tombol kembali ke tampilan 2d
+    pushMatrix();
+    translate(30, 50, 10);
+    
+    noStroke();
+    fill(150, 0, 0);
+    quad(40, -18, 45, -14, 45, 24, 40, 20);
+    quad(4, 25, 0, 20, 45, 20, 44, 25);
+    fill(215, 0, 0);
+    rect(20, 0, 40, 40);
+    
+    fill(255);
+    textSize(26);
+    text("x", 13, 7);
+    popMatrix();
+    
+    // 
+    pushMatrix();
+    strokeWeight(2);
+    stroke(150);
+    translate(width/2, height/2, 0);
+    rotateY(rotY);
+    rotateX(rotX);
+    
+    scale(scaleFactor);
+    
+    noFill();
+    stroke(50);
+    box(1000);
+    
+    pushMatrix();
+    fill(255);
+    stroke(255);
+    translate(0, 250, 0);
+    //box(150);
+    beginShape();
+    vertex(100, 100);
+    endShape();
+    popMatrix();
+    
+    items[viewItem].observe();
+    popMatrix();
   }
 }
