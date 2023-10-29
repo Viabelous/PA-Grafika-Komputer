@@ -26,8 +26,8 @@ class carrot extends consumable {
 
     // Menggambar badan wortel
     fill(255, 102, 0);
-    float xWortel = width / 2;
-    float yWortel = height / 6;
+    float xWortel = 500 / 2;
+    float yWortel = 500 / 6;
     float size = 200;
     beginShape();
     vertex(xWortel, yWortel);
@@ -54,7 +54,7 @@ class carrot extends consumable {
   }
 
   void desc() {
-    text("Bahkan sebuah wortel yang akan\n"+
-      "menyelamatkanmu disaat masa-masa kritis", 0, 0);
+    text("Bahkan sebuah wortel akan dapat\n"+
+         "menyelamatkanmu di masa-masa kritis", 0, 0);
   }
 }
