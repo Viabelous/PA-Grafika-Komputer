@@ -17,9 +17,13 @@ float rotX = 0;
 float rotXNow = 0;
 float yNow = 0;
 
+float scaleMax = 2;
+float scaleMin = 0.5;
 float scaleFactor = 1.0;
 float translateX = 0.0;
 float translateY = 0.0;
+
+PImage lightIcon;
 
 
 // List Daftar Slot Item
@@ -59,7 +63,7 @@ places[] slots = {
 item[] items = {
   addItem(1, 0), addItem(2, 1), addItem(3, 2),
   addItem(4, 3, 10), addItem(5, 4, 5), addItem(6, 5),
-  addItem(7, 6), addItem(0, 7), addItem(0, 8),
+  addItem(7, 6), addItem(8, 7), addItem(9, 8),
   addItem(0, 9), addItem(0, 10), addItem(0, 11),
   addItem(0, 12), addItem(0, 13), addItem(0, 14),
   addItem(0, 15), addItem(0, 16), addItem(0, 17),
@@ -87,6 +91,8 @@ void mouseClicked() {
       mousePos(130, 345, 310, 365)) mode = "observe";
   } else if (mode == "observe") {
     if (mousePos(20, 60, 25, 70)) mode = "inventory";
+    if (mousePos(20, 60, 80, 125)) //untuk fungsi light 3D
+    ;
   }
 }
 
@@ -161,6 +167,13 @@ void mouseReleased() {
 void mouseWheel(MouseEvent e) {
   float delta = e.getCount() > 0 ? 1.05 : e.getCount() < 0 ? 1.0/1.05 : 1.0;
   scaleFactor *= delta;
+  
+  if(scaleFactor >= scaleMin && scaleFactor <= scaleMax){
+    scaleFactor *= delta;
+  } else {
+    scaleFactor = 1.0;
+  }
+  
   translateX = (delta*translateX) + mouseX * (1 - delta);
   translateY = (delta*translateY) + mouseY * (1 - delta);
 }
@@ -230,6 +243,7 @@ void setup() {
   surface.setTitle("Item Inventory");
   surface.setLocation(0, 0);
   audioClick = new SoundFile(this, "./audio/click_item.wav");
+  lightIcon = loadImage("./images/lightbulb-05.png");
 }
 
 void draw() {
@@ -329,49 +343,67 @@ void draw() {
 
   } else if (mode == "observe") {
     // ... kodingan untuk tampilan 3D
-    // your code goes here.
     background(0);
 
     // tombol kembali ke tampilan 2d
     pushMatrix();
-    translate(30, 50, 10);
-
-    noStroke();
-    fill(150, 0, 0);
-    quad(40, -18, 45, -14, 45, 24, 40, 20);
-    quad(4, 25, 0, 20, 45, 20, 44, 25);
-    fill(215, 0, 0);
-    rect(20, 0, 40, 40);
-
-    fill(255);
-    textSize(26);
-    text("x", 13, 7);
+      translate(30, 50, 10);
+  
+      noStroke();
+      fill(150, 0, 0);
+      quad(40, -18, 45, -14, 45, 24, 40, 20);
+      quad(4, 25, 0, 20, 45, 20, 44, 25);
+      fill(215, 0, 0);
+      rect(20, 0, 40, 40);
+  
+      fill(255);
+      textSize(26);
+      text("x", 13, 7);
     popMatrix();
-
-    //
+      
+      
+    // tombol light
     pushMatrix();
-    strokeWeight(2);
-    stroke(150);
-    translate(width/2, height/2, 0);
-    rotateY(rotY);
-    rotateX(rotX);
+      translate(90, 50, 10);
+  
+      noStroke();
+      fill(201, 171, 0);
+      quad(40, -18, 45, -14, 45, 24, 40, 20);
+      quad(4, 25, 0, 20, 45, 20, 44, 25);
+      fill(245, 209, 0);
+      rect(20, 0, 40, 40);
 
-    scale(scaleFactor);
-
-    noFill();
-    stroke(50);
-    box(1000);
-
-    pushMatrix();
-    fill(255);
-    stroke(255);
-    translate(0, 250, 0);
-    beginShape();
-    vertex(100, 100);
-    endShape();
+      pushMatrix();
+        translate(10, -13, 0);
+        image(lightIcon, 0, 0, 24, 24);
+      popMatrix();
     popMatrix();
-
-    items[viewItem].observe();
+      
+      
+      // tampilan 3D
+      pushMatrix();
+        strokeWeight(2);
+        stroke(150);
+        translate(width/2, height/2, 0);
+        rotateY(rotY);
+        rotateX(rotX);
+    
+        scale(scaleFactor);
+    
+        noFill();
+        stroke(50);
+        box(1000);
+    
+        pushMatrix();
+        fill(255);
+        stroke(255);
+        translate(0, 250, 0);
+        beginShape();
+        vertex(100, 100);
+        endShape();
+      popMatrix();
+  
+      items[viewItem].observe();
     popMatrix();
   }
 }

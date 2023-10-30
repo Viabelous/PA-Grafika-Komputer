@@ -267,3 +267,240 @@ class NightwalkersSight extends item {
 
   
 }
+
+
+
+class emeraldWings extends item {
+  
+  emeraldWings(int xI, int yI, places boxI){
+    super(xI, yI, boxI, 
+    "Emerlad Wings",
+    false);
+  }
+  
+  
+  void preview(){
+    pushMatrix();
+    translate(-20, -20);
+    scale(0.5);
+    
+      stroke(6, 83, 49);
+      fill(6, 118, 67, 190);
+      pushMatrix();
+        rotate(PI/-8);
+        ellipse(65, 335, 130, 35);
+      popMatrix();
+      
+      stroke(30, 134, 79);
+      noFill();
+      beginShape();
+        curveVertex(260, 355);
+        curveVertex(150, 300);
+        curveVertex(250, 268);
+        curveVertex(480, 279);
+      endShape();
+      
+      stroke(6, 83, 49);
+      fill(6, 118, 67, 190);
+      pushMatrix();
+        rotate(PI/9);
+        ellipse(230, 145, 180, 40);
+      popMatrix();
+      
+      pushMatrix();
+        rotate(PI/90);
+        ellipse(184, 247, 145, 30);
+      popMatrix();
+      
+      pushMatrix();
+        rotate(PI/-35);
+        ellipse(145, 282, 160, 30);
+      popMatrix();
+      
+      
+      pushMatrix();
+        rotate(PI/9);
+        ellipse(390, 163, 130, 35);
+      popMatrix();
+      
+      stroke(30, 134, 79);
+      noFill();
+      beginShape();
+        curveVertex(260, 355);
+        curveVertex(350, 300);
+        curveVertex(250, 268);
+        curveVertex(290, 350);
+      endShape();
+      
+      stroke(6, 83, 49);
+      fill(6, 118, 67, 190);
+      pushMatrix();
+        rotate(PI/-9);
+        ellipse(236, 317, 180, 40);
+      popMatrix();
+      
+      pushMatrix();
+        rotate(PI/-90);
+        ellipse(310, 264, 145, 30);
+      popMatrix();
+      
+      pushMatrix();
+        rotate(PI/40);
+        ellipse(346, 240, 160, 30);
+      popMatrix();
+      
+      stroke(30, 134, 79);
+      noFill();
+      beginShape();
+        curveVertex(220, 87);
+        curveVertex(130, 205);
+        curveVertex(247, 248);
+        curveVertex(203, 329);
+      endShape();
+      
+      beginShape();
+        curveVertex(220, 87);
+        curveVertex(365, 205);
+        curveVertex(247, 248);
+        curveVertex(203, 329);
+      endShape();
+      
+      fill(125, 170, 131, 35);
+      noStroke();
+      circle(388, 196, 10);
+      circle(113, 196, 10);
+      circle(206, 264, 8);
+      circle(289, 264, 8);
+      
+      fill(255);
+      stroke(69, 142, 86);
+      ellipse(random(150, 450), random(150, 350), 4, 4);
+      
+    popMatrix();
+    strokeWeight(1);
+    stroke(0);
+    fill(0);
+  }
+  
+  
+  void thumbnail(){
+    pushMatrix();
+    translate(x-62, y-62);
+    scale(0.25);
+      
+      stroke(6, 83, 49);
+      fill(6, 118, 67, 190);
+      pushMatrix();
+        rotate(PI/-8);
+        ellipse(65, 335, 130, 35);
+      popMatrix();
+      
+      stroke(30, 134, 79);
+      noFill();
+      beginShape();
+        curveVertex(260, 355);
+        curveVertex(150, 300);
+        curveVertex(250, 268);
+        curveVertex(480, 279);
+      endShape();
+      
+      stroke(6, 83, 49);
+      fill(6, 118, 67, 190);
+      pushMatrix();
+        rotate(PI/9);
+        ellipse(230, 145, 180, 40);
+      popMatrix();
+      
+      pushMatrix();
+        rotate(PI/90);
+        ellipse(184, 247, 145, 30);
+      popMatrix();
+      
+      pushMatrix();
+        rotate(PI/-35);
+        ellipse(145, 282, 160, 30);
+      popMatrix();
+      
+      
+      pushMatrix();
+        rotate(PI/9);
+        ellipse(390, 163, 130, 35);
+      popMatrix();
+      
+      stroke(30, 134, 79);
+      noFill();
+      beginShape();
+        curveVertex(260, 355);
+        curveVertex(350, 300);
+        curveVertex(250, 268);
+        curveVertex(290, 350);
+      endShape();
+      
+      stroke(6, 83, 49);
+      fill(6, 118, 67, 190);
+      pushMatrix();
+        rotate(PI/-9);
+        ellipse(236, 317, 180, 40);
+      popMatrix();
+      
+      pushMatrix();
+        rotate(PI/-90);
+        ellipse(310, 264, 145, 30);
+      popMatrix();
+      
+      pushMatrix();
+        rotate(PI/40);
+        ellipse(346, 240, 160, 30);
+      popMatrix();
+      
+      stroke(30, 134, 79);
+      noFill();
+      beginShape();
+        curveVertex(220, 87);
+        curveVertex(130, 205);
+        curveVertex(247, 248);
+        curveVertex(203, 329);
+      endShape();
+      
+      beginShape();
+        curveVertex(220, 87);
+        curveVertex(365, 205);
+        curveVertex(247, 248);
+        curveVertex(203, 329);
+      endShape();
+      
+      fill(125, 170, 131, 35);
+      noStroke();
+      circle(388, 196, 10);
+      circle(113, 196, 10);
+      circle(206, 264, 8);
+      circle(289, 264, 8);
+      
+      fill(255);
+      stroke(69, 142, 86);
+      ellipse(random(150, 450), random(150, 350), 4, 4);
+      
+    translate(10, 50);
+    stroke(0);
+    strokeWeight(2);
+    popMatrix();
+    strokeWeight(1);
+    stroke(0);
+    fill(0);
+  }
+
+
+
+  void stats(){
+    text("Tipe: Equipment Item", 0, 0);
+  }
+
+
+
+  void desc(){
+    text("Sayap berwarna emerald yang dapat berkamuflase\n"+
+         "dengan dedaunan pohon maupun semak-semak.\n\n"+
+         "\"Item ini dapat dipajang sebagai dekorasi.\"", 0, 0);
+  }
+  
+}
