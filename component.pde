@@ -149,7 +149,9 @@ item addItem(int id, int ids, int quan){
   if(id == 4) return new squamaManitis(slots[ids].x, slots[ids].y, slots[ids], quan);
   if(id == 5) return new carrot(slots[ids].x, slots[ids].y, slots[ids], quan);
   if(id == 6) return new NightwalkersSight(slots[ids].x, slots[ids].y, slots[ids]);
+  if(id == 7) return new magnificentSword(slots[ids].x, slots[ids].y, slots[ids]);
   return null;
+
 }
 
 item addItem(int id, int ids){

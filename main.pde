@@ -59,7 +59,7 @@ places[] slots = {
 item[] items = {
   addItem(1, 0), addItem(2, 1), addItem(3, 2),
   addItem(4, 3, 10), addItem(5, 4, 5), addItem(6, 5),
-  addItem(0, 6), addItem(0, 7), addItem(0, 8),
+  addItem(7, 6), addItem(0, 7), addItem(0, 8),
   addItem(0, 9), addItem(0, 10), addItem(0, 11),
   addItem(0, 12), addItem(0, 13), addItem(0, 14),
   addItem(0, 15), addItem(0, 16), addItem(0, 17),
@@ -251,7 +251,9 @@ void draw() {
       }
     }; // menampilkan thumbnail
 
+    rectMode(CENTER);
     // Menampilkan preview
+    pushMatrix();
     fill(71, 78, 118);
     translate(150, 70);
     square(100, 100, 200);
@@ -264,7 +266,9 @@ void draw() {
     line(0, 0, 0, 200);
     line(0, 200, 200, 200);
     items[viewItem].preview();
-
+    popMatrix();
+    rectMode(CENTER);
+    
     // tombol Observe
     if (items[viewItem].observable) {
       fill(52, 58, 106);
@@ -279,8 +283,9 @@ void draw() {
 
 
     // Menampilkan Box Desc
+    pushMatrix();
     fill(65, 71, 124);
-    translate(550, 70);
+    translate(650, 150);
     stroke(159, 162, 185);
     strokeWeight(5);
     rect(250, 70, 1000, 350, 200);
@@ -298,15 +303,29 @@ void draw() {
     line(-230, -0, -230, 130);
     line(710, -0, 710, 130);
     rect(250, 70, 43, 60, 100);
+    textSize(30);
+    fill(0);
+    text("Judul Item", -160, -20);
+    text("Status", -160, 100);
+    text("Deskripsi", 300, -20);
+    
+    
+    // Menampilkan 
 
 
     // membuat border di pinggir
     stroke(49, 53, 85);
     strokeWeight(30);
-    line(-700, -124, 900, -124);
-    line(885, -120, 885, 900);
-    line(-700, 746, 870, 746);
-    line(-686, -110, -686, 740);
+    line(-646, -130, 948, -130);
+    line(-646, 734, 948, 734);
+    line(-636, -144, -636, 734);
+    line(938, -144, 938, 738);
+    popMatrix();
+
+    fill(0);
+    text("X : " +mouseX, 0,30);
+    text("Y : " +mouseY, 0,70);
+
   } else if (mode == "observe") {
     // ... kodingan untuk tampilan 3D
     // your code goes here.

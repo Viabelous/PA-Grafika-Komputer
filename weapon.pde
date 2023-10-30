@@ -141,3 +141,94 @@ class kunai extends item {
     text("test4", 0, 0);
   }
 }
+
+
+class magnificentSword extends item { // untuk item dengan jumlah, pakai consumable ketimbang item
+  magnificentSword(int xI, int yI, places boxI){
+    super(xI, yI, boxI, 
+    "Magnificent Sword",  // Sesuaikan
+    false);
+    // isikan parameter terakhir dengan "true" apabila
+    // benda memiliki versi 3D / observable.
+    // tambahkan param quan di konstruktor dan setelah param terakhir
+    // apabila item memiliki jumlah, lalu tambah lagi param "true" jika bisa dimakan
+    // atau sebaliknya.
+  }
+  
+  void preview(){
+    pushMatrix();
+    scale(0.4);
+    build();
+    popMatrix();
+  };
+  
+  void thumbnail(){
+    pushMatrix();
+    translate(x-50, y-50);
+    scale(0.2);
+    build();
+    popMatrix();
+  }
+  
+  void build(){
+    pushMatrix();
+    scale(1.6);
+    translate(97,201);
+    rotate(radians(45));
+    translate(-250, -250);
+    
+    rectMode(CORNER);
+    beginShape();
+    fill(235, 240, 235);
+    stroke(186, 188, 186);
+    strokeWeight(5);
+    vertex(253, 250);
+    vertex(285, 252);
+    vertex(287, 51);
+    vertex(262, 11);
+  
+    vertex(259, 250);
+    vertex(233, 252);
+    vertex(234, 51);
+    vertex(265, 11);
+    endShape();
+  
+    fill(245, 234, 22);
+    stroke(232, 221, 0);
+    strokeWeight(5);
+    rect(213, 250, 87, 28, 20);
+  
+    fill(245, 78, 32);
+    noStroke();
+    rect(249, 272, 16, 34);
+  
+    fill(245, 234, 22);
+    stroke(232, 221, 0);
+    strokeWeight(5);
+    circle(258, 310, 30);
+
+  
+    popMatrix();
+    strokeWeight(1);
+    stroke(0);
+    fill(0);
+  }
+
+
+
+
+
+  void stats(){
+
+    // ... kodingan untuk teks stat
+
+  }
+
+
+
+  void desc(){
+
+    // ... kodingan untuk teks deskripsi
+
+  }
+}
