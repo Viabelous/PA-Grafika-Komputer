@@ -274,10 +274,10 @@ void draw() {
       fill(52, 58, 106);
       stroke(159, 162, 185);
       strokeWeight(2);
-      rect(90, 270, 220, 60);
+      rect(250, 340, 220, 60);
       fill(255);
       textSize(40);
-      text("OBSERVE", 10, 283);
+      text("OBSERVE", 165, 350);
       textSize(12);
     }
 
@@ -304,9 +304,10 @@ void draw() {
     line(710, -0, 710, 130);
     rect(250, 70, 43, 60, 100);
     textSize(30);
-    fill(0);
+    fill(255);
     text("Judul Item", -160, -20);
-    text("Status", -160, 100);
+    text("Status", -160, 10);
+    textSize(20);
     text("Deskripsi", 300, -20);
     
     
