@@ -2,7 +2,7 @@ class carrot extends consumable {
   carrot(int xI, int yI, places boxI, int quanI) {
     super(xI, yI, boxI,
       "Carrot",
-      false, quanI, false);
+      false, quanI, true);
   }
 
   void preview() {
