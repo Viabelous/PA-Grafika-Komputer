@@ -63,7 +63,7 @@ class pond_hammer extends item {
   }
   
   void stats(){
-    text("test1", 0, 0);
+    text(icon("atk", 0, 0, 1) + "ATK 20", 0, 0);
   }
   
   void desc(){

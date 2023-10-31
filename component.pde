@@ -112,28 +112,28 @@ class air extends item {
 
 
 
-String Icon(String namaIcon, int x, int y, float scl) {
+String icon(String namaIcon, int x, int y, float scl) {
   pushMatrix();
   scale(scl);
   translate(x, y);
   if (namaIcon == "atk") {
       pushMatrix();
-  translate(25, 25); // Pusat pedang akan diatur di tengah jendela
-
-  // Ubah ukuran pedang
-  float scaleValue = 0.1;
-  scale(scaleValue);
-
-  fill(#1559FF);
-  arc(200, 200, 100, 300, radians(0), radians(180), CHORD);
-  
-  fill(#FC3838);
-  arc(200, 220, 80, 200, radians(0), radians(180), CHORD);
-  
-  fill(#FFFFFF);
-  rect(195, 240, 10, 40);
-  rect(180, 255, 40 ,10);
-  popMatrix();
+      translate(25, 25); // Pusat pedang akan diatur di tengah jendela
+    
+      // Ubah ukuran pedang
+      float scaleValue = 0.1;
+      scale(scaleValue);
+    
+      fill(#1559FF);
+      arc(200, 200, 100, 300, radians(0), radians(180), CHORD);
+      
+      fill(#FC3838);
+      arc(200, 220, 80, 200, radians(0), radians(180), CHORD);
+      
+      fill(#FFFFFF);
+      rect(195, 240, 10, 40);
+      rect(180, 255, 40 ,10);
+      popMatrix();
   } else if (namaIcon == "heal") {
   } else if (namaIcon == "mana") {
   } else if (namaIcon == "deffend") {
@@ -142,7 +142,7 @@ String Icon(String namaIcon, int x, int y, float scl) {
   }
   popMatrix();
 
-  return "     ";
+  return "         ";
 }
 
 
