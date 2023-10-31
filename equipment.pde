@@ -250,18 +250,26 @@ class nightwalkersSight extends item {
 
 
   void stats(){
-    text("Tipe: Helmet\n"+
-    "", 0, 0);
-    // ... kodingan untuk teks stat
+    text("Tipe: Helmet\n\n\n"+
+         "Saat dikenakan, akan dapat melihat\n"+
+         "di kegelapan.", 0, 0);
 
   }
 
 
 
   void desc(){
-
-    // ... kodingan untuk teks deskripsi
-
+    pushMatrix();
+    translate(0, -30);
+    textSize(19);
+    text("Topeng yang dirancang khusus dan menjadi\n"+
+         "simbol keanggotaan dari organisasi non\n"+
+         "resmi Nightwalker.\n\n"+
+         "Topeng ini sudah didesain ulang berkali-kali\n"+
+         "oleh penciptanya. Namun, akhirnya rampung\n"+
+         "karena kematian mendadak. Meski demikan\n"+
+         "tujuan dibuatnya topeng ini sudah tercapai.", 0, 0);
+    popMatrix();
   }
 
 

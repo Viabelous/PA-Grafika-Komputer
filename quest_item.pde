@@ -564,7 +564,6 @@ class hynaPainting extends item {
 
     // Gambar latar belakang foto
     fill(#FFFFFF);  // Warna putih
-    rectMode(CENTER);
     rect(250, 250, 200, 200);
 
     // Menggambar Love
@@ -588,7 +587,6 @@ class hynaPainting extends item {
     // Menambahkan tulisan "H.Y.N.A"
     fill(0); // Warna hitam untuk teks
     textSize(50);
-    textAlign(CENTER, TOP);
     text("H.Y.N.A", 250, 290);
   }
 
@@ -601,8 +599,9 @@ class hynaPainting extends item {
   }
 
   void desc() {
-    text("Sebuah lukisan yang didapat ketika pemain\n"+
-      "telah berinteraksi dengan seluruh developer.\n\n"+
+    text("Sebuah lukisan aneh yang didapat setelah\n"+
+         "setelah menyelesaikan quest.\n"+
+         "\"Unusual Rendezvous\" \n\n"+
       "\"Item ini dapat dipajang sebagai dekorasi.\"", 0, 0);
   }
 }

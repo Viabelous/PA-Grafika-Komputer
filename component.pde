@@ -116,25 +116,24 @@ String icon(String namaIcon, int x, int y, float scl) {
   pushMatrix();
   scale(scl);
   translate(x, y);
-  if (namaIcon == "atk") {
+  if (namaIcon == "def") {
+      pushMatrix();
+      float scaleValue = 0.1;
+      scale(scaleValue);
+    
+      fill(#1559FF);
+      arc(200, -130, 100, 300, radians(0), radians(180), CHORD);
+      
+      fill(#FC3838);
+      arc(200, -110, 80, 200, radians(0), radians(180), CHORD);
+      
+      fill(#FFFFFF);
+      rect(200, -60, 10, 40);
+      rect(200, -60, 40, 10);
+      popMatrix();
   } else if (namaIcon == "heal") {
-  } else if (namaIcon == "deffend") {
-    pushMatrix();
-    float scaleValue = 0.1;
-    scale(scaleValue);
-
-    fill(#1559FF);
-    arc(200, -130, 100, 300, radians(0), radians(180), CHORD);
-
-    fill(#FC3838);
-    arc(200, -110, 80, 200, radians(0), radians(180), CHORD);
-
-    fill(#FFFFFF);
-    rect(200, -60, 10, 40);
-    rect(200, -60, 40, 10);
-    popMatrix();
+  } else if (namaIcon == "atk") {
   } else if (namaIcon == "speed") {
-  } else if (namaIcon == "inventory") {
   }
   popMatrix();
 
