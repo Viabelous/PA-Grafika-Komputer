@@ -276,6 +276,7 @@ class stoneAxe extends item { // untuk item dengan jumlah, pakai consumable keti
     translate(250, 250);
     rotate(radians(-20));
     translate(-235, -350);
+    rectMode(CORNER);
     fill(142, 112, 3);
     stroke(62, 49, 2);
     strokeWeight(4);

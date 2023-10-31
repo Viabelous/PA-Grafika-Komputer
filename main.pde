@@ -64,7 +64,7 @@ item[] items = {
   addItem(1, 0), addItem(2, 1), addItem(3, 2),
   addItem(4, 3, 10), addItem(5, 4, 5), addItem(6, 5),
   addItem(7, 6), addItem(8, 7), addItem(9, 8),
-  addItem(10, 9, 4), addItem(11, 10, 20), addItem(0, 11),
+  addItem(10, 9, 4), addItem(11, 10, 20), addItem(12, 11),
   addItem(0, 12), addItem(0, 13), addItem(0, 14),
   addItem(0, 15), addItem(0, 16), addItem(0, 17),
   addItem(0, 18), addItem(0, 19), addItem(0, 20),

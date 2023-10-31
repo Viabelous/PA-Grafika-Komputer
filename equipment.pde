@@ -250,7 +250,8 @@ class nightwalkersSight extends item {
 
 
   void stats(){
-
+    text("Tipe: Helmet\n"+
+    "", 0, 0);
     // ... kodingan untuk teks stat
 
   }
