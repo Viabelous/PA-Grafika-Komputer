@@ -283,10 +283,10 @@ class bsoj extends item {
 
 
 
-class skyFeatherBadge extends item {
-  skyFeatherBadge(int xI, int yI, places boxI){
+class skyfeatherBadge extends item {
+  skyfeatherBadge(int xI, int yI, places boxI){
     super(xI, yI, boxI,
-    "Badge Feather",
+    "Skyfeather Badge",
     true);
   }
   

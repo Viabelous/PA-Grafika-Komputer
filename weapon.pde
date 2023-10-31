@@ -177,41 +177,54 @@ class magnificentSword extends item { // untuk item dengan jumlah, pakai consuma
     rotate(radians(45));
     translate(-250, -250);
     
-    rectMode(CORNER);
-    beginShape();
-    fill(235, 240, 235);
-    stroke(186, 188, 186);
-    strokeWeight(5);
-    vertex(253, 250);
-    vertex(285, 252);
-    vertex(287, 51);
-    vertex(262, 11);
-  
-    vertex(259, 250);
-    vertex(233, 252);
-    vertex(234, 51);
-    vertex(265, 11);
-    endShape();
-  
-    fill(245, 234, 22);
-    stroke(232, 221, 0);
-    strokeWeight(5);
-    rect(213, 250, 87, 28, 20);
-  
-    fill(245, 78, 32);
-    noStroke();
-    rect(249, 272, 16, 34);
-  
-    fill(245, 234, 22);
-    stroke(232, 221, 0);
-    strokeWeight(5);
-    circle(258, 310, 30);
+  rectMode(CORNER);
 
+  fill(245, 78, 32);
+  noStroke();
+  rect(249, 272, 16, 34);
+
+
+  fill(245, 234, 22);
+  stroke(232, 221, 0);
+  strokeWeight(5);
+  rect(213, 250, 87, 28, 20);
+
+  fill(235, 240, 235);
+  stroke(186, 188, 186);
+  strokeWeight(4);
+  beginShape();
+  vertex(253, 250);
+  vertex(285, 252);
+  vertex(287, 51);
+  vertex(262, 11);
+
+  vertex(259, 250);
+  vertex(233, 252);
+  vertex(234, 51);
+  vertex(265, 11);
+  endShape();
+
+  fill(245, 234, 22);
+  stroke(232, 221, 0);
+  strokeWeight(4);
+  circle(258, 310, 30);
+  noFill();
+  stroke(0);
+  strokeWeight(3);
+  arc(257, 312, 33, 24, radians(-396), radians(-121));
+  arc(284, 265, 37, 31, radians(-429), radians(-260));
+  arc(229, 265, 33, 30, radians(-287), radians(-121));
+  line(228,280,248,279);
+  line(266,280,284,280);
   
-    popMatrix();
-    strokeWeight(1);
-    stroke(0);
-    fill(0);
+  beginShape();
+  vertex(287, 252);
+  vertex(287, 51);
+  vertex(261, 11);
+  vertex(232, 52);
+  vertex(234, 250);
+  endShape();
+  popMatrix();
   }
 
 

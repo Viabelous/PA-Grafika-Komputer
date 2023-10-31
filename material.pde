@@ -91,3 +91,89 @@ class squamaManitis extends consumable {
          "sehingga perlu keahlian khusus jika ingin menempanya.", 0, 0);
   }
 }
+
+class bombby extends consumable { 
+  bombby(int xI, int yI, places boxI, int quan){
+    super(xI, yI, boxI, 
+    "bombby",  // Sesuaikan
+    false, quan, false);
+  }
+  
+  void preview(){
+    pushMatrix();
+    scale(0.4);
+    build();
+    popMatrix();
+  };
+  
+  void thumbnail(){
+    pushMatrix();
+    translate(x-50, y-50);
+    scale(0.2);
+    build();
+    popMatrix();
+  }
+  
+  void build(){
+    pushMatrix();
+
+    stroke(0);
+    strokeWeight(4);
+    scale(2.1);
+    translate(-144,-54);
+    
+    rectMode(CORNER);
+    fill(57, 55, 52);
+    circle(263, 200, 150);
+    fill(85, 82, 76);
+    rect(229, 110, 51, 32, 55);
+  
+    noStroke();
+    fill(108, 106, 101);
+    rect(240, 109, 28, 15, 8);
+  
+    beginShape();
+    fill(0);
+    curveVertex(230, 110);
+    curveVertex(256, 111);
+    curveVertex(250, 80);
+    curveVertex(288, 90);
+    curveVertex(288, 75);
+    curveVertex(240, 75);
+    curveVertex(246, 110);
+    curveVertex(246, 110);
+    endShape();
+  
+    popMatrix();
+    strokeWeight(1);
+    stroke(0);
+    fill(0);
+  }
+
+
+  // buat fungsi di bawah ini jika dan hanya jika
+  // benda memiliki mode observe (3D)
+  void observe(){
+    pushMatrix();
+
+    // ... kodingan untuk tampilan 3D
+
+    popMatrix();
+  }
+
+
+
+  void stats(){
+
+    // ... kodingan untuk teks stat
+
+  }
+
+
+
+  void desc(){
+
+    // ... kodingan untuk teks deskripsi
+
+  }
+}

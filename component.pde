@@ -148,11 +148,12 @@ item addItem(int id, int ids, int quan){
   if(id == 3) return new bsoj(slots[ids].x, slots[ids].y, slots[ids]);
   if(id == 4) return new squamaManitis(slots[ids].x, slots[ids].y, slots[ids], quan);
   if(id == 5) return new carrot(slots[ids].x, slots[ids].y, slots[ids], quan);
-  if(id == 6) return new NightwalkersSight(slots[ids].x, slots[ids].y, slots[ids]);
+  if(id == 6) return new nightwalkersSight(slots[ids].x, slots[ids].y, slots[ids]);
   if(id == 7) return new magnificentSword(slots[ids].x, slots[ids].y, slots[ids]);
   if(id == 8) return new emeraldWings(slots[ids].x, slots[ids].y, slots[ids]);
-  if(id == 9) return new skyFeatherBadge(slots[ids].x, slots[ids].y, slots[ids]);
-  
+  if(id == 9) return new skyfeatherBadge(slots[ids].x, slots[ids].y, slots[ids]);
+  if(id == 10) return new bombby(slots[ids].x, slots[ids].y, slots[ids], quan);
+  if(id == 11) return new rawMeat(slots[ids].x, slots[ids].y, slots[ids], quan);
   return null;
 
 }
