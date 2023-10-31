@@ -84,6 +84,7 @@ class rawMeat extends consumable {
   void build(){
     pushMatrix();
 
+    rectMode(CORNER);
     scale(1.7);
     translate(-100,-113);
     stroke(180, 32, 2);

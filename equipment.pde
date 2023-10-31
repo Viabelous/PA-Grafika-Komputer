@@ -492,7 +492,7 @@ class emeraldWings extends item {
 
 
   void stats(){
-    text("Tipe: Equipment Item", 0, 0);
+    text("Tipe: Cape", 0, 0);
   }
 
 

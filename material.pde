@@ -80,15 +80,22 @@ class squamaManitis extends consumable {
   }
   
   void stats() {
-    text("Dapat dijadikan bahan tempa atau obat-obatan", 0, 0);
+    text("Dapat dijadikan bahan tempa atau\n"+
+    "obat-obatan", 0, 0);
   }
 
   void desc() {
-    text("Sisik yang keras dari hewan monster Pholidolphs untuk\n"+
-         "melindungi dirinya sekaligus menyerang musuh di hadapan.\n"+
-         "Kekerasannya yang tahan lama memikat para penempa, sayangnya\n"+
-         "sisik ini tidak sekuat benda logam dalam menahan panas\n"+
-         "sehingga perlu keahlian khusus jika ingin menempanya.", 0, 0);
+    pushMatrix();
+    textSize(19);
+    translate(0, -30);
+    text("Sisik yang keras dari hewan monster\n"+
+         "Pholidolphs untuk melindungi dirinya\n"+
+         "sekaligus menyerang musuh di hadapan.\n\n"+
+         "Kekerasannya yang tahan lama memikat para\n"+
+         "penempa, sayangnya sisik ini tidak sekuat\n"+
+         "benda logam dalam menahan panas sehingga\n"+
+         "perlu keahlian khusus jika ingin menempanya.", 0, 0);
+    popMatrix();
   }
 }
 

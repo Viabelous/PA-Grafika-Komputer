@@ -273,10 +273,10 @@ class bsoj extends item {
   }
   
   void desc(){
-    text("Sebuah pedang yang tak pernah berkarat milik\n"+
-         "Dewi Keadilan, Themis.\n\n"+
-         "Bilahnya yang mengkilap namun retak itu seakan\n"+
-         "berbisik:\n"+
+    text("Sebuah pedang yang tak pernah berkarat\n"+
+         "milik Dewi Keadilan, Themis.\n\n"+
+         "Bilahnya yang mengkilap namun retak itu\n"+
+         "seakan berbisik:\n"+
          "\"Keadilan telah disirnakan oleh desersi\"", 0, 0);
   }
 }

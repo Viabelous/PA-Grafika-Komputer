@@ -321,10 +321,10 @@ void draw() {
     fill(255);
     text(items[viewItem].name, -160, -20);
     pushMatrix();
-    translate(-160, 10);
-    items[viewItem].stats();
+    translate(-160, 15);
     textSize(20);
-    translate(460, -30);
+    items[viewItem].stats();
+    translate(440, -25);
     items[viewItem].desc();
     popMatrix();
 
