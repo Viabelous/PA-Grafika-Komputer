@@ -42,7 +42,7 @@ class carrot extends consumable {
 
     beginShape();
     vertex(x, y);
-    bezierVertex(x - size, y, x - size, y + size/2, x, y + size + y + 10);
+    bezierVertex(x - size, y, x - size, y + size/2, x, y + size + y + 50);
     bezierVertex(x + size, y, x + size/2, y, x, y);
     endShape(CLOSE);
 
@@ -52,7 +52,7 @@ class carrot extends consumable {
     fill(#FF923E);
     beginShape();
     vertex(x, y);
-    bezierVertex(x - size + 10, y, x - size, y + size/2, x, y + size + y + 10);
+    bezierVertex(x - size + 10, y, x - size, y + size/2, x, y + size + y + 50);
     bezierVertex(x + size - 80, y, x + size/2, y + 10, x, y);
     endShape(CLOSE);
     
