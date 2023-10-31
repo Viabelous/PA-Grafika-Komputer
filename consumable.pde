@@ -24,34 +24,38 @@ class carrot extends consumable {
     float x = 250;
     float y = 90;
     float size = 200;
-
+    
+    stroke(0);
     strokeWeight(2);
 
     // Menggambar daun wortel
-    noStroke();
     fill(#65F965);
     beginShape();
-    vertex(x + 100, y - size / 4);
-    bezierVertex(x, y - size / 2, x - size / 2, y - size / 2, x - size / 2, y + size / 4);
+    vertex(x + 100, y - size / 6);
+    bezierVertex(x, y - size / 2, x - size / 6, y - size / 6, x - size / 2, y + size / 6);
     endShape(CLOSE);
 
     // Menggambar badan wortel
+    stroke(0);
+    strokeWeight(2);
     fill(#EE883A);
 
     beginShape();
     vertex(x, y);
-    bezierVertex(x - size, y, x - size, y + size/2, x, y + size*2);
+    bezierVertex(x - size, y, x - size, y + size/2, x, y + size + y + 10);
     bezierVertex(x + size, y, x + size/2, y, x, y);
     endShape(CLOSE);
 
     // Menggambar bagian dalam wortel
+
+    noStroke();
     fill(#FF923E);
     beginShape();
     vertex(x, y);
-    bezierVertex(x - size + 10, y, x - size, y + size/2, x, y + size*2);
+    bezierVertex(x - size + 10, y, x - size, y + size/2, x, y + size + y + 10);
     bezierVertex(x + size - 80, y, x + size/2, y + 10, x, y);
     endShape(CLOSE);
-
+    
     fill(#EE883A);
     ellipse(x - size/5, y + size/2, x - 100, y / 2);
   }
