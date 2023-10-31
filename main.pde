@@ -118,16 +118,12 @@ void mouseDragged() {
   } else if (mode == "observe") {
     if (!dragObserve) {
       xNow = mouseX;
-      rotYNow = rotY;
-    }
-    dragObserve = true;
-    rotY = rotYNow + (xNow - mouseX)/100;
-
-    if (!dragObserve) {
       yNow = mouseY;
+      rotYNow = rotY;
       rotXNow = rotX;
     }
     dragObserve = true;
+    rotY = rotYNow + (xNow - mouseX)/100;
     rotX = rotXNow + (yNow - mouseY)/100;
   }
 }
@@ -156,9 +152,9 @@ void mouseReleased() {
 
     selected = -1;
   } else if (mode == "observe") {
-    dragObserve = false;
-    xNow = 0;
-    yNow = 0;
+      dragObserve = false;
+      xNow = 0;
+      yNow = 0;
   }
 }
 
