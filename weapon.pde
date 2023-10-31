@@ -1,7 +1,7 @@
-class pond_hammer extends item {
-  pond_hammer(int xI, int yI, places boxI){
+class swamp_hammer extends item {
+  swamp_hammer(int xI, int yI, places boxI){
     super(xI, yI, boxI,
-    "Pond Hammer",
+    "Swamp Hammer",
     false);
   }
   
@@ -63,11 +63,15 @@ class pond_hammer extends item {
   }
   
   void stats(){
-    text(icon("deffend", 0, 0, 1) + "DEFF 60", 0, 0);
+    text(icon("atk", 0, 0, 1) + "ATK 60", 0, 0);
   }
   
   void desc(){
-    text("test2", 0, 0);
+    text("Martil aneh dengan desain mirip\n"+
+         "benda-benda rawa.\n\n"+
+         "Walau terlihat seperti terbuat dari\n"+
+         "benda-benda rawa, martil ini sebenarnya\n"+
+         "terbuat dari batuan berwarna hijau.", 0, 0);
   }
 }
 
@@ -138,7 +142,13 @@ class kunai extends item {
   }
   
   void desc(){
-    text("test4", 0, 0);
+    translate(0, -10);
+    text("Pisau runcing multifungsi yang terbuat\n"+
+         "dari mineral keras.\n\n"+
+         "Saat dalam perkelahian, pengguna amatiran\n"+
+         "biasanya akan melempar benda ini karena\n"+
+         "tidak tahu perbedaan antara kunai dengan\n"+
+         "tobikunai.", 0, 0);
   }
 }
 

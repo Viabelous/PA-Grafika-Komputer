@@ -600,8 +600,7 @@ class hynaPainting extends item {
 
   void desc() {
     text("Sebuah lukisan aneh yang didapat setelah\n"+
-         "setelah menyelesaikan quest.\n"+
-         "\"Unusual Rendezvous\" \n\n"+
+         "menyelesaikan quest \"Unusual Conference\".\n\n"+
       "\"Item ini dapat dipajang sebagai dekorasi.\"", 0, 0);
   }
 }
