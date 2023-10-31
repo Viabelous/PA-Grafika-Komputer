@@ -31,8 +31,8 @@ class carrot extends consumable {
     noStroke();
     fill(#65F965);
     beginShape();
-    vertex(x + 100, y - size / 2);
-    bezierVertex(x, y - size / 2, x - size / 2 + 10, y - size / 2, x - size / 2 + 10, y + size / 4);
+    vertex(x + 100, y - size / 4);
+    bezierVertex(x, y - size / 2, x - size / 2, y - size / 2, x - size / 2, y + size / 4);
     endShape(CLOSE);
 
     // Menggambar badan wortel
