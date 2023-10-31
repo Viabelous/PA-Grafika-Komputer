@@ -154,6 +154,7 @@ item addItem(int id, int ids, int quan){
   if(id == 9) return new skyfeatherBadge(slots[ids].x, slots[ids].y, slots[ids]);
   if(id == 10) return new bombby(slots[ids].x, slots[ids].y, slots[ids], quan);
   if(id == 11) return new rawMeat(slots[ids].x, slots[ids].y, slots[ids], quan);
+  if(id == 12) return new stoneAxe(slots[ids].x, slots[ids].y, slots[ids]);
   return null;
 
 }

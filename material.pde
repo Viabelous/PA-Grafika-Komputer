@@ -95,7 +95,7 @@ class squamaManitis extends consumable {
 class bombby extends consumable { 
   bombby(int xI, int yI, places boxI, int quan){
     super(xI, yI, boxI, 
-    "bombby",  // Sesuaikan
+    "Bombby",  // Sesuaikan
     false, quan, false);
   }
   

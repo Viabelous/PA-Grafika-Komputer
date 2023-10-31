@@ -245,3 +245,112 @@ class magnificentSword extends item { // untuk item dengan jumlah, pakai consuma
 
   }
 }
+
+
+class stoneAxe extends item { // untuk item dengan jumlah, pakai consumable ketimbang item
+  stoneAxe(int xI, int yI, places boxI){
+    super(xI, yI, boxI, 
+    "Stone Axe",  // Sesuaikan
+    false);
+  }
+  
+  void preview(){
+    pushMatrix();
+    scale(0.4);
+    build();
+    popMatrix();
+  };
+  
+  void thumbnail(){
+    pushMatrix();
+    translate(x-50, y-50);
+    scale(0.2);
+    build();
+    popMatrix();
+  }
+  
+  void build(){
+    pushMatrix();
+
+    scale(1.3);
+    translate(250, 250);
+    rotate(radians(-20));
+    translate(-235, -350);
+    fill(142, 112, 3);
+    stroke(62, 49, 2);
+    strokeWeight(4);
+    rect(230, 150, 30, 272);
+    fill(62, 49, 2);
+    rect(235, 150, 5, 270);
+  
+    beginShape();
+    noStroke();
+    fill(137, 134, 124);
+    curveVertex(386, -80);
+    curveVertex(249, 163);
+    curveVertex(164, 134);
+    curveVertex(160, 195);
+    curveVertex(170, 255);
+    curveVertex(250, 235);
+    curveVertex(377, 477);
+    endShape();
+  
+    beginShape();
+    noStroke();
+    fill(193, 192, 185);
+    curveVertex(180, 140);
+    curveVertex(180, 140);
+    curveVertex(140, 100);
+    curveVertex(130, 195);
+    curveVertex(140, 280);
+    curveVertex(180, 256);
+    curveVertex(180, 256);
+    endShape();
+  
+  
+  
+    beginShape();
+    stroke(0);
+    noFill();
+    curveVertex(368, -153);
+    curveVertex(241, 167);
+    curveVertex(146, 100);
+    curveVertex(131, 195);
+    curveVertex(144, 284);
+    curveVertex(233, 243);
+    curveVertex(108, 696);
+    endShape();
+  
+    popMatrix();
+    strokeWeight(1);
+    stroke(0);
+    fill(0);
+  }
+
+
+  // buat fungsi di bawah ini jika dan hanya jika
+  // benda memiliki mode observe (3D)
+  void observe(){
+    pushMatrix();
+
+    // ... kodingan untuk tampilan 3D
+
+    popMatrix();
+  }
+
+
+
+  void stats(){
+
+    // ... kodingan untuk teks stat
+
+  }
+
+
+
+  void desc(){
+
+    // ... kodingan untuk teks deskripsi
+
+  }
+}
