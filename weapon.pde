@@ -181,12 +181,11 @@ class magnificentSword extends item { // untuk item dengan jumlah, pakai consuma
   }
   
   void build(){
-    pushMatrix();
-    scale(1.6);
-    translate(97,201);
-    rotate(radians(45));
-    translate(-250, -250);
-    
+  pushMatrix();
+  scale(1.8);
+  translate(80, 184);
+  rotate(radians(45));
+  translate(-250, -250);
   rectMode(CORNER);
 
   fill(245, 78, 32);
@@ -202,6 +201,7 @@ class magnificentSword extends item { // untuk item dengan jumlah, pakai consuma
   fill(235, 240, 235);
   stroke(186, 188, 186);
   strokeWeight(4);
+
   beginShape();
   vertex(253, 250);
   vertex(285, 252);
@@ -221,12 +221,14 @@ class magnificentSword extends item { // untuk item dengan jumlah, pakai consuma
   noFill();
   stroke(0);
   strokeWeight(3);
-  arc(257, 312, 33, 24, radians(-396), radians(-121));
-  arc(284, 265, 37, 31, radians(-429), radians(-260));
-  arc(229, 265, 33, 30, radians(-287), radians(-121));
-  line(228,280,248,279);
-  line(266,280,284,280);
-  
+  line(220, 252, 236, 251);
+  line(249, 278, 251, 297);
+  line(265, 280, 266, 297);
+  arc(259, 311, 34, 33, radians(-428), radians(-120));
+  arc(284, 265, 37, 31, radians(-435), radians(-256));
+  arc(229, 265, 34, 30, radians(-279), radians(-117));
+  line(228, 280, 248, 279);
+  line(266, 280, 284, 280);
   beginShape();
   vertex(287, 252);
   vertex(287, 51);
@@ -251,7 +253,12 @@ class magnificentSword extends item { // untuk item dengan jumlah, pakai consuma
 
   void desc(){
 
-    // ... kodingan untuk teks deskripsi
+        translate(0, -10);
+    text("Pedang ini didapatkan dikedalaman\n"+
+         "Goa Avarice.\n\n"+
+         "Terbuat dari iron dan emas,\n"+
+         "meskipun terlihat biasa\n"+
+         "tapi memiliki damage yang luar biasa", 0, 0);
 
   }
 }
@@ -360,8 +367,16 @@ class stoneAxe extends item { // untuk item dengan jumlah, pakai consumable keti
 
 
   void desc(){
-
-    // ... kodingan untuk teks deskripsi
-
+    
+        pushMatrix();
+        translate(1,-27);
+    text("Kapak yang terbuat dengan batu\n"+
+         "dan memiliki gaggang kayu.\n\n"+
+         "Biasa digunakan oleh pemula karena mudah\n"+
+         "dibuat dan bahannya mudah didapat.\n"+
+         "Dikatakan oleh penjual, kapak ini dapat\n"+
+         "memberikan keberuntungan\n"+
+         "(Walau kenyataanya tidak demikian). ", 0, 0);
+         popMatrix();
   }
 }

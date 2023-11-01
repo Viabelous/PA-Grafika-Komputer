@@ -180,7 +180,17 @@ class bombby extends consumable {
 
   void desc(){
 
-    // ... kodingan untuk teks deskripsi
+    pushMatrix();
+    translate(0, -30);
+    text("alat untuk meledakkan atau menghancurkan objek.\n"+
+         "Biasanya digunakan untuk menciptakan efek\n"+
+         "ledakan yang dramatis, mengalahkan lawan, atau\n\n"+
+         "memecahkan teka-teki dalam dungeon.\n"+
+         "Penggunaan bom tidak selalu tanpa risiko.\n"+
+         "Penggunanya juga perlu berhati-hati agar\n"+
+         "tidak terkena ledakan dari bom mereka sendiri,\n"+
+         "yang dapat menyebabkan kerusakan.", 0, 0);
+    popMatrix();
 
   }
 }

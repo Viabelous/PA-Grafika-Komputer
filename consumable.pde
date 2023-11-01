@@ -194,7 +194,13 @@ class rawMeat extends consumable {
 
 
   void desc() {
-
-    // ... kodingan untuk teks deskripsi
+    pushMatrix();
+    translate(0, -30);
+    text("Daging sapi berfungsi sebagai sumber nutrisi\n"+
+         "atau makanan yang dapat mengembalikan energi,\n"+
+         "kesehatan, atau stamin.\n\n"+
+         "ini sangat penting dalam situasi di mana\n"+
+         "harus menghindari kematian atau kelelahan.", 0, 0);
+    popMatrix();
   }
 }
