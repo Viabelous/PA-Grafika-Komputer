@@ -202,11 +202,11 @@ void keyPressed() {
       }
     }
     
-    if (key == 'q') {
+    if (key == 'q' || key == 't') {
       for (int i = items.length - 1; i > -1; i--) {
         if (items[i].box.id == idxSelected) {
           
-          if(items[i].consumable == true){
+          if(items[i].consumable == true && key == 'q'){
             if(((consumable)items[i]).foodItem){
               ((consumable)items[i]).quantity -= 1;
               
@@ -214,6 +214,9 @@ void keyPressed() {
                 items[i] = addItem(0, idxSelected);
               }
             }
+          }
+          if(key == 't'){
+            items[i] = addItem(0, idxSelected);
           }
           break;
         }
@@ -247,19 +250,6 @@ void draw() {
     // ... kodingan untuk tampilan 2D
     background(114, 120, 152);
     slots[idxSelected].selected = true;
-
-    for (places slot : slots) slot.build(); // menampilkan slot item
-    for (item item : items)
-    {
-      item.thumbnail();
-      if(item.consumable == true){
-        if(((consumable)item).quantity != 1){
-          textSize(20);
-          fill(255);
-          text(((consumable)item).quantity, item.box.x-45, item.box.y+40);
-        }
-      }
-    }; // menampilkan thumbnail
 
     rectMode(CENTER);
     // Menampilkan preview
@@ -334,6 +324,19 @@ void draw() {
     line(-636, -144, -636, 734);
     line(938, -144, 938, 738);
     popMatrix();
+    
+    for (places slot : slots) slot.build(); // menampilkan slot item
+    for (item item : items)
+    {
+      item.thumbnail();
+      if(item.consumable == true){
+        if(((consumable)item).quantity != 1){
+          textSize(20);
+          fill(255);
+          text(((consumable)item).quantity, item.box.x-45, item.box.y+40);
+        }
+      }
+    }; // menampilkan thumbnail
 
     fill(0);
     text("X : " +mouseX, 0,30);
