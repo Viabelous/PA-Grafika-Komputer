@@ -1,6 +1,6 @@
 class bsoj extends item {
-  bsoj(int xI, int yI, places boxI) {
-    super(xI, yI, boxI,
+  bsoj(int xI, int yI) {
+    super(xI, yI, 
       "Broken Sword of Judgement",
       true);
   }
@@ -284,8 +284,8 @@ class bsoj extends item {
 
 
 class skyfeatherBadge extends item {
-  skyfeatherBadge(int xI, int yI, places boxI) {
-    super(xI, yI, boxI,
+  skyfeatherBadge(int xI, int yI) {
+    super(xI, yI,
       "Skyfeather Badge",
       true);
   }
@@ -525,14 +525,14 @@ class skyfeatherBadge extends item {
 
   void desc() {
     text("Sebuah medali yang didapat ketika pemain\n"+
-      "telah memiliki 15 macam wings.\n\n"+
+      "telah memiliki 5 macam wings.\n\n"+
       "\"Item ini dapat dipajang sebagai dekorasi.\"", 0, 0);
   }
 }
 
 class hynaPainting extends item {
-  hynaPainting(int xI, int yI, places boxI) {
-    super(xI, yI, boxI,
+  hynaPainting(int xI, int yI) {
+    super(xI, yI,
       "H.Y.N.A",
       true);
   }
@@ -606,8 +606,8 @@ class hynaPainting extends item {
 
 
 class kitsuneMask extends item {
-  kitsuneMask(int xI, int yI, places boxI) {
-    super(xI, yI, boxI,
+  kitsuneMask(int xI, int yI) {
+    super(xI, yI,
       "Kitsune Mask",
       true);
   }

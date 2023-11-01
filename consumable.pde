@@ -1,6 +1,6 @@
 class carrot extends countable {
-  carrot(int xI, int yI, places boxI, int quanI) {
-    super(xI, yI, boxI,
+  carrot(int xI, int yI, int quanI) {
+    super(xI, yI,
       "Carrot",
       false, quanI, true);
   }
@@ -72,8 +72,8 @@ class carrot extends countable {
 }
 
 class rawMeat extends countable {
-  rawMeat(int xI, int yI, places boxI, int quan) {
-    super(xI, yI, boxI,
+  rawMeat(int xI, int yI, int quan) {
+    super(xI, yI,
       "Raw Meat",
       false, quan, true);
   }
@@ -196,9 +196,9 @@ class rawMeat extends countable {
   void desc() {
     pushMatrix();
     translate(0, -10);
-    text("Daging sapi berfungsi sebagai sumber nutrisi\n"+
+    text("Sumber nutrisi\n"+
          "atau makanan yang dapat mengembalikan,\n"+
-         "energi, kesehatan, atau stamin.\n\n"+
+         "energi, kesehatan, atau stamina.\n\n"+
          "ini sangat penting dalam situasi di mana\n"+
          "harus menghindari kematian atau kelelahan.", 0, 0);
     popMatrix();

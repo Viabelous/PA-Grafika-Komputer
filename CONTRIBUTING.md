@@ -125,8 +125,8 @@ void build(){
 lalu buat class baru pada file sesuai dengan kategori item dibuat seperti berikut:
 ```
 class namaItem extends item { // untuk item dengan jumlah, pakai countable ketimbang item
-  namaItem(int xI, int yI, places boxI){
-    super(xI, yI, boxI, 
+  namaItem(int xI, int yI){
+    super(xI, yI,
     "namaItem",  // Sesuaikan
     false);
     // isikan parameter terakhir dengan "true" apabila
@@ -196,8 +196,8 @@ class namaItem extends item { // untuk item dengan jumlah, pakai countable ketim
 Atau apabila item pada versi preview dan thumbnail memiliki bentuk yang sama, maka dapat pula ditulis seperti berikut:
 ```
 class namaItem extends item { // untuk item dengan jumlah, pakai countable ketimbang item
-  namaItem(int xI, int yI, places boxI){
-    super(xI, yI, boxI, 
+  namaItem(int xI, int yI){
+    super(xI, yI,
     "namaItem",  // Sesuaikan
     false);
     // isikan parameter terakhir dengan "true" apabila
@@ -263,7 +263,7 @@ class namaItem extends item { // untuk item dengan jumlah, pakai countable ketim
 ```
 Lalu buka file [component](component.pde) dan scroll ke paling bawah dan tambahkan kodingan di dalam fungsi addItem di bawah if dan di atas seperti berikut:
 ```
-  if(id == idTerkini) return new namaItem(slots[ids].x, slots[ids].y, slots[ids]);
+  if(id == idTerkini) return new namaItem(slots[ids].x, slots[ids].y);
 ```
 Ubah **idTerkini** dengan id yang berbeda dengan item di atasnya dan ubah **namaItem** sesuai nama class dari item baru yang dibuat.  
 tambahkan "quan" setelah parameter terakhir apabila memiliki jumlah.  

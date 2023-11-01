@@ -1,6 +1,6 @@
 class squamaManitis extends countable {
-  squamaManitis(int xI, int yI, places boxI, int quanI) {
-    super(xI, yI, boxI,
+  squamaManitis(int xI, int yI, int quanI) {
+    super(xI, yI,
       "Squama Manitis",
       false, quanI, false);
   }
@@ -100,9 +100,9 @@ class squamaManitis extends countable {
 }
 
 class bombby extends countable { 
-  bombby(int xI, int yI, places boxI, int quan){
-    super(xI, yI, boxI, 
-    "Bombby",  // Sesuaikan
+  bombby(int xI, int yI, int quan){
+    super(xI, yI,
+    "Bombby",
     false, quan, false);
   }
   

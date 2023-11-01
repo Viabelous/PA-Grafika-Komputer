@@ -1,43 +1,38 @@
 abstract class item {
   int x;
   int y;
-  places box;
   String name;
   boolean consumable = false;
   boolean observable;
 
-  item(int xI, int yI, places boxI,
-    String nameI, boolean obsI) {
+  item(int xI, int yI,
+       String nameI, boolean obsI) {
     x = xI;
     y = yI;
-    box = boxI;
     name = nameI;
     observable = obsI;
   }
 
   abstract void thumbnail();
   abstract void preview();
-  void observe() {
-  }
+  void observe() {}
   abstract void stats();
   abstract void desc();
-
-
-
-  boolean getBox() {
-    return box.getPos();
-  }
 }
+
+
 
 class places {
   int id;
+  int itemIndex;
   int x;
   int y;
   int size;
   boolean selected = false;
 
-  places(int idI, int xI, int yI, int sizeI) {
+  places(int idI, int itemIndexI, int xI, int yI, int sizeI) {
     id = idI;
+    itemIndex = itemIndexI;
     x = xI;
     y = yI;
     size = sizeI;
@@ -53,6 +48,14 @@ class places {
     strokeWeight(2);
     fill(71, 78, 118);
     square(x, y, size);
+    items[itemIndex].thumbnail();
+    if(items[itemIndex].consumable == true){
+        if(((countable)items[itemIndex]).quantity != 1){
+          textSize(20);
+          fill(255);
+          text(((countable)items[itemIndex]).quantity, x-45, y+40);
+        }
+      }
   }
 
   boolean getPos() {
@@ -61,19 +64,22 @@ class places {
 }
 
 
+
 abstract class countable extends item {
   int quantity = 0;
   boolean foodItem;
 
-  countable(int xI, int yI, places boxI,
-    String nameI, boolean obsI, int quanI,
-    boolean foodItemI) {
-    super(xI, yI, boxI, nameI, obsI);
+  countable(int xI, int yI, String nameI,
+            boolean obsI, int quanI,
+            boolean foodItemI) {
+    super(xI, yI, nameI, obsI);
     super.consumable = true;
     quantity = quanI;
     foodItem = foodItemI;
   }
 }
+
+
 
 boolean mousePos(int xLeft, int xRight, int yUp, int yDown) {
   return(mouseX >= xLeft && mouseX <= xRight &&
@@ -82,32 +88,15 @@ boolean mousePos(int xLeft, int xRight, int yUp, int yDown) {
 
 
 
-int getPlaceOwner(places p) {
-  int i = -1;
-  for (item item : items) {
-    i++;
-    if (item.box.equals(p)) return i;
-  }
-  return -1;
-}
-
-
-
 class air extends item {
-  air(int xI, int yI, places boxI) {
-    super(xI, yI, boxI,
-      "",
-      false);
+  air(int xI, int yI) {
+    super(xI, yI, "", false);
   }
 
-  void preview() {
-  }
-  void thumbnail() {
-  }
-  void stats() {
-  }
-  void desc() {
-  }
+  void preview() {}
+  void thumbnail() {}
+  void stats() {}
+  void desc() {}
 }
 
 
@@ -142,13 +131,7 @@ String icon(String namaIcon, int x, int y, float scl) {
 
 
 void focus() {
-  for (int i = items.length - 1; i > -1; i--) {
-    if (items[i].box.id == idxSelected) {
-      viewItem = i;
-      idxSelected = items[i].box.id;
-      break;
-    }
-  }
+  viewItem = slots[idxSelected].itemIndex; // ubah Preview
 }
 
 
@@ -160,21 +143,21 @@ void keyNav(boolean con, int tr, int fs) {
 
 
 item addItem(int id, int ids, int quan) {
-  if (id == 0) return new air(slots[ids].x, slots[ids].y, slots[ids]);
-  if (id == 1) return new swamp_hammer(slots[ids].x, slots[ids].y, slots[ids]);
-  if (id == 2) return new kunai(slots[ids].x, slots[ids].y, slots[ids]);
-  if (id == 3) return new bsoj(slots[ids].x, slots[ids].y, slots[ids]);
-  if (id == 4) return new squamaManitis(slots[ids].x, slots[ids].y, slots[ids], quan);
-  if (id == 5) return new carrot(slots[ids].x, slots[ids].y, slots[ids], quan);
-  if (id == 6) return new nightwalkersSight(slots[ids].x, slots[ids].y, slots[ids]);
-  if (id == 7) return new magnificentSword(slots[ids].x, slots[ids].y, slots[ids]);
-  if (id == 8) return new emeraldWings(slots[ids].x, slots[ids].y, slots[ids]);
-  if (id == 9) return new skyfeatherBadge(slots[ids].x, slots[ids].y, slots[ids]);
-  if (id == 10) return new bombby(slots[ids].x, slots[ids].y, slots[ids], quan);
-  if (id == 11) return new rawMeat(slots[ids].x, slots[ids].y, slots[ids], quan);
-  if (id == 12) return new stoneAxe(slots[ids].x, slots[ids].y, slots[ids]);
-  if (id == 13) return new hynaPainting(slots[ids].x, slots[ids].y, slots[ids]);
-  if (id == 14) return new kitsuneMask(slots[ids].x, slots[ids].y, slots[ids]);
+  if (id == 0) return new air(slots[ids].x, slots[ids].y);
+  if (id == 1) return new swamp_hammer(slots[ids].x, slots[ids].y);
+  if (id == 2) return new kunai(slots[ids].x, slots[ids].y);
+  if (id == 3) return new bsoj(slots[ids].x, slots[ids].y);
+  if (id == 4) return new squamaManitis(slots[ids].x, slots[ids].y, quan);
+  if (id == 5) return new carrot(slots[ids].x, slots[ids].y, quan);
+  if (id == 6) return new nightwalkersSight(slots[ids].x, slots[ids].y);
+  if (id == 7) return new magnificentSword(slots[ids].x, slots[ids].y);
+  if (id == 8) return new emeraldWings(slots[ids].x, slots[ids].y);
+  if (id == 9) return new skyfeatherBadge(slots[ids].x, slots[ids].y);
+  if (id == 10) return new bombby(slots[ids].x, slots[ids].y, quan);
+  if (id == 11) return new rawMeat(slots[ids].x, slots[ids].y, quan);
+  if (id == 12) return new stoneAxe(slots[ids].x, slots[ids].y);
+  if (id == 13) return new hynaPainting(slots[ids].x, slots[ids].y);
+  if (id == 14) return new kitsuneMask(slots[ids].x, slots[ids].y);
   return null;
 }
 

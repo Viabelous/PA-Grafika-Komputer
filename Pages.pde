@@ -87,32 +87,22 @@ class inventory extends pages{
     line(938, -144, 938, 738);
     popMatrix();
     
-    for (places slot : slots) slot.build(); // menampilkan slot item
-    for (item item : items)
-    {
-      item.thumbnail();
-      if(item.consumable == true){
-        if(((countable)item).quantity != 1){
-          textSize(20);
-          fill(255);
-          text(((countable)item).quantity, item.box.x-45, item.box.y+40);
-        }
-      }
-    }; // menampilkan thumbnail
-
-    fill(0);
-    text("X : " +mouseX, 0,30);
-    text("Y : " +mouseY, 0,70);
+    
+    
+    for (places slot : slots) slot.build(); // menampilkan slot
+    
+    if(selected != -1) items[selected].thumbnail(); // menapilkan item di-drag
   }
   
   
   
   void mouseClicked(){
-    for (int i = items.length - 1; i > -1; i--) {
-      if (items[i].getBox()) {
-        viewItem = i;
-        slots[idxSelected].selected = false;
-        idxSelected = items[i].box.id;
+    for (int i = slots.length - 1; i > -1; i--) {
+      if (slots[i].getPos()) {
+        viewItem = slots[i].itemIndex; // ubah Preview
+        slots[idxSelected].selected = false; // ubah status selected slot sebelumnya
+        idxSelected = slots[i].id; // ubah item yang dipilih
+        slots[idxSelected].selected = true; // ubah status selected slot sekarang 
         audioClick.play();
         break;
       }
@@ -125,16 +115,27 @@ class inventory extends pages{
   
   
   void mouseDragged(){
+    // Jika tidak ada item dipilih
     if (selected == -1) {
+      
+      // Jika drag dimulai tidak pada item,
+      // maka tidak akan berjalan
       if (!firstGet) return;
-      for (int i = items.length - 1; i > -1; i--) {
-        if (items[i].getBox() &&
-          items[i].getClass() != new air(0, 0, null).getClass()) {
-          selected = i;
+      
+      // Pindah Item
+      for (int i = slots.length - 1; i > -1; i--) {
+        
+        // Pastikan slot tidak kosong
+        if (slots[i].getPos() &&
+          items[slots[i].itemIndex].getClass() != new air(0, 0).getClass()) {
+          slotMSelected = i; // ambil indeks slot
+          selected = slots[i].itemIndex; // ambil indeks item
           break;
         }
         firstGet = false;
       }
+      
+      // Pindah item jika ada item yang dipilih
     } else {
       items[selected].x = mouseX;
       items[selected].y = mouseY;
@@ -148,20 +149,23 @@ class inventory extends pages{
     if (selected != -1) {
       for (places slot : slots) {
         if (slot.getPos()) {
-          int item = getPlaceOwner(slot);
-          items[item].box = items[selected].box;
-          items[item].x = items[item].box.x;
-          items[item].y = items[item].box.y;
-          items[selected].box = slot;
+          int idxItem = slots[slotMSelected].itemIndex; // ambil index item sekarang
+          slots[slotMSelected].itemIndex = slot.itemIndex;
+          items[slot.itemIndex].x = slots[slotMSelected].x;
+          items[slot.itemIndex].y = slots[slotMSelected].y;
+          items[selected].x = slot.x;
+          items[selected].y = slot.y;
+          slot.itemIndex = idxItem;
+          
           break;
+        } else{
+          items[selected].x = slots[slotMSelected].x;
+          items[selected].y = slots[slotMSelected].y;
         }
       }
-      items[selected].x = items[selected].box.x;
-      items[selected].y = items[selected].box.y;
     }
 
     focus();
-
     selected = -1;
   }
   
@@ -198,24 +202,22 @@ class inventory extends pages{
     }
     
     if (key == 'q' || key == 't') {
-      for (int i = items.length - 1; i > -1; i--) {
-        if (items[i].box.id == idxSelected) {
-          
-          if(items[i].consumable == true && key == 'q'){
-            if(((countable)items[i]).foodItem){
-              ((countable)items[i]).quantity -= 1;
+      if(items[slots[idxSelected].itemIndex].consumable == true &&
+         key == 'q'){
+            if(((countable)items[slots[idxSelected].itemIndex]).foodItem){
               
-              if(((countable)items[i]).quantity == 0){
-                items[i] = addItem(0, idxSelected);
+              // Kurangi quantity
+              ((countable)items[slots[idxSelected].itemIndex]).quantity -= 1;
+              
+              // Jika quantity adalah 0
+              if(((countable)items[slots[idxSelected].itemIndex]).quantity == 0){
+                items[slots[idxSelected].itemIndex] = addItem(0, idxSelected);
               }
             }
           }
           if(key == 't'){
-            items[i] = addItem(0, idxSelected);
+            items[slots[idxSelected].itemIndex] = addItem(0, idxSelected);
           }
-          break;
-        }
-      }
      }
 
     focus();

@@ -6,7 +6,8 @@ boolean firstGet = true; // Untuk mengatasi bug item terbawa
 SoundFile audioClick; // Untuk menggunakan sound saat berpindah2 item
 // ketika mouse ditekan dan di-hover
 // ke item
-int idxSelected = 0;
+int idxSelected = 0; // index slot yang dipilih
+int slotMSelected = 0; // index slot yang diakses dengan Mouse
 
 pages hal = new inventory();
 
@@ -29,36 +30,36 @@ PImage lightIcon;
 
 // List Daftar Slot Item
 places[] slots = {
-  new places(0, 125, 475, 100),
-  new places(1, 275, 475, 100),
-  new places(2, 425, 475, 100),
-  new places(3, 575, 475, 100),
-  new places(4, 725, 475, 100),
-  new places(5, 875, 475, 100),
-  new places(6, 1025, 475, 100),
-  new places(7, 1175, 475, 100),
-  new places(8, 1325, 475, 100),
-  new places(9, 1475, 475, 100),
-  new places(10, 125, 625, 100),
-  new places(11, 275, 625, 100),
-  new places(12, 425, 625, 100),
-  new places(13, 575, 625, 100),
-  new places(14, 725, 625, 100),
-  new places(15, 875, 625, 100),
-  new places(16, 1025, 625, 100),
-  new places(17, 1175, 625, 100),
-  new places(18, 1325, 625, 100),
-  new places(19, 1475, 625, 100),
-  new places(20, 125, 775, 100),
-  new places(21, 275, 775, 100),
-  new places(22, 425, 775, 100),
-  new places(23, 575, 775, 100),
-  new places(24, 725, 775, 100),
-  new places(25, 875, 775, 100),
-  new places(26, 1025, 775, 100),
-  new places(27, 1175, 775, 100),
-  new places(28, 1325, 775, 100),
-  new places(29, 1475, 775, 100)
+  new places(0, 0, 125, 475, 100),
+  new places(1, 1, 275, 475, 100),
+  new places(2, 2, 425, 475, 100),
+  new places(3, 3, 575, 475, 100),
+  new places(4, 4, 725, 475, 100),
+  new places(5, 5, 875, 475, 100),
+  new places(6, 6, 1025, 475, 100),
+  new places(7, 7, 1175, 475, 100),
+  new places(8, 8, 1325, 475, 100),
+  new places(9, 9, 1475, 475, 100),
+  new places(10, 10, 125, 625, 100),
+  new places(11, 11, 275, 625, 100),
+  new places(12, 12, 425, 625, 100),
+  new places(13, 13, 575, 625, 100),
+  new places(14, 14, 725, 625, 100),
+  new places(15, 15, 875, 625, 100),
+  new places(16, 16, 1025, 625, 100),
+  new places(17, 17, 1175, 625, 100),
+  new places(18, 18, 1325, 625, 100),
+  new places(19, 19, 1475, 625, 100),
+  new places(20, 20, 125, 775, 100),
+  new places(21, 21, 275, 775, 100),
+  new places(22, 22, 425, 775, 100),
+  new places(23, 23, 575, 775, 100),
+  new places(24, 24, 725, 775, 100),
+  new places(25, 25, 875, 775, 100),
+  new places(26, 26, 1025, 775, 100),
+  new places(27, 27, 1175, 775, 100),
+  new places(28, 28, 1325, 775, 100),
+  new places(29, 29, 1475, 775, 100)
 };
 
 item[] items = {

@@ -3,8 +3,8 @@ class nightwalkersSight extends item {
   int lensClr = 0;
   boolean lensBright = true;
   
-  nightwalkersSight(int xI, int yI, places boxI){
-    super(xI, yI, boxI, 
+  nightwalkersSight(int xI, int yI){
+    super(xI, yI,
     "Nightwalkers Sight",  // Sesuaikan
     false);
   }
@@ -286,8 +286,8 @@ class emeraldWings extends item {
   int resh = 130;
   boolean toogleResh = true;
   
-  emeraldWings(int xI, int yI, places boxI){
-    super(xI, yI, boxI, 
+  emeraldWings(int xI, int yI){
+    super(xI, yI,
     "Emerald Wings",
     false);
   }

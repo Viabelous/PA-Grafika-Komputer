@@ -1,6 +1,6 @@
 class swamp_hammer extends item {
-  swamp_hammer(int xI, int yI, places boxI){
-    super(xI, yI, boxI,
+  swamp_hammer(int xI, int yI){
+    super(xI, yI,
     "Swamp Hammer",
     false);
   }
@@ -78,8 +78,8 @@ class swamp_hammer extends item {
 
 
 class kunai extends item {
-  kunai(int xI, int yI, places boxI){
-    super(xI, yI, boxI,
+  kunai(int xI, int yI){
+    super(xI, yI,
     "Kunai",
     false);
   }
@@ -153,16 +153,11 @@ class kunai extends item {
 }
 
 
-class magnificentSword extends item { // untuk item dengan jumlah, pakai consumable ketimbang item
-  magnificentSword(int xI, int yI, places boxI){
-    super(xI, yI, boxI, 
+class magnificentSword extends item {
+  magnificentSword(int xI, int yI){
+    super(xI, yI,
     "Magnificent Sword",  // Sesuaikan
     false);
-    // isikan parameter terakhir dengan "true" apabila
-    // benda memiliki versi 3D / observable.
-    // tambahkan param quan di konstruktor dan setelah param terakhir
-    // apabila item memiliki jumlah, lalu tambah lagi param "true" jika bisa dimakan
-    // atau sebaliknya.
   }
   
   void preview(){
@@ -265,9 +260,9 @@ class magnificentSword extends item { // untuk item dengan jumlah, pakai consuma
 
 
 class stoneAxe extends item { // untuk item dengan jumlah, pakai consumable ketimbang item
-  stoneAxe(int xI, int yI, places boxI){
-    super(xI, yI, boxI, 
-    "Stone Axe",  // Sesuaikan
+  stoneAxe(int xI, int yI){
+    super(xI, yI,
+    "Stone Axe",
     false);
   }
   
@@ -376,7 +371,7 @@ class stoneAxe extends item { // untuk item dengan jumlah, pakai consumable keti
          "dibuat dan bahannya mudah didapat.\n"+
          "Dikatakan oleh penjual, kapak ini dapat\n"+
          "memberikan keberuntungan\n"+
-         "(Walau kenyataanya tidak demikian). ", 0, 0);
+         "(Walau kenyataannya tidak demikian). ", 0, 0);
          popMatrix();
   }
 }
