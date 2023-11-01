@@ -554,17 +554,16 @@ class hynaPainting extends item {
 
   void build() {
     // Menggambar Foto Love
-    strokeWeight(2);
-    noStroke();
+    strokeWeight(2); 
 
     // Gambar bingkai foto
     fill(#6C2F2F);  // Warna cokelat
     rectMode(CENTER);
-    rect(250, 250, 250, 250);
+    rect(250, 250, 450, 350);
 
     // Gambar latar belakang foto
     fill(#FFFFFF);  // Warna putih
-    rect(250, 250, 200, 200);
+    rect(250, 250, 400, 300);
 
     // Menggambar Love
     fill(#FF4343); // Warna merah
@@ -587,7 +586,7 @@ class hynaPainting extends item {
     // Menambahkan tulisan "H.Y.N.A"
     fill(0); // Warna hitam untuk teks
     textSize(50);
-    text("H.Y.N.A", 250, 290);
+    text("H.Y.N.A", 170, 340);
   }
 
   void observe() {
