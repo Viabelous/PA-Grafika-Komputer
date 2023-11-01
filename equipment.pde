@@ -281,12 +281,70 @@ class nightwalkersSight extends item {
 
 class emeraldWings extends item {
   
+  float randX = 250;
+  float randY = 250;
+  int resh = 130;
+  boolean toogleResh = true;
+  
   emeraldWings(int xI, int yI, places boxI){
     super(xI, yI, boxI, 
     "Emerald Wings",
     false);
   }
   
+  void sparkle(){
+    pushMatrix();
+      if (resh == 132) {
+        randX = random(100, 400);
+        randY = random(100, 400);
+      }
+      
+      translate(randX, randY);
+      
+      translate(-25, -25);
+      scale(0.1);
+      strokeWeight(7);
+      fill(255);
+    
+      if(resh < 130){
+      beginShape();
+      vertex(250, 0+resh);
+      curveVertex(100, -600);
+      curveVertex(250, 0+resh);
+      curveVertex(0+resh, 250);
+      curveVertex(-400, 0);
+      vertex(0+resh, 250);
+    
+      curveVertex(-500, 350);
+      curveVertex(0+resh, 250);
+      curveVertex(250, 500-resh);
+      curveVertex(0+resh, 1000);
+      vertex(250, 500-resh);
+      
+      curveVertex(300, 1000);
+      curveVertex(250, 500-resh);
+      curveVertex(500-resh, 250);
+      curveVertex(1000, 300);
+      vertex(500-resh, 250);
+      
+      curveVertex(1000, 0);
+      curveVertex(500-resh, 250);
+      curveVertex(250, 0+resh);
+      curveVertex(500, 0);
+      endShape();
+      }
+      
+      if (resh < 60 || resh > 132) {
+        toogleResh = !toogleResh;
+      }
+      
+      if(toogleResh){
+        resh -= 1;
+      } else if(!toogleResh){
+        resh+= 1;
+      }
+    popMatrix();
+  }
   
   void preview(){
     pushMatrix();
@@ -383,7 +441,7 @@ class emeraldWings extends item {
       
       fill(255);
       stroke(69, 142, 86);
-      ellipse(random(150, 450), random(150, 350), 4, 4);
+      sparkle();
       
     popMatrix();
     strokeWeight(1);
@@ -487,7 +545,8 @@ class emeraldWings extends item {
       
       fill(255);
       stroke(69, 142, 86);
-      ellipse(random(150, 450), random(150, 350), 4, 4);
+      
+      
       
     translate(10, 50);
     stroke(0);
