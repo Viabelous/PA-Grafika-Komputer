@@ -61,11 +61,11 @@ class places {
 }
 
 
-abstract class consumable extends item {
+abstract class countable extends item {
   int quantity = 0;
   boolean foodItem;
 
-  consumable(int xI, int yI, places boxI,
+  countable(int xI, int yI, places boxI,
     String nameI, boolean obsI, int quanI,
     boolean foodItemI) {
     super(xI, yI, boxI, nameI, obsI);

@@ -1,4 +1,4 @@
-class squamaManitis extends consumable {
+class squamaManitis extends countable {
   squamaManitis(int xI, int yI, places boxI, int quanI) {
     super(xI, yI, boxI,
       "Squama Manitis",
@@ -99,7 +99,7 @@ class squamaManitis extends consumable {
   }
 }
 
-class bombby extends consumable { 
+class bombby extends countable { 
   bombby(int xI, int yI, places boxI, int quan){
     super(xI, yI, boxI, 
     "Bombby",  // Sesuaikan

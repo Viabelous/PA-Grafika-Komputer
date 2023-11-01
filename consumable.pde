@@ -1,4 +1,4 @@
-class carrot extends consumable {
+class carrot extends countable {
   carrot(int xI, int yI, places boxI, int quanI) {
     super(xI, yI, boxI,
       "Carrot",
@@ -71,7 +71,7 @@ class carrot extends consumable {
   }
 }
 
-class rawMeat extends consumable {
+class rawMeat extends countable {
   rawMeat(int xI, int yI, places boxI, int quan) {
     super(xI, yI, boxI,
       "Raw Meat",

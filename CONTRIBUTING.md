@@ -124,15 +124,15 @@ void build(){
 
 lalu buat class baru pada file sesuai dengan kategori item dibuat seperti berikut:
 ```
-class namaItem extends item { // untuk item dengan jumlah, pakai consumable ketimbang item
+class namaItem extends item { // untuk item dengan jumlah, pakai countable ketimbang item
   namaItem(int xI, int yI, places boxI){
     super(xI, yI, boxI, 
     "namaItem",  // Sesuaikan
     false);
     // isikan parameter terakhir dengan "true" apabila
     // benda memiliki versi 3D / observable.
-    // tambahkan param quan di konstruktor dan setelah param terakhir
-    // apabila item memiliki jumlah, lalu tambah lagi param "true" jika bisa dimakan
+    // tambahkan param quan di konstruktor dan setelah param terakhir apabila
+    // item memiliki jumlah, lalu tambah lagi param "true" jika bisa dimakan
     // atau sebaliknya.
   }
   
@@ -195,15 +195,15 @@ class namaItem extends item { // untuk item dengan jumlah, pakai consumable keti
 ```
 Atau apabila item pada versi preview dan thumbnail memiliki bentuk yang sama, maka dapat pula ditulis seperti berikut:
 ```
-class namaItem extends item { // untuk item dengan jumlah, pakai consumable ketimbang item
+class namaItem extends item { // untuk item dengan jumlah, pakai countable ketimbang item
   namaItem(int xI, int yI, places boxI){
     super(xI, yI, boxI, 
     "namaItem",  // Sesuaikan
     false);
     // isikan parameter terakhir dengan "true" apabila
     // benda memiliki versi 3D / observable.
-    // tambahkan param quan di konstruktor dan setelah param terakhir
-    // apabila item memiliki jumlah, lalu tambah lagi param "true" jika bisa dimakan
+    // tambahkan param quan di konstruktor dan setelah param terakhir apabila
+    // item memiliki jumlah, lalu tambah lagi param "true" jika bisa dimakan
     // atau sebaliknya.
   }
   
