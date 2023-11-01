@@ -195,10 +195,10 @@ class rawMeat extends consumable {
 
   void desc() {
     pushMatrix();
-    translate(0, -30);
+    translate(0, -10);
     text("Daging sapi berfungsi sebagai sumber nutrisi\n"+
-         "atau makanan yang dapat mengembalikan energi,\n"+
-         "kesehatan, atau stamin.\n\n"+
+         "atau makanan yang dapat mengembalikan,\n"+
+         "energi, kesehatan, atau stamin.\n\n"+
          "ini sangat penting dalam situasi di mana\n"+
          "harus menghindari kematian atau kelelahan.", 0, 0);
     popMatrix();
