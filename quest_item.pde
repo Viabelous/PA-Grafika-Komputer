@@ -604,3 +604,318 @@ class hynaPainting extends item {
       "\"Item ini dapat dipajang sebagai dekorasi.\"", 0, 0);
   }
 }
+
+
+class kitsuneMask extends item {
+  kitsuneMask(int xI, int yI, places boxI) {
+    super(xI, yI, boxI,
+      "Kitsune Mask",
+      true);
+  }
+
+  void preview() {
+    pushMatrix();
+    scale(0.4);
+    build();
+    popMatrix();
+  };
+
+  void thumbnail() {
+    pushMatrix();
+    translate(x-50, y-50);
+    scale(0.2);
+    build();
+    popMatrix();
+  }
+
+  void build() {
+    pushMatrix();
+      translate(0, 45, 0);
+      stroke(0);
+      fill(255, 245, 245);
+      beginShape();
+      vertex(70, 145, 0);
+      bezierVertex(60, 75, 110, 30, 200, 130);
+      bezierVertex(245, 115, 0, 250, 115, 0, 300, 130, 0);
+      bezierVertex(320, 90, 0, 415, 10, 0, 425, 145, 0);
+      bezierVertex(431, 175, -5, 433, 190, -5, 433, 240, -5);
+      
+      vertex(424, 145, 0);
+      bezierVertex(480, 204, 0, 470, 280, 0, 410, 303, 0);
+      bezierVertex(349, 323, 0, 307, 294, 0, 300, 285, 0);
+      bezierVertex(272, 251, 224, 265, 205, 285);
+      bezierVertex(175, 310, 156, 305, 127, 305);
+      bezierVertex(125, 300, 80, 310, 45, 255);
+      bezierVertex(35, 225, 30, 205,  69, 145);
+      endShape();
+      
+      noStroke();
+      fill(255, 245, 245);
+      quad(422, 144, 434, 158, 444, 277, 427, 294);
+      
+      noStroke();
+      fill(0, 0, 0);
+      beginShape();
+      vertex(127, 160, 0);
+      bezierVertex(110, 230, 170, 240, 210, 235);
+      bezierVertex(206, 185, 180, 175, 125, 160);
+      endShape();
+      
+      beginShape();
+      vertex(380, 160, 0);
+      bezierVertex(385, 230, 349, 240, 289, 235);
+      bezierVertex(295, 185, 329, 175, 382, 160);
+      endShape();
+      
+      strokeWeight(6);
+      stroke(255, 40, 40);
+      noFill();
+      beginShape();
+      vertex(127, 160, 0);
+      bezierVertex(110, 230, 170, 240, 210, 235);
+      bezierVertex(206, 185, 180, 175, 125, 160);
+      endShape();
+      
+      beginShape();
+      vertex(380, 160, 0);
+      bezierVertex(385, 230, 349, 240, 289, 235);
+      bezierVertex(295, 185, 329, 175, 382, 160);
+      endShape();
+      
+      fill(255, 40, 40);
+      ellipse(250, 170, 25, 25);
+      
+      strokeWeight(2);
+      fill(255, 40, 40);
+      beginShape();
+      vertex(175, 250, 0);
+      bezierVertex(145, 260, 84, 255, 95, 230);
+      bezierVertex(125, 215, 140, 265, 180, 250);
+      endShape();
+      
+      beginShape();
+      vertex(177, 260, 0);
+      bezierVertex(155, 290, 105, 285, 100, 270);
+      bezierVertex(102, 250, 151, 285, 175, 261);
+      endShape();
+      
+      pushMatrix();
+        translate(505, 0);
+        rotateY(PI/-1);
+        beginShape();
+        vertex(178, 250, 0);
+        bezierVertex(145, 260, 84, 255, 95, 230);
+        bezierVertex(125, 215, 140, 265, 180, 250);
+        endShape();
+        
+        beginShape();
+        vertex(177, 260, 0);
+        bezierVertex(155, 290, 105, 285, 100, 270);
+        bezierVertex(102, 250, 151, 285, 175, 261);
+        endShape();
+      popMatrix();
+      
+      beginShape();
+      curveVertex(225, 200);
+      curveVertex(130, 87);
+      curveVertex(90, 110);
+      curveVertex(99, 136);
+      curveVertex(163, 117);
+      curveVertex(130, 87);
+      curveVertex(10, 14);
+      endShape();
+      
+      pushMatrix();
+        translate(496, 0, 3);
+        rotateY(PI/-1);
+        beginShape();
+        curveVertex(225, 200);
+        curveVertex(130, 87);
+        curveVertex(90, 110);
+        curveVertex(99, 136);
+        curveVertex(163, 117);
+        curveVertex(130, 87);
+        curveVertex(10, 14);
+        endShape();
+      popMatrix();
+      
+      beginShape();
+      curveVertex(265, 240);
+      curveVertex(250, 240);
+      curveVertex(260, 243);
+      curveVertex(250, 255);
+      curveVertex(240, 243);
+      curveVertex(250, 240);
+      curveVertex(250, 240);
+      endShape();
+    popMatrix();
+  }
+
+  void observe() {
+    pushMatrix();
+    translate(-250, -200, 0);
+      noStroke();
+      fill(255, 245, 245);
+      beginShape();
+      vertex(70, 145);
+      bezierVertex(60, 75, 15, 110, 30, 65, 200, 130, 0);
+      bezierVertex(245, 115, 0, 250, 115, 0, 300, 130, 0);
+      bezierVertex(320, 90, 0, 415, 10, 52, 425, 145, 0);
+      bezierVertex(435, 175, 0, 443, 190, 0, 445, 240, 0);
+      
+      vertex(424, 145);
+      bezierVertex(480, 204, -20, 470, 280, 0, 410, 303, 0);
+      bezierVertex(349, 323, -5, 307, 294, 10, 300, 285, 25);
+      bezierVertex(272, 251, 50, 224, 265, 40, 205, 285, 20);
+      bezierVertex(175, 310, 0, 156, 305, 0, 127, 305, 0);
+      bezierVertex(125, 300, 0, 80, 310, 0, 45, 255, -5);
+      bezierVertex(35, 225, -10, 30, 205, -5, 69, 145, 0);
+      endShape();
+      
+      beginShape();
+      vertex(70, 145);
+      bezierVertex(60, 75, 10, 110, 30, 60, 200, 130, -5);
+      bezierVertex(245, 115, -5, 250, 115, -5, 300, 130, -5);
+      bezierVertex(320, 90, -5, 415, 10, 48, 425, 145, -5);
+      bezierVertex(435, 175, -5, 443, 190, -5, 445, 240, -5);
+      
+      vertex(424, 145);
+      bezierVertex(480, 204, -25, 470, 280, -5, 410, 303, -5);
+      bezierVertex(349, 323, -10, 307, 294, 5, 300, 285, 20);
+      bezierVertex(272, 251, 45, 224, 265, 35, 205, 285, 15);
+      bezierVertex(175, 310, -5, 156, 305, -5, 127, 305, -5);
+      bezierVertex(125, 300, -5, 80, 310, -5, 45, 255, -10);
+      bezierVertex(35, 225, -15, 30, 205, -10, 69, 145, -5);
+      endShape();
+      
+      noFill();
+      strokeWeight(30);
+      strokeCap(ROUND);
+      stroke(255, 245, 245);
+      beginShape();
+      vertex(70, 145);
+      bezierVertex(60, 75, 12, 110, 30, 62, 200, 130, -3);
+      bezierVertex(245, 115, -3, 250, 115, -3, 300, 130, -3);
+      bezierVertex(320, 90, -3, 415, 10, 49, 425, 145, -3);
+      bezierVertex(435, 175, -3, 443, 190, -3, 445, 240, -3);
+      
+      vertex(424, 145);
+      bezierVertex(480, 204, -23, 470, 280, -3, 410, 303, -3);
+      bezierVertex(349, 323, -8, 307, 294, 7, 300, 285, 22);
+      bezierVertex(272, 251, 47, 224, 265, 37, 205, 285, 17);
+      bezierVertex(175, 310, -3, 156, 305, -3, 127, 305, -3);
+      bezierVertex(125, 300, -3, 80, 310, -3, 45, 255, -8);
+      bezierVertex(35, 225, -13, 30, 205, -8, 69, 145, -3);
+      endShape();
+      
+      noStroke();
+      fill(0, 0, 0);
+      beginShape();
+      vertex(127, 160, 23);
+      bezierVertex(110, 230, 23, 170, 240, -5, 210, 235, 20);
+      bezierVertex(206, 185, 14, 180, 175, 9, 125, 160, 22);
+      endShape();
+      
+      beginShape();
+      vertex(380, 160, 13);
+      bezierVertex(385, 230, 23, 349, 240, 0, 289, 235, 23);
+      bezierVertex(295, 185, 13, 329, 175, 8, 382, 160, 18);
+      endShape();
+      
+      strokeWeight(6);
+      stroke(255, 40, 40);
+      noFill();
+      beginShape();
+      vertex(127, 160, 23);
+      bezierVertex(110, 230, 25, 170, 240, -5, 210, 235, 20);
+      bezierVertex(206, 185, 15, 180, 175, 10, 125, 160, 22);
+      endShape();
+      
+      beginShape();
+      vertex(380, 160, 15);
+      bezierVertex(385, 230, 25, 349, 240, 0, 289, 235, 25);
+      bezierVertex(295, 185, 15, 329, 175, 10, 382, 160, 20);
+      endShape();
+      
+      pushMatrix();
+        translate(0, 0, 18);
+        fill(255, 40, 40);
+        ellipse(250, 170, 25, 25);
+      popMatrix();
+      
+      strokeWeight(2);
+      fill(255, 40, 40);
+      beginShape();
+      vertex(175, 250, 6);
+      bezierVertex(145, 260, 11, 84, 255, 5, 95, 230, 11);
+      bezierVertex(125, 215, 10, 140, 265, 13, 180, 250, 5);
+      endShape();
+      
+      beginShape();
+      vertex(177, 260, 7);
+      bezierVertex(155, 290, 6, 105, 285, 2, 100, 270, 6);
+      bezierVertex(102, 250, 15, 151, 285, 4, 175, 261, 8);
+      endShape();
+      
+      pushMatrix();
+        translate(506, 0, 19);
+        rotateY(PI/-1);
+        beginShape();
+        vertex(178, 250, 6);
+        bezierVertex(145, 260, 11, 84, 255, 5, 95, 230, 11);
+        bezierVertex(125, 215, 10, 140, 265, 13, 180, 250, 8);
+        endShape();
+        
+        beginShape();
+        vertex(177, 260, 7);
+        bezierVertex(155, 290, 6, 105, 285, 2, 100, 270, 6);
+        bezierVertex(102, 250, 15, 151, 285, 4, 175, 261, 8);
+        endShape();
+      popMatrix();
+      
+      beginShape();
+      curveVertex(225, 200, 0);
+      curveVertex(130, 87, 38);
+      curveVertex(90, 110, 29);
+      curveVertex(99, 136, 23);
+      curveVertex(163, 117, 30);
+      curveVertex(130, 87, 39);
+      curveVertex(10, 14, 27);
+      endShape();
+      
+      pushMatrix();
+        translate(495, 0, 73);
+        rotateY(PI/-1);
+        beginShape();
+        curveVertex(225, 200, 0);
+        curveVertex(130, 87, 48);
+        curveVertex(90, 110, 49);
+        curveVertex(99, 136, 54);
+        curveVertex(163, 117, 60);
+        curveVertex(130, 87, 50);
+        curveVertex(10, 14, 0);
+        endShape();
+      popMatrix();
+      
+      beginShape();
+      curveVertex(265, 250, 72);
+      curveVertex(250, 250, 40);
+      curveVertex(260, 253, 38);
+      curveVertex(250, 265, 45);
+      curveVertex(240, 253, 35);
+      curveVertex(250, 250, 40);
+      curveVertex(250, 250, 71);
+      endShape();
+    popMatrix();
+  }
+
+  void stats() {
+    text("Tipe: Quest Item", 0, 0);
+  }
+
+  void desc() {
+    text("Sebuah topeng rubah yang dapat dibeli\n"+
+      "di stall.\n\n"+
+      "\"Item ini dapat dipajang sebagai dekorasi.\"", 0, 0);
+  }
+}
