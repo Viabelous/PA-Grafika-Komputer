@@ -26,6 +26,7 @@ float translateX = 0.0;
 float translateY = 0.0;
 
 PImage lightIcon;
+boolean light = false;
 
 
 // List Daftar Slot Item

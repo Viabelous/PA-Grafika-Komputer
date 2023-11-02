@@ -278,6 +278,12 @@ class observe extends pages{
       popMatrix();
     popMatrix();
       
+      if (light){
+        lights();
+        // 
+      } else {
+        noLights();
+      }
       
       // tampilan 3D
       pushMatrix();
@@ -309,8 +315,21 @@ class observe extends pages{
   
   
   void mouseClicked(){
-    if (mousePos(20, 60, 25, 70)) hal = new inventory();
-    if (mousePos(20, 60, 80, 125));
+    if (mousePos(20, 60, 25, 70)){
+      hal = new inventory();
+      rotX = 0;
+      rotY = 0;
+      light = false;
+    }
+    if (light){
+      if (mousePos(80, 125, 20, 60)){
+        light = false;
+      }
+    } else {
+      if (mousePos(80, 125, 20, 60)){
+        light = true;
+      }
+    }
   }
   
   
