@@ -8,6 +8,7 @@ class nightwalkersSight extends item {
     "Nightwalkers Sight",
     "unique",
     false);
+    discardable = false;
   }
   
   

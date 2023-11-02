@@ -159,7 +159,7 @@ class magnificentSword extends item {
   magnificentSword(int xI, int yI){
     super(xI, yI,
     "Magnificent Sword",
-    "unique",
+    "rare",
     false);
   }
   
