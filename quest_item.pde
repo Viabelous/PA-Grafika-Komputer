@@ -586,7 +586,7 @@ class hynaPainting extends item {
     // Menambahkan tulisan "H.Y.N.A"
     fill(0); // Warna hitam untuk teks
     textSize(50);
-    text("H.Y.N.A", 170, 340);
+    text("H.Y.N.A", 170, 370);
   }
 
   void observe() {

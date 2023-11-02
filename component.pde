@@ -6,7 +6,7 @@ abstract class item {
   boolean observable;
 
   item(int xI, int yI,
-       String nameI, boolean obsI) {
+    String nameI, boolean obsI) {
     x = xI;
     y = yI;
     name = nameI;
@@ -15,7 +15,8 @@ abstract class item {
 
   abstract void thumbnail();
   abstract void preview();
-  void observe() {}
+  void observe() {
+  }
   abstract void stats();
   abstract void desc();
 }
@@ -49,13 +50,13 @@ class places {
     fill(71, 78, 118);
     square(x, y, size);
     items[itemIndex].thumbnail();
-    if(items[itemIndex].consumable == true){
-        if(((countable)items[itemIndex]).quantity != 1){
-          textSize(20);
-          fill(255);
-          text(((countable)items[itemIndex]).quantity, x-45, y+40);
-        }
+    if (items[itemIndex].consumable == true) {
+      if (((countable)items[itemIndex]).quantity != 1) {
+        textSize(20);
+        fill(255);
+        text(((countable)items[itemIndex]).quantity, x-45, y+40);
       }
+    }
   }
 
   boolean getPos() {
@@ -70,8 +71,8 @@ abstract class countable extends item {
   boolean foodItem;
 
   countable(int xI, int yI, String nameI,
-            boolean obsI, int quanI,
-            boolean foodItemI) {
+    boolean obsI, int quanI,
+    boolean foodItemI) {
     super(xI, yI, nameI, obsI);
     super.consumable = true;
     quantity = quanI;
@@ -93,10 +94,14 @@ class air extends item {
     super(xI, yI, "", false);
   }
 
-  void preview() {}
-  void thumbnail() {}
-  void stats() {}
-  void desc() {}
+  void preview() {
+  }
+  void thumbnail() {
+  }
+  void stats() {
+  }
+  void desc() {
+  }
 }
 
 
@@ -106,22 +111,76 @@ String icon(String namaIcon, int x, int y, float scl) {
   scale(scl);
   translate(x, y);
   if (namaIcon == "def") {
-      pushMatrix();
-      float scaleValue = 0.1;
-      scale(scaleValue);
-    
-      fill(#1559FF);
-      arc(200, -130, 100, 300, radians(0), radians(180), CHORD);
-      
-      fill(#FC3838);
-      arc(200, -110, 80, 200, radians(0), radians(180), CHORD);
-      
-      fill(#FFFFFF);
-      rect(200, -60, 10, 40);
-      rect(200, -60, 40, 10);
-      popMatrix();
+    pushMatrix();
+    float scaleValue = 0.1;
+    scale(scaleValue);
+
+    fill(#1559FF);
+    arc(200, -130, 100, 300, radians(0), radians(180), CHORD);
+
+    fill(#FC3838);
+    arc(200, -110, 80, 200, radians(0), radians(180), CHORD);
+
+    fill(#FFFFFF);
+    rect(200, -60, 10, 40);
+    rect(200, -60, 40, 10);
+    popMatrix();
   } else if (namaIcon == "heal") {
+    pushMatrix();
+    float scaleValue = 0.2;
+    scale(scaleValue);
+    rectMode(CORNER);
+
+    int iconX = 30; // Koordinat X untuk ikon "heal"
+    int iconY = -60; // Koordinat Y untuk ikon "heal"
+
+    // Icon Heal
+    fill(#35C183); // Warna hijau
+    stroke(0);
+    rect(iconX, iconY, 100, 60, 20); // Membuat first aid
+
+    // Tanda +
+    fill(#FFFFFF); // Warna putih
+    noStroke();
+    rect(iconX + 42, iconY + 10, 15, 40); // Membuat tanda plus horizontal
+    rect(iconX + 29, iconY + 23, 40, 15); // Membuat tanda plus vertikal
+
+    popMatrix();
   } else if (namaIcon == "atk") {
+    pushMatrix();
+    float scaleValue = 0.08;
+    scale(scaleValue);
+    rectMode(CORNER);
+    
+    float centerX = 220; // Koordinat X untuk pusat pedang
+    float centerY = 250; // Koordinat Y untuk pusat pedang
+    
+    // pedang
+    beginShape();
+    vertex(centerX - 12, centerY - 250);
+    vertex(centerX + 20, centerY - 248);
+    vertex(centerX + 22, centerY - 447);
+    vertex(centerX - 3, centerY - 487);
+    vertex(centerX - 6, centerY - 248);
+    vertex(centerX - 32, centerY - 246);
+    vertex(centerX - 31, centerY - 447);
+    vertex(centerX + 0, centerY - 487);
+    endShape();
+
+    // Holder ganggang pedang
+    fill(#F53952);
+    ellipse(centerX - 5, centerY - 165, 50, 20);
+
+    // Ganggang pedang
+    fill(#1C72FA);
+    rect(centerX - 15, centerY - 223, 20, 54);
+
+    fill(#60A3AA);
+    stroke(#7741BF);
+    strokeWeight(3);
+    rect(centerX - 51, centerY - 245, 87, 28, 10);
+
+    popMatrix();
   } else if (namaIcon == "speed") {
   }
   popMatrix();

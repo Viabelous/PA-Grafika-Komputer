@@ -62,7 +62,7 @@ class carrot extends countable {
 
 
   void stats() {
-    text("Tipe: Sayuran", 0, 0);
+    text(icon("heal", 0, 0, 1) + "HEAL 10", 0, 0);
   }
 
   void desc() {
