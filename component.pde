@@ -2,14 +2,18 @@ abstract class item {
   int x;
   int y;
   String name;
+  String rarity; //{air, common, uncommon, rare, unique, myth}
   boolean consumable = false;
+  boolean discardable = true;
   boolean observable;
 
   item(int xI, int yI,
-    String nameI, boolean obsI) {
+    String nameI, String rarityI,
+    boolean obsI) {
     x = xI;
     y = yI;
     name = nameI;
+    rarity = rarityI;
     observable = obsI;
   }
 
@@ -71,9 +75,10 @@ abstract class countable extends item {
   boolean foodItem;
 
   countable(int xI, int yI, String nameI,
+    String rarityI,
     boolean obsI, int quanI,
     boolean foodItemI) {
-    super(xI, yI, nameI, obsI);
+    super(xI, yI, nameI, rarityI, obsI);
     super.consumable = true;
     quantity = quanI;
     foodItem = foodItemI;
@@ -91,7 +96,7 @@ boolean mousePos(int xLeft, int xRight, int yUp, int yDown) {
 
 class air extends item {
   air(int xI, int yI) {
-    super(xI, yI, "", false);
+    super(xI, yI, "", "air", false);
   }
 
   void preview() {
@@ -106,14 +111,12 @@ class air extends item {
 
 
 
-String icon(String namaIcon, int x, int y, float scl) {
+String icon(String namaIcon, int x, int y) {
   pushMatrix();
-  scale(scl);
   translate(x, y);
   if (namaIcon == "def") {
     pushMatrix();
-    float scaleValue = 0.1;
-    scale(scaleValue);
+    scale(0.1);
 
     fill(#1559FF);
     arc(200, -130, 100, 300, radians(0), radians(180), CHORD);
@@ -127,8 +130,7 @@ String icon(String namaIcon, int x, int y, float scl) {
     popMatrix();
   } else if (namaIcon == "heal") {
     pushMatrix();
-    float scaleValue = 0.2;
-    scale(scaleValue);
+    scale(0.2);
     rectMode(CORNER);
 
     int iconX = 30; // Koordinat X untuk ikon "heal"
@@ -146,14 +148,18 @@ String icon(String namaIcon, int x, int y, float scl) {
     rect(iconX + 29, iconY + 23, 40, 15); // Membuat tanda plus vertikal
 
     popMatrix();
+    
   } else if (namaIcon == "atk") {
     pushMatrix();
-    float scaleValue = 0.08;
-    scale(scaleValue);
+    scale(0.08);
     rectMode(CORNER);
     
     float centerX = 220; // Koordinat X untuk pusat pedang
     float centerY = 250; // Koordinat Y untuk pusat pedang
+    
+    translate(centerX, centerY);
+    rotate(radians(45));
+    translate(-centerX-200, -centerY+50);
     
     // pedang
     beginShape();
@@ -185,6 +191,7 @@ String icon(String namaIcon, int x, int y, float scl) {
   }
   popMatrix();
 
+  fill(255);
   return "         ";
 }
 

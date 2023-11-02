@@ -1,8 +1,10 @@
 class bsoj extends item {
   bsoj(int xI, int yI) {
-    super(xI, yI, 
+    super(xI, yI,
       "Broken Sword of Judgement",
+      "myth",
       true);
+  discardable = false;
   }
 
   void preview() {
@@ -287,7 +289,9 @@ class skyfeatherBadge extends item {
   skyfeatherBadge(int xI, int yI) {
     super(xI, yI,
       "Skyfeather Badge",
+      "myth",
       true);
+   discardable = false;
   }
 
   void preview() {
@@ -520,7 +524,7 @@ class skyfeatherBadge extends item {
   }
 
   void stats() {
-    text("Tipe: Quest Item", 0, 0);
+    text("Tipe: Quest Reward", 0, 0);
   }
 
   void desc() {
@@ -534,7 +538,9 @@ class hynaPainting extends item {
   hynaPainting(int xI, int yI) {
     super(xI, yI,
       "H.Y.N.A",
+      "myth",
       true);
+   discardable = false;
   }
 
   void preview() {
@@ -594,7 +600,7 @@ class hynaPainting extends item {
   }
 
   void stats() {
-    text("Tipe: Quest Item", 0, 0);
+    text("Tipe: Quest Reward", 0, 0);
   }
 
   void desc() {
@@ -609,7 +615,9 @@ class kitsuneMask extends item {
   kitsuneMask(int xI, int yI) {
     super(xI, yI,
       "Kitsune Mask",
+      "unique",
       true);
+   discardable = false;
   }
 
   void preview() {
@@ -913,8 +921,10 @@ class kitsuneMask extends item {
   }
 
   void desc() {
-    text("Sebuah topeng rubah yang dapat dibeli\n"+
-      "di stall.\n\n"+
-      "\"Item ini dapat dipajang sebagai dekorasi.\"", 0, 0);
+    text("Sebuah topeng rubah yang entah mengapa\n"+
+      "terasa berbeda dari topeng lainnya di stall\n"+
+      "topeng.\n\n"+
+      "Mungkin seseorang yang tepat akan dapat\n"+
+      "memberitahumu sesuatu terkait topeng ini.", 0, 0);
   }
 }

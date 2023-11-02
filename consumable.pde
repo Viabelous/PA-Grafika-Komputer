@@ -2,6 +2,7 @@ class carrot extends countable {
   carrot(int xI, int yI, int quanI) {
     super(xI, yI,
       "Carrot",
+      "common",
       false, quanI, true);
   }
 
@@ -62,7 +63,7 @@ class carrot extends countable {
 
 
   void stats() {
-    text(icon("heal", 0, 0, 1) + "HEAL 10", 0, 0);
+    text(icon("heal", 0, 0) + "HP +10", 0, 0);
   }
 
   void desc() {
@@ -75,6 +76,7 @@ class rawMeat extends countable {
   rawMeat(int xI, int yI, int quan) {
     super(xI, yI,
       "Raw Meat",
+      "common",
       false, quan, true);
   }
 

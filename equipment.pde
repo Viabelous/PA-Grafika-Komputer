@@ -5,7 +5,8 @@ class nightwalkersSight extends item {
   
   nightwalkersSight(int xI, int yI){
     super(xI, yI,
-    "Nightwalkers Sight",  // Sesuaikan
+    "Nightwalkers Sight",
+    "unique",
     false);
   }
   
@@ -250,7 +251,8 @@ class nightwalkersSight extends item {
 
 
   void stats(){
-    text("Tipe: Helmet\n\n\n"+
+    text("Tipe: Helmet\n"+
+         icon("def", 0, 30)+"DEF +20\n\n"+
          "Saat dikenakan, akan dapat melihat\n"+
          "di kegelapan.", 0, 0);
 
@@ -289,7 +291,9 @@ class emeraldWings extends item {
   emeraldWings(int xI, int yI){
     super(xI, yI,
     "Emerald Wings",
+    "rare",
     false);
+    super.discardable = false;
   }
   
   void sparkle(){

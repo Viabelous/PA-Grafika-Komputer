@@ -128,12 +128,14 @@ class namaItem extends item { // untuk item dengan jumlah, pakai countable ketim
   namaItem(int xI, int yI){
     super(xI, yI,
     "namaItem",  // Sesuaikan
+    "rarityItem",
     false);
     // isikan parameter terakhir dengan "true" apabila
     // benda memiliki versi 3D / observable.
     // tambahkan param quan di konstruktor dan setelah param terakhir apabila
     // item memiliki jumlah, lalu tambah lagi param "true" jika bisa dimakan
     // atau sebaliknya.
+    // tambahkan <discardable = false;> jika item tidak dapat dihapus.
   }
   
   
@@ -199,12 +201,14 @@ class namaItem extends item { // untuk item dengan jumlah, pakai countable ketim
   namaItem(int xI, int yI){
     super(xI, yI,
     "namaItem",  // Sesuaikan
+    "rarityItem",
     false);
     // isikan parameter terakhir dengan "true" apabila
     // benda memiliki versi 3D / observable.
     // tambahkan param quan di konstruktor dan setelah param terakhir apabila
     // item memiliki jumlah, lalu tambah lagi param "true" jika bisa dimakan
     // atau sebaliknya.
+    // tambahkan <discardable = false;> jika item tidak dapat dihapus.
   }
   
   void preview(){

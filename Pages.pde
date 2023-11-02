@@ -16,8 +16,20 @@ class inventory extends pages{
     rectMode(CENTER);
     // Menampilkan preview
     pushMatrix();
-    fill(71, 78, 118);
     translate(150, 70);
+    if(items[viewItem].rarity == "common"){
+      fill(188, 184, 184); // Abu-abu
+    } else if(items[viewItem].rarity == "uncommon"){
+      fill(188, 184, 184); // biru <belum>
+    } else if(items[viewItem].rarity == "rare"){
+      fill(188, 184, 184); // emas <belum>
+    } else if(items[viewItem].rarity == "unique"){
+      fill(188, 184, 184); // ungu <belum>
+    } else if(items[viewItem].rarity == "myth"){
+      fill(188, 184, 184); // merah <belum>
+    } else{
+      fill(71, 78, 118); // Kosong
+    }
     square(100, 100, 200);
     stroke(43, 46, 72);
     strokeWeight(5);
@@ -215,9 +227,9 @@ class inventory extends pages{
               }
             }
           }
-          if(key == 't'){
-            items[slots[idxSelected].itemIndex] = addItem(0, idxSelected);
-          }
+       else if(items[slots[idxSelected].itemIndex].discardable && key == 't'){
+         items[slots[idxSelected].itemIndex] = addItem(0, idxSelected);
+       }
      }
 
     focus();
