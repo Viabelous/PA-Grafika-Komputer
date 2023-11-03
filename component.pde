@@ -208,6 +208,35 @@ void keyNav(boolean con, int tr, int fs) {
 }
 
 
+
+void alert(int num){
+  if(num == 0){
+    logs += "> ERROR: Perintah salah\n";
+  }
+  else if(num == 1){
+    logs += "> ERROR: Perintah tidak dikenali\n";
+  }
+  else if(num == 2){
+    logs += "> HINT: Sesuaikan '/add {item_id} {quantity<opsional>}'\n";
+  }
+  else if(num == 3){
+    logs += "> ERROR: Inventory penuh'\n";
+  }
+}
+
+
+
+int findEmptySlot(){
+  for(int i = 0; i <= slots.length; i++){
+    if(items[slots[i].itemIndex].getClass() == new air(0, 0).getClass()){
+      return i;
+    }
+  }
+  return -1;
+}
+
+
+
 item addItem(int id, int ids, int quan) {
   if (id == 0) return new air(slots[ids].x, slots[ids].y);
   if (id == 1) return new swamp_hammer(slots[ids].x, slots[ids].y);

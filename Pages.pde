@@ -162,14 +162,14 @@ class inventory extends pages{
       for (places slot : slots) {
         if (slot.getPos()) {
           int idxItem = slots[slotMSelected].itemIndex; // ambil index item sekarang
-          slots[slotMSelected].itemIndex = slot.itemIndex;
-          items[slot.itemIndex].x = slots[slotMSelected].x;
-          items[slot.itemIndex].y = slots[slotMSelected].y;
-          items[selected].x = slot.x;
-          items[selected].y = slot.y;
-          slot.itemIndex = idxItem;
-          
-          break;
+          if (items[slot.itemIndex].getClass() != items[idxItem].getClass()) {
+              slots[slotMSelected].itemIndex = slot.itemIndex;
+              items[slot.itemIndex].x = slots[slotMSelected].x;
+              items[slot.itemIndex].y = slots[slotMSelected].y;
+              items[selected].x = slot.x;
+              items[selected].y = slot.y;
+              slot.itemIndex = idxItem;
+          }
         } else{
           items[selected].x = slots[slotMSelected].x;
           items[selected].y = slots[slotMSelected].y;
@@ -231,6 +231,9 @@ class inventory extends pages{
          items[slots[idxSelected].itemIndex] = addItem(0, idxSelected);
        }
      }
+     else if (key == TAB){
+        hal = new command();
+      }
 
     focus();
   };
@@ -376,4 +379,147 @@ class observe extends pages{
       audioClick.play();
     }
   }
+}
+
+
+
+
+
+class command extends pages{
+  
+  void build(){
+    background(255);
+    rectMode(CORNER);
+    stroke(2);
+    fill(200);
+    rect(50, 50, 1500, 749);
+    fill(100);
+    rect(50, 800, 1500, 50);
+    fill(255);
+    textSize(30);
+    text(Cmd, 80, 833);
+    
+    fill(0);
+    String splittedLogs[] = logs.split("\n", 0);
+    int placement = 815;
+    pushMatrix();
+    translate(0, -placement - splittedLogs.length*35 + 815);
+    
+    if(logs != ""){
+      if(splittedLogs.length > 21){
+        logs = "";
+        for(int i = 0; i <= 21; i++){
+          if(i != 0){
+            logs += splittedLogs[i] + "\n";
+          }
+        }
+        
+      }
+      
+      
+      for(String log : splittedLogs){
+        if(log.charAt(0) == '>'){
+          if(log.charAt(2) == 'E'){
+            fill(#B24143);
+          } else if(log.charAt(2) == 'H'){
+            fill(#A4A500);
+          }else{
+            fill(#12A0B7);
+          }
+        } else{
+          fill(0);
+        }
+        text(log, 80, placement);
+        placement += 35;
+      }
+    }
+    popMatrix();
+    
+    noStroke();
+    fill(#3E3E48);
+    rect(0, 850, 1600, 50);
+    rect(0, 0, 1600, 50);
+    rect(0, 50, 50, 800);
+    rect(1550, 50, 498, 800);
+  }
+  
+  
+  
+  void mouseClicked(){};
+  void mouseDragged(){};
+  void mouseReleased(){};
+  void mouseWheel(MouseEvent e){};
+  
+  void keyPressed(){
+    if (key == BACKSPACE) {
+      if (Cmd.length()>0) {
+        Cmd=Cmd.substring(0, Cmd.length()-1);
+        }
+    } else if (key == TAB){
+        Cmd = "";
+        hal = new inventory();
+        
+    } else if (key == ENTER) {
+      if(Cmd == "") return;
+        logs += Cmd + "\n";
+          String splittedInp[] = Cmd.split(" ", 0);
+          if(Cmd.charAt(0) == '/'){
+            if(splittedInp[0].equals("/add")){
+              if(splittedInp.length <= 3){
+                if(splittedInp.length == 1){
+                  alert(0);
+                  alert(2);
+                  Cmd = "";
+                  return;
+                }
+                
+                try{
+                  int itemId = Integer.parseInt(splittedInp[1]);
+                  if(splittedInp.length == 2){
+                    int putInto = findEmptySlot();
+                    if(putInto == -1){
+                      alert(3);
+                      return;
+                    } else{
+                      items[slots[putInto].itemIndex] = addItem(itemId, putInto);
+                    }
+                    logs += "> Item " + itemId +
+                    " sebanyak 1 berhasil ditambahkan\n";
+                  }
+                  else if(splittedInp.length == 3){
+                    int quan = Integer.parseInt(splittedInp[2]);
+                    int putInto = findEmptySlot();
+                    if(putInto == -1){
+                      alert(3);
+                      return;
+                    } else{
+                      items[slots[putInto].itemIndex] = addItem(itemId, putInto, quan);
+                    }
+                    logs += "> Item " + itemId + " sebanyak " + quan +
+                    " berhasil ditambahkan\n";
+                  }  
+                } catch (Exception e){
+                    alert(0);
+                    alert(2);
+                }
+              } else{
+                alert(0);
+                alert(2);
+              }
+            } else{
+              alert(1);
+            }
+          }
+        Cmd = "";
+      }
+      else if(key == '>'){}
+      else if(key == CODED){}
+      else {
+        Cmd += key;
+      }
+  }
+  
+  
+  
+
 }

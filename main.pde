@@ -8,6 +8,8 @@ SoundFile audioClick; // Untuk menggunakan sound saat berpindah2 item
 // ke item
 int idxSelected = 0; // index slot yang dipilih
 int slotMSelected = 0; // index slot yang diakses dengan Mouse
+String Cmd=""; // var teks command
+String logs=""; // var log command
 
 pages hal = new inventory();
 
