@@ -928,3 +928,137 @@ class kitsuneMask extends item {
       "memberitahumu sesuatu terkait topeng ini.", 0, 0);
   }
 }
+
+
+
+class book extends item {
+  book(int xI, int yI) {
+    super(xI, yI,
+      "Book",
+      "unique",
+      true);
+   discardable = false;
+  }
+
+  void preview() {
+    pushMatrix();
+    scale(0.4);
+    build();
+    popMatrix();
+  };
+
+  void thumbnail() {
+    pushMatrix();
+    translate(x-50, y-50);
+    scale(0.2);
+    build();
+    popMatrix();
+  }
+
+  float angleX = 0;
+  float angleY = 0;
+
+  void build() {
+    
+    pushMatrix();
+    fill(200,0,0);
+    circle(250,250,400);
+    popMatrix();
+  }
+
+  void observe() {
+  pushMatrix();
+  //translate(111, 100);
+  rotateX(radians(angleX));
+  rotateY(radians(angleY));
+
+  // Sampul buku depan
+  pushMatrix();
+  translate(-1, 0, 10 / 2);
+  fill(228, 90, 63);
+  noStroke();
+  sphere(12);
+
+  // Garis pada objek 3D
+  stroke(213, 160, 109); // Warna garis
+  strokeWeight(3);
+
+  // Garis horizontal
+  for (float z = -5; z <= 5; z += 2) {
+    line(-10, -10, z, 10, -10, z);
+    line(-10, 10, z, 10, 10, z);
+  }
+
+  // Garis vertikal
+  for (float x = -10; x <= 10; x += 5) {
+    line(x, -10, -5, x, 10, 5);
+  }
+
+
+  for (float i = 0; i < TWO_PI; i += TWO_PI / 6) {
+    pushMatrix();
+    translate(1, 1, 4);
+    rotateZ(i);
+    beginShape();
+    fill(188, 150, 49);
+    noStroke();
+    curveVertex(20, 0, 0);
+    curveVertex(20, 0, 0);
+    curveVertex(0, 20 * 2, 0);
+    curveVertex(-20, 0, 0);
+    curveVertex(-20, 0, 0);
+    endShape(CLOSE);
+    popMatrix();
+  }
+
+
+
+
+    fill(194, 163, 103);
+    stroke(196, 147, 83);
+    strokeWeight(4);
+    box(100, 150, 5);
+
+
+  popMatrix();
+
+  // Sampul buku belakang
+  pushMatrix();
+  translate(0, 0);
+  for (float i = 0; i < TWO_PI; i += TWO_PI / 6) {
+    pushMatrix();
+    translate(-1, -2, 5);
+    rotateZ(i);
+    beginShape();
+    fill(150, 112, 30);
+    noStroke();
+    curveVertex(8, -24, -4);
+    curveVertex(17, 0, -9);
+    curveVertex(27, 20 * 2, -15);
+    curveVertex(-3, 0, -11);
+    curveVertex(-20, 0, 135);
+    endShape(CLOSE);
+    popMatrix();
+  }
+    box(100, 150, 5);
+    popMatrix();
+  
+    // Halaman buku
+    pushMatrix();
+    translate(0, 0, -10 / 2);
+    fill(194, 163, 103);
+    stroke(196, 147, 83);
+    strokeWeight(4);
+    box(100, 150, 10);
+    popMatrix();
+
+    popMatrix();
+  }
+
+  void stats() {
+  
+  }
+
+  void desc() {
+  }
+}

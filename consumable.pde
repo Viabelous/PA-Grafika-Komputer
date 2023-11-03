@@ -206,3 +206,89 @@ class rawMeat extends countable {
     popMatrix();
   }
 }
+
+
+class happyCllate extends countable {
+  happyCllate(int xI, int yI, int quan) {
+    super(xI, yI,
+      "Happy Cllate",
+      "common",
+      false, quan, true);
+  }
+
+  void preview() {
+    pushMatrix();
+    scale(0.4);
+    build();
+    popMatrix();
+  };
+
+  void thumbnail() {
+    pushMatrix();
+    translate(x-50, y-50);
+    scale(0.2);
+    build();
+    popMatrix();
+  }
+
+  void build() {
+    pushMatrix();
+ 
+    scale(3.9);
+    translate(250,250);
+    rotate(radians(45));
+    translate(-388,-147);
+    rectMode(CORNER);
+  
+    stroke(0);
+    strokeWeight(2);
+    fill(132, 69, 19);
+    rect(100, 100, 20, 20);
+    rect(120, 100, 20, 20);
+    rect(139, 100, 20, 20);
+    rect(100, 120, 20, 20);
+    rect(100, 140, 20, 20);
+    rect(120, 120, 20, 20);
+    rect(139, 120, 20, 20);
+    rect(118, 140, 20, 20);
+    rect(139, 140, 20, 20);
+    fill(182, 15, 31);
+    rect(97, 148, 64, 48);
+    fill(214, 101, 114);
+    triangle(83, 150, 97, 128, 131, 154);
+    triangle(121, 154, 161, 116, 160, 150);
+
+
+
+
+    popMatrix();
+    strokeWeight(1);
+    stroke(0);
+    fill(0);
+  }
+
+
+  // buat fungsi di bawah ini jika dan hanya jika
+  // benda memiliki mode observe (3D)
+  void observe() {
+    pushMatrix();
+
+    // ... kodingan untuk tampilan 3D
+
+    popMatrix();
+  }
+
+
+
+  void stats() {
+
+    // ... kodingan untuk teks stat
+  }
+
+
+
+  void desc() {
+
+
+  }
+}

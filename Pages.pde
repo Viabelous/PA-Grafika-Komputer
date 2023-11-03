@@ -20,13 +20,13 @@ class inventory extends pages{
     if(items[viewItem].rarity == "common"){
       fill(188, 184, 184); // Abu-abu
     } else if(items[viewItem].rarity == "uncommon"){
-      fill(188, 184, 184); // biru <belum>
+      fill(117, 192, 206); // biru 
     } else if(items[viewItem].rarity == "rare"){
-      fill(188, 184, 184); // emas <belum>
+      fill(222, 184, 87); // emas 
     } else if(items[viewItem].rarity == "unique"){
-      fill(188, 184, 184); // ungu <belum>
+      fill(185, 107, 216); // ungu 
     } else if(items[viewItem].rarity == "myth"){
-      fill(188, 184, 184); // merah <belum>
+      fill(167, 62, 52); // merah
     } else{
       fill(71, 78, 118); // Kosong
     }
