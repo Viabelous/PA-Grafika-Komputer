@@ -296,15 +296,16 @@ class skyfeatherBadge extends item {
 
   void preview() {
     pushMatrix();
-    scale(0.4);
+    translate(-50, -40);
+    scale(0.6);
     build();
     popMatrix();
   };
 
   void thumbnail() {
     pushMatrix();
-    translate(x-50, y-50);
-    scale(0.2);
+    translate(x-75, y-70);
+    scale(0.3);
     build();
     popMatrix();
   }
@@ -313,67 +314,93 @@ class skyfeatherBadge extends item {
     stroke(0);
     pushMatrix();
 
-    translate(-50, -50);
-    scale(1.25);
 
-    fill(0, 91, 98);
-    stroke(0, 76, 82);
-    beginShape();
-    vertex(250, 339);
-    bezierVertex(425, 273, 370, 229, 354, 155);
-    bezierVertex(245, 135, 255, 100, 250, 130);
-    bezierVertex(250, 132, 250, 267, 250, 335);
-    endShape();
-
-
-    beginShape();
-    vertex(250, 339);
-    bezierVertex(95, 273, 141, 230, 146, 155);
-    bezierVertex(242, 135, 255, 100, 250, 130);
-    bezierVertex(250, 132, 250, 267, 250, 335);
-    endShape();
-
-    fill(232, 232, 232);
-    stroke(200, 200, 200);
-
-    beginShape();
-    vertex(350, 145);
-    bezierVertex(365, 230, 390, 290, 250, 340);
-    bezierVertex(465, 310, 350, 185, 390, 145);
-    endShape();
-
-    beginShape();
-    vertex(150, 145);
-    bezierVertex(150, 230, 115, 290, 250, 340);
-    bezierVertex(45, 310, 150, 185, 110, 145);
-    endShape();
-
-    fill(240, 240, 240, 195);
-    stroke(220, 220, 220);
-    beginShape();
-    vertex(250, 220);
-    bezierVertex(222, 190, 217, 215, 180, 195);
-    bezierVertex(180, 190, 185, 228, 225, 225);
-
-    bezierVertex(240, 230, 205, 235, 190, 220);
-    bezierVertex(190, 242, 225, 255, 240, 250);
-
-    bezierVertex(225, 260, 202, 255, 200, 250);
-    bezierVertex(205, 265, 225, 275, 250, 260);
-    endShape();
-
-    beginShape();
-    vertex(250, 220);
-    bezierVertex(275, 190, 295, 215, 325, 195);
-    bezierVertex(325, 190, 320, 228, 280, 225);
-
-    bezierVertex(265, 230, 303, 235, 315, 220);
-    bezierVertex(310, 242, 285, 255, 265, 250);
-
-    bezierVertex(270, 260, 305, 255, 300, 250);
-    bezierVertex(298, 265, 275, 275, 250, 260);
-    endShape();
-
+      fill(0, 91, 98);
+      stroke(0, 76, 82);
+      beginShape();
+      vertex(250, 339);
+      bezierVertex(425, 273, 370, 229, 354, 155);
+      bezierVertex(245, 135, 255, 100, 250, 130);
+      bezierVertex(250, 132, 250, 267, 250, 335);
+      endShape();
+      
+      
+      beginShape();
+      vertex(250, 339);
+      bezierVertex(95, 273, 141, 230, 146, 155);
+      bezierVertex(242, 135, 255, 100, 250, 130);
+      bezierVertex(250, 132, 250, 267, 250, 335);
+      endShape();
+      
+      fill(232, 232, 232);
+      stroke(200, 200, 200);
+      
+      beginShape();
+      vertex(350, 145);
+      bezierVertex(365, 230, 390, 290, 250, 340);
+      bezierVertex(465, 310, 350, 185, 390, 145);
+      endShape();
+      
+      beginShape();
+      vertex(150, 145);
+      bezierVertex(150, 230, 115, 290, 250, 340);
+      bezierVertex(45, 310, 150, 185, 110, 145);
+      endShape();
+      
+      fill(240, 240, 240, 195);
+      stroke(220, 220, 220);
+      beginShape();
+      vertex(250, 220);
+      bezierVertex(222, 190, 217, 215, 180, 195);
+      bezierVertex(180, 190, 185, 228, 225, 225);
+      
+      bezierVertex(240, 230, 205, 235, 190, 220);
+      bezierVertex(190, 242, 225, 255, 240, 250);
+      
+      bezierVertex(225, 260, 202, 255, 200, 250);
+      bezierVertex(205, 265, 225, 275, 250, 260);
+      endShape();
+      
+      beginShape();
+      vertex(250, 220);
+      bezierVertex(275, 190, 295, 215, 325, 195);
+      bezierVertex(325, 190, 320, 228, 280, 225);
+      
+      bezierVertex(265, 230, 303, 235, 315, 220);
+      bezierVertex(310, 242, 285, 255, 265, 250);
+      
+      bezierVertex(270, 260, 305, 255, 300, 250);
+      bezierVertex(298, 265, 275, 275, 250, 260);
+      endShape();
+      
+      noFill();
+      strokeWeight(4);
+      stroke(0);
+      line(108, 145, 153, 145);
+      line(348, 145, 392, 145);
+      line(152, 152, 153, 145);
+      line(348, 145, 350, 155);
+      
+      beginShape();
+      vertex(250, 343);
+      bezierVertex(465, 310, 350, 185, 390, 145);
+      endShape();
+      
+      beginShape();
+      vertex(250, 343);
+      bezierVertex(45, 310, 150, 185, 108, 145);
+      endShape();
+      
+      beginShape();
+      vertex(351, 153);
+      bezierVertex(290, 149, 255, 111, 250, 118);
+      endShape();
+      
+      beginShape();
+      vertex(153, 152);
+      bezierVertex(209, 139, 221, 130, 250, 117);
+      endShape();
+      
     popMatrix();
     strokeWeight(1);
     stroke(0);
@@ -637,7 +664,10 @@ class kitsuneMask extends item {
 
   void build() {
     pushMatrix();
-      translate(0, 45, 0);
+    translate(0, 45, 0);
+      
+      //base topeng
+      strokeWeight(4);
       stroke(0);
       fill(255, 245, 245);
       beginShape();
@@ -645,9 +675,6 @@ class kitsuneMask extends item {
       bezierVertex(60, 75, 110, 30, 200, 130);
       bezierVertex(245, 115, 0, 250, 115, 0, 300, 130, 0);
       bezierVertex(320, 90, 0, 415, 10, 0, 425, 145, 0);
-      bezierVertex(431, 175, -5, 433, 190, -5, 433, 240, -5);
-      
-      vertex(424, 145, 0);
       bezierVertex(480, 204, 0, 470, 280, 0, 410, 303, 0);
       bezierVertex(349, 323, 0, 307, 294, 0, 300, 285, 0);
       bezierVertex(272, 251, 224, 265, 205, 285);
@@ -656,10 +683,7 @@ class kitsuneMask extends item {
       bezierVertex(35, 225, 30, 205,  69, 145);
       endShape();
       
-      noStroke();
-      fill(255, 245, 245);
-      quad(422, 144, 434, 158, 444, 277, 427, 294);
-      
+      //lubang mata kiri
       noStroke();
       fill(0, 0, 0);
       beginShape();
@@ -668,12 +692,14 @@ class kitsuneMask extends item {
       bezierVertex(206, 185, 180, 175, 125, 160);
       endShape();
       
+      //lubang mata kiri
       beginShape();
       vertex(380, 160, 0);
       bezierVertex(385, 230, 349, 240, 289, 235);
       bezierVertex(295, 185, 329, 175, 382, 160);
       endShape();
       
+      //outline lubang mata kiri
       strokeWeight(6);
       stroke(255, 40, 40);
       noFill();
@@ -683,15 +709,18 @@ class kitsuneMask extends item {
       bezierVertex(206, 185, 180, 175, 125, 160);
       endShape();
       
+      //outline lubang mata kanan
       beginShape();
       vertex(380, 160, 0);
       bezierVertex(385, 230, 349, 240, 289, 235);
       bezierVertex(295, 185, 329, 175, 382, 160);
       endShape();
       
+      //corak bulat
       fill(255, 40, 40);
       ellipse(250, 170, 25, 25);
       
+      //corak pipi kiri
       strokeWeight(2);
       fill(255, 40, 40);
       beginShape();
@@ -706,6 +735,7 @@ class kitsuneMask extends item {
       bezierVertex(102, 250, 151, 285, 175, 261);
       endShape();
       
+      //corak pipi kanan
       pushMatrix();
         translate(505, 0);
         rotateY(PI/-1);
@@ -722,6 +752,7 @@ class kitsuneMask extends item {
         endShape();
       popMatrix();
       
+      //telinga kiri
       beginShape();
       curveVertex(225, 200);
       curveVertex(130, 87);
@@ -732,6 +763,7 @@ class kitsuneMask extends item {
       curveVertex(10, 14);
       endShape();
       
+      //telinga kiri
       pushMatrix();
         translate(496, 0, 3);
         rotateY(PI/-1);
@@ -746,6 +778,7 @@ class kitsuneMask extends item {
         endShape();
       popMatrix();
       
+      //hidung
       beginShape();
       curveVertex(265, 240);
       curveVertex(250, 240);
@@ -755,6 +788,7 @@ class kitsuneMask extends item {
       curveVertex(250, 240);
       curveVertex(250, 240);
       endShape();
+      
     popMatrix();
   }
 

@@ -197,3 +197,239 @@ class bombby extends countable {
 
   }
 }
+
+
+class sapphireChunk extends countable {
+  sapphireChunk(int xI, int yI, int quanI) {
+    super(xI, yI,
+      "Sapphire chunk",
+      "uncommon",
+      false, quanI, false);
+  }
+
+  void preview() {
+    pushMatrix();
+    scale(0.4);
+    build();
+    popMatrix();
+  };
+
+  void thumbnail() {
+    pushMatrix();
+    translate(x-50, y-50);
+    scale(0.2);
+    build();
+    popMatrix();
+  }
+
+  void build() {
+    pushMatrix();
+    stroke(0);
+    
+      strokeWeight(2);
+      stroke(0);
+      
+      //cahaya sapphire
+      pushMatrix();
+      fill(196, 233, 255, 115);
+      translate(-77, -60, 0);
+      scale(1.2);
+      beginShape();
+      vertex(279, 94);
+      vertex(217, 112);
+      vertex(198, 179);
+      vertex(195, 252);
+      vertex(230, 350);
+      vertex(316, 416);
+      vertex(354, 360);
+      vertex(381, 227);
+      vertex(339, 132);
+      endShape(CLOSE);
+      popMatrix();
+      
+      pushMatrix();
+      translate(-82, -116, 0);
+      scale(1.3);
+      beginShape();
+      vertex(127, 291);
+      vertex(99, 344);
+      vertex(125, 402);
+      vertex(167, 432);
+      vertex(195, 392);
+      vertex(199, 342);
+      vertex(156, 305);
+      endShape(CLOSE);
+      popMatrix();
+      
+      pushMatrix();
+      translate(-148, -120);
+      scale(1.3);
+      beginShape();
+      vertex(446, 321);
+      vertex(463, 371);
+      vertex(453, 412);
+      vertex(413, 432);
+      vertex(397, 405);
+      vertex(395, 370);
+      vertex(404, 336);
+      endShape(CLOSE);
+      popMatrix();
+      
+      //base sapphire
+      noStroke();
+      fill(2, 107, 162);
+      pushMatrix();
+      translate(-21, 0);
+      beginShape();
+      vertex(279, 94);
+      vertex(217, 112);
+      vertex(198, 179);
+      vertex(195, 252);
+      vertex(230, 350);
+      vertex(316, 416);
+      vertex(354, 360);
+      vertex(381, 227);
+      vertex(339, 132);
+      endShape(CLOSE);
+      popMatrix();
+      
+      pushMatrix();
+      translate(-35, 0);
+      beginShape();
+      vertex(127, 291);
+      vertex(99, 344);
+      vertex(125, 402);
+      vertex(167, 432);
+      vertex(195, 392);
+      vertex(199, 342);
+      vertex(156, 305);
+      endShape(CLOSE);
+      popMatrix();
+      
+      pushMatrix();
+      translate(-19, 0);
+      beginShape();
+      vertex(446, 321);
+      vertex(463, 371);
+      vertex(453, 412);
+      vertex(413, 432);
+      vertex(397, 405);
+      vertex(395, 370);
+      vertex(404, 336);
+      endShape(CLOSE);
+      popMatrix();
+      
+      //sapphire bagian tengah
+      fill(5, 95, 149);
+      pushMatrix();
+      translate(-21, 0);
+      beginShape();
+      vertex(282, 96);
+      vertex(217, 115);
+      vertex(198, 180);
+      vertex(197, 255);
+      vertex(232, 350);
+      vertex(315, 416);
+      vertex(332, 360);
+      vertex(334, 230);
+      vertex(316, 171);
+      endShape(CLOSE);
+      popMatrix();
+      
+      pushMatrix();
+      translate(-35, 0);
+      beginShape();
+      vertex(128, 294);
+      vertex(100, 346);
+      vertex(124, 402);
+      vertex(167, 430);
+      vertex(180, 392);
+      vertex(179, 358);
+      vertex(156, 323);
+      endShape(CLOSE);
+      popMatrix();
+      
+      pushMatrix();
+      translate(-19, 0);
+      beginShape();
+      vertex(440, 323);
+      vertex(445, 375);
+      vertex(436, 412);
+      vertex(415, 432);
+      vertex(398, 405);
+      vertex(396, 370);
+      vertex(403, 336);
+      endShape(CLOSE);
+      popMatrix();
+      
+      //sapphire bagian gelap
+      fill(0, 83, 130);
+      pushMatrix();
+      translate(-21, 0);
+      beginShape();
+      vertex(263, 99);
+      vertex(216, 115);
+      vertex(200, 180);
+      vertex(197, 255);
+      vertex(232, 350);
+      vertex(315, 414);
+      vertex(267, 327);
+      vertex(250, 230);
+      vertex(235, 171);
+      endShape(CLOSE);
+      popMatrix();
+      
+      pushMatrix();
+      translate(-35, 0);
+      beginShape();
+      vertex(126, 295);
+      vertex(100, 346);
+      vertex(124, 402);
+      vertex(167, 430);
+      vertex(140, 392);
+      vertex(124, 358);
+      vertex(125, 323);
+      endShape(CLOSE);
+      popMatrix();
+      
+      pushMatrix();
+      translate(-19, 0);
+      beginShape();
+      vertex(440, 323);
+      vertex(415, 358);
+      vertex(408, 391);
+      vertex(414, 432);
+      vertex(398, 405);
+      vertex(395, 370);
+      vertex(407, 336);
+      endShape(CLOSE);
+      popMatrix();
+      
+    popMatrix();
+    strokeWeight(1);
+    stroke(0);
+    fill(0);
+  }
+  
+  
+  void stats(){
+    text("Dapat digunakankan sebagai bahan\n"+
+    "enchantment dan dapat dilelehkan untuk\n"+
+    "membuat atribut.", 0, 0);
+  }
+  
+  
+  void desc(){
+    pushMatrix();
+    textSize(19);
+    translate(0, 30);
+    text("Batu sapphire berwarna biru laut yang dapat\n"+
+         "ditemukandi kedalaman +2500m sampai\n"+
+         "dengan kedalaman +4000m yang merupakan\n"+
+         "area mining sapphire.\n", 0, 0);
+         //"penempa, sayangnya sisik ini tidak sekuat\n"+
+         //"benda logam dalam menahan panas sehingga\n"+
+         //"perlu keahlian khusus jika ingin menempanya.", 0, 0);
+    popMatrix();
+  }
+}

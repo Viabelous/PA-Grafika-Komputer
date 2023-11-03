@@ -356,6 +356,8 @@ class emeraldWings extends item {
     translate(-20, -20);
     scale(0.5);
     
+      //wings sisi kiri
+      strokeWeight(2);
       stroke(6, 83, 49);
       fill(6, 118, 67, 190);
       pushMatrix();
@@ -389,7 +391,7 @@ class emeraldWings extends item {
         ellipse(145, 282, 160, 30);
       popMatrix();
       
-      
+      //wings sisi kanan
       pushMatrix();
         rotate(PI/9);
         ellipse(390, 163, 130, 35);
@@ -421,6 +423,7 @@ class emeraldWings extends item {
         ellipse(346, 240, 160, 30);
       popMatrix();
       
+      //corak wings
       stroke(30, 134, 79);
       noFill();
       beginShape();
@@ -444,8 +447,21 @@ class emeraldWings extends item {
       circle(206, 264, 8);
       circle(289, 264, 8);
       
-      fill(255);
-      stroke(69, 142, 86);
+      // ----------------- outline ----------------
+      noFill();
+      stroke(0);
+      beginShape();
+      bezier(417, 190, 409, 168, 297, 195, 250, 236);
+      bezier(417, 191, 409, 208, 363, 231, 337, 237);
+      bezier(339, 238, 381, 234, 410, 249, 384, 260);
+      bezier(385, 259, 438, 274, 385, 288, 349, 284);
+      bezier(353, 285, 431, 338, 269, 313, 248, 267);
+      bezier(146, 285, 78, 338, 211, 313, 250, 267);
+      bezier(114, 260, 65, 274, 91, 289, 145, 286);
+      bezier(81, 191, 92, 208, 140, 231, 166, 237);
+      bezier(173, 238, 124, 234, 79, 249, 113, 260);
+      bezier(82, 193, 59, 153, 211, 195, 250, 236);
+      endShape();
       sparkle();
       
     popMatrix();
@@ -460,6 +476,7 @@ class emeraldWings extends item {
     translate(x-62, y-62);
     scale(0.25);
       
+      //wings sisi kiri
       stroke(6, 83, 49);
       fill(6, 118, 67, 190);
       pushMatrix();
@@ -493,7 +510,7 @@ class emeraldWings extends item {
         ellipse(145, 282, 160, 30);
       popMatrix();
       
-      
+      //wings sisi kanan
       pushMatrix();
         rotate(PI/9);
         ellipse(390, 163, 130, 35);
@@ -525,6 +542,7 @@ class emeraldWings extends item {
         ellipse(346, 240, 160, 30);
       popMatrix();
       
+      //corak wings
       stroke(30, 134, 79);
       noFill();
       beginShape();
@@ -548,10 +566,21 @@ class emeraldWings extends item {
       circle(206, 264, 8);
       circle(289, 264, 8);
       
-      fill(255);
-      stroke(69, 142, 86);
-      
-      
+      // ----------------- outline ----------------
+      noFill();
+      stroke(0);
+      beginShape();
+      bezier(417, 190, 409, 168, 297, 195, 250, 236);
+      bezier(417, 191, 409, 208, 363, 231, 337, 237);
+      bezier(339, 238, 381, 234, 410, 249, 384, 260);
+      bezier(385, 259, 438, 274, 385, 288, 349, 284);
+      bezier(353, 285, 431, 338, 269, 313, 248, 267);
+      bezier(146, 285, 78, 338, 211, 313, 250, 267);
+      bezier(114, 260, 65, 274, 91, 289, 145, 286);
+      bezier(81, 191, 92, 208, 140, 231, 166, 237);
+      bezier(173, 238, 124, 234, 79, 249, 113, 260);
+      bezier(82, 193, 59, 153, 211, 195, 250, 236);
+      endShape();
       
     translate(10, 50);
     stroke(0);
@@ -565,15 +594,24 @@ class emeraldWings extends item {
 
 
   void stats(){
-    text("Tipe: Cape", 0, 0);
+    text("Tipe: Wings\n"+
+    icon("def", 0, 30)+"DEF +30",
+     0, 0);
+     
+    text("Dapat berkamuflase dengan dedaunan\n"+
+         "pohon maupun semak-semak.\n",
+         0, 90);
   }
 
 
 
   void desc(){
-    text("Sayap berwarna emerald yang dapat berkamuflase\n"+
-         "dengan dedaunan pohon maupun semak-semak.\n\n"+
-         "\"Item ini dapat dipajang sebagai dekorasi.\"", 0, 0);
+    text("Sebuah sayap berwarna emerald dengan\n"+
+         "masing-masing sisinys memiliki 4 sayap\n"+
+         "yang tipis namun dapat menerjang udara\n"+
+         "dengan cepat, walaupun tipis sayap ini dapat\n"+
+         "membawamu kemana saja.\n\n",
+         0, 0);
   }
   
 }
