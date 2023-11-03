@@ -162,13 +162,25 @@ class inventory extends pages{
       for (places slot : slots) {
         if (slot.getPos()) {
           int idxItem = slots[slotMSelected].itemIndex; // ambil index item sekarang
-          if (items[slot.itemIndex].getClass() != items[idxItem].getClass()) {
+          boolean calculate = false;
+          if(items[idxItem].consumable)
+            if(slot != slots[slotMSelected])
+              if(items[slot.itemIndex].getClass() == items[idxItem].getClass())
+                calculate = true;
+          
+          if (!calculate){
               slots[slotMSelected].itemIndex = slot.itemIndex;
               items[slot.itemIndex].x = slots[slotMSelected].x;
               items[slot.itemIndex].y = slots[slotMSelected].y;
               items[selected].x = slot.x;
               items[selected].y = slot.y;
               slot.itemIndex = idxItem;
+              break;
+          } else{
+            ((countable)items[slot.itemIndex]).quantity +=
+            ((countable)items[selected]).quantity;
+            items[idxItem] = addItem(0, slotMSelected);
+            break;
           }
         } else{
           items[selected].x = slots[slotMSelected].x;
