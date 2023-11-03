@@ -426,10 +426,7 @@ class sapphireChunk extends countable {
     text("Batu sapphire berwarna biru laut yang dapat\n"+
          "ditemukandi kedalaman +2500m sampai\n"+
          "dengan kedalaman +4000m yang merupakan\n"+
-         "area mining sapphire.\n", 0, 0);
-         //"penempa, sayangnya sisik ini tidak sekuat\n"+
-         //"benda logam dalam menahan panas sehingga\n"+
-         //"perlu keahlian khusus jika ingin menempanya.", 0, 0);
+         "area mining sapphire.", 0, 0);
     popMatrix();
   }
 }
