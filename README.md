@@ -22,6 +22,14 @@ Hal-hal yang dapat dilakukan di mode tampilan inventory di antaranya:
 * **Berpindah ke Tampilan Observe** dengan mengeklik tombol observe di bawah preview item.
 
   
+### Tampilan Command (1D)
+Tampilan Command memungkinkan pengguna untuk menambahkan dan menghapus item di inventory.
+Hal-hal yang dapat dilakukan di mode tampilan coomand di antaranya:
+* **Berpindah ke Tampilan Inventory** dengan menekan TAB di keyboard.  
+* **Memanajemen item di inventory** dengan mengetikkan beberapa command dengan keyboard.  
+
+
+  
 ### Tampilan Observe (3D)
 Tampilan Observe memperlihatkan detil dari item yang dipilih untuk di-observe di inventory.
 Hal-hal yang dapat dilakukan di mode tampilan observe di antaranya:
@@ -37,8 +45,8 @@ Contributors:
   Jabatan  |     NIM    |           Nama         |     Tanggung Jawab
 __________________________________________________________________________
   Anggota  | 2109106037 | Agustina Dwi Maharani  | FE2D
-   Ketua   | 2109106039 | Ibnu Yafi Arya Wardana | UI/UX, BE2D
-  Anggota  | 2109106040 | Natalie Fuad           | FE3D, BE3D
+   Ketua   | 2109106039 | Ibnu Yafi Arya Wardana | UI/UX, FE1D, BE1D, BE2D
+  Anggota  | 2109106040 | Natalie Fuad           | FE3D, BE3D, BE1D
   Anggota  | 2109106043 | Hadie Pratama Tulili 	 | Icon, Sound
  __________________________________________________________________________
 ```

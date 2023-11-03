@@ -23,6 +23,12 @@ Contoh penulisan:
 Program dipisahkan dalam penugasan untuk memudahkan pembagian pengerjaan dan menghindari konflik. Kontributor selain penanggung jawab boleh membantu pengerjaan tugas
 kontributor lain **dengan syarat** mendapat izin dari penanggung jawab tugas tersebut. Beberapa method/line mungkin dapat dipakai beberapa kali sehingga disarankan untuk kontributor saling berkomunikasi agar tidak perlu menulis kode yang duplikat.
 
+* **Front End 1D**  `Tina37`  
+Mengurus segala hal berkaitan dengan tampilan pada mode 1D (command), dalam desain dan tata letak.
+
+* **Back End 1D** `Yafi39, Natalie40`  
+Mengurus alur, struktur program, dan GUI serta mencegah terjadinya error atau bug pada mode 1D (command), dan hal-hal lainnya yang dapat memengaruhi pengalaman pengguna selama dijalankannya program.
+
 * **Front End 2D**  `Tina37`  
 Mengurus segala hal berkaitan dengan tampilan pada mode 2D (inventory), baik dalam desain, tata letak, hingga koordinasi kepada anggota tim dalam penggunaan warna.
 
@@ -125,17 +131,12 @@ void build(){
 lalu buat class baru pada file sesuai dengan kategori item dibuat seperti berikut:
 ```
 class namaItem extends item { // untuk item dengan jumlah, pakai countable ketimbang item
-  namaItem(int xI, int yI){
+  namaItem(int xI, int yI){ // tambahkan param quan apabila memiliki jumlah
     super(xI, yI,
     "namaItem",  // Sesuaikan
-    "rarityItem",
-    false);
-    // isikan parameter terakhir dengan "true" apabila
-    // benda memiliki versi 3D / observable.
-    // tambahkan param quan di konstruktor dan setelah param terakhir apabila
-    // item memiliki jumlah, lalu tambah lagi param "true" jika bisa dimakan
-    // atau sebaliknya.
+    "rarityItem"); // tambahkan param quan apabila memiliki jumlah
     // tambahkan <discardable = false;> jika item tidak dapat dihapus.
+    // tambahkan <foodItem = true;> jika item dapat dimakan langsung (hanya untuk countable).
   }
   
   
@@ -198,17 +199,12 @@ class namaItem extends item { // untuk item dengan jumlah, pakai countable ketim
 Atau apabila item pada versi preview dan thumbnail memiliki bentuk yang sama, maka dapat pula ditulis seperti berikut:
 ```
 class namaItem extends item { // untuk item dengan jumlah, pakai countable ketimbang item
-  namaItem(int xI, int yI){
+  namaItem(int xI, int yI){ // tambahkan param quan apabila memiliki jumlah
     super(xI, yI,
     "namaItem",  // Sesuaikan
-    "rarityItem",
-    false);
-    // isikan parameter terakhir dengan "true" apabila
-    // benda memiliki versi 3D / observable.
-    // tambahkan param quan di konstruktor dan setelah param terakhir apabila
-    // item memiliki jumlah, lalu tambah lagi param "true" jika bisa dimakan
-    // atau sebaliknya.
+    "rarityItem"); // tambahkan param quan apabila memiliki jumlah
     // tambahkan <discardable = false;> jika item tidak dapat dihapus.
+    // tambahkan <foodItem = true;> jika item dapat dimakan langsung (hanya untuk countable).
   }
   
   void preview(){

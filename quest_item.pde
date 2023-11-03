@@ -2,9 +2,9 @@ class bsoj extends item {
   bsoj(int xI, int yI) {
     super(xI, yI,
       "Broken Sword of Judgement",
-      "myth",
-      true);
-  discardable = false;
+      "myth");
+    discardable = false;
+    observable = true;
   }
 
   void preview() {
@@ -289,9 +289,9 @@ class skyfeatherBadge extends item {
   skyfeatherBadge(int xI, int yI) {
     super(xI, yI,
       "Skyfeather Badge",
-      "myth",
-      true);
-   discardable = false;
+      "myth");
+    discardable = false;
+    observable = true;
   }
 
   void preview() {
@@ -565,9 +565,9 @@ class hynaPainting extends item {
   hynaPainting(int xI, int yI) {
     super(xI, yI,
       "H.Y.N.A",
-      "myth",
-      true);
-   discardable = false;
+      "myth");
+    discardable = false;
+    observable = true;
   }
 
   void preview() {
@@ -642,9 +642,9 @@ class kitsuneMask extends item {
   kitsuneMask(int xI, int yI) {
     super(xI, yI,
       "Kitsune Mask",
-      "unique",
-      true);
-   discardable = false;
+      "unique");
+    discardable = false;
+    observable = true;
   }
 
   void preview() {
@@ -969,9 +969,9 @@ class book extends item {
   book(int xI, int yI) {
     super(xI, yI,
       "Book",
-      "unique",
-      true);
-   discardable = false;
+      "unique");
+    discardable = false;
+    observable = true;
   }
 
   void preview() {

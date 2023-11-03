@@ -5,16 +5,14 @@ abstract class item {
   String rarity; //{air, common, uncommon, rare, unique, myth}
   boolean consumable = false;
   boolean discardable = true;
-  boolean observable;
+  boolean observable = false;
 
   item(int xI, int yI,
-    String nameI, String rarityI,
-    boolean obsI) {
+    String nameI, String rarityI) {
     x = xI;
     y = yI;
     name = nameI;
     rarity = rarityI;
-    observable = obsI;
   }
 
   abstract void thumbnail();
@@ -72,16 +70,13 @@ class places {
 
 abstract class countable extends item {
   int quantity = 0;
-  boolean foodItem;
+  boolean foodItem = false;
 
   countable(int xI, int yI, String nameI,
-    String rarityI,
-    boolean obsI, int quanI,
-    boolean foodItemI) {
-    super(xI, yI, nameI, rarityI, obsI);
+    String rarityI, int quanI) {
+    super(xI, yI, nameI, rarityI);
     super.consumable = true;
     quantity = quanI;
-    foodItem = foodItemI;
   }
 }
 
@@ -96,7 +91,7 @@ boolean mousePos(int xLeft, int xRight, int yUp, int yDown) {
 
 class air extends item {
   air(int xI, int yI) {
-    super(xI, yI, "", "air", false);
+    super(xI, yI, "", "air");
   }
 
   void preview() {
@@ -257,6 +252,7 @@ item addItem(int id, int ids, int quan) {
   if (id == 16) return new book(slots[ids].x, slots[ids].y);
   if (id == 17) return new healPotion(slots[ids].x, slots[ids].y, quan);
   if (id == 18) return new sapphireChunk(slots[ids].x, slots[ids].y, quan);
+  if (id == 19) return new firefly(slots[ids].x, slots[ids].y, quan);
   return null;
 }
 

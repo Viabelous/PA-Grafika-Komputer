@@ -2,8 +2,7 @@ class swamp_hammer extends item {
   swamp_hammer(int xI, int yI){
     super(xI, yI,
     "Swamp Hammer",
-    "common",
-    false);
+    "common");
   }
   
   void preview(){
@@ -82,8 +81,7 @@ class kunai extends item {
   kunai(int xI, int yI){
     super(xI, yI,
     "Kunai",
-    "common",
-    false);
+    "common");
   }
   
   void preview(){
@@ -172,8 +170,7 @@ class mammonsBlade extends item {
   mammonsBlade(int xI, int yI){
     super(xI, yI,
     "Mammon's Blade",
-    "rare",
-    false);
+    "rare");
   }
   
   void preview(){
@@ -279,8 +276,7 @@ class stoneAxe extends item { // untuk item dengan jumlah, pakai consumable keti
   stoneAxe(int xI, int yI){
     super(xI, yI,
     "Stone Axe",
-    "common",
-    false);
+    "common");
   }
   
   void preview(){

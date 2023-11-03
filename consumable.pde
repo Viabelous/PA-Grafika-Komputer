@@ -2,8 +2,8 @@ class carrot extends countable {
   carrot(int xI, int yI, int quanI) {
     super(xI, yI,
       "Carrot",
-      "common",
-      false, quanI, true);
+      "common", quanI);
+      foodItem = true;
   }
 
   void preview() {
@@ -76,8 +76,8 @@ class rawMeat extends countable {
   rawMeat(int xI, int yI, int quan) {
     super(xI, yI,
       "Raw Meat",
-      "common",
-      false, quan, true);
+      "common", quan);
+      foodItem = true;
   }
 
   void preview() {
@@ -212,8 +212,8 @@ class happyCllate extends countable {
   happyCllate(int xI, int yI, int quan) {
     super(xI, yI,
       "Happy Cllate",
-      "common",
-      false, quan, true);
+      "common", quan);
+      foodItem = true;
   }
 
   void preview() {
@@ -300,8 +300,8 @@ class healPotion extends countable {
   healPotion(int xI, int yI, int quanI){
     super(xI, yI,
     "Heal Potion",
-    "uncommon",
-    false, quanI, false);
+    "uncommon", quanI);
+    foodItem = true;
   }
   
   void preview(){

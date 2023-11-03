@@ -2,8 +2,7 @@ class squamaManitis extends countable {
   squamaManitis(int xI, int yI, int quanI) {
     super(xI, yI,
       "Squama Manitis",
-      "uncommon",
-      false, quanI, false);
+      "uncommon", quanI);
   }
 
   void preview() {
@@ -104,8 +103,7 @@ class bombby extends countable {
   bombby(int xI, int yI, int quan){
     super(xI, yI,
     "Bombby",
-    "uncommon",
-    false, quan, false);
+    "uncommon", quan);
   }
   
   void preview(){
@@ -203,8 +201,7 @@ class sapphireChunk extends countable {
   sapphireChunk(int xI, int yI, int quanI) {
     super(xI, yI,
       "Sapphire chunk",
-      "uncommon",
-      false, quanI, false);
+      "uncommon", quanI);
   }
 
   void preview() {
@@ -421,12 +418,190 @@ class sapphireChunk extends countable {
   
   void desc(){
     pushMatrix();
-    textSize(19);
-    translate(0, 30);
-    text("Batu sapphire berwarna biru laut yang dapat\n"+
-         "ditemukandi kedalaman +2500m sampai\n"+
+    text("Batu berwarna biru laut yang dapat\n"+
+         "ditemukan di kedalaman +2500m sampai\n"+
          "dengan kedalaman +4000m yang merupakan\n"+
-         "area mining sapphire.", 0, 0);
+         "area mining sapphire.\n", 0, 0);
+    popMatrix();
+  }
+}
+
+
+
+
+class firefly extends countable {
+  int rotA = 0;
+  int rotB = 0;
+  int time = 0;
+  
+  firefly(int xI, int yI, int quanI) {
+    super(xI, yI,
+      "Firefly",
+      "uncommon", quanI);
+  }
+
+  void preview() {
+    pushMatrix();
+    scale(0.4);
+      stroke(0);
+      
+      noFill();
+      strokeWeight(1);
+      bezier(150, 397, 144, 365, 319, 348, 350, 397);
+      
+      strokeWeight(4);
+      fill(#f0f0e7, 80);
+      beginShape();
+      curveVertex(305, -27);
+      curveVertex(150, 390);
+      curveVertex(350, 390);
+      curveVertex(178, 17);
+      vertex(350, 140);
+      curveVertex(200, 50);
+      curveVertex(350, 140);
+      curveVertex(150, 140);
+      curveVertex(143, -50);
+      endShape(CLOSE);
+      
+      
+      pushMatrix();
+      translate(250, 225);
+      rotate(radians(rotA));
+      translate(-250, -225);
+  
+      translate(250, 315);
+      rotate(radians(-rotB));
+      translate(-250, -315);
+      
+      
+      stroke(#FFE290);
+      strokeWeight(25);
+      point(250, 250);
+      stroke(#FFEBB2);
+      strokeWeight(20);
+      point(250, 250);
+      stroke(#FFF3D3);
+      strokeWeight(15);
+      point(250, 250);
+      stroke(255);
+      strokeWeight(10);
+      point(250, 250);
+      popMatrix();
+      
+      strokeWeight(4);
+      stroke(0);
+      fill(#CE576F);
+      ellipse(250, 140, 215, 73);
+      fill(#5792ce);
+      ellipse(250, 122, 187, 54);
+      fill(#CE576F);
+      ellipse(250, 105, 215, 73);
+      fill(#a9465b);
+      strokeWeight(2);
+      ellipse(250, 110, 15, 8);
+      ellipse(250, 90, 15, 8);
+      ellipse(210, 100, 15, 8);
+      ellipse(290, 100, 15, 8);
+      fill(255, 90);
+      noStroke();
+      ellipse(310, 295, 55, 213);
+      
+      if(time < 72){
+        rotA += (rotA == 355) ? -355 : 5;
+      } else{
+        rotB += (rotB == 357) ? -357 : 3;
+      }
+      fill(0);
+      
+      time += (time == 191) ? -191 : 1;
+    popMatrix();
+  };
+
+  void thumbnail() {
+    pushMatrix();
+    translate(x-50, y-50);
+    scale(0.2);
+      stroke(0);
+      
+      noFill();
+      strokeWeight(1);
+      bezier(150, 397, 144, 365, 319, 348, 350, 397);
+      
+      strokeWeight(4);
+      fill(#f0f0e7, 80);
+      beginShape();
+      curveVertex(305, -27);
+      curveVertex(150, 390);
+      curveVertex(350, 390);
+      curveVertex(178, 17);
+      vertex(350, 140);
+      curveVertex(200, 50);
+      curveVertex(350, 140);
+      curveVertex(150, 140);
+      curveVertex(143, -50);
+      endShape(CLOSE);
+      
+      stroke(#FFE290, 150);
+      fill(#FFE290, 120);
+      beginShape();
+      vertex(227, 241);
+      bezierVertex(294, 290, 179, 293, 301, 356);
+      bezierVertex(184, 292, 319, 292, 239, 226);
+      endShape();
+      stroke(#FFE290);
+      strokeWeight(25);
+      point(230, 230);
+      stroke(#FFEBB2);
+      strokeWeight(20);
+      point(230, 230);
+      stroke(#FFF3D3);
+      strokeWeight(15);
+      point(230, 230);
+      stroke(255);
+      strokeWeight(10);
+      point(230, 230);
+  
+      
+      strokeWeight(4);
+      stroke(0);
+      fill(#CE576F);
+      ellipse(250, 140, 215, 73);
+      fill(#5792ce);
+      ellipse(250, 122, 187, 54);
+      fill(#CE576F);
+      ellipse(250, 105, 215, 73);
+      fill(#a9465b);
+      strokeWeight(2);
+      ellipse(250, 110, 15, 8);
+      ellipse(250, 90, 15, 8);
+      ellipse(210, 100, 15, 8);
+      ellipse(290, 100, 15, 8);
+      fill(255, 90);
+      noStroke();
+      ellipse(310, 295, 55, 213);
+      fill(0);   
+    popMatrix();
+  }
+  
+  
+  void stats(){
+    text("Dapat digunakan sebagai bahan untuk\n"+
+    "membuat material, peralatan, ataupun\n"+
+    "atribut.", 0, 0);
+  }
+  
+  
+  void desc(){
+    pushMatrix();
+    textSize(18);
+    text("Spesies kumbang yang dapat mengeluarkan\n"+
+         "cahaya menggunakan serbuk luminesens di\n"+
+         "badannya yang transparan.\n\n"+
+         "Di wilayah timur, kumbang ini dipercaya\n"+
+         "adalah jiwa yang tersesat, sehingga mereka\n"+
+         "mulai mengadakan festival penangkapan yang\n"+
+         "kemudian bersamaan akan dilepaskan di padang\n"+
+         "rumput luas.", 0, -30);
     popMatrix();
   }
 }

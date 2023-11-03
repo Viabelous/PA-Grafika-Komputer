@@ -6,8 +6,7 @@ class nightwalkersSight extends item {
   nightwalkersSight(int xI, int yI){
     super(xI, yI,
     "Nightwalkers Sight",
-    "unique",
-    false);
+    "unique");
     discardable = false;
   }
   
@@ -292,8 +291,7 @@ class emeraldWings extends item {
   emeraldWings(int xI, int yI){
     super(xI, yI,
     "Emerald Wings",
-    "rare",
-    false);
+    "rare");
     super.discardable = false;
   }
   
