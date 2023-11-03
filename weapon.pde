@@ -104,35 +104,48 @@ class kunai extends item {
   void build(){
     stroke(0);
     pushMatrix();
-      strokeWeight(2);
-      scale(1.1);
-      
-      fill(180);
-      quad(236, 220, 316, 326, 288, 351, 201, 248);
-      
-      beginShape();
-      vertex(237, 222);
-      vertex(250, 154);
-      vertex(50, 35);
-      vertex(120, 244);
-      vertex(203, 250);
-      endShape();
-      
-      noFill();
-      strokeWeight(30);
-      stroke(180);
-      circle(324, 369, 71);
-      
-      strokeWeight(2);
-      stroke(0);
-      
-      arc(324, 370, 100, 100, radians(-104), radians(211), OPEN);
-      circle(325, 369, 43);
-      
-      stroke(225);
-      line(248, 155, 165, 160);
-      line(52, 38, 165, 160);
-      line(121, 242, 165, 160);
+    scale(1.1);
+    strokeWeight(4);
+    
+    fill(140);
+    
+    beginShape();
+    vertex(237, 222);
+    vertex(250, 154);
+    vertex(50, 35);
+    vertex(120, 244);
+    vertex(203, 250);
+    endShape();
+    
+    fill(140);
+    circle(298, 334, 36);
+    
+    fill(#9B7B5B);
+    beginShape();
+    vertex(316, 326);
+    bezierVertex(293, 325, 289, 337, 288, 351);
+    vertex(201, 248);
+    bezierVertex(201, 248, 203, 217, 236, 220);
+    endShape(CLOSE);    
+    
+    
+    noFill();
+    strokeWeight(30);
+    stroke(140);
+    circle(335, 375, 71);
+    
+    strokeWeight(4);
+    stroke(0);
+    
+    arc(333, 374, 100, 100, radians(-110), radians(208), OPEN);
+    circle(334, 374, 43);
+    
+    stroke(194);
+    line(247, 155, 165, 160);
+    line(54, 40, 165, 160);
+    line(121, 242, 165, 160);
+    fill(194);
+    triangle(58, 44, 165, 160, 245, 155);
     popMatrix();
     strokeWeight(1);
     stroke(0);
@@ -155,10 +168,10 @@ class kunai extends item {
 }
 
 
-class magnificentSword extends item {
-  magnificentSword(int xI, int yI){
+class mammonsBlade extends item {
+  mammonsBlade(int xI, int yI){
     super(xI, yI,
-    "Magnificent Sword",
+    "Mammon's Blade",
     "rare",
     false);
   }
@@ -252,8 +265,8 @@ class magnificentSword extends item {
   void desc(){
 
         translate(0, -10);
-    text("Pedang ini didapatkan dikedalaman\n"+
-         "Goa Avarice.\n\n"+
+    text("Pedang ini didapatkan di kedalaman\n"+
+         "Dungeon of Avarice.\n\n"+
          "Terbuat dari iron dan emas,\n"+
          "meskipun terlihat biasa\n"+
          "tapi memiliki damage yang luar biasa", 0, 0);

@@ -216,7 +216,7 @@ item addItem(int id, int ids, int quan) {
   if (id == 4) return new squamaManitis(slots[ids].x, slots[ids].y, quan);
   if (id == 5) return new carrot(slots[ids].x, slots[ids].y, quan);
   if (id == 6) return new nightwalkersSight(slots[ids].x, slots[ids].y);
-  if (id == 7) return new magnificentSword(slots[ids].x, slots[ids].y);
+  if (id == 7) return new mammonsBlade(slots[ids].x, slots[ids].y);
   if (id == 8) return new emeraldWings(slots[ids].x, slots[ids].y);
   if (id == 9) return new skyfeatherBadge(slots[ids].x, slots[ids].y);
   if (id == 10) return new bombby(slots[ids].x, slots[ids].y, quan);
