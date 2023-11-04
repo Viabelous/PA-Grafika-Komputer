@@ -443,14 +443,11 @@ class healPotion extends countable {
 
   void desc(){
     pushMatrix();
-    translate(0, -30);
-    textSize(18);
+    translate(0, 0);
     text("Sebuah potion yang dibuat oleh\n"+
-         "potioneer-potioneer berbakat di desa \n"+
-         "barat. Potioneer itu biasanya memberikan\n"+
-         "potion heal ini sebagai hadiah setelah\n"+
-         "membantunya mencari bahan untuk ia\n"+
-         "membuat potion.", 0, 0);
+         "potioneer-potioneer berbakat di desa\n"+
+         "barat. Diimport ke berbagai stall di berbagai\n"+
+         "negara di penjuru benua Elzern.", 0, 0);
     popMatrix();
 
   }

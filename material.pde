@@ -421,7 +421,7 @@ class sapphireChunk extends countable {
     text("Batu berwarna biru laut yang dapat\n"+
          "ditemukan di kedalaman +2500m sampai\n"+
          "dengan kedalaman +4000m yang merupakan\n"+
-         "area mining sapphire.\n", 0, 30);
+         "area mining sapphire.\n", 0, 0);
     popMatrix();
   }
 }
@@ -901,10 +901,8 @@ class goldOilLamp extends countable {
   
   
   void stats(){
-    text("Dapat digantung ataupun diletakkan\n"+
-    "dimana saja.\n\n"+
-    "\"Cahaya dan aroma dari api dapat berbeda\n"+
-    "tergantung dari minyak yang digunakan.\"", 0, 0);
+    text("Cahaya dan aroma dari api dapat berbeda\n"+
+    "tergantung dari minyak yang digunakan.", 0, 0);
   }
   
   
@@ -913,11 +911,11 @@ class goldOilLamp extends countable {
     textSize(19);
     translate(0, 30);
     text("Sebuah lampu minyak berbahan dasar\n"+
-         "gold ingot dengan ketahanan apinya yang\n"+
-         "dapat menyala selama 4 jam.\n\n"+
-         "Cahayanya dapat menerangi dan\n"+
-         "menghangatkan malam yang gelap dan\n"+
-         "dingin.", 0, -40);
+         "gold ingot. Cahayanya dapat menerangi\n"+
+         "dan menghangatkan malam yang gelap\n"+
+         "dan dingin.\n\n"+
+         "\"Dapat digantung ataupun diletakkan\n"+
+         "dimana saja.\"", 0, -40);
     popMatrix();
   }
 }
