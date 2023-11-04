@@ -405,11 +405,11 @@ class sapphireChunk extends countable {
     stroke(0);
     fill(0);
   }
-  
-  void stats(){
+
+  void stats() {
     text("Dapat dilelehkan untuk membuat\n"+
-    "atribut dan dapat digunakankan sebagai\n"+
-    "bahan enchantment.", 0, 0);
+      "atribut dan dapat digunakankan sebagai\n"+
+      "bahan enchantment.", 0, 0);
   }
 
 
@@ -613,11 +613,12 @@ class letter extends item {
   void preview() {
     pushMatrix();
     scale(0.4);
+    stroke(0);
 
     rectMode(CENTER);
 
-    int coorX = 200;
-    int coorY = 200;
+    int coorX = 250;
+    int coorY = 250;
 
     fill(#A3A6AF);
     strokeWeight(5);
@@ -664,10 +665,11 @@ class letter extends item {
     pushMatrix();
     translate(x-50, y-50);
     scale(0.2);
+    stroke(0);
     rectMode(CENTER);
 
-    int coorX = 200;
-    int coorY = 200;
+    int coorX = 250;
+    int coorY = 250;
 
     fill(#A3A6AF);
     strokeWeight(5);
@@ -753,294 +755,295 @@ class goldOilLamp extends countable {
     popMatrix();
   }
   void build() {
-  pushMatrix();
+    pushMatrix();
     translate(-50, -68);
     scale(1.2);
     pushMatrix();
-      translate(50, 100);
-      scale(0.8);
-      strokeWeight(4);
-      
-      //pegangan lampu
-      noFill();
-      stroke(213, 174, 16);
-      beginShape();
-      bezier(263, 21, 314, -45, 187, -45, 238, 21);
-      endShape();
-      
-      fill(249, 206, 5);
-      arc(250, 32, 30, 35, -3, PI/-20);
-      
-      fill(248, 206, 8);
-      stroke(243, 200, 0);
-      //cahaya lampu
-      pushMatrix();
-        translate(-101,-120);
-        scale(1.4);
-        beginShape();
-        vertex(250, 245);
-        bezierVertex(221, 307, 216, 325, 235, 356);
-        bezierVertex(308, 390, 271, 274, 250, 240);
-        endShape();
-      popMatrix();
-      
-      //bohlam lampu
-      fill(255, 221, 49);
-      stroke(255, 216, 21);
-      beginShape();
-      vertex(250, 245);
-      bezierVertex(221, 307, 216, 325, 235, 356);
-      bezierVertex(308, 390, 271, 274, 250, 240);
-      endShape();
-      
-      
-      //----------- pelindung bohlam lampu -----------
-      //bagian kiri
-      stroke(208, 208, 208);
-      fill(236, 235, 235, 140);
-      beginShape();
-        vertex(250, 358);
-        curveVertex(288, 572);
-        curveVertex(170, 355);
-        curveVertex(150, 235);
-        curveVertex(180, 135);
-        curveVertex(165, 82);
-        curveVertex(250, 79);
-        curveVertex(249, 157);
-      endShape();
-      
-      //bagian kanan
-      pushMatrix();
-        translate(500, 0);
-        rotateY(PI/-1);
-        beginShape();
-        vertex(250, 357);
-        curveVertex(288, 572);
-        curveVertex(170, 355);
-        curveVertex(150, 235);
-        curveVertex(180, 135);
-        curveVertex(165, 82);
-        curveVertex(250, 86);
-        curveVertex(249, 153);
-        endShape();
-      popMatrix();
-      
-      //tali penutup pelindung lampu
-      noFill();
-      strokeWeight(3);
-      stroke(211, 159, 0);
-      beginShape();
-      bezier(149, 230, 73, 252, 428, 333, 338, 338);
-      bezier(161, 338, 73, 333, 428, 252, 351, 229);
-      endShape();
-      
-      //------------- tiang lampu ------------
-      noFill();
-      strokeWeight(10);
-      stroke(223, 168, 0);
-      
-      //bagian kiri
-      beginShape();
-      vertex(137, 69);
-      bezierVertex(91, 23, 50, 116, 110, 226);
-      bezierVertex(130, 302, 55, 377, 122, 378);
-      endShape();
-      
-      //bagian kanan
-      pushMatrix();
-        translate(500, 0);
-        rotateY(PI/-1);
-        beginShape();
-        vertex(137, 69);
-        bezierVertex(91, 23, 50, 116, 110, 226);
-        bezierVertex(130, 302, 55, 377, 122, 378);
-        endShape();
-      popMatrix();
-      
-      //----------- penutup lampu --------------
-      strokeWeight(30);
-      stroke(251, 204, 78);
-      fill(251, 204, 78);
-      //bagian atas
-      ellipse(320, 49, 27, 20);
-      ellipse(179, 49, 25, 20);
-      line(136, 72, 360, 70);
-      
-      ellipse(143, 76, 4, 12);
-      ellipse(356, 76, 4, 13);
-      line(164, 43, 335, 44);
-      
-      stroke(255, 212, 84);
-      fill(255, 212, 82);
-      line(136, 81, 361, 81);
-      
-      //bagian bawah
-      strokeWeight(30);
-      stroke(251, 204, 78);
-      fill(251, 204, 78);
-      ellipse(361, 379, 20, 20);
-      ellipse(143, 379, 20, 20);
-      line(115, 398, 387, 398);
-      
-      ellipse(381, 406, 6, 2);
-      ellipse(118, 406, 6, 2);
-      line(132, 369, 368, 369);
-      
-      stroke(255, 212, 84);
-      fill(255, 212, 82);
-      ellipse(400, 414, 6, 5);
-      ellipse(102, 414, 6, 5);
-      line(92, 416, 406, 414);
-      
-      
-      //---------------- outline ---------------
-      noFill();
-      strokeWeight(4);
-      stroke(0);
-      
-      //pegangan lampu
-      beginShape();
-      bezier(266, 22, 314, -50, 187, -48, 235, 21);
-      endShape();
-      
-      //----------- pelindung bohlam lampu -----------
-      //bagian kiri
-      beginShape();
-      vertex(127, 67);
-      bezierVertex(123, 103, 138, 94, 163, 97);
-      endShape();
-      
-      beginShape();
-      vertex(163, 98);
-      bezierVertex(191, 144, 171, 126, 149, 227);
-      endShape();
-      
-      beginShape();
-      bezier(147, 248, 142, 281, 148, 288, 154, 324);
-      bezier(162, 341, 161, 353, 167, 353, 167, 353);
-      endShape();
-      
-      beginShape();
-      vertex(167, 352);
-      bezierVertex(110, 351, 122, 370, 115, 370);
-      endShape();
-      
-      //bagian kanan
-      pushMatrix();
-        translate(500, 0);
-        rotateY(PI/-1);
-        beginShape();
-        vertex(125, 67);
-        bezierVertex(123, 103, 138, 94, 163, 97);
-        endShape();
-        
-        beginShape();
-        vertex(163, 98);
-        bezierVertex(191, 144, 171, 126, 149, 227);
-        endShape();
-        
-        beginShape();
-        bezier(147, 248, 142, 281, 148, 288, 154, 324);
-        bezier(162, 341, 161, 353, 167, 353, 167, 353);
-        endShape();
-        
-        beginShape();
-        vertex(167, 352);
-        bezierVertex(110, 351, 122, 370, 115, 370);
-        endShape();
-      popMatrix();
-      
-      pushMatrix();
-      translate(498,0);
-      rotateY(PI/1);
-        //kiri atas
-        arc(353, 238, 22, 22, -2, PI/2);
-        //kiri bawah
-        arc(333, 332, 46, 20, -1, PI/2);;
-      popMatrix();
-      //kanan atas
-      arc(353, 238, 22, 22, -2, PI/2);
-      //kanan bawah
-      arc(333, 332, 46, 20, -1, PI/2);
-      
-      //------------- tiang lampu ------------
-      //bagian kiri sisi kanan
-      beginShape();
-      vertex(126, 69);
-      bezierVertex(101, 36, 56, 116, 114, 226);
-      bezierVertex(136, 302, 67, 368, 118, 372);
-      endShape();
-      
-      //bagian kiri sisi kiri
-      beginShape();
-      vertex(134, 59);
-      bezierVertex(86, 23, 45, 112, 104, 226);
-      bezierVertex(124, 302, 46, 368, 115, 384);
-      endShape();
-      
-      //bagian kanan
-      pushMatrix();
-        translate(500, 0);
-        rotateY(PI/-1);
-        //sisi kiri
-        beginShape();
-        vertex(126, 69);
-        bezierVertex(101, 36, 56, 116, 114, 226);
-        bezierVertex(136, 302, 67, 368, 118, 372);
-        endShape();
-        
-        //sisi kanan
-        beginShape();
-        vertex(134, 59);
-        bezierVertex(86, 23, 45, 116, 104, 226);
-        bezierVertex(124, 302, 46, 368, 115, 384);
-        endShape();
-      popMatrix();
-      
-      //----------- penutup lampu --------------
-      beginShape();
-      bezier(235, 21, 245, 39, 151, 11, 156, 39);
-      bezier(127, 69, 132, 48, 150, 70, 156, 39);
-      bezier(116, 372, 114, 380, 121, 395, 97, 397);
-      bezier(100, 397, 78, 398, 73, 437, 112, 432);
-      endShape();
-      
-      pushMatrix();
-        translate(500, 0);
-        rotateY(PI/-1);
-        beginShape();
-        bezier(235, 21, 245, 39, 151, 11, 156, 39);
-        bezier(127, 69, 132, 48, 150, 70, 156, 39);
-        bezier(116, 372, 114, 380, 121, 395, 97, 397);
-        bezier(100, 397, 78, 398, 73, 437, 112, 432);
-        endShape();
-      popMatrix();
-      
-      line(112, 432, 395, 432);
+    translate(50, 100);
+    scale(0.8);
+    strokeWeight(4);
+
+    //pegangan lampu
+    noFill();
+    stroke(213, 174, 16);
+    beginShape();
+    bezier(263, 21, 314, -45, 187, -45, 238, 21);
+    endShape();
+
+    fill(249, 206, 5);
+    arc(250, 32, 30, 35, -3, PI/-20);
+
+    fill(248, 206, 8);
+    stroke(243, 200, 0);
+    //cahaya lampu
+    pushMatrix();
+    translate(-101, -120);
+    scale(1.4);
+    beginShape();
+    vertex(250, 245);
+    bezierVertex(221, 307, 216, 325, 235, 356);
+    bezierVertex(308, 390, 271, 274, 250, 240);
+    endShape();
     popMatrix();
-  popMatrix();
+
+    //bohlam lampu
+    fill(255, 221, 49);
+    stroke(255, 216, 21);
+    beginShape();
+    vertex(250, 245);
+    bezierVertex(221, 307, 216, 325, 235, 356);
+    bezierVertex(308, 390, 271, 274, 250, 240);
+    endShape();
+
+
+    //----------- pelindung bohlam lampu -----------
+    //bagian kiri
+    stroke(208, 208, 208);
+    fill(236, 235, 235, 140);
+    beginShape();
+    vertex(250, 358);
+    curveVertex(288, 572);
+    curveVertex(170, 355);
+    curveVertex(150, 235);
+    curveVertex(180, 135);
+    curveVertex(165, 82);
+    curveVertex(250, 79);
+    curveVertex(249, 157);
+    endShape();
+
+    //bagian kanan
+    pushMatrix();
+    translate(500, 0);
+    rotateY(PI/-1);
+    beginShape();
+    vertex(250, 357);
+    curveVertex(288, 572);
+    curveVertex(170, 355);
+    curveVertex(150, 235);
+    curveVertex(180, 135);
+    curveVertex(165, 82);
+    curveVertex(250, 86);
+    curveVertex(249, 153);
+    endShape();
+    popMatrix();
+
+    //tali penutup pelindung lampu
+    noFill();
+    strokeWeight(3);
+    stroke(211, 159, 0);
+    beginShape();
+    bezier(149, 230, 73, 252, 428, 333, 338, 338);
+    bezier(161, 338, 73, 333, 428, 252, 351, 229);
+    endShape();
+
+    //------------- tiang lampu ------------
+    noFill();
+    strokeWeight(10);
+    stroke(223, 168, 0);
+
+    //bagian kiri
+    beginShape();
+    vertex(137, 69);
+    bezierVertex(91, 23, 50, 116, 110, 226);
+    bezierVertex(130, 302, 55, 377, 122, 378);
+    endShape();
+
+    //bagian kanan
+    pushMatrix();
+    translate(500, 0);
+    rotateY(PI/-1);
+    beginShape();
+    vertex(137, 69);
+    bezierVertex(91, 23, 50, 116, 110, 226);
+    bezierVertex(130, 302, 55, 377, 122, 378);
+    endShape();
+    popMatrix();
+
+    //----------- penutup lampu --------------
+    strokeWeight(30);
+    stroke(251, 204, 78);
+    fill(251, 204, 78);
+    //bagian atas
+    ellipse(320, 49, 27, 20);
+    ellipse(179, 49, 25, 20);
+    line(136, 72, 360, 70);
+
+    ellipse(143, 76, 4, 12);
+    ellipse(356, 76, 4, 13);
+    line(164, 43, 335, 44);
+
+    stroke(255, 212, 84);
+    fill(255, 212, 82);
+    line(136, 81, 361, 81);
+
+    //bagian bawah
+    strokeWeight(30);
+    stroke(251, 204, 78);
+    fill(251, 204, 78);
+    ellipse(361, 379, 20, 20);
+    ellipse(143, 379, 20, 20);
+    line(115, 398, 387, 398);
+
+    ellipse(381, 406, 6, 2);
+    ellipse(118, 406, 6, 2);
+    line(132, 369, 368, 369);
+
+    stroke(255, 212, 84);
+    fill(255, 212, 82);
+    ellipse(400, 414, 6, 5);
+    ellipse(102, 414, 6, 5);
+    line(92, 416, 406, 414);
+
+
+    //---------------- outline ---------------
+    noFill();
+    strokeWeight(4);
+    stroke(0);
+
+    //pegangan lampu
+    beginShape();
+    bezier(266, 22, 314, -50, 187, -48, 235, 21);
+    endShape();
+
+    //----------- pelindung bohlam lampu -----------
+    //bagian kiri
+    beginShape();
+    vertex(127, 67);
+    bezierVertex(123, 103, 138, 94, 163, 97);
+    endShape();
+
+    beginShape();
+    vertex(163, 98);
+    bezierVertex(191, 144, 171, 126, 149, 227);
+    endShape();
+
+    beginShape();
+    bezier(147, 248, 142, 281, 148, 288, 154, 324);
+    bezier(162, 341, 161, 353, 167, 353, 167, 353);
+    endShape();
+
+    beginShape();
+    vertex(167, 352);
+    bezierVertex(110, 351, 122, 370, 115, 370);
+    endShape();
+
+    //bagian kanan
+    pushMatrix();
+    translate(500, 0);
+    rotateY(PI/-1);
+    beginShape();
+    vertex(125, 67);
+    bezierVertex(123, 103, 138, 94, 163, 97);
+    endShape();
+
+    beginShape();
+    vertex(163, 98);
+    bezierVertex(191, 144, 171, 126, 149, 227);
+    endShape();
+
+    beginShape();
+    bezier(147, 248, 142, 281, 148, 288, 154, 324);
+    bezier(162, 341, 161, 353, 167, 353, 167, 353);
+    endShape();
+
+    beginShape();
+    vertex(167, 352);
+    bezierVertex(110, 351, 122, 370, 115, 370);
+    endShape();
+    popMatrix();
+
+    pushMatrix();
+    translate(498, 0);
+    rotateY(PI/1);
+    //kiri atas
+    arc(353, 238, 22, 22, -2, PI/2);
+    //kiri bawah
+    arc(333, 332, 46, 20, -1, PI/2);
+    ;
+    popMatrix();
+    //kanan atas
+    arc(353, 238, 22, 22, -2, PI/2);
+    //kanan bawah
+    arc(333, 332, 46, 20, -1, PI/2);
+
+    //------------- tiang lampu ------------
+    //bagian kiri sisi kanan
+    beginShape();
+    vertex(126, 69);
+    bezierVertex(101, 36, 56, 116, 114, 226);
+    bezierVertex(136, 302, 67, 368, 118, 372);
+    endShape();
+
+    //bagian kiri sisi kiri
+    beginShape();
+    vertex(134, 59);
+    bezierVertex(86, 23, 45, 112, 104, 226);
+    bezierVertex(124, 302, 46, 368, 115, 384);
+    endShape();
+
+    //bagian kanan
+    pushMatrix();
+    translate(500, 0);
+    rotateY(PI/-1);
+    //sisi kiri
+    beginShape();
+    vertex(126, 69);
+    bezierVertex(101, 36, 56, 116, 114, 226);
+    bezierVertex(136, 302, 67, 368, 118, 372);
+    endShape();
+
+    //sisi kanan
+    beginShape();
+    vertex(134, 59);
+    bezierVertex(86, 23, 45, 116, 104, 226);
+    bezierVertex(124, 302, 46, 368, 115, 384);
+    endShape();
+    popMatrix();
+
+    //----------- penutup lampu --------------
+    beginShape();
+    bezier(235, 21, 245, 39, 151, 11, 156, 39);
+    bezier(127, 69, 132, 48, 150, 70, 156, 39);
+    bezier(116, 372, 114, 380, 121, 395, 97, 397);
+    bezier(100, 397, 78, 398, 73, 437, 112, 432);
+    endShape();
+
+    pushMatrix();
+    translate(500, 0);
+    rotateY(PI/-1);
+    beginShape();
+    bezier(235, 21, 245, 39, 151, 11, 156, 39);
+    bezier(127, 69, 132, 48, 150, 70, 156, 39);
+    bezier(116, 372, 114, 380, 121, 395, 97, 397);
+    bezier(100, 397, 78, 398, 73, 437, 112, 432);
+    endShape();
+    popMatrix();
+
+    line(112, 432, 395, 432);
+    popMatrix();
+    popMatrix();
     strokeWeight(1);
     stroke(0);
     fill(0);
   }
-  
-  
-  void stats(){
+
+
+  void stats() {
     text("Cahaya dan aroma dari api dapat berbeda\n"+
-    "tergantung dari minyak yang digunakan.", 0, 0);
+      "tergantung dari minyak yang digunakan.", 0, 0);
   }
-  
-  
-  void desc(){
+
+
+  void desc() {
     pushMatrix();
     textSize(19);
     translate(0, 30);
     text("Sebuah lampu minyak berbahan dasar\n"+
-         "gold ingot. Cahayanya dapat menerangi\n"+
-         "dan menghangatkan malam yang gelap\n"+
-         "dan dingin.\n\n"+
-         "\"Dapat digantung ataupun diletakkan\n"+
-         "dimana saja.\"", 0, -40);
+      "gold ingot. Cahayanya dapat menerangi\n"+
+      "dan menghangatkan malam yang gelap\n"+
+      "dan dingin.\n\n"+
+      "\"Dapat digantung ataupun diletakkan\n"+
+      "dimana saja.\"", 0, -40);
     popMatrix();
   }
 }
