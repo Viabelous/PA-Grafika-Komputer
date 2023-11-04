@@ -287,8 +287,9 @@ class happyCllate extends countable {
   void desc() {
     text("Sumber energi dalam situasi di mana\n"+
     "harus menghindari kematian atau kelelahan.\n\n"+
-    "Meskipun hanya memberi heal yang sedikit\n"+
-    "Namun sangat mudah untuk mendapatkannya.", 0, 0);
+    "Meskipun hanya memberi heal yang\n"+
+    "sedikit, namun sangat mudah untuk \n"+
+    "mendapatkannya.", 0, 0);
     
   }
 }
