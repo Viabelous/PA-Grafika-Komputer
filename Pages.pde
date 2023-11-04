@@ -463,6 +463,10 @@ class command extends pages{
   void mouseWheel(MouseEvent e){};
   
   void keyPressed(){
+    if(key == ESC){
+      key = TAB;
+    }
+    
     if (key == BACKSPACE) {
       if (Cmd.length()>0) {
         Cmd=Cmd.substring(0, Cmd.length()-1);
