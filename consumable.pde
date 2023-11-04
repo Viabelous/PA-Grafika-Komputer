@@ -300,7 +300,7 @@ class healPotion extends countable {
   healPotion(int xI, int yI, int quanI){
     super(xI, yI,
     "Heal Potion",
-    "uncommon", quanI);
+    "common", quanI);
     foodItem = true;
   }
   
@@ -450,9 +450,7 @@ class healPotion extends countable {
          "barat. Potioneer itu biasanya memberikan\n"+
          "potion heal ini sebagai hadiah setelah\n"+
          "membantunya mencari bahan untuk ia\n"+
-         "membuat potion.\n\n"+
-         "Diimpor ke berbagai stall di\n"+
-         "berbagai negara di sepenjuri benua Elzern.", 0, 0);
+         "membuat potion.", 0, 0);
     popMatrix();
 
   }

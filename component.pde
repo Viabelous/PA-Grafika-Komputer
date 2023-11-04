@@ -253,6 +253,7 @@ item addItem(int id, int ids, int quan) {
   if (id == 17) return new healPotion(slots[ids].x, slots[ids].y, quan);
   if (id == 18) return new sapphireChunk(slots[ids].x, slots[ids].y, quan);
   if (id == 19) return new firefly(slots[ids].x, slots[ids].y, quan);
+  if (id == 20) return new goldOilLamp(slots[ids].x, slots[ids].y, quan);
   return null;
 }
 
