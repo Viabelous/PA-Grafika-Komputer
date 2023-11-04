@@ -247,13 +247,14 @@ item addItem(int id, int ids, int quan) {
   if (id == 13) return new hynaPainting(slots[ids].x, slots[ids].y);
   if (id == 14) return new kitsuneMask(slots[ids].x, slots[ids].y);
   if (id == 15) return new happyCllate(slots[ids].x, slots[ids].y, quan);
-  if (id == 16) return new book(slots[ids].x, slots[ids].y);
+  if (id == 16) return new magicStarBook(slots[ids].x, slots[ids].y);
   if (id == 17) return new healPotion(slots[ids].x, slots[ids].y, quan);
   if (id == 18) return new sapphireChunk(slots[ids].x, slots[ids].y, quan);
   if (id == 19) return new firefly(slots[ids].x, slots[ids].y, quan);
   if (id == 20) return new goldOilLamp(slots[ids].x, slots[ids].y, quan);
   if (id == 21) return new letter(slots[ids].x, slots[ids].y);
   if (id == 22) return new panamaBerry(slots[ids].x, slots[ids].y, quan);
+  if (id == 23) return new pinkPrism(slots[ids].x, slots[ids].y, quan);
   return null;
 }
 
