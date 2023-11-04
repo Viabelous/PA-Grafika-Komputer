@@ -211,6 +211,8 @@ void alert(int num) {
   } else if (num == 2) {
     logs += "> HINT: Sesuaikan '/add {item_id} {quantity<opsional>}'\n";
   } else if (num == 3) {
+    logs += "> ERROR: Item dengan ID tersebut tidak ditemukan'\n";
+  } else if (num == 4) {
     logs += "> ERROR: Inventory penuh'\n";
   }
 }

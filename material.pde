@@ -1,3 +1,4 @@
+// ========================================= SQUAMA MANITIS ========================================= //
 class squamaManitis extends countable {
   squamaManitis(int xI, int yI, int quanI) {
     super(xI, yI,
@@ -99,6 +100,11 @@ class squamaManitis extends countable {
   }
 }
 
+
+
+
+
+// ========================================= BOMBBY ========================================= //
 class bombby extends countable {
   bombby(int xI, int yI, int quan) {
     super(xI, yI,
@@ -157,19 +163,6 @@ class bombby extends countable {
     fill(0);
   }
 
-
-  // buat fungsi di bawah ini jika dan hanya jika
-  // benda memiliki mode observe (3D)
-  void observe() {
-    pushMatrix();
-
-    // ... kodingan untuk tampilan 3D
-
-    popMatrix();
-  }
-
-
-
   void stats() {
 
     // ... kodingan untuk teks stat
@@ -195,6 +188,10 @@ class bombby extends countable {
 }
 
 
+
+
+
+// ========================================= SAPPHIRE CHUNK ========================================= //
 class sapphireChunk extends countable {
   sapphireChunk(int xI, int yI, int quanI) {
     super(xI, yI,
@@ -426,6 +423,8 @@ class sapphireChunk extends countable {
 
 
 
+
+// ========================================= FIREFLY ========================================= //
 class firefly extends countable {
   int rotA = 0;
   int rotB = 0;
@@ -734,6 +733,10 @@ class letter extends item {
 }
 
 
+
+
+
+// ========================================= GOLD OIL LAMP ========================================= //
 class goldOilLamp extends countable {
   goldOilLamp(int xI, int yI, int quanI) {
     super(xI, yI,

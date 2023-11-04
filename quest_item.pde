@@ -1,3 +1,4 @@
+// ========================================= BSOJ ========================================= //
 class bsoj extends item {
   bsoj(int xI, int yI) {
     super(xI, yI,
@@ -285,6 +286,9 @@ class bsoj extends item {
 
 
 
+
+
+// ========================================= SKYFEATHER BADGE ========================================= //
 class skyfeatherBadge extends item {
   skyfeatherBadge(int xI, int yI) {
     super(xI, yI,
@@ -561,6 +565,11 @@ class skyfeatherBadge extends item {
   }
 }
 
+
+
+
+
+// ========================================= H.Y.N.A PAINTING ========================================= //
 class hynaPainting extends item {
   hynaPainting(int xI, int yI) {
     super(xI, yI,
@@ -638,6 +647,10 @@ class hynaPainting extends item {
 }
 
 
+
+
+
+// ========================================= KITSUNE MASK ========================================= //
 class kitsuneMask extends item {
   kitsuneMask(int xI, int yI) {
     super(xI, yI,
@@ -965,6 +978,9 @@ class kitsuneMask extends item {
 
 
 
+
+
+// ========================================= BOOK ========================================= //
 class book extends item {
   book(int xI, int yI) {
     super(xI, yI,
