@@ -965,10 +965,10 @@ class kitsuneMask extends item {
 
 
 
-class book extends item {
-  book(int xI, int yI) {
+class magicStarBook extends item {
+  magicStarBook(int xI, int yI) {
     super(xI, yI,
-      "Book",
+      "Magic Star Book",
       "unique");
     discardable = false;
     observable = true;
@@ -989,92 +989,377 @@ class book extends item {
     popMatrix();
   }
 
-  float angleX = 0;
-  float angleY = 0;
 
   void build() {
-    
     pushMatrix();
-    fill(200,0,0);
-    circle(250,250,400);
-    popMatrix();
-  }
-
-  void observe() {
-  pushMatrix();
-  //translate(111, 100);
-  rotateX(radians(angleX));
-  rotateY(radians(angleY));
-
-  // Sampul buku depan
-  pushMatrix();
-  translate(-1, 0, 10 / 2);
-  fill(228, 90, 63);
-  noStroke();
-  sphere(12);
-
-  // Garis pada objek 3D
-  stroke(213, 160, 109); // Warna garis
-  strokeWeight(3);
-
-  // Garis horizontal
-  for (float z = -5; z <= 5; z += 2) {
-    line(-10, -10, z, 10, -10, z);
-    line(-10, 10, z, 10, 10, z);
-  }
-
-  // Garis vertikal
-  for (float x = -10; x <= 10; x += 5) {
-    line(x, -10, -5, x, 10, 5);
-  }
-
-
-  for (float i = 0; i < TWO_PI; i += TWO_PI / 6) {
-    pushMatrix();
-    translate(1, 1, 4);
-    rotateZ(i);
-    beginShape();
-    fill(188, 150, 49);
-    noStroke();
-    curveVertex(20, 0, 0);
-    curveVertex(20, 0, 0);
-    curveVertex(0, 20 * 2, 0);
-    curveVertex(-20, 0, 0);
-    curveVertex(-20, 0, 0);
-    endShape(CLOSE);
-    popMatrix();
-  }
-
-
-
-
+    scale(2.0);
+    rectMode(CORNER);    
+    translate(123, 124);
+    stroke(213, 160, 109);
+    strokeWeight(3);
     fill(194, 163, 103);
     stroke(196, 147, 83);
     strokeWeight(4);
-    box(100, 150, 5);
-
-
-  popMatrix();
-
-  // Sampul buku belakang
-  pushMatrix();
-  translate(0, 0);
-  for (float i = 0; i < TWO_PI; i += TWO_PI / 6) {
-    pushMatrix();
-    translate(-1, -2, 5);
-    rotateZ(i);
-    beginShape();
-    fill(150, 112, 30);
+    rect(-79, -89, 156, 177);
+  
+    for (float i = 0; i < TWO_PI; i += TWO_PI / 6) {
+      pushMatrix();
+      translate(1, 1);
+      rotateZ(i);
+      beginShape();
+      fill(188, 150, 49);
+      noStroke();
+      curveVertex(20, 0);
+      curveVertex(20, 0);
+      curveVertex(18, 40);
+      curveVertex(-20, 0);
+      curveVertex(-20, 0);
+      endShape(CLOSE);
+      popMatrix();
+    }
+  
+    for (float i = 0; i < TWO_PI; i += TWO_PI / 6) {
+      pushMatrix();
+      translate(45, 57);
+      rotateZ(i);
+      beginShape();
+      fill(226, 208, 165);
+      noStroke();
+      curveVertex(-17, 0);
+      curveVertex(5, 0);
+      curveVertex(7, -16);
+      curveVertex(-7, 0);
+      curveVertex(-39, 0);
+      endShape(CLOSE);
+      popMatrix();
+    }
+  
+    for (float i = 0; i < TWO_PI; i += TWO_PI / 6) {
+      pushMatrix();
+      translate(-42, 57);
+      rotateZ(i);
+      beginShape();
+      fill(226, 208, 165);
+      noStroke();
+      curveVertex(-17, 0);
+      curveVertex(5, 0);
+      curveVertex(-9, -16);
+      curveVertex(-7, 0);
+      curveVertex(-39, 0);
+      endShape(CLOSE);
+      popMatrix();
+    }
+  
+    for (float i = 0; i < TWO_PI; i += TWO_PI / 6) {
+      pushMatrix();
+      translate(41, -55);
+      rotateZ(i);
+      beginShape();
+      fill(226, 208, 165);
+      noStroke();
+      curveVertex(-17, 0);
+      curveVertex(2, 0);
+      curveVertex(-5, -16);
+      curveVertex(-7, 0);
+      curveVertex(-39, 0);
+      endShape(CLOSE);
+      popMatrix();
+    }
+  
+    for (float i = 0; i < TWO_PI; i += TWO_PI / 6) {
+      pushMatrix();
+      translate(-39, -55);
+      rotateZ(i);
+      beginShape();
+      fill(226, 208, 165);
+      noStroke();
+      curveVertex(-17, 0);
+      curveVertex(5, 0);
+      curveVertex(7, -16);
+      curveVertex(-7, 0);
+      curveVertex(-39, 0);
+      endShape(CLOSE);
+      popMatrix();
+    }
+    fill(228, 85, 63);
     noStroke();
-    curveVertex(8, -24, -4);
-    curveVertex(17, 0, -9);
-    curveVertex(27, 20 * 2, -15);
-    curveVertex(-3, 0, -11);
-    curveVertex(-20, 0, 135);
-    endShape(CLOSE);
+    circle(1, 1, 20);
     popMatrix();
   }
-    box(100, 150, 5);
+
+    void observe() {
+    // Sampul buku depan
+    pushMatrix();
+    translate(-1, 0, 10 / 2);
+    fill(228, 90, 63);
+    noStroke();
+    sphere(12);
+
+    // Garis pada objek
+    stroke(213, 160, 109); // Warna garis
+    strokeWeight(3);
+
+    // Garis horizontal
+    for (float z = -5; z <= 5; z += 2) {
+      line(-10, -10, z, 10, -10, z);
+      line(-10, 10, z, 10, 10, z);
+    }
+
+    // Garis vertikal
+    for (float x = -10; x <= 10; x += 5) {
+      line(x, -10, -5, x, 10, 5);
+    }
+
+
+    for (float i = 0; i < TWO_PI; i += TWO_PI / 6) {
+      pushMatrix();
+      translate(1, 1, 4);
+      rotateZ(i);
+      beginShape();
+      fill(188, 150, 49);
+      noStroke();
+      curveVertex(20, 0, 0);
+      curveVertex(20, 0, 0);
+      curveVertex(18, 20 * 2, 0);
+      curveVertex(-20, 0, 0);
+      curveVertex(-20, 0, 0);
+      endShape(CLOSE);
+      popMatrix();
+    }
+  
+    for (float i = 0; i < TWO_PI; i += TWO_PI / 6) {
+      pushMatrix();
+      translate(45, 57, 4);
+      rotateZ(i);
+      beginShape();
+      fill(226, 208, 165);
+      noStroke();
+      curveVertex(-17, 0, 0);
+      curveVertex(5, 0, 0);
+      curveVertex(7, 16 * -1, 0);
+      curveVertex(-7, 0, 0);
+      curveVertex(-39, 0, 0);
+      endShape(CLOSE);
+      popMatrix();
+    }
+  
+    for (float i = 0; i < TWO_PI; i += TWO_PI / 6) {
+      pushMatrix();
+      translate(-42, 57, 4);
+      rotateZ(i);
+      beginShape();
+      fill(226, 208, 165);
+      noStroke();
+      curveVertex(-17, 0, 0);
+      curveVertex(5, 0, 0);
+      curveVertex(-9, 16 * -1, 0);
+      curveVertex(-7, 0, 0);
+      curveVertex(-39, 0, 0);
+      endShape(CLOSE);
+      popMatrix();
+    }
+  
+    for (float i = 0; i < TWO_PI; i += TWO_PI / 6) {
+      pushMatrix();
+      translate(41, -55, 4);
+      rotateZ(i);
+      beginShape();
+      fill(226, 208, 165);
+      noStroke();
+      curveVertex(-17, 0, 0);
+      curveVertex(2, 0, 0);
+      curveVertex(-5, 16 * -1, 0);
+      curveVertex(-7, 0, 0);
+      curveVertex(-39, 0, 0);
+      endShape(CLOSE);
+      popMatrix();
+    }
+  
+    for (float i = 0; i < TWO_PI; i += TWO_PI / 6) {
+      pushMatrix();
+      translate(-39, -55, 4);
+      rotateZ(i);
+      beginShape();
+      fill(226, 208, 165);
+      noStroke();
+      curveVertex(-17, 0, 0);
+      curveVertex(5, 0, 0);
+      curveVertex(7, 16 * -1, 0);
+      curveVertex(-7, 0, 0);
+      curveVertex(-39, 0, 0);
+      endShape(CLOSE);
+      popMatrix();
+    }
+  
+    fill(194, 163, 103);
+    stroke(196, 147, 83);
+    strokeWeight(4);
+    box(200, 250, 5);
+    popMatrix();
+  
+    // Sampul buku belakang
+    for (float i = 0; i < TWO_PI; i += TWO_PI / 6) {
+      pushMatrix();
+      translate(-49, 34, -12);
+      rotateZ(i);
+      beginShape();
+      fill(219, 206, 179);
+      noStroke();
+      curveVertex(36, 0, 0);
+      curveVertex(5, -6, 0);
+      curveVertex(-8, 16 * -1, 0);
+      curveVertex(-7, 0, 0);
+      curveVertex(-147, -33, 0);
+      endShape(CLOSE);
+      popMatrix();
+    }
+  
+    for (float i = 0; i < TWO_PI; i += TWO_PI / 6) {
+      pushMatrix();
+      translate(-7, 60, -12);
+      rotateZ(i);
+      beginShape();
+      fill(242, 206, 143);
+      noStroke();
+      curveVertex(36, 0, 0);
+      curveVertex(5, -6, 0);
+      curveVertex(-8, 16 * -1, 0);
+      curveVertex(-7, 0, 0);
+      curveVertex(-146, 7, 0);
+      endShape(CLOSE);
+      popMatrix();
+    }
+  
+    for (float i = 0; i < TWO_PI; i += TWO_PI / 6) {
+      pushMatrix();
+      translate(51, 15, -12);
+      rotateZ(i);
+      beginShape();
+      fill(220, 189, 135);
+      noStroke();
+      curveVertex(36, 1, 0);
+      curveVertex(5, -14, 0);
+      curveVertex(-2, 0 * -1, 0);
+      curveVertex(-7, 0, 0);
+      curveVertex(-131, -33, 0);
+      endShape(CLOSE);
+      popMatrix();
+    }
+  
+    for (float i = 0; i < TWO_PI; i += TWO_PI / 6) {
+      pushMatrix();
+      translate(41, -65, -12);
+      rotateZ(i);
+      beginShape();
+      fill(209, 185, 121);
+      noStroke();
+      curveVertex(36, 4, 0);
+      curveVertex(5, -8, 0);
+      curveVertex(-8, 16 * 0, 0);
+      curveVertex(-7, -30, 0);
+      curveVertex(-142, -33, 0);
+      endShape(CLOSE);
+      popMatrix();
+    }
+  
+    for (float i = 0; i < TWO_PI; i += TWO_PI / 6) {
+      pushMatrix();
+      translate(-7, -57, -12);
+      rotateZ(i);
+      beginShape();
+      fill(229, 189, 81);
+      noStroke();
+      curveVertex(36, 0, 0);
+      curveVertex(5, 5, 0);
+      curveVertex(-8, 15 * -1, 0);
+      curveVertex(-7, 0, 0);
+      curveVertex(-142, -141, 0);
+      endShape(CLOSE);
+      popMatrix();
+    }
+  
+    for (float i = 0; i < TWO_PI; i += TWO_PI / 6) {
+      pushMatrix();
+      translate(-49, 78, -12);
+      rotateZ(i);
+      beginShape();
+      fill(229, 189, 81);
+      noStroke();
+      curveVertex(36, 0, 0);
+      curveVertex(5, 5, 0);
+      curveVertex(-8, 15 * -1, 0);
+      curveVertex(-7, 0, 0);
+      curveVertex(-142, -141, 0);
+      endShape(CLOSE);
+      popMatrix();
+    }
+  
+    for (float i = 0; i < TWO_PI; i += TWO_PI / 6) {
+      pushMatrix();
+      translate(50, 65, -12);
+      rotateZ(i);
+      beginShape();
+      fill(140, 105, 20);
+      noStroke();
+      curveVertex(36, 0, 0);
+      curveVertex(5, 21, 0);
+      curveVertex(-8, 16 * -1, 0);
+      curveVertex(-7, 0, 0);
+      curveVertex(-142, -33, 0);
+      endShape(CLOSE);
+      popMatrix();
+    }
+  
+    for (float i = 0; i < TWO_PI; i += TWO_PI / 6) {
+      pushMatrix();
+      translate(-47, -68, -12);
+      rotateZ(i);
+      beginShape();
+      fill(209, 197, 167);
+      noStroke();
+      curveVertex(36, 0, 0);
+      curveVertex(5, 22, 0);
+      curveVertex(-8, 16 * -1, 0);
+      curveVertex(-7, 0, 0);
+      curveVertex(-142, -17, 0);
+      endShape(CLOSE);
+      popMatrix();
+    }
+  
+    for (float i = 0; i < TWO_PI; i += TWO_PI / 6) {
+      pushMatrix();
+      translate(-50, -23, -12);
+      rotateZ(i);
+      beginShape();
+      fill(140, 105, 20);
+      noStroke();
+      curveVertex(36, 0, 0);
+      curveVertex(5, -6, 0);
+      curveVertex(-8, 16 * -1, 0);
+      curveVertex(-7, 0, 0);
+      curveVertex(-142, 7, 0);
+      endShape(CLOSE);
+      popMatrix();
+    }
+  
+    pushMatrix();
+    translate(0, 0);
+    for (float i = 0; i < TWO_PI; i += TWO_PI / 6) {
+      pushMatrix();
+      translate(-1, -2, 5);
+      rotateZ(i);
+      beginShape();
+      fill(150, 112, 30);
+      noStroke();
+      curveVertex(8, -24, -4);
+      curveVertex(17, 0, -9);
+      curveVertex(25, 20 * 2, -15);
+      curveVertex(-3, 0, -11);
+      curveVertex(-20, 0, 135);
+      endShape(CLOSE);
+      popMatrix();
+    }
+    box(200, 250, 7);
     popMatrix();
   
     // Halaman buku
@@ -1083,16 +1368,18 @@ class book extends item {
     fill(194, 163, 103);
     stroke(196, 147, 83);
     strokeWeight(4);
-    box(100, 150, 10);
+    box(200, 250, 10);
     popMatrix();
-
-    popMatrix();
-  }
-
-  void stats() {
+    }
   
+  void stats() {
+    text("Tipe: Quest Item", 0, 0);
   }
 
   void desc() {
+    text("Sebuah buku ajaib yang berisikan\n"+
+      "mantra-mantra yang dapat mempengaruhi\n"+
+      "dunia.\n\n"+
+      "Untuk mendapatkan buku ini sangatlah sulit.", 0, 0);
   }
 }
