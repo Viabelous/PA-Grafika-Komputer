@@ -3,7 +3,7 @@ abstract class item {
   int y;
   String name;
   String rarity; //{air, common, uncommon, rare, unique, myth}
-  boolean consumable = false;
+  boolean countable = false;
   boolean discardable = true;
   boolean observable = false;
 
@@ -52,7 +52,7 @@ class places {
     fill(71, 78, 118);
     square(x, y, size);
     items[itemIndex].thumbnail();
-    if (items[itemIndex].consumable == true) {
+    if (items[itemIndex].countable == true) {
       if (((countable)items[itemIndex]).quantity != 1) {
         textSize(20);
         fill(255);
@@ -75,7 +75,7 @@ abstract class countable extends item {
   countable(int xI, int yI, String nameI,
     String rarityI, int quanI) {
     super(xI, yI, nameI, rarityI);
-    super.consumable = true;
+    super.countable = true;
     quantity = quanI;
   }
 }
@@ -251,6 +251,7 @@ item addItem(int id, int ids, int quan) {
   if (id == 19) return new firefly(slots[ids].x, slots[ids].y, quan);
   if (id == 20) return new goldOilLamp(slots[ids].x, slots[ids].y, quan);
   if (id == 21) return new letter(slots[ids].x, slots[ids].y);
+  if (id == 22) return new panamaBerry(slots[ids].x, slots[ids].y, quan);
   return null;
 }
 

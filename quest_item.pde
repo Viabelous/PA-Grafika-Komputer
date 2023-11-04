@@ -279,7 +279,7 @@ class bsoj extends item {
       "milik Dewi Keadilan, Themis.\n\n"+
       "Bilahnya yang mengkilap namun retak itu\n"+
       "seakan berbisik:\n"+
-      "\"Keadilan telah disirnakan oleh desersi\"", 0, 0);
+      "\"Keadilan telah disirnakan oleh desersi\".", 0, 0);
   }
 }
 

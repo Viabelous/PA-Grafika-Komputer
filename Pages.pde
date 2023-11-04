@@ -163,7 +163,7 @@ class inventory extends pages{
         if (slot.getPos()) {
           int idxItem = slots[slotMSelected].itemIndex; // ambil index item sekarang
           boolean calculate = false;
-          if(items[idxItem].consumable)
+          if(items[idxItem].countable)
             if(slot != slots[slotMSelected])
               if(items[slot.itemIndex].getClass() == items[idxItem].getClass())
                 calculate = true;
@@ -226,7 +226,7 @@ class inventory extends pages{
     }
     
     if (key == 'q' || key == 't') {
-      if(items[slots[idxSelected].itemIndex].consumable == true &&
+      if(items[slots[idxSelected].itemIndex].countable == true &&
          key == 'q'){
             if(((countable)items[slots[idxSelected].itemIndex]).foodItem){
               

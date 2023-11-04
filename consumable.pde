@@ -71,7 +71,7 @@ class carrot extends countable {
       "menyelamatkanmu di masa-masa kritis\n\n"+
       "Sering ditemukan di beberapa tempat\n"+
       "seperti perkebunan atau di chest yang\n"+
-      "tersembunyi di rumah2", 0, 0);
+      "tersembunyi di rumah-rumah.", 0, 0);
   }
 }
 
@@ -450,6 +450,148 @@ class healPotion extends countable {
       "potioneer-potioneer berbakat di desa\n"+
       "barat. Diimport ke berbagai stall di berbagai\n"+
       "negara di penjuru benua Elzern.", 0, 0);
+    popMatrix();
+  }
+}
+
+
+
+
+class panamaBerry extends countable {
+  panamaBerry(int xI, int yI, int quanI) {
+    super(xI, yI,
+      "Panama Berry",
+      "common", quanI);
+    foodItem = true;
+  }
+
+  void preview() {
+    pushMatrix();
+    scale(0.4);
+    build();
+    popMatrix();
+  };
+
+  void thumbnail() {
+    pushMatrix();
+    translate(x-50, y-50);
+    scale(0.2);
+    build();
+    popMatrix();
+  }
+
+  void build() {
+    pushMatrix();
+
+    // Batang
+    noFill();
+    stroke(#937547);
+    strokeWeight(21);
+    curve(-694, 885, 111, 162, 450, 458, 432, 996);
+    strokeWeight(8);
+    curve(117, 590, 310, 197, 337, 290, 297, 246);
+    curve(435, 240, 275, 187, 256, 358, 279, 295);
+    curve(100, 372, 210, 145, 221, 253, 27, 959);
+    curve(179, 403, 158, 159, 126, 339, 249, 750);
+    curve(34, 54, 136, 103, 167, 143, 227, 209);
+    curve(82, 163, 95, 143, 124, 155, 69, 154);
+    curve(218, 223, 212, 161, 200, 178, 241, 200);
+    curve(246, 74, 268, 170, 285, 112, 437, 32);
+    curve(329, 343, 355, 327, 377, 310, 461, 266);
+    curve(404, 340, 390, 311, 410, 262, 531, 206);
+    
+    // line Batang
+    strokeWeight(2);
+    stroke(0);
+    line(440, 462, 460, 454);
+    curve(743, 1176, 460, 454, 412, 266, 718, 204);
+    curve(247, 359, 406, 264, 386, 292, 375, 484);
+    curve(704, 1127, 440, 462, 376, 315, 305, 205);
+    curve(309, 388, 353, 335, 383, 310, 393, 313);
+    curve(242, 398, 346, 329, 379, 302, 440, 267);
+    curve(219, 537, 315, 198, 331, 288, 244, 269);
+    curve(146, 595, 311, 193, 340, 291, 258, 340);
+    curve(228, 85, 344, 264, 372, 307, 368, 301);
+    curve(376, 282, 344, 231, 385, 292, 345, 269);
+    curve(218, 153, 273, 166, 334, 220, 421, 356);
+    curve(283, 114, 273, 166, 284, 118, 360, 65);
+    curve(313, 282, 265, 161, 278, 113, 223, 177);
+    curve(218, 185, 275, 192, 335, 252, 412, 363);
+    curve(358, 280, 275, 192, 259, 350, 314, 638);
+    curve(400, 233, 269, 186, 252, 348, 290, 177);
+    curve(79, 391, 217, 143, 219, 246, 121, 554);
+    curve(124, 357, 210, 140, 228, 244, 45, 929);
+    curve(318, 216, 269, 186, 240, 171, 166, 152);
+    curve(375, 258, 230, 166, 204, 176, 239, 130);
+    curve(199, 169, 201, 160, 196, 172, 205, 201);
+    curve(236, 130, 264, 160, 239, 149, 183, 137);
+    curve(318, 216, 269, 186, 240, 171, 166, 152);
+    curve(409, 211, 231, 146, 169, 139, 295, 134);
+    curve(289, 216, 201, 160, 115, 172, 168, 187);
+    curve(237, 130, 157, 160, 129, 327, 198, 630);
+    curve(192, 502, 120, 328, 146, 163, 242, 152);
+    curve(47, 87, 141, 102, 173, 148, 178, 111);
+    curve(65, 98, 135, 107, 163, 151, 169, 187);
+    
+    curve(237, 129, 158, 140, 122, 148, 103, 164);
+    curve(141, 156, 122, 148, 95, 139, 37, 152);
+    curve(149, 186, 110, 152, 95, 146, 79, 136);
+    line(110, 153, 115, 171);
+    
+    // Daun
+    strokeWeight(3);
+    stroke(0);
+    fill(#3DB760);
+    bezier(51, 41, 129, 204, 208, 37, 51, 41);
+    bezier(28, 145, 87, 228, 145, 72, 28, 145);
+    bezier(380, 48, 353, 223, 144, 52, 380, 48);
+    bezier(173, 236, 275, 185, 144, 125, 173, 236);
+    bezier(478, 170, 514, 358, 267, 241, 478, 170);
+    bezier(297, 365, 407, 367, 339, 252, 297, 365);
+    
+    // Buah
+    stroke(0);
+    fill(0);
+    circle(127, 377, 20);
+    circle(221, 309, 18);
+    circle(256, 405, 6);
+    circle(335, 327, 16);
+    
+    rectMode(CORNER);
+    strokeWeight(2);
+    fill(213, 62, 62);
+    rect(99, 326, 55, 58, 30);
+    fill(213, 74, 63);
+    rect(312, 283, 48, 50, 30);
+    fill(230, 98, 57);
+    rect(189, 244, 67, 69, 34);
+    fill(213, 133, 63);
+    rect(228, 348, 55, 58, 30);
+
+    popMatrix();
+    strokeWeight(1);
+    stroke(0);
+    fill(0);
+  }
+
+
+
+  void stats() {
+    text(icon("heal", 0, 0)+
+      "HP +5\n\n"+
+      "Dapat langsung dimakan atau dijadikan\n"+
+      "bahan untuk memasak.", 0, 0);
+  }
+
+
+
+  void desc() {
+    pushMatrix();
+    translate(0, 0);
+    text("Buah yang sedikit manis dan dapat\n"+
+      "berbuah di mana-mana di sepanjang jalan\n"+
+      "benua Elzern.\n\n"+
+      "Anak-anak sangat menyukai buah ini.", 0, 0);
     popMatrix();
   }
 }
