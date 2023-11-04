@@ -71,7 +71,7 @@ class carrot extends countable {
       "menyelamatkanmu di masa-masa kritis\n\n"+
       "Sering ditemukan di beberapa tempat\n"+
       "seperti perkebunan atau di chest yang\n"+
-      "tersembunyi di rumah-rumah.", 0, 0);
+      "tersembunyi di goa maupun di hutan", 0, 0);
   }
 }
 

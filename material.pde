@@ -612,13 +612,13 @@ class letter extends item {
 
   void preview() {
     pushMatrix();
-    scale(0.4);
+    scale(0.6);
     stroke(0);
 
     rectMode(CENTER);
 
-    int coorX = 250;
-    int coorY = 250;
+    int coorX = 165;
+    int coorY = 170;
 
     fill(#A3A6AF);
     strokeWeight(5);
@@ -664,12 +664,12 @@ class letter extends item {
   void thumbnail() {
     pushMatrix();
     translate(x-50, y-50);
-    scale(0.2);
+    scale(0.3);
     stroke(0);
     rectMode(CENTER);
 
-    int coorX = 250;
-    int coorY = 250;
+    int coorX = 166;
+    int coorY = 170;
 
     fill(#A3A6AF);
     strokeWeight(5);
@@ -714,21 +714,20 @@ class letter extends item {
 
 
   void stats() {
-    text("Dapat digunakan sebagai bahan untuk\n"+
-      "membuat material, peralatan, ataupun\n"+
-      "atribut.", 0, 0);
+    text("", 0, 0);
   }
 
 
   void desc() {
     pushMatrix();
     textSize(18);
-    text("Surat yang dibuat untuk para petualang.\n"+
-      "Di wilayah timur, kumbang ini dipercaya\n"+
-      "adalah jiwa yang tersesat, sehingga mereka\n"+
-      "mulai mengadakan festival penangkapan yang\n"+
-      "kemudian bersamaan akan dilepaskan di padang\n"+
-      "rumput luas.", 0, 0);
+    text("Surat ini adalah pesan yang ditujukan kepada\n"+
+      "para petualang yang berani menjelajahi wilayah\n"+
+      "timur.\n\n"+
+      "Dalam surat ini terdapat informasi yang\n"+
+      "mengundang rasa ingin tahu dan misteri, serta\n"+
+      "mungkin berisi petunjuk atauperjalanan yang\n"+
+      "menarik.", 0, 0);
     popMatrix();
   }
 }
