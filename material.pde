@@ -1,3 +1,4 @@
+// ========================================= SQUAMA MANITIS ========================================= //
 class squamaManitis extends countable {
   squamaManitis(int xI, int yI, int quanI) {
     super(xI, yI,
@@ -99,6 +100,11 @@ class squamaManitis extends countable {
   }
 }
 
+
+
+
+
+// ========================================= BOMBBY ========================================= //
 class bombby extends countable {
   bombby(int xI, int yI, int quan) {
     super(xI, yI,
@@ -157,28 +163,13 @@ class bombby extends countable {
     fill(0);
   }
 
-
-  // buat fungsi di bawah ini jika dan hanya jika
-  // benda memiliki mode observe (3D)
-  void observe() {
-    pushMatrix();
-
-    // ... kodingan untuk tampilan 3D
-
-    popMatrix();
-  }
-
-
-
   void stats() {
-
-    // ... kodingan untuk teks stat
+    text(icon("atk", 0, 0) + "ATK 100", 0, 0);
   }
 
 
 
   void desc() {
-
     pushMatrix();
     translate(0, -20);
     textSize(18);
@@ -195,6 +186,10 @@ class bombby extends countable {
 }
 
 
+
+
+
+// ========================================= SAPPHIRE CHUNK ========================================= //
 class sapphireChunk extends countable {
   sapphireChunk(int xI, int yI, int quanI) {
     super(xI, yI,
@@ -426,6 +421,8 @@ class sapphireChunk extends countable {
 
 
 
+
+// ========================================= FIREFLY ========================================= //
 class firefly extends countable {
   int rotA = 0;
   int rotB = 0;
@@ -733,6 +730,10 @@ class letter extends item {
 }
 
 
+
+
+
+// ========================================= GOLD OIL LAMP ========================================= //
 class goldOilLamp extends countable {
   goldOilLamp(int xI, int yI, int quanI) {
     super(xI, yI,
@@ -1044,5 +1045,125 @@ class goldOilLamp extends countable {
       "\"Dapat digantung ataupun diletakkan\n"+
       "dimana saja.\"", 0, -40);
     popMatrix();
+  }
+}
+
+
+class pinkPrism extends countable {
+  pinkPrism(int xI, int yI, int quanI) {
+    super(xI, yI,
+      "Pink Prism",
+      "uncommon", quanI);
+  }
+
+  void preview() {
+    pushMatrix();
+    scale(0.4);
+    build();
+    popMatrix();
+  };
+
+  void thumbnail() {
+    pushMatrix();
+    translate(x-50, y-50);
+    scale(0.2);
+    build();
+    popMatrix();
+  }
+
+  void build() {
+    pushMatrix();
+
+    stroke(0);
+    strokeWeight(4);
+    scale(4.1);
+    translate(-138, -96);
+    stroke(0);
+  
+    strokeWeight(2);
+    fill(224, 42, 226);
+    beginShape();
+    vertex(169, 110);
+    vertex(229, 110);
+    vertex(248, 150);
+    vertex(200, 206);
+    vertex(149, 150);
+    endShape(CLOSE);
+  
+    fill(230, 81, 239);
+    noStroke();
+    beginShape();
+    vertex(170, 111);
+    vertex(229, 111);
+    vertex(245, 150);
+    vertex(201, 146);
+    vertex(147, 150);
+    vertex(151, 150);
+    endShape(CLOSE);
+  
+    fill(247, 60, 249);
+    noStroke();
+    beginShape();
+    vertex(169, 110);
+    vertex(229, 110);
+    vertex(248, 150);
+    vertex(200, 206);
+    endShape(CLOSE);
+    
+    fill(228, 86, 233);
+    noStroke();
+    beginShape();
+    vertex(226, 110);
+    vertex(229, 110);
+    vertex(248, 150);
+    vertex(200, 206);
+    endShape(CLOSE);
+    
+    fill(216, 71, 225);
+    noStroke();
+    beginShape();
+    vertex(218, 146);
+    vertex(229, 148);
+    vertex(248, 150);
+    vertex(200, 206);
+    endShape(CLOSE);
+    
+    fill(213, 64, 222);
+    noStroke();
+    beginShape();
+    vertex(180, 148);
+    vertex(169, 111);
+    vertex(225, 111);
+    vertex(217, 145);
+    vertex(218, 147);
+    endShape(CLOSE);
+
+    popMatrix();
+    strokeWeight(1);
+    stroke(0);
+    fill(0);
+  }
+
+
+  // buat fungsi di bawah ini jika dan hanya jika
+  // benda memiliki mode observe (3D)
+  void observe() {
+    pushMatrix();
+
+    // ... kodingan untuk tampilan 3D
+
+    popMatrix();
+  }
+
+
+
+  void stats() {
+   
+  }
+
+
+
+  void desc() {
+
   }
 }

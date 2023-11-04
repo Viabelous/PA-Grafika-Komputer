@@ -1,3 +1,4 @@
+// ========================================= NIGHTWALKERS SIGHT ========================================= //
 class nightwalkersSight extends item {
   int gearRot = 0;
   int lensClr = 0;
@@ -273,14 +274,13 @@ class nightwalkersSight extends item {
          "tujuan dibuatnya topeng ini sudah tercapai.", 0, 0);
     popMatrix();
   }
-
-
-
-  
 }
 
 
 
+
+
+// ========================================= EMERALD WINGS ========================================= //
 class emeraldWings extends item {
   
   float randX = 250;

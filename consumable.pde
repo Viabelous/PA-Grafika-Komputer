@@ -1,3 +1,4 @@
+// ========================================= CARROT ========================================= //
 class carrot extends countable {
   carrot(int xI, int yI, int quanI) {
     super(xI, yI,
@@ -75,6 +76,11 @@ class carrot extends countable {
   }
 }
 
+
+
+
+
+// ========================================= RAW MEAT ========================================= //
 class rawMeat extends countable {
   rawMeat(int xI, int yI, int quan) {
     super(xI, yI,
@@ -192,8 +198,7 @@ class rawMeat extends countable {
 
 
   void stats() {
-
-    // ... kodingan untuk teks stat
+    text(icon("heal", 0, 0) + "HP +70", 0, 0);
   }
 
 
@@ -211,6 +216,10 @@ class rawMeat extends countable {
 }
 
 
+
+
+
+// ========================================= HAPPY CLLATE ========================================= //
 class happyCllate extends countable {
   happyCllate(int xI, int yI, int quan) {
     super(xI, yI,
@@ -261,9 +270,6 @@ class happyCllate extends countable {
     triangle(83, 150, 97, 128, 131, 154);
     triangle(121, 154, 161, 116, 160, 150);
 
-
-
-
     popMatrix();
     strokeWeight(1);
     stroke(0);
@@ -284,19 +290,25 @@ class happyCllate extends countable {
 
 
   void stats() {
-
-    // ... kodingan untuk teks stat
+    text(icon("heal", 0, 0) + "HP +30", 0, 0);
   }
 
 
-
   void desc() {
+    text("Sumber energi dalam situasi di mana\n"+
+    "harus menghindari kematian atau kelelahan.\n\n"+
+    "Meskipun hanya memberi heal yang\n"+
+    "sedikit, namun sangat mudah untuk \n"+
+    "mendapatkannya.", 0, 0);
+    
   }
 }
 
 
 
 
+
+// ========================================= HEAL POTION ========================================= //
 class healPotion extends countable {
   healPotion(int xI, int yI, int quanI) {
     super(xI, yI,
@@ -457,6 +469,8 @@ class healPotion extends countable {
 
 
 
+
+// ========================================= PANAMA BERRY ========================================= //
 class panamaBerry extends countable {
   panamaBerry(int xI, int yI, int quanI) {
     super(xI, yI,

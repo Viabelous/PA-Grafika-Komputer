@@ -7,6 +7,7 @@ abstract class pages{
   abstract void keyPressed();
 }
 
+// ========================================= INVENTORY ========================================= //
 class inventory extends pages{
   
   void build(){
@@ -175,13 +176,19 @@ class inventory extends pages{
               items[selected].x = slot.x;
               items[selected].y = slot.y;
               slot.itemIndex = idxItem;
-              break;
           } else{
-            ((countable)items[slot.itemIndex]).quantity +=
-            ((countable)items[selected]).quantity;
-            items[idxItem] = addItem(0, slotMSelected);
-            break;
+            if(((countable)items[slot.itemIndex]).quantity +
+               ((countable)items[selected]).quantity <= 9999){
+              ((countable)items[slot.itemIndex]).quantity +=
+              ((countable)items[selected]).quantity;
+              items[idxItem] = addItem(0, slotMSelected);
+            } else{
+              ((countable)items[selected]).quantity -= 
+              (9999 - ((countable)items[slot.itemIndex]).quantity);
+              ((countable)items[slot.itemIndex]).quantity = 9999;
+            }
           }
+          break;
         } else{
           items[selected].x = slots[slotMSelected].x;
           items[selected].y = slots[slotMSelected].y;
@@ -255,6 +262,7 @@ class inventory extends pages{
 
 
 
+// ========================================= OBSERVE ========================================= //
 class observe extends pages{
   void build(){
     background(0);
@@ -396,7 +404,7 @@ class observe extends pages{
 
 
 
-
+// ========================================= COMMAND ========================================= //
 class command extends pages{
   
   void build(){
@@ -491,29 +499,26 @@ class command extends pages{
                 
                 try{
                   int itemId = Integer.parseInt(splittedInp[1]);
-                  if(splittedInp.length == 2){
-                    int putInto = findEmptySlot();
-                    if(putInto == -1){
-                      alert(3);
-                      return;
-                    } else{
-                      items[slots[putInto].itemIndex] = addItem(itemId, putInto);
-                    }
-                    logs += "> Item " + itemId +
-                    " sebanyak 1 berhasil ditambahkan\n";
+                  int quan = splittedInp.length == 3 ? 
+                    Integer.parseInt(splittedInp[2]) : 1;
+                  int putInto = findEmptySlot();
+                  
+                  if(quan <= 0 || addItem(itemId, putInto).countable == false){
+                    quan = 1;
+                  } else if(quan > 9999){
+                    quan = 9999;
                   }
-                  else if(splittedInp.length == 3){
-                    int quan = Integer.parseInt(splittedInp[2]);
-                    int putInto = findEmptySlot();
-                    if(putInto == -1){
-                      alert(3);
-                      return;
-                    } else{
-                      items[slots[putInto].itemIndex] = addItem(itemId, putInto, quan);
-                    }
+                  
+                  if(addItem(itemId, putInto) == null){
+                    alert(3);
+                  }
+                  else if(putInto == -1){
+                    alert(4);
+                  } else{
+                    items[slots[putInto].itemIndex] = addItem(itemId, putInto, quan);
                     logs += "> Item " + itemId + " sebanyak " + quan +
                     " berhasil ditambahkan\n";
-                  }  
+                  }
                 } catch (Exception e){
                     alert(0);
                     alert(2);
