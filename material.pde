@@ -171,14 +171,12 @@ class bombby extends countable {
 
 
   void stats() {
-
-    // ... kodingan untuk teks stat
+    text(icon("atk", 0, 0) + "ATK 100", 0, 0);
   }
 
 
 
   void desc() {
-
     pushMatrix();
     translate(0, -20);
     textSize(18);

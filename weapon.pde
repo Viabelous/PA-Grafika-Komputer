@@ -252,16 +252,13 @@ class mammonsBlade extends item {
 
 
   void stats(){
-
-    // ... kodingan untuk teks stat
-
+     text(icon("atk", 0, 0) + "ATK 40", 0, 0);
   }
 
 
 
   void desc(){
-
-        translate(0, -10);
+    translate(0, -10);
     text("Pedang ini didapatkan di kedalaman\n"+
          "Dungeon of Avarice.\n\n"+
          "Terbuat dari iron dan emas,\n"+
@@ -367,24 +364,21 @@ class stoneAxe extends item { // untuk item dengan jumlah, pakai consumable keti
 
 
   void stats(){
-
-    // ... kodingan untuk teks stat
-
+     text(icon("atk", 0, 0) + "ATK 35", 0, 0);
   }
 
 
 
   void desc(){
-    
         pushMatrix();
         translate(1,-27);
-    text("Kapak yang terbuat dengan batu\n"+
-         "dan memiliki gaggang kayu.\n\n"+
-         "Biasa digunakan oleh pemula karena mudah\n"+
-         "dibuat dan bahannya mudah didapat.\n"+
-         "Dikatakan oleh penjual, kapak ini dapat\n"+
-         "memberikan keberuntungan\n"+
-         "(Walau kenyataannya tidak demikian). ", 0, 0);
-         popMatrix();
+        text("Kapak yang terbuat dengan batu\n"+
+             "dan memiliki gaggang kayu.\n\n"+
+             "Biasa digunakan oleh pemula karena mudah\n"+
+             "dibuat dan bahannya mudah didapat.\n"+
+             "Dikatakan oleh penjual, kapak ini dapat\n"+
+             "memberikan keberuntungan\n"+
+             "(Walau kenyataannya tidak demikian). ", 0, 0);
+             popMatrix();
   }
 }
