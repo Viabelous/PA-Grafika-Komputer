@@ -75,7 +75,8 @@ item[] items = {
   addItem(19, 18, 5), addItem(0, 19), addItem(0, 20),
   addItem(0, 21), addItem(0, 22), addItem(0, 23),
   addItem(0, 24), addItem(0, 25), addItem(0, 26),
-  addItem(0, 27), addItem(0, 28), addItem(0, 29)
+  addItem(0, 27), addItem(0, 28), addItem(0, 29),
+  addItem(20, 19)
 };
 
 void mouseClicked() { hal.mouseClicked(); }

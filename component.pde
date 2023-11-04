@@ -143,19 +143,18 @@ String icon(String namaIcon, int x, int y) {
     rect(iconX + 29, iconY + 23, 40, 15); // Membuat tanda plus vertikal
 
     popMatrix();
-    
   } else if (namaIcon == "atk") {
     pushMatrix();
     scale(0.08);
     rectMode(CORNER);
-    
+
     float centerX = 220; // Koordinat X untuk pusat pedang
     float centerY = 250; // Koordinat Y untuk pusat pedang
-    
+
     translate(centerX, centerY);
     rotate(radians(45));
     translate(-centerX-200, -centerY+50);
-    
+
     // pedang
     beginShape();
     vertex(centerX - 12, centerY - 250);
@@ -204,26 +203,23 @@ void keyNav(boolean con, int tr, int fs) {
 
 
 
-void alert(int num){
-  if(num == 0){
+void alert(int num) {
+  if (num == 0) {
     logs += "> ERROR: Perintah salah\n";
-  }
-  else if(num == 1){
+  } else if (num == 1) {
     logs += "> ERROR: Perintah tidak dikenali\n";
-  }
-  else if(num == 2){
+  } else if (num == 2) {
     logs += "> HINT: Sesuaikan '/add {item_id} {quantity<opsional>}'\n";
-  }
-  else if(num == 3){
+  } else if (num == 3) {
     logs += "> ERROR: Inventory penuh'\n";
   }
 }
 
 
 
-int findEmptySlot(){
-  for(int i = 0; i <= slots.length; i++){
-    if(items[slots[i].itemIndex].getClass() == new air(0, 0).getClass()){
+int findEmptySlot() {
+  for (int i = 0; i <= slots.length; i++) {
+    if (items[slots[i].itemIndex].getClass() == new air(0, 0).getClass()) {
       return i;
     }
   }
@@ -253,6 +249,7 @@ item addItem(int id, int ids, int quan) {
   if (id == 17) return new healPotion(slots[ids].x, slots[ids].y, quan);
   if (id == 18) return new sapphireChunk(slots[ids].x, slots[ids].y, quan);
   if (id == 19) return new firefly(slots[ids].x, slots[ids].y, quan);
+  if (id == 20) return new letter(slots[ids].x, slots[ids].y);
   return null;
 }
 

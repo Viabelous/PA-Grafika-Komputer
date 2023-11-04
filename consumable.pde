@@ -3,7 +3,7 @@ class carrot extends countable {
     super(xI, yI,
       "Carrot",
       "common", quanI);
-      foodItem = true;
+    foodItem = true;
   }
 
   void preview() {
@@ -25,7 +25,7 @@ class carrot extends countable {
     float x = 250;
     float y = 90;
     float size = 200;
-    
+
     stroke(0);
     strokeWeight(2);
 
@@ -56,7 +56,7 @@ class carrot extends countable {
     bezierVertex(x - size + 10, y, x - size, y + size/2, x, y + size + y + 50);
     bezierVertex(x + size - 80, y, x + size/2, y + 10, x, y);
     endShape(CLOSE);
-    
+
     fill(#EE883A);
     ellipse(x - size/5, y + size/2, x - 100, y / 2);
   }
@@ -68,7 +68,10 @@ class carrot extends countable {
 
   void desc() {
     text("Bahkan sebuah wortel akan dapat\n"+
-      "menyelamatkanmu di masa-masa kritis", 0, 0);
+      "menyelamatkanmu di masa-masa kritis\n\n"+
+      "Sering ditemukan di beberapa tempat\n"+
+      "seperti perkebunan atau di chest yang\n"+
+      "tersembunyi di rumah2", 0, 0);
   }
 }
 
@@ -77,7 +80,7 @@ class rawMeat extends countable {
     super(xI, yI,
       "Raw Meat",
       "common", quan);
-      foodItem = true;
+    foodItem = true;
   }
 
   void preview() {
@@ -199,10 +202,10 @@ class rawMeat extends countable {
     pushMatrix();
     translate(0, -10);
     text("Sumber nutrisi\n"+
-         "atau makanan yang dapat mengembalikan,\n"+
-         "energi, kesehatan, atau stamina.\n\n"+
-         "ini sangat penting dalam situasi di mana\n"+
-         "harus menghindari kematian atau kelelahan.", 0, 0);
+      "atau makanan yang dapat mengembalikan,\n"+
+      "energi, kesehatan, atau stamina.\n\n"+
+      "ini sangat penting dalam situasi di mana\n"+
+      "harus menghindari kematian atau kelelahan.", 0, 0);
     popMatrix();
   }
 }
@@ -213,7 +216,7 @@ class happyCllate extends countable {
     super(xI, yI,
       "Happy Cllate",
       "common", quan);
-      foodItem = true;
+    foodItem = true;
   }
 
   void preview() {
@@ -233,13 +236,13 @@ class happyCllate extends countable {
 
   void build() {
     pushMatrix();
- 
+
     scale(3.9);
-    translate(250,250);
+    translate(250, 250);
     rotate(radians(45));
-    translate(-388,-147);
+    translate(-388, -147);
     rectMode(CORNER);
-  
+
     stroke(0);
     strokeWeight(2);
     fill(132, 69, 19);
@@ -288,144 +291,142 @@ class happyCllate extends countable {
 
 
   void desc() {
-
-
   }
 }
 
 
 
 
-class healPotion extends countable { 
-  healPotion(int xI, int yI, int quanI){
+class healPotion extends countable {
+  healPotion(int xI, int yI, int quanI) {
     super(xI, yI,
-    "Heal Potion",
-    "uncommon", quanI);
+      "Heal Potion",
+      "uncommon", quanI);
     foodItem = true;
   }
-  
-  void preview(){
+
+  void preview() {
     pushMatrix();
     scale(0.4);
     build();
     popMatrix();
   };
-  
-  void thumbnail(){
+
+  void thumbnail() {
     pushMatrix();
     translate(x-50, y-50);
     scale(0.2);
     build();
     popMatrix();
   }
-  
-  void build(){
+
+  void build() {
     pushMatrix();
-      translate(45, -5);
-      scale(0.9);
-      
-      //potion
-      noStroke();
-      fill(121, 11, 0);
-      quad(283, 170, 392, 201, 142, 452, 50, 362);
-      
-      pushMatrix();
-      noStroke();
-      translate(275, 61);
-      rotate(PI/4);
-      arc(118, 371, 130, 130, 0, PI/1);
-      popMatrix();
-      
-      //penutup potion bagian tengah
-      noStroke();
-      fill(108, 56, 0);
-      quad(388, 82, 444, 142, 387, 182, 346, 136);
-      
-      //penutup potion bagian atas
-      pushMatrix();
-      translate(0, 0);
-      rotate(PI/4);
-      noStroke();
-      fill(137, 73, 4);
-      ellipse(374, -216, 78, 21);
-      popMatrix();
-      
-      //penutup potion bagian bawah
-      pushMatrix();
-      translate(0, 0);
-      rotate(PI/4);
-      fill(108, 56, 0);
-      ellipse(373, -147, 64, 21);
-      popMatrix();
-      
-      //botol potion bagian tengah 
-      fill(255, 255, 255, 115);
-      quad(354, 114, 416, 175, 142, 453, 50, 360);
-      
-      //botol potion bagian bawah
-      pushMatrix();
-      translate(275, 61);
-      rotate(PI/4);
-      arc(118, 371, 130, 130, 0, PI/1);
-      popMatrix();
-      
-      //pembatas tutup potion
-      noStroke();
-      fill(255, 255, 255, 90);
-      quad(343, 114, 414, 187, 407, 194, 336, 120);
-      
-      // ----------------- outline ----------------
-      //penutup potion
-      pushMatrix();
-      translate(0, 0);
-      rotate(PI/4);
-      noFill();
-      stroke(0);
-      arc(373, -213, 81, 27, -3, PI/117);
-      popMatrix();
-      
-      //botol potion bagian bawah
-      pushMatrix();
-      translate(275, 61);
-      rotate(PI/4);
-      arc(118, 371, 130, 130, 0, PI/1);
-      popMatrix();
-      
-      //sisi kiri potion
-      line(49, 362, 341, 125);
-      //sisi kanan potion
-      line(141, 455, 402, 189);
-      
-      //batas penutup potion
-      //kiri atas
-      line(361, 119, 354, 112);
-      
-      //kanan atas
-      line(415, 173, 408, 166);
-      
-      //kiri sisi
-      line(348, 119, 354, 112);
-      //kiri bagian pembatas atas
-      line(348, 119, 343, 114);
-      //kiri sisi samping
-      line(343, 114, 336, 121);
-      //kiri bawah
-      line(341, 126, 337, 121);
-      
-      //kanan bagian pembatas atas
-      line(415, 188, 408, 181);
-      //kanan bagian kanan sisi
-      line(417, 173, 409, 182);
-      //kanan bagian samping
-      line(416, 187, 408, 195);
-      //kanan bawah
-      line(401, 189, 407, 194);
-      
-      //penutup potion kiri
-      line(360, 119, 388, 82);
-      //penutup potion kanan
-      line(408, 167, 444, 141);
-  
+    translate(45, -5);
+    scale(0.9);
+
+    //potion
+    noStroke();
+    fill(121, 11, 0);
+    quad(283, 170, 392, 201, 142, 452, 50, 362);
+
+    pushMatrix();
+    noStroke();
+    translate(275, 61);
+    rotate(PI/4);
+    arc(118, 371, 130, 130, 0, PI/1);
+    popMatrix();
+
+    //penutup potion bagian tengah
+    noStroke();
+    fill(108, 56, 0);
+    quad(388, 82, 444, 142, 387, 182, 346, 136);
+
+    //penutup potion bagian atas
+    pushMatrix();
+    translate(0, 0);
+    rotate(PI/4);
+    noStroke();
+    fill(137, 73, 4);
+    ellipse(374, -216, 78, 21);
+    popMatrix();
+
+    //penutup potion bagian bawah
+    pushMatrix();
+    translate(0, 0);
+    rotate(PI/4);
+    fill(108, 56, 0);
+    ellipse(373, -147, 64, 21);
+    popMatrix();
+
+    //botol potion bagian tengah
+    fill(255, 255, 255, 115);
+    quad(354, 114, 416, 175, 142, 453, 50, 360);
+
+    //botol potion bagian bawah
+    pushMatrix();
+    translate(275, 61);
+    rotate(PI/4);
+    arc(118, 371, 130, 130, 0, PI/1);
+    popMatrix();
+
+    //pembatas tutup potion
+    noStroke();
+    fill(255, 255, 255, 90);
+    quad(343, 114, 414, 187, 407, 194, 336, 120);
+
+    // ----------------- outline ----------------
+    //penutup potion
+    pushMatrix();
+    translate(0, 0);
+    rotate(PI/4);
+    noFill();
+    stroke(0);
+    arc(373, -213, 81, 27, -3, PI/117);
+    popMatrix();
+
+    //botol potion bagian bawah
+    pushMatrix();
+    translate(275, 61);
+    rotate(PI/4);
+    arc(118, 371, 130, 130, 0, PI/1);
+    popMatrix();
+
+    //sisi kiri potion
+    line(49, 362, 341, 125);
+    //sisi kanan potion
+    line(141, 455, 402, 189);
+
+    //batas penutup potion
+    //kiri atas
+    line(361, 119, 354, 112);
+
+    //kanan atas
+    line(415, 173, 408, 166);
+
+    //kiri sisi
+    line(348, 119, 354, 112);
+    //kiri bagian pembatas atas
+    line(348, 119, 343, 114);
+    //kiri sisi samping
+    line(343, 114, 336, 121);
+    //kiri bawah
+    line(341, 126, 337, 121);
+
+    //kanan bagian pembatas atas
+    line(415, 188, 408, 181);
+    //kanan bagian kanan sisi
+    line(417, 173, 409, 182);
+    //kanan bagian samping
+    line(416, 187, 408, 195);
+    //kanan bawah
+    line(401, 189, 407, 194);
+
+    //penutup potion kiri
+    line(360, 119, 388, 82);
+    //penutup potion kanan
+    line(408, 167, 444, 141);
+
     popMatrix();
     strokeWeight(1);
     stroke(0);
@@ -434,26 +435,25 @@ class healPotion extends countable {
 
 
 
-  void stats(){
+  void stats() {
     text(icon("heal", 0, 0)+
-    "HP +100", 0, 0);
+      "HP +100", 0, 0);
   }
 
 
 
-  void desc(){
+  void desc() {
     pushMatrix();
     translate(0, -30);
     textSize(18);
     text("Sebuah potion yang dibuat oleh\n"+
-         "potioneer-potioneer berbakat di desa \n"+
-         "barat. Potioneer itu biasanya memberikan\n"+
-         "potion heal ini sebagai hadiah setelah\n"+
-         "membantunya mencari bahan untuk ia\n"+
-         "membuat potion.\n\n"+
-         "Diimpor ke berbagai stall di\n"+
-         "berbagai negara di sepenjuri benua Elzern.", 0, 0);
+      "potioneer-potioneer berbakat di desa \n"+
+      "barat. Potioneer itu biasanya memberikan\n"+
+      "potion heal ini sebagai hadiah setelah\n"+
+      "membantunya mencari bahan untuk ia\n"+
+      "membuat potion.\n\n"+
+      "Diimpor ke berbagai stall di\n"+
+      "berbagai negara di sepenjuri benua Elzern.", 0, 0);
     popMatrix();
-
   }
 }
