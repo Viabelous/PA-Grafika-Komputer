@@ -285,7 +285,7 @@ class emeraldWings extends item {
   
   float randX = 250;
   float randY = 250;
-  int resh = 130;
+  int resh = 132;
   boolean toogleResh = true;
   
   emeraldWings(int xI, int yI){

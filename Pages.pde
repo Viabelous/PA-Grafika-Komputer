@@ -264,6 +264,8 @@ class inventory extends pages{
 
 // ========================================= OBSERVE ========================================= //
 class observe extends pages{
+  float lightDirection = frameCount * 0.01/2;
+  
   void build(){
     background(0);
 
@@ -301,11 +303,18 @@ class observe extends pages{
       popMatrix();
     popMatrix();
       
+      
       if (light){
         lights();
-        // 
+        spotLight(255, 255, 255, mouseX, mouseY, 500, 0, 0, -1, PI/5, 495);
+        fill(255, 215, 13);
+        textSize(16);
+        text("Light ON", 140, 40);
       } else {
         noLights();
+        fill(227, 0, 0);
+        textSize(16);
+        text("Light OFF", 140, 40);
       }
       
       // tampilan 3D
