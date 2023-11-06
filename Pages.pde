@@ -94,8 +94,8 @@ class inventory extends pages {
     // membuat border di pinggir
     stroke(49, 53, 85);
     strokeWeight(30);
-    line(-646, -130, 948, -130);
-    line(-646, 734, 948, 734);
+    line(-650, -135, 950, -135);
+    line(-650, 735, 950, 735);
     line(-636, -144, -636, 734);
     line(938, -144, 938, 738);
     popMatrix();
