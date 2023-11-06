@@ -3,7 +3,7 @@ import processing.sound.*;
 int selected = -1; // Untuk mengakses item dengan mouse
 int viewItem = 0; // Untuk menampilkan item pada preview
 boolean firstGet = true; // Untuk mengatasi bug item terbawa
-SoundFile audioClick; // Untuk menggunakan sound saat berpindah2 item
+SoundFile audioTheme, audioClick, audioObserve, audioEat, audioDrink; // Untuk menggunakan berbagai macam sound
 // ketika mouse ditekan dan di-hover
 // ke item
 int idxSelected = 0; // index slot yang dipilih
@@ -78,11 +78,21 @@ item[] items = {
   addItem(0, 27), addItem(0, 28), addItem(0, 29),
 };
 
-void mouseClicked() { hal.mouseClicked(); }
-void mouseDragged() { hal.mouseDragged(); }
-void mouseReleased() { hal.mouseReleased(); }
-void mouseWheel(MouseEvent e) { hal.mouseWheel(e); }
-void keyPressed() { hal.keyPressed(); }
+void mouseClicked() {
+  hal.mouseClicked();
+}
+void mouseDragged() {
+  hal.mouseDragged();
+}
+void mouseReleased() {
+  hal.mouseReleased();
+}
+void mouseWheel(MouseEvent e) {
+  hal.mouseWheel(e);
+}
+void keyPressed() {
+  hal.keyPressed();
+}
 
 
 
@@ -93,8 +103,15 @@ void setup() {
   size(1600, 900, P3D);
   surface.setTitle("Item Inventory");
   surface.setLocation(0, 0);
-  audioClick = new SoundFile(this, "./audio/click_item.wav");
+  audioTheme = new SoundFile(this, "./audio/audio-soundtheme.mp3");
+  audioClick = new SoundFile(this, "./audio/click-item.wav");
+  audioObserve = new SoundFile(this, "./audio/minecraft-click.wav");
+  audioDrink = new SoundFile(this, "./audio/minecraft-drinking.wav");
+  audioEat = new SoundFile(this, "./audio/minecraft-eating.wav");
   lightIcon = loadImage("./images/lightbulb-05.png");
+
+  audioTheme.amp(0.3);
+  audioTheme.play();
 }
 
 void draw() {
