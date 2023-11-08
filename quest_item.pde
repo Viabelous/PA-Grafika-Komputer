@@ -80,6 +80,7 @@ class bsoj extends item {
 
   void observe() {
     pushMatrix();
+    scale(1.8);
     translate(0, 50);
     fill(#FFE990);
     beginShape();
