@@ -327,17 +327,17 @@ class skyfeatherBadge extends item {
     bezierVertex(245, 135, 255, 100, 250, 130);
     bezierVertex(250, 132, 250, 267, 250, 335);
     endShape();
-    
+
     beginShape();
     vertex(250, 339);
     bezierVertex(95, 273, 141, 230, 146, 155);
     bezierVertex(242, 135, 255, 100, 250, 130);
     bezierVertex(250, 132, 250, 267, 250, 335);
     endShape();
-    
+
     fill(232, 232, 232);
     stroke(200, 200, 200);
-    
+
     beginShape();
     vertex(350, 145);
     bezierVertex(365, 230, 390, 290, 250, 340);
@@ -425,19 +425,19 @@ class skyfeatherBadge extends item {
     bezierVertex(125, 231, -40, 109, 225, -30, 128, 258, -20);
     bezierVertex(119, 250, 0, 121, 186, 0, 119, 183, 0);
     endShape();
-    
+
     beginShape();
     vertex(133, 285, -27);
     bezierVertex(157, 336, -40, 218, 300, 12, 165, 315, -20);
     bezierVertex(177, 315, -11, 141, 300, -3, 130, 280, -12);
     endShape();
-    
+
     beginShape();
     vertex(147, 224, -37);
     bezierVertex(142, 259, -28, 151, 225, -55, 141, 292, -7);
     bezierVertex(168, 271, -11, 142, 268, -2, 146, 221, -1);
     endShape();
-    
+
     beginShape();
     vertex(389, 146, -36);
     bezierVertex(367, 183, -28, 379, 170, -47, 384, 210, -19);
@@ -648,11 +648,6 @@ class hynaPainting extends item {
     bezierVertex(350, 140, 390, 190, 250, 280);
     bezierVertex(110, 220, 150, 170, 250, 200);
     endShape(CLOSE);
-
-    // Menambahkan tulisan "H.Y.N.A"
-    fill(0); // Warna hitam untuk teks
-    textSize(50);
-    text("H.Y.N.A", 170, 370);
   }
 
   void observe() {
@@ -695,13 +690,8 @@ class hynaPainting extends item {
     bezierVertex(0, 50, -140, -60, 0, -50);
     endShape(CLOSE);
     popMatrix();
-
-    // Menambahkan tulisan "H.Y.N.A"
-    fill(0); // Warna hitam untuk teks
-    textSize(50);
-    text("H.Y.N.A", coorX - 80, coorY + 120);
   }
-
+  
   void stats() {
     text("Tipe: Quest Reward", 0, 0);
   }
@@ -876,7 +866,7 @@ class kitsuneMask extends item {
     pushMatrix();
     translate(-200, -150, 0);
     scale(0.8);
-    
+
     noStroke();
     fill(255, 245, 245);
     beginShape();

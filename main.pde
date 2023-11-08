@@ -106,8 +106,7 @@ void setup() {
   audioTheme = new SoundFile(this, "./audio/audio-soundtheme.mp3");
   audioClick = new SoundFile(this, "./audio/click-item.wav");
   audioObserve = new SoundFile(this, "./audio/minecraft-click.wav");
-  audioDrink = new SoundFile(this, "./audio/minecraft-drinking.wav");
-  audioEat = new SoundFile(this, "./audio/minecraft-eating.wav");
+  audioEat = new SoundFile(this, "./audio/audio-eating.wav");
   lightIcon = loadImage("./images/lightbulb-05.png");
 
   audioTheme.amp(0.3);
@@ -115,5 +114,9 @@ void setup() {
 }
 
 void draw() {
+  if (!audioTheme.isPlaying()) {
+    audioTheme.cue(0); // Memulai ulang suara jika sudah selesai
+    audioTheme.play();
+  }
   hal.build();
 }
