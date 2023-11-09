@@ -692,7 +692,7 @@ class hynaPainting extends item {
     endShape(CLOSE);
     popMatrix();
   }
-  
+
   void stats() {
     text("Tipe: Quest Reward", 0, 0);
   }
@@ -1454,5 +1454,141 @@ class magicStarBook extends item {
       "mantra-mantra yang dapat mempengaruhi\n"+
       "dunia.\n\n"+
       "Untuk mendapatkan buku ini sangatlah sulit.", 0, 0);
+  }
+}
+
+
+class letter extends item {
+  letter(int xI, int yI) {
+    super(xI, yI,
+      "Letter",
+      "rare");
+    discardable = false;
+    observable = false;
+  }
+
+  void preview() {
+    pushMatrix();
+    scale(0.6);
+    stroke(0);
+
+    rectMode(CENTER);
+
+    int coorX = 165;
+    int coorY = 170;
+
+    fill(#A3A6AF);
+    strokeWeight(5);
+    rect(coorX, coorY, 300, 200);
+
+    fill(#FC7A7A);
+    rect(coorX, coorY - 70, 160, 60);
+
+    fill(#CECECE);
+    rect(coorX, coorY + 80, 150, 40);
+
+    line(coorX - 50, coorY + 70, coorX - 50, coorY + 98);
+    line(coorX - 20, coorY + 70, coorX - 20, coorY + 98);
+    line(coorX + 20, coorY + 70, coorX + 20, coorY + 98);
+    line(coorX + 50, coorY + 70, coorX + 50, coorY + 98);
+
+    // Menggambar Love (bayangan)
+    fill(#BC1B1B); // Warna merah tua
+    beginShape();
+    vertex(coorX, coorY);
+
+    bezierVertex(coorX + 60, coorY - 60, coorX + 80, coorY, coorX + 5, coorY + 40);
+    bezierVertex(coorX - 60, coorY - 10, coorX - 20, coorY - 40, coorX, coorY);
+    endShape(CLOSE);
+
+    // Menggambar Love
+    fill(#FF4343); // Warna merah
+    beginShape();
+    vertex(coorX, coorY);
+
+    bezierVertex(coorX + 40, coorY - 60, coorX + 70, coorY - 20, coorX, coorY + 35);
+    bezierVertex(coorX - 60, coorY - 10, coorX - 40, coorY - 60, coorX, coorY);
+    endShape(CLOSE);
+
+    // Menambahkan tulisan "H.Y.N.A"
+    fill(#FFFFFF); // Warna hitam untuk teks
+    textSize(30);
+    text("H.Y.N.A", coorX - 45, coorY - 60);
+
+    popMatrix();
+  };
+
+  void thumbnail() {
+    pushMatrix();
+    translate(x-50, y-50);
+    scale(0.3);
+    stroke(0);
+    rectMode(CENTER);
+
+    int coorX = 166;
+    int coorY = 170;
+
+    fill(#A3A6AF);
+    strokeWeight(5);
+    rect(coorX, coorY, 300, 200);
+
+    fill(#FC7A7A);
+    rect(coorX, coorY - 70, 160, 60);
+
+    fill(#CECECE);
+    rect(coorX, coorY + 80, 150, 40);
+
+    line(coorX - 50, coorY + 70, coorX - 50, coorY + 98);
+    line(coorX - 20, coorY + 70, coorX - 20, coorY + 98);
+    line(coorX + 20, coorY + 70, coorX + 20, coorY + 98);
+    line(coorX + 50, coorY + 70, coorX + 50, coorY + 98);
+
+    // Menggambar Love (bayangan)
+    fill(#BC1B1B); // Warna merah tua
+    beginShape();
+    vertex(coorX, coorY);
+
+    bezierVertex(coorX + 60, coorY - 60, coorX + 80, coorY, coorX + 5, coorY + 40);
+    bezierVertex(coorX - 60, coorY - 10, coorX - 20, coorY - 40, coorX, coorY);
+    endShape(CLOSE);
+
+    // Menggambar Love
+    fill(#FF4343); // Warna merah
+    beginShape();
+    vertex(coorX, coorY);
+
+    bezierVertex(coorX + 40, coorY - 60, coorX + 70, coorY - 20, coorX, coorY + 35);
+    bezierVertex(coorX - 60, coorY - 10, coorX - 40, coorY - 60, coorX, coorY);
+    endShape(CLOSE);
+
+    // Menambahkan tulisan "H.Y.N.A"
+    fill(#FFFFFF); // Warna hitam untuk teks
+    textSize(30);
+    text("H.Y.N.A", coorX - 45, coorY - 60);
+
+    popMatrix();
+  }
+
+  void observe() {
+
+  }
+
+
+  void stats() {
+    text("Tipe: Quest Item", 0, 0);
+  }
+
+
+  void desc() {
+    pushMatrix();
+    textSize(18);
+    text("Surat ini adalah pesan yang ditujukan kepada\n"+
+      "para petualang yang berani menjelajahi wilayah\n"+
+      "timur.\n\n"+
+      "Dalam surat ini terdapat informasi yang\n"+
+      "mengundang rasa ingin tahu dan misteri, serta\n"+
+      "mungkin berisi petunjuk atauperjalanan yang\n"+
+      "menarik.", 0, 0);
+    popMatrix();
   }
 }
