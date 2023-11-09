@@ -1031,12 +1031,22 @@ class pinkPrism extends countable {
 
 
   void stats() {
-   
+    text("dapat diubah menjadi perhiasan atau\n"+
+      "equipment khusus dengan statistik\n"+
+      "yang luar biasa.", 0, 0);
   }
 
 
 
   void desc() {
-
+    pushMatrix();
+    translate(0, 0);
+    text("Sebuah diamon berwarna pink yang\n"+
+      "mencerminkan kecantikan dan keanggunan.\n \n"+
+      "Meski mendapatkanya perlu penantian yang\n"+
+      "sangat lama, diamon ini dapat\n"+
+      "memberikan keberuntungan yang\n"+
+      "luar biasa bagi pemiliknya.", 0, 0);
+    popMatrix();
   }
 }
