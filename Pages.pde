@@ -245,7 +245,7 @@ class inventory extends pages {
             items[slots[idxSelected].itemIndex] = addItem(0, idxSelected);
           }
 
-          audioEat.play();
+          audioSwallow.play();
         }
       } else if (items[slots[idxSelected].itemIndex].discardable && key == 't') {
         items[slots[idxSelected].itemIndex] = addItem(0, idxSelected);

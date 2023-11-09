@@ -3,7 +3,7 @@ import processing.sound.*;
 int selected = -1; // Untuk mengakses item dengan mouse
 int viewItem = 0; // Untuk menampilkan item pada preview
 boolean firstGet = true; // Untuk mengatasi bug item terbawa
-SoundFile audioTheme, audioClick, audioObserve, audioEat, audioDrink; // Untuk menggunakan berbagai macam sound
+SoundFile audioTheme, audioClick, audioObserve, audioSwallow; // Untuk menggunakan berbagai macam sound
 // ketika mouse ditekan dan di-hover
 // ke item
 int idxSelected = 0; // index slot yang dipilih
@@ -105,8 +105,8 @@ void setup() {
   surface.setLocation(0, 0);
   audioTheme = new SoundFile(this, "./audio/audio-soundtheme.mp3");
   audioClick = new SoundFile(this, "./audio/click-item.wav");
-  audioObserve = new SoundFile(this, "./audio/minecraft-click.wav");
-  audioEat = new SoundFile(this, "./audio/audio-eating.wav");
+  audioObserve = new SoundFile(this, "./audio/click-button.mp3");
+  audioSwallow = new SoundFile(this, "./audio/audio-swallow.wav");
   lightIcon = loadImage("./images/lightbulb-05.png");
 
   audioTheme.amp(0.3);
