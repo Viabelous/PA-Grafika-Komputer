@@ -649,6 +649,11 @@ class hynaPainting extends item {
     bezierVertex(350, 140, 390, 190, 250, 280);
     bezierVertex(110, 220, 150, 170, 250, 200);
     endShape(CLOSE);
+
+    // Menambahkan tulisan "H.Y.N.A"
+    fill(0); // Warna hitam untuk teks
+    textSize(50);
+    text("H.Y.N.A", 170, 370);
   }
 
   void observe() {
@@ -690,6 +695,11 @@ class hynaPainting extends item {
     bezierVertex(100, -110, 140, -60, 0, 50);
     bezierVertex(0, 50, -140, -60, 0, -50);
     endShape(CLOSE);
+
+    // Menambahkan tulisan "H.Y.N.A"
+    fill(0); // Warna hitam untuk teks
+    textSize(60);
+    text("H.Y.N.A", coorX - 330, coorY - 130);
     popMatrix();
   }
 
@@ -1511,7 +1521,7 @@ class letter extends item {
     endShape(CLOSE);
 
     // Menambahkan tulisan "H.Y.N.A"
-    fill(#FFFFFF); // Warna hitam untuk teks
+    fill(#FFFFFF); // Warna putih untuk teks
     textSize(30);
     text("H.Y.N.A", coorX - 45, coorY - 60);
 
@@ -1562,7 +1572,7 @@ class letter extends item {
     endShape(CLOSE);
 
     // Menambahkan tulisan "H.Y.N.A"
-    fill(#FFFFFF); // Warna hitam untuk teks
+    fill(#FFFFFF); // Warna putih untuk teks
     textSize(30);
     text("H.Y.N.A", coorX - 45, coorY - 60);
 
@@ -1570,7 +1580,6 @@ class letter extends item {
   }
 
   void observe() {
-
   }
 
 
