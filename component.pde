@@ -182,49 +182,49 @@ String icon(String namaIcon, int x, int y) {
 
     popMatrix();
   } else if (namaIcon == "speed") {
-  pushMatrix();
-  scale(0.1);
-  rectMode(CENTER);
+    pushMatrix();
+    scale(0.1);
+    rectMode(CENTER);
 
-  int coorX = 200;
-  int coorY = 200;
+    int coorX = 200;
+    int coorY = 200;
 
-  // Menggambar pelindung mata kaki sepatu
-  fill(#EFA65E);
-  stroke(#3F250F);
-  strokeWeight(5);
-  rect(coorX, coorY - 20, 90, 50);
+    // Menggambar pelindung mata kaki sepatu
+    fill(#EFA65E);
+    stroke(#3F250F);
+    strokeWeight(5);
+    rect(coorX, coorY - 20, 90, 50);
 
-  strokeWeight(3);
-  arc(coorX + 45, coorY + 95, 120, 100, radians(270), radians(360), PIE);
+    strokeWeight(3);
+    arc(coorX + 45, coorY + 95, 120, 100, radians(270), radians(360), PIE);
 
-  // Menggambar bagian sepatu
-  stroke(#3F250F);
-  strokeWeight(3);
-  fill(#D39255);
-  beginShape();
-  vertex(coorX - 40, coorY + 5);
-  vertex(coorX - 35, coorY - 20);
-  vertex(coorX - 40, coorY - 45);
-  vertex(coorX + 40, coorY + 5);
+    // Menggambar bagian sepatu
+    stroke(#3F250F);
+    strokeWeight(3);
+    fill(#D39255);
+    beginShape();
+    vertex(coorX - 40, coorY + 5);
+    vertex(coorX - 35, coorY - 20);
+    vertex(coorX - 40, coorY - 45);
+    vertex(coorX + 40, coorY + 5);
 
-  vertex(coorX + 40, coorY);
-  vertex(coorX + 35, coorY - 20);
-  vertex(coorX + 40, coorY - 45);
-  endShape(CLOSE);
+    vertex(coorX + 40, coorY);
+    vertex(coorX + 35, coorY - 20);
+    vertex(coorX + 40, coorY - 45);
+    endShape(CLOSE);
 
-  fill(#B56C30);
-  strokeWeight(4);
-  rect(coorX, coorY + 52, 90, 85);
+    fill(#B56C30);
+    strokeWeight(4);
+    rect(coorX, coorY + 52, 90, 85);
 
-  fill(#7A481F);
-  rect(coorX, coorY + 30, 80, 5);
-  rect(coorX, coorY + 60, 80, 5);
+    fill(#7A481F);
+    rect(coorX, coorY + 30, 80, 5);
+    rect(coorX, coorY + 60, 80, 5);
 
-  fill(#CC8C4E);
-  rect(coorX + 30, coorY + 108, 150, 20, 2);
-  
-  popMatrix();
+    fill(#CC8C4E);
+    rect(coorX + 30, coorY + 108, 150, 20, 2);
+
+    popMatrix();
   }
   popMatrix();
 
@@ -300,6 +300,7 @@ item addItem(int id, int ids, int quan) {
   if (id == 21) return new letter(slots[ids].x, slots[ids].y);
   if (id == 22) return new panamaBerry(slots[ids].x, slots[ids].y, quan);
   if (id == 23) return new pinkPrism(slots[ids].x, slots[ids].y, quan);
+  if (id == 24) return new arrow(slots[ids].x, slots[ids].y);
   return null;
 }
 

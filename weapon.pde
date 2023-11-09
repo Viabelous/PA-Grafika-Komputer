@@ -382,3 +382,114 @@ class stoneAxe extends item { // untuk item dengan jumlah, pakai consumable keti
     popMatrix();
   }
 }
+
+class arrow extends item { // untuk item dengan jumlah, pakai consumable ketimbang item
+  arrow(int xI, int yI) {
+    super(xI, yI,
+      "Arrow",
+      "common");
+  }
+
+  void preview() {
+    pushMatrix();
+    scale(0.6);
+    build();
+    popMatrix();
+  };
+
+  void thumbnail() {
+    pushMatrix();
+    translate(x-50, y-50);
+    scale(0.3);
+    build();
+    popMatrix();
+  }
+
+  void build() {
+    pushMatrix();
+    translate(114, -126);
+    rotate(radians(30));
+    rectMode(CENTER);
+    stroke(0);
+    strokeWeight(4);
+
+    // Membuat badan anak panah
+    fill(#F8D5B9);
+    rect(200, 200, 20, 200);
+
+    fill(#E1915C);
+    rect(200, 105, 18, 10, 2);
+    rect(200, 115, 18, 10, 2);
+    rect(200, 125, 18, 10, 2);
+
+    fill(#FE3131);
+    rect(200, 105, 18, 10, 2);
+    rect(200, 115, 18, 10, 2);
+
+    fill(#56A5CC);
+    rect(200, 205, 18, 10, 2);
+    fill(#FFFFFF);
+    rect(200, 195, 18, 10, 2);
+    rect(200, 215, 18, 10, 2);
+
+    fill(#E1915C);
+    rect(200, 275, 18, 10, 2);
+    rect(200, 285, 18, 10, 2);
+    rect(200, 295, 18, 10, 2);
+
+    fill(#E9E3D4);
+    // Membuat kepala anak panah
+    beginShape();
+    vertex(200, 51);
+    bezierVertex(283, 190, 225, 50, 158, 117);
+    endShape(CLOSE);
+
+    // Membuat bulu ekor anak panah
+    fill(#f8e4bd);
+    beginShape();
+    vertex(210, 300);
+    bezierVertex(324, 440, 242, 274, 210, 266);
+    endShape(CLOSE);
+
+    beginShape();
+    vertex(190, 298);
+    bezierVertex(112, 402, 104, 346, 190, 266);
+    endShape(CLOSE);
+
+    beginShape();
+    vertex(210, 302);
+    bezierVertex(221, 434, 179, 410, 191, 302);
+    endShape(CLOSE);
+    popMatrix();
+  }
+
+
+  // buat fungsi di bawah ini jika dan hanya jika
+  // benda memiliki mode observe (3D)
+  void observe() {
+    pushMatrix();
+
+    // ... kodingan untuk tampilan 3D
+
+    popMatrix();
+  }
+
+
+
+  void stats() {
+    text(icon("atk", 0, 0) + "ATK 20", 0, 0);
+  }
+
+
+
+  void desc() {
+    pushMatrix();
+    translate(1, -27);
+    text("Panah sederhana yang dibuat\n"+
+      "dengan batu, kayu dan bulu ayam.\n\n"+
+      "Panah ini akan bersinar ketika berada\n"+
+      "di suatu tempat di hutan Gariya.\n\n"+
+      "Berhati2lah saat menggunakannya. ", 0, 0);
+    popMatrix();
+  }
+}
