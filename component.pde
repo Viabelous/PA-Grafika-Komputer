@@ -90,8 +90,8 @@ boolean mousePos(int xLeft, int xRight, int yUp, int yDown) {
 
 
 class air extends item {
-  air(int xI, int yI) {
-    super(xI, yI, "", "air");
+  air() {
+    super(-1, -1, "", "air");
   }
 
   void preview() {
@@ -108,7 +108,7 @@ class air extends item {
 
 String icon(String namaIcon, int x, int y) {
   pushMatrix();
-  translate(x, y);
+  translate(x-5, y);
   if (namaIcon == "def") {
     pushMatrix();
     scale(0.1);
@@ -125,6 +125,7 @@ String icon(String namaIcon, int x, int y) {
     popMatrix();
   } else if (namaIcon == "heal") {
     pushMatrix();
+    translate(2, -1);
     scale(0.2);
     rectMode(CORNER);
 
@@ -187,7 +188,7 @@ String icon(String namaIcon, int x, int y) {
     rectMode(CENTER);
 
     int coorX = 200;
-    int coorY = 200;
+    int coorY = -30;
 
     // Menggambar pelindung mata kaki sepatu
     fill(#EFA65E);
@@ -266,7 +267,7 @@ void alert(int num) {
 
 int findEmptySlot() {
   for (int i = 0; i <= slots.length; i++) {
-    if (items[slots[i].itemIndex].getClass() == new air(0, 0).getClass()) {
+    if (items[slots[i].itemIndex].getClass() == new air().getClass()) {
       return i;
     }
   }
@@ -276,7 +277,7 @@ int findEmptySlot() {
 
 
 item addItem(int id, int ids, int quan) {
-  if (id == 0) return new air(slots[ids].x, slots[ids].y);
+  if (id == 0) return new air();
   if (id == 1) return new swamp_hammer(slots[ids].x, slots[ids].y);
   if (id == 2) return new kunai(slots[ids].x, slots[ids].y);
   if (id == 3) return new bsoj(slots[ids].x, slots[ids].y);

@@ -460,7 +460,7 @@ class healPotion extends countable {
     translate(0, 0);
     text("Sebuah potion yang dibuat oleh\n"+
       "potioneer-potioneer berbakat di desa\n"+
-      "barat. Diimport ke berbagai stall di berbagai\n"+
+      "barat. Diimpor ke berbagai stall di berbagai\n"+
       "negara di penjuru benua Elzern.", 0, 0);
     popMatrix();
   }
@@ -592,7 +592,9 @@ class panamaBerry extends countable {
 
   void stats() {
     text(icon("heal", 0, 0)+
-      "HP +5\n\n"+
+      "HP +5\n"+
+      icon("speed", 0, 30)+
+      "SPD +10\n\n"+
       "Dapat langsung dimakan atau dijadikan\n"+
       "bahan untuk memasak.", 0, 0);
   }

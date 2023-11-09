@@ -143,7 +143,7 @@ class inventory extends pages {
 
         // Pastikan slot tidak kosong
         if (slots[i].getPos() &&
-          items[slots[i].itemIndex].getClass() != new air(0, 0).getClass()) {
+          items[slots[i].itemIndex].getClass() != new air().getClass()) {
           slotMSelected = i; // ambil indeks slot
           selected = slots[i].itemIndex; // ambil indeks item
           break;
@@ -548,15 +548,15 @@ class command extends pages {
                 
               if (splittedInp.length == 2){
                 try {
-                  int delId = Integer.parseInt(splittedInp[1]);
+                  int delIndex = Integer.parseInt(splittedInp[1]);
                   
-                  if (items[slots[delId-1].itemIndex].getClass() == new air(0, 0).getClass()){
-                    logs += "> ERROR: Item dengan id " + delId + " tidak ada!\n";
+                  if (items[slots[delIndex-1].itemIndex].getClass() == new air().getClass()){
+                    logs += "> ERROR: tidak ada item di slot " + delIndex;
                     
                   } else {
-                    items[slots[delId-1].itemIndex] = addItem(0, delId-1);
+                    items[slots[delIndex-1].itemIndex] = addItem(0, delIndex-1);
                     
-                    logs += "> Item di slot " + delId + " berhasil dihapus\n";
+                    logs += "> Item di slot " + delIndex + " berhasil dihapus\n";
                   }
                 } catch(Exception e){
                   alert(0);

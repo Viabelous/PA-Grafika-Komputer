@@ -593,12 +593,11 @@ class emeraldWings extends item {
 
   void stats(){
     text("Tipe: Wings\n"+
-    icon("def", 0, 30)+"DEF +30",
-     0, 0);
-     
-    text("Dapat berkamuflase dengan dedaunan\n"+
+    icon("def", 0, 30)+"DEF +30\n"+
+    icon("speed", 0, 60) + "SPD +30\n\n"+
+         "Dapat berkamuflase dengan dedaunan\n"+
          "pohon maupun semak-semak.\n",
-         0, 90);
+         0, 0);
   }
 
 

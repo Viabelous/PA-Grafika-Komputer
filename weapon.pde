@@ -252,8 +252,7 @@ class mammonsBlade extends item {
 
 
   void stats() {
-    text(icon("atk", 0, 0) + "ATK 40", 0, 0);
-    text(icon("speed", 0, 10) + "SPD 25", 0, 40);
+    text(icon("atk", 0, 0) + "ATK 77", 0, 0);
   }
 
 
@@ -383,7 +382,7 @@ class stoneAxe extends item { // untuk item dengan jumlah, pakai consumable keti
   }
 }
 
-class arrow extends item { // untuk item dengan jumlah, pakai consumable ketimbang item
+class arrow extends item {
   arrow(int xI, int yI) {
     super(xI, yI,
       "Arrow",
@@ -484,12 +483,9 @@ class arrow extends item { // untuk item dengan jumlah, pakai consumable ketimba
 
   void desc() {
     pushMatrix();
-    translate(1, -27);
     text("Panah sederhana yang dibuat\n"+
       "dengan batu, kayu dan bulu ayam.\n\n"+
-      "Panah ini akan bersinar ketika berada\n"+
-      "di suatu tempat di hutan Gariya.\n\n"+
-      "Berhati2lah saat menggunakannya. ", 0, 0);
+      "Berhati-hatilah saat menggunakannya!", 0, 0);
     popMatrix();
   }
 }
