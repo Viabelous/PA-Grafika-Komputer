@@ -257,6 +257,8 @@ void alert(int num) {
     logs += "> ERROR: Item dengan ID tersebut tidak ditemukan'\n";
   } else if (num == 4) {
     logs += "> ERROR: Inventory penuh'\n";
+  } else if (num == 5) {
+    logs += "> HINT: Sesuaikan '/del {item_id}'\n";
   }
 }
 

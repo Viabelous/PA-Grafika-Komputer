@@ -538,7 +538,32 @@ class command extends pages {
             alert(0);
             alert(2);
           }
-        } else {
+        } else if (splittedInp[0].equals("/del")){
+              if(splittedInp.length == 1){
+                alert(0);
+                alert(5);
+                Cmd = "";
+                return;
+              }
+                
+              if (splittedInp.length == 2){
+                try {
+                  int delId = Integer.parseInt(splittedInp[1]);
+                  
+                  if (items[slots[delId-1].itemIndex].getClass() == new air(0, 0).getClass()){
+                    logs += "> ERROR: Item dengan id " + delId + " tidak ada!\n";
+                    
+                  } else {
+                    items[slots[delId-1].itemIndex] = addItem(0, delId-1);
+                    
+                    logs += "> Item di slot " + delId + " berhasil dihapus\n";
+                  }
+                } catch(Exception e){
+                  alert(0);
+                  alert(5);
+                }
+              }
+            } else {
           alert(1);
         }
       }
