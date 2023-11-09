@@ -834,9 +834,9 @@ class kitsuneMask extends item {
     curveVertex(10, 14);
     endShape();
 
-    //telinga kiri
+    //telinga kanan
     pushMatrix();
-    translate(496, 0, 3);
+    translate(496, 0);
     rotateY(PI/-1);
     beginShape();
     curveVertex(225, 200);
