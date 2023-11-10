@@ -296,11 +296,10 @@ class happyCllate extends countable {
 
   void desc() {
     text("Sumber energi dalam situasi di mana\n"+
-    "harus menghindari kematian atau kelelahan.\n\n"+
-    "Meskipun hanya memberi heal yang\n"+
-    "sedikit, namun sangat mudah untuk \n"+
-    "mendapatkannya.", 0, 0);
-    
+      "harus menghindari kematian atau kelelahan.\n\n"+
+      "Meskipun hanya memberi heal yang\n"+
+      "sedikit, namun sangat mudah untuk \n"+
+      "mendapatkannya.", 0, 0);
   }
 }
 
@@ -467,9 +466,6 @@ class healPotion extends countable {
 }
 
 
-
-
-
 // ========================================= PANAMA BERRY ========================================= //
 class panamaBerry extends countable {
   panamaBerry(int xI, int yI, int quanI) {
@@ -513,7 +509,7 @@ class panamaBerry extends countable {
     curve(246, 74, 268, 170, 285, 112, 437, 32);
     curve(329, 343, 355, 327, 377, 310, 461, 266);
     curve(404, 340, 390, 311, 410, 262, 531, 206);
-    
+
     // line Batang
     strokeWeight(2);
     stroke(0);
@@ -546,12 +542,12 @@ class panamaBerry extends countable {
     curve(192, 502, 120, 328, 146, 163, 242, 152);
     curve(47, 87, 141, 102, 173, 148, 178, 111);
     curve(65, 98, 135, 107, 163, 151, 169, 187);
-    
+
     curve(237, 129, 158, 140, 122, 148, 103, 164);
     curve(141, 156, 122, 148, 95, 139, 37, 152);
     curve(149, 186, 110, 152, 95, 146, 79, 136);
     line(110, 153, 115, 171);
-    
+
     // Daun
     strokeWeight(3);
     stroke(0);
@@ -562,7 +558,7 @@ class panamaBerry extends countable {
     bezier(173, 236, 275, 185, 144, 125, 173, 236);
     bezier(478, 170, 514, 358, 267, 241, 478, 170);
     bezier(297, 365, 407, 367, 339, 252, 297, 365);
-    
+
     // Buah
     stroke(0);
     fill(0);
@@ -570,7 +566,7 @@ class panamaBerry extends countable {
     circle(221, 309, 18);
     circle(256, 405, 6);
     circle(335, 327, 16);
-    
+
     rectMode(CORNER);
     strokeWeight(2);
     fill(213, 62, 62);
@@ -608,6 +604,90 @@ class panamaBerry extends countable {
       "berbuah di mana-mana di sepanjang jalan\n"+
       "benua Elzern.\n\n"+
       "Anak-anak sangat menyukai buah ini.", 0, 0);
+    popMatrix();
+  }
+}
+
+
+// ========================================= Melancia's Watermelon ========================================= //
+class melancia extends countable {
+  melancia(int xI, int yI, int quanI) {
+    super(xI, yI,
+      "Melancia's Watermelon",
+      "common", quanI);
+    foodItem = true;
+  }
+
+  void preview() {
+    pushMatrix();
+    scale(0.4);
+    build();
+    popMatrix();
+  };
+
+  void thumbnail() {
+    pushMatrix();
+    translate(x-50, y-50);
+    scale(0.2);
+    build();
+    popMatrix();
+  }
+
+  void build() {
+    pushMatrix();
+    translate(+80, -350);
+    scale(2);
+    rotate(radians(30));
+    stroke(0);
+    strokeWeight(4);
+
+    noStroke();
+    fill(#93CB8C);
+    arc(220, 188, 240, 270, radians(0), radians(180), PIE);
+
+    stroke(#EA125E);
+    fill(#EE615D);
+    arc(220, 188, 240, 240, radians(0), radians(180), PIE);
+
+    noStroke();
+    fill(#616868);
+    ellipse(295, 217, 10, 13);
+    ellipse(175, 264, 12, 10);
+    ellipse(254, 240, 14, 10);
+    ellipse(215, 284, 18, 11);
+    ellipse(186, 207, 16, 10);
+    ellipse(308, 248, 12, 7);
+    ellipse(144, 237, 14, 11);
+    ellipse(254, 240, 10, 10);
+    ellipse(266, 270, 18, 11);
+    ellipse(240, 218, 16, 10);
+    ellipse(203, 240, 10, 10);
+    ellipse(226, 260, 17, 11);
+    ellipse(134, 209, 8, 14);
+
+    popMatrix();
+  }
+
+
+
+  void stats() {
+    text(icon("heal", 0, 0)+
+      "HP +15\n"+
+      icon("speed", 0, 30)+
+      "SPD +5\n\n"+
+      "Dapat langsung dimakan atau dijadikan\n"+
+      "bahan untuk memasak.", 0, 0);
+  }
+
+
+
+  void desc() {
+    pushMatrix();
+    translate(0, 0);
+    text("Buah yang sedikit sulit didapatkan\n"+
+      "bila berada di kawasan sungai qersia.\n\n"+
+      "Konon buah ini merupakan buah persembahan\n"+
+      "untuk para raja", 0, 0);
     popMatrix();
   }
 }

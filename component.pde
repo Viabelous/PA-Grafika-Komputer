@@ -304,6 +304,7 @@ item addItem(int id, int ids, int quan) {
   if (id == 23) return new pinkPrism(slots[ids].x, slots[ids].y, quan);
   if (id == 24) return new arrow(slots[ids].x, slots[ids].y, quan);
   if (id == 25) return new bow(slots[ids].x, slots[ids].y);
+  if (id == 26) return new melancia(slots[ids].x, slots[ids].y, quan);
   return null;
 }
 
