@@ -382,16 +382,16 @@ class stoneAxe extends item { // untuk item dengan jumlah, pakai consumable keti
   }
 }
 
-class arrow extends item {
-  arrow(int xI, int yI) {
+class arrow extends countable {
+  arrow(int xI, int yI, int quanI) {
     super(xI, yI,
       "Arrow",
-      "common");
+      "common", quanI);
   }
 
   void preview() {
     pushMatrix();
-    scale(0.6);
+    scale(0.4);
     build();
     popMatrix();
   };
@@ -399,13 +399,14 @@ class arrow extends item {
   void thumbnail() {
     pushMatrix();
     translate(x-50, y-50);
-    scale(0.3);
+    scale(0.2);
     build();
     popMatrix();
   }
 
   void build() {
     pushMatrix();
+    scale(1.5);
     translate(114, -126);
     rotate(radians(30));
     rectMode(CENTER);
@@ -473,6 +474,7 @@ class arrow extends item {
 
   void stats() {
     text(icon("atk", 0, 0) + "ATK 20", 0, 0);
+    text(icon("speed", 0, 30) + "SPEED 20", 0, 30);
   }
 
 
@@ -487,16 +489,16 @@ class arrow extends item {
   }
 }
 
-class arrowsBag extends item {
-  arrowsBag(int xI, int yI) {
+class bow extends item {
+  bow(int xI, int yI) {
     super(xI, yI,
-      "Arrows Bag",
+      "Bow",
       "uncommon");
   }
 
   void preview() {
     pushMatrix();
-    scale(0.8);
+    scale(0.4);
     build();
     popMatrix();
   };
@@ -504,62 +506,62 @@ class arrowsBag extends item {
   void thumbnail() {
     pushMatrix();
     translate(x-50, y-50);
-    scale(0.4);
+    scale(0.2);
     build();
     popMatrix();
   }
 
   void build() {
     pushMatrix();
-    translate(-160, -10);
-    rotate(radians(-20));
+    scale(1.5);
+    translate(-100, 60);
+    rotate(radians(-35));
     stroke(0);
     strokeWeight(4);
     rectMode(CENTER);
 
-    // Membuat tas anak panah
-    fill(#806967);
-    rect(220, 224, 50, 6);
-
-    fill(#9B7E7B);
-    rect(220, 210, 60, 20);
-    rect(220, 277, 50, 100);
-
-
-    fill(#e9dd6c);
-    rect(220, 200, 60, 10);
-    rect(220, 300, 50, 12);
-    rect(220, 250, 50, 12);
-
+    fill(#895338);
     beginShape();
-    vertex(245, 243);
-    bezierVertex(393, 182, 255, 406, 245, 304);
-    fill(216);
-    vertex(245, 257);
-    bezierVertex(361, 191, 270, 376, 245, 292);
+    vertex(105, 55);
+    bezierVertex(456, 186, 292, 297, 189, 426);
+    bezierVertex(72, 436, 479, 216, 109, 82);
     endShape(CLOSE);
 
-    // Membuat ekor anak panah
-    rotate(radians(-11));
-    fill(#F8D5B9);
-    rect(165, 195, 15, 69);
-
-    fill(#B39B8E);
+    fill(#D7452D);
     beginShape();
-    vertex(173, 171);
-    bezierVertex(232, 103, 171, 264, 172, 186);
+    vertex(108, 57);
+    bezierVertex(149, 69, 105, 95, 110, 72);
     endShape(CLOSE);
 
     beginShape();
-    vertex(157, 178);
-    bezierVertex(85, 100, 167, 259, 157, 186);
+    vertex(167, 421);
+    bezierVertex(207, 380, 185, 440, 189, 424);
     endShape(CLOSE);
 
-    strokeWeight(3);
-    fill(#56A5CC);
-    rect(165, 172, 11, 7);
-    rect(165, 182, 11, 7);
-    rect(165, 192, 11, 7);
+    fill(#2AA5D8);
+    quad(295, 167, 258, 181, 255, 203, 315, 185);
+    quad(310, 268, 263, 267, 258, 246, 324, 245);
+
+    fill(#FFFFFF);
+    beginShape();
+    vertex(126, 91);
+    vertex(131, 255);
+    vertex(178, 394);
+    vertex(184, 384);
+    vertex(142, 250);
+    vertex(137, 95);
+    endShape();
+
+    fill(#F5F1DF);
+    textSize(24);
+    pushMatrix();
+    rotate(radians(13));
+    text("M", 145, 56);
+    popMatrix();
+    pushMatrix();
+    rotate(radians(-6));
+    text("M", 149, 420);
+    popMatrix();
 
     popMatrix();
   }
@@ -578,17 +580,18 @@ class arrowsBag extends item {
 
 
   void stats() {
-    text(icon("def", 0, 0) + "DEFF 30", 0, 0);
+    text(icon("atk", 0, 0) + "ATK 30", 0, 0);
     text(icon("speed", 0, 30) + "SPD 30", 0, 35);
+    text("Hanya dapat dipakai bila terdapat anak\n"+"panah.", 0, 75);
   }
 
 
 
   void desc() {
     pushMatrix();
-    text("Tas Panah yang berasak dari kerajaan Eldia\n"+
-      "yang memiliki ciri unik di rajutannya.\n\n"+
-      "Terbuat dari kulit babi yang diambil dari\n"+
+    text("Busur panah yang berasak dari kerajaan Eldia\n"+
+      "yang memiliki ciri unik di kayunya.\n\n"+
+      "Terbuat dari kayu pohon yang diambil dari\n"+
       "pegunungan mathil, membuatnya menjadi\n"+
       "ringan dan kuat.", 0, 0);
     popMatrix();

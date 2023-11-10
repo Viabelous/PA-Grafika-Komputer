@@ -593,7 +593,7 @@ class panamaBerry extends countable {
   void stats() {
     text(icon("heal", 0, 0)+
       "HP +5\n"+
-      icon("speed", -2, 25)+
+      icon("speed", 0, 30)+
       "SPD +10\n\n"+
       "Dapat langsung dimakan atau dijadikan\n"+
       "bahan untuk memasak.", 0, 0);

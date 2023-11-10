@@ -184,6 +184,7 @@ String icon(String namaIcon, int x, int y) {
     popMatrix();
   } else if (namaIcon == "speed") {
     pushMatrix();
+    translate(-2, -2);
     scale(0.1);
     rectMode(CENTER);
 
@@ -301,8 +302,8 @@ item addItem(int id, int ids, int quan) {
   if (id == 21) return new letter(slots[ids].x, slots[ids].y);
   if (id == 22) return new panamaBerry(slots[ids].x, slots[ids].y, quan);
   if (id == 23) return new pinkPrism(slots[ids].x, slots[ids].y, quan);
-  if (id == 24) return new arrow(slots[ids].x, slots[ids].y);
-  if (id == 25) return new arrowsBag(slots[ids].x, slots[ids].y);
+  if (id == 24) return new arrow(slots[ids].x, slots[ids].y, quan);
+  if (id == 25) return new bow(slots[ids].x, slots[ids].y);
   return null;
 }
 
