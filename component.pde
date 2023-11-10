@@ -302,6 +302,7 @@ item addItem(int id, int ids, int quan) {
   if (id == 22) return new panamaBerry(slots[ids].x, slots[ids].y, quan);
   if (id == 23) return new pinkPrism(slots[ids].x, slots[ids].y, quan);
   if (id == 24) return new arrow(slots[ids].x, slots[ids].y);
+  if (id == 25) return new arrowsBag(slots[ids].x, slots[ids].y);
   return null;
 }
 

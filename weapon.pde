@@ -427,6 +427,7 @@ class arrow extends item {
 
     fill(#56A5CC);
     rect(200, 205, 18, 10, 2);
+
     fill(#FFFFFF);
     rect(200, 195, 18, 10, 2);
     rect(200, 215, 18, 10, 2);
@@ -444,7 +445,7 @@ class arrow extends item {
     endShape(CLOSE);
 
     // Membuat bulu ekor anak panah
-    fill(#f8e4bd);
+    fill(#B39B8E);
     beginShape();
     vertex(210, 300);
     bezierVertex(324, 440, 242, 274, 210, 266);
@@ -453,11 +454,6 @@ class arrow extends item {
     beginShape();
     vertex(190, 298);
     bezierVertex(112, 402, 104, 346, 190, 266);
-    endShape(CLOSE);
-
-    beginShape();
-    vertex(210, 302);
-    bezierVertex(221, 434, 179, 410, 191, 302);
     endShape(CLOSE);
     popMatrix();
   }
@@ -485,7 +481,116 @@ class arrow extends item {
     pushMatrix();
     text("Panah sederhana yang dibuat\n"+
       "dengan batu, kayu dan bulu ayam.\n\n"+
+      "Panah ini bisa digunakan untuk berburu,\n"+
       "Berhati-hatilah saat menggunakannya!", 0, 0);
+    popMatrix();
+  }
+}
+
+class arrowsBag extends item {
+  arrowsBag(int xI, int yI) {
+    super(xI, yI,
+      "Arrows Bag",
+      "uncommon");
+  }
+
+  void preview() {
+    pushMatrix();
+    scale(0.8);
+    build();
+    popMatrix();
+  };
+
+  void thumbnail() {
+    pushMatrix();
+    translate(x-50, y-50);
+    scale(0.4);
+    build();
+    popMatrix();
+  }
+
+  void build() {
+    pushMatrix();
+    translate(-160, -10);
+    rotate(radians(-20));
+    stroke(0);
+    strokeWeight(4);
+    rectMode(CENTER);
+
+    // Membuat tas anak panah
+    fill(#806967);
+    rect(220, 224, 50, 6);
+
+    fill(#9B7E7B);
+    rect(220, 210, 60, 20);
+    rect(220, 277, 50, 100);
+
+
+    fill(#e9dd6c);
+    rect(220, 200, 60, 10);
+    rect(220, 300, 50, 12);
+    rect(220, 250, 50, 12);
+
+    beginShape();
+    vertex(245, 243);
+    bezierVertex(393, 182, 255, 406, 245, 304);
+    fill(216);
+    vertex(245, 257);
+    bezierVertex(361, 191, 270, 376, 245, 292);
+    endShape(CLOSE);
+
+    // Membuat ekor anak panah
+    rotate(radians(-11));
+    fill(#F8D5B9);
+    rect(165, 195, 15, 69);
+
+    fill(#B39B8E);
+    beginShape();
+    vertex(173, 171);
+    bezierVertex(232, 103, 171, 264, 172, 186);
+    endShape(CLOSE);
+
+    beginShape();
+    vertex(157, 178);
+    bezierVertex(85, 100, 167, 259, 157, 186);
+    endShape(CLOSE);
+
+    strokeWeight(3);
+    fill(#56A5CC);
+    rect(165, 172, 11, 7);
+    rect(165, 182, 11, 7);
+    rect(165, 192, 11, 7);
+
+    popMatrix();
+  }
+
+
+  // buat fungsi di bawah ini jika dan hanya jika
+  // benda memiliki mode observe (3D)
+  void observe() {
+    pushMatrix();
+
+    // ... kodingan untuk tampilan 3D
+
+    popMatrix();
+  }
+
+
+
+  void stats() {
+    text(icon("def", 0, 0) + "DEFF 30", 0, 0);
+    text(icon("speed", 0, 30) + "SPD 30", 0, 35);
+  }
+
+
+
+  void desc() {
+    pushMatrix();
+    text("Tas Panah yang berasak dari kerajaan Eldia\n"+
+      "yang memiliki ciri unik di rajutannya.\n\n"+
+      "Terbuat dari kulit babi yang diambil dari\n"+
+      "pegunungan mathil, membuatnya menjadi\n"+
+      "ringan dan kuat.", 0, 0);
     popMatrix();
   }
 }
