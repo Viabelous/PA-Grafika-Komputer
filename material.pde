@@ -189,6 +189,88 @@ class bombby extends countable {
 
 
 
+// ========================================= BASEBALL ========================================= //
+class baseball extends countable {
+  baseball(int xI, int yI, int quan) {
+    super(xI, yI,
+      "Baseball",
+      "common", quan);
+  }
+
+  void preview() {
+    pushMatrix();
+    scale(0.4);
+    build();
+    popMatrix();
+  };
+
+  void thumbnail() {
+    pushMatrix();
+    translate(x-50, y-50);
+    scale(0.2);
+    build();
+    popMatrix();
+  }
+
+  void build() {
+    pushMatrix();
+    translate(-160, -170);
+    scale(2);
+    stroke(0);
+    strokeWeight(4);
+
+    fill(#DADACC);
+    ellipse(215, 215, 150, 150);
+
+    noStroke();
+    fill(#F3F3E8);
+    ellipse(220, 207, 130, 130);
+
+    stroke(#FA323F);
+    noFill();
+    beginShape();
+    vertex(281, 183);
+    bezierVertex(186, 158, 210, 272, 251, 278);
+    endShape(OPEN);
+
+    beginShape();
+    vertex(178, 154);
+    bezierVertex(186, 146, 218, 180, 152, 251);
+    endShape(OPEN);
+
+    stroke(#3E3E3E);
+    line(259, 215, 264, 233);
+    line(259, 227, 272, 246);
+    line(200, 266, 185, 283);
+    line(189, 283, 197, 263);
+    line(222, 163, 205, 182);
+    line(227, 177, 203, 170);
+    popMatrix();
+  }
+
+  void stats() {
+    text(icon("atk", 0, 0) + "ATK 5", 0, 0);
+  }
+
+
+  void desc() {
+    pushMatrix();
+    translate(0, -20);
+    textSize(18);
+    text("Bola baseball yang masih terlihat\n"+
+      "seperti baru. Bola ini memiliki sedikit goresan\n"+
+      "pada rajutannya karena tergores oleh\n"+
+      "ranting pepohonan yang jatuh.\n\n"+
+      "Bola ini dapat membuat hewan peliharaanmu\n"+
+      "menjadi lebih sayang kepadamu.", 0, 0);
+    popMatrix();
+  }
+}
+
+
+
+
+
 // ========================================= SAPPHIRE CHUNK ========================================= //
 class sapphireChunk extends countable {
   sapphireChunk(int xI, int yI, int quanI) {

@@ -440,8 +440,8 @@ class command extends pages {
     if (logs != "") {
       if (splittedLogs.length > 21) {
         logs = "";
-        for (int i = 0; i <= 21; i++) {
-          if (i != 0) {
+        for (int i = 0; i <= splittedLogs.length - 1; i++) {
+          if (i >= splittedLogs.length - 20) {
             logs += splittedLogs[i] + "\n";
           }
         }

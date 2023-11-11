@@ -1049,10 +1049,10 @@ class kitsuneMask extends item {
 
 
 
-class magicStarBook extends item {
-  magicStarBook(int xI, int yI) {
+class starmagisBook extends item {
+  starmagisBook(int xI, int yI) {
     super(xI, yI,
-      "Magic Star Book",
+      "Starmagis Book",
       "unique");
     discardable = false;
     observable = true;
@@ -1463,8 +1463,7 @@ class magicStarBook extends item {
   void desc() {
     text("Sebuah buku ajaib yang berisikan\n"+
       "mantra-mantra yang dapat mempengaruhi\n"+
-      "dunia.\n\n"+
-      "Untuk mendapatkan buku ini sangatlah sulit.", 0, 0);
+      "dunia.", 0, 0);
   }
 }
 

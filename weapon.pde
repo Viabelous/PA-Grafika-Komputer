@@ -473,7 +473,7 @@ class arrow extends countable {
 
 
   void stats() {
-    text(icon("atk", 0, 0) + "ATK +20", 0, 0);
+    text(icon("atk", 0, 0) + "ATK +8", 0, 0);
   }
 
 
@@ -579,8 +579,9 @@ class bow extends item {
 
 
   void stats() {
-    text(icon("atk", 0, 0) + "ATK +30", 0, 0);
-    text("Hanya dapat dipakai bila terdapat anak\n"+"panah.", 0, 40);
+    text(icon("atk", 0, 0) + "ATK 15\n\n" +
+         "Hanya dapat dipakai bila terdapat anak\n"+
+         "panah di inventory.", 0, 0);
   }
 
 

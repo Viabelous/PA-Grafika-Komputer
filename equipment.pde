@@ -614,20 +614,73 @@ class emeraldWings extends item {
 
 
 
-// ========================================= BASEBALL ========================================= //
-class baseball extends countable {
-  baseball(int xI, int yI, int quan) {
+
+// ========================================= GLACIAL WINGS ========================================= //
+class glacialWings extends item {
+
+  float randX = 250;
+  float randY = 250;
+  int resh = 0;
+  boolean toogleResh = true;
+
+  glacialWings(int xI, int yI) {
     super(xI, yI,
-      "Baseball",
-      "uncommon", quan);
+      "Glacial Wings",
+      "rare");
+    super.discardable = false;
+  }
+
+  void flake() {
+      pushMatrix();
+      translate(-250, -250);
+      if (resh == 0) {
+        randX = random(100, 400);
+        randY = random(100, 400);
+      }
+  
+      translate(randX, randY);
+      fill(255, resh);
+      stroke(255, resh/2);
+      
+      for(int i = 0; i < 6; i++){
+      pushMatrix();
+      translate(250, 250);
+      rotate(radians(0 + i*59));
+      translate(-250, -250);
+      
+        for(int j = 0; j < 3; j++){
+        pushMatrix();
+        translate(265, 252);
+        rotate(radians(-40 + j*40));
+        translate(-265, -252);
+        rect(270, 250, 10, 5);
+        popMatrix();
+        }
+        rect(250, 250, 20, 5);     
+      popMatrix();
+      }
+  
+      popMatrix();
+    
+    if(resh == 255 || resh == 0){
+      toogleResh = !toogleResh;
+    }
+    resh += toogleResh ? -15 : 15;
   }
 
   void preview() {
     pushMatrix();
     scale(0.4);
     build();
+    pushMatrix();
+    flake();
     popMatrix();
-  };
+    popMatrix();
+    strokeWeight(1);
+    stroke(0);
+    fill(0);
+  }
+
 
   void thumbnail() {
     pushMatrix();
@@ -635,60 +688,106 @@ class baseball extends countable {
     scale(0.2);
     build();
     popMatrix();
-  }
-
-  void build() {
-    pushMatrix();
-    translate(-160, -170);
-    scale(2);
+    strokeWeight(1);
     stroke(0);
-    strokeWeight(4);
-
-    fill(#DADACC);
-    ellipse(215, 215, 150, 150);
-
-    noStroke();
-    fill(#F3F3E8);
-    ellipse(220, 207, 130, 130);
-
-    stroke(#FA323F);
-    noFill();
+    fill(0);
+  }
+  
+  void build(){
+    pushMatrix();
+    for(int i = 0; i <= 1; i++){
+    if(i == 1){
+      translate(500, 0);
+      scale(-1, 1);
+    }
+    
+    stroke(0);
+    fill(#83cde0, 142);
     beginShape();
-    vertex(281, 183);
-    bezierVertex(186, 158, 210, 272, 251, 278);
-    endShape(OPEN);
-
+    curveVertex(249, 379);
+    curveVertex(250, 235);
+    curveVertex(370, 50);
+    curveVertex(750, 0);
+    vertex(370, 50);
+    curveVertex(-82, -118);
+    curveVertex(370, 50);
+    curveVertex(452, 420);
+    curveVertex(43, 340);
+    vertex(403, 420);
+    curveVertex(424, 452);
+    curveVertex(403, 420);
+    curveVertex(272, 286);
+    curveVertex(38, 353);
+    vertex(250, 260);
+    endShape(CLOSE);
+    
+    stroke(#acd4e5, 86);
+    fill(#a3dcec, 100);
+    curve(244, 121, 370, 85, 431, 417, 394, 677);
+    fill(#95b7cb, 100);
+    curve(278, 162, 354, 85, 404, 420, 437, 745);
+    fill(#cbe0ec, 100);
+    curve(301, 121, 333, 85, 369, 369, 345, 677);
+    fill(#b8d5e6, 100);
+    curve(302, 358, 313, 129, 342, 331, 305, 371);
+    
+    stroke(0);
+    fill((i == 0) ? #c5e3f5 : #AECFE3);
     beginShape();
-    vertex(178, 154);
-    bezierVertex(186, 146, 218, 180, 152, 251);
-    endShape(OPEN);
-
-    stroke(#3E3E3E);
-    line(259, 215, 264, 233);
-    line(259, 227, 272, 246);
-    line(200, 266, 185, 283);
-    line(189, 283, 197, 263);
-    line(222, 163, 205, 182);
-    line(227, 177, 203, 170);
+    curveVertex(249, 379);
+    curveVertex(250, 235);
+    curveVertex(370, 50);
+    curveVertex(750, 0);
+    vertex(370, 50);
+    curveVertex(128, 162);
+    curveVertex(370, 50);
+    curveVertex(455, 420);
+    curveVertex(2, 600);
+    vertex(455, 420);
+    curveVertex(128, 358);
+    curveVertex(403, 421);
+    curveVertex(419, 229);
+    curveVertex(182, 594);
+    vertex(407, 315);
+    curveVertex(239, 67);
+    curveVertex(401, 187);
+    curveVertex(370, 106);
+    curveVertex(152, 301);
+    vertex(370, 87);
+    curveVertex(736, 162);
+    curveVertex(370, 87);
+    curveVertex(250, 260);
+    curveVertex(45, 334);
+    vertex(250, 260);
+    endShape(CLOSE);
+    
+    fill((i == 0) ? #E8F3FA : #AECFE3);
+    triangle(250, 258, 341, 293, 299, 304);
+    triangle(250, 258, 291, 245, 312, 209);
+    triangle(250, 185, 272, 212, 250, 372);
+    }
     popMatrix();
   }
 
+
+
   void stats() {
-    text(icon("atk", 0, 0) + "ATK +10", 0, 0);
+    text("Tipe: Wings\n"+
+      icon("def", 0, 30)+"DEF +30\n"+
+      icon("speed", 0, 60) + "SPD +30\n\n"+
+      "Saat dikenakan, akan mendapat kekebalan\n"+
+      "dari tempat dengan suhu rendah.\n",
+      0, 0);
   }
 
 
 
   void desc() {
-    pushMatrix();
-    translate(0, -20);
-    textSize(18);
-    text("Bola baseball yang masih terlihat\n"+
-      "seperti baru. Bola ini memiliki sedikit goresan\n"+
-      "pada rajutannya karena tergores oleh\n"+
-      "ranting pepohonan yang jatuh.\n\n"+
-      "Bola ini dapat membuat hewan peliharaanmu\n"+
-      "menjadi lebih sayang kepadamu", 0, 0);
-    popMatrix();
+    text("Sebuah sayap yang seakan terbuat dari es\n"+
+      "dengan masing-masing sisinya terlihat tajam\n"+
+      "dan padat walau kenyataannya sangat lentur.\n\n"+
+      "Walau terlihat tak meyakinkan, sayap ini\n"+
+      "dapat membawamu kemana saja.\n\n",
+      0, 0);
   }
 }

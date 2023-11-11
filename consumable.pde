@@ -224,7 +224,7 @@ class happyCllate extends countable {
   happyCllate(int xI, int yI, int quan) {
     super(xI, yI,
       "Happy Cllate",
-      "common", quan);
+      "uncommon", quan);
     foodItem = true;
   }
 
@@ -290,16 +290,13 @@ class happyCllate extends countable {
 
 
   void stats() {
-    text(icon("heal", 0, 0) + "HP +30", 0, 0);
+    text(icon("heal", 0, 0) + "HP +65", 0, 0);
   }
 
 
   void desc() {
     text("Sumber energi dalam situasi di mana\n"+
-      "harus menghindari kematian atau kelelahan.\n\n"+
-      "Meskipun hanya memberi heal yang\n"+
-      "sedikit, namun sangat mudah untuk \n"+
-      "mendapatkannya.", 0, 0);
+      "harus menghindari kematian atau kelelahan.\n\n", 0, 0);
   }
 }
 
@@ -313,7 +310,7 @@ class healPotion extends countable {
     super(xI, yI,
 
       "Heal Potion",
-      "common", quanI);
+      "uncommon", quanI);
     foodItem = true;
   }
 
@@ -669,7 +666,7 @@ class melancia extends countable {
 
 
   void stats() {
-    text(icon("heal", 0, 0)+"HP +15\n"+
+    text(icon("heal", 0, 0)+"HP +45\n\n"+
       "Dapat langsung dimakan atau dijadikan\n"+
       "bahan untuk memasak.", 0, 0);
   }
@@ -679,8 +676,8 @@ class melancia extends countable {
   void desc() {
     pushMatrix();
     translate(0, 0);
-    text("Buah yang sedikit sulit didapatkan\n"+
-      "bila berada di kawasan sungai qersia.\n\n"+
+    text("Buah yang sedikit sulit didapatkan dan\n"+
+      "hanya tumbuh di kawasan sungai Qersia.\n\n"+
       "Konon buah ini merupakan buah yang\n"+
       "dipersembahan untuk para raja", 0, 0);
     popMatrix();
