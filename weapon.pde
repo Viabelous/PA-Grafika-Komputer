@@ -474,7 +474,7 @@ class arrow extends countable {
 
   void stats() {
     text(icon("atk", 0, 0) + "ATK 20", 0, 0);
-    text(icon("speed", 0, 30) + "SPEED 20", 0, 30);
+    text(icon("speed", 0, 30) + "SPD 20", 0, 35);
   }
 
 

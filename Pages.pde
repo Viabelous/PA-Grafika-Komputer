@@ -352,14 +352,17 @@ class observe extends pages {
       rotX = 0;
       rotY = 0;
       light = false;
+      audioObserve.play();
     }
     if (light) {
       if (mousePos(80, 125, 20, 60)) {
         light = false;
+        audioObserve.play();
       }
     } else {
       if (mousePos(80, 125, 20, 60)) {
         light = true;
+        audioObserve.play();
       }
     }
   }
@@ -538,32 +541,32 @@ class command extends pages {
             alert(0);
             alert(2);
           }
-        } else if (splittedInp[0].equals("/del")){
-              if(splittedInp.length == 1){
-                alert(0);
-                alert(5);
-                Cmd = "";
-                return;
+        } else if (splittedInp[0].equals("/del")) {
+          if (splittedInp.length == 1) {
+            alert(0);
+            alert(5);
+            Cmd = "";
+            return;
+          }
+
+          if (splittedInp.length == 2) {
+            try {
+              int delIndex = Integer.parseInt(splittedInp[1]);
+
+              if (items[slots[delIndex-1].itemIndex].getClass() == new air().getClass()) {
+                logs += "> ERROR: tidak ada item di slot " + delIndex;
+              } else {
+                items[slots[delIndex-1].itemIndex] = addItem(0, delIndex-1);
+
+                logs += "> Item di slot " + delIndex + " berhasil dihapus\n";
               }
-                
-              if (splittedInp.length == 2){
-                try {
-                  int delIndex = Integer.parseInt(splittedInp[1]);
-                  
-                  if (items[slots[delIndex-1].itemIndex].getClass() == new air().getClass()){
-                    logs += "> ERROR: tidak ada item di slot " + delIndex;
-                    
-                  } else {
-                    items[slots[delIndex-1].itemIndex] = addItem(0, delIndex-1);
-                    
-                    logs += "> Item di slot " + delIndex + " berhasil dihapus\n";
-                  }
-                } catch(Exception e){
-                  alert(0);
-                  alert(5);
-                }
-              }
-            } else {
+            }
+            catch(Exception e) {
+              alert(0);
+              alert(5);
+            }
+          }
+        } else {
           alert(1);
         }
       }
