@@ -614,7 +614,7 @@ class melancia extends countable {
   melancia(int xI, int yI, int quanI) {
     super(xI, yI,
       "Melancia's Watermelon",
-      "common", quanI);
+      "uncommon", quanI);
     foodItem = true;
   }
 
@@ -635,17 +635,16 @@ class melancia extends countable {
 
   void build() {
     pushMatrix();
+
     translate(+80, -350);
     scale(2);
     rotate(radians(30));
+
     stroke(0);
     strokeWeight(4);
-
-    noStroke();
     fill(#93CB8C);
     arc(220, 188, 240, 270, radians(0), radians(180), PIE);
 
-    stroke(#EA125E);
     fill(#EE615D);
     arc(220, 188, 240, 240, radians(0), radians(180), PIE);
 
@@ -669,12 +668,8 @@ class melancia extends countable {
   }
 
 
-
   void stats() {
-    text(icon("heal", 0, 0)+
-      "HP +15\n"+
-      icon("speed", 0, 30)+
-      "SPD +5\n\n"+
+    text(icon("heal", 0, 0)+"HP +15\n"+
       "Dapat langsung dimakan atau dijadikan\n"+
       "bahan untuk memasak.", 0, 0);
   }
@@ -686,8 +681,8 @@ class melancia extends countable {
     translate(0, 0);
     text("Buah yang sedikit sulit didapatkan\n"+
       "bila berada di kawasan sungai qersia.\n\n"+
-      "Konon buah ini merupakan buah persembahan\n"+
-      "untuk para raja", 0, 0);
+      "Konon buah ini merupakan buah yang\n"+
+      "dipersembahan untuk para raja", 0, 0);
     popMatrix();
   }
 }

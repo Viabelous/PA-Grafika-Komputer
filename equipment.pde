@@ -674,7 +674,7 @@ class baseball extends countable {
   }
 
   void stats() {
-    text(icon("atk", 0, 0) + "ATK 30", 0, 0);
+    text(icon("atk", 0, 0) + "ATK +10", 0, 0);
   }
 
 

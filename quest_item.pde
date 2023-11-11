@@ -621,7 +621,8 @@ class hynaPainting extends item {
 
   void build() {
     // Menggambar Foto Love
-    strokeWeight(2);
+    stroke(0);
+    strokeWeight(4);
 
     // Gambar bingkai foto
     fill(#6C2F2F);  // Warna cokelat
