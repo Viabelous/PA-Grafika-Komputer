@@ -786,7 +786,7 @@ class glacialWings extends item {
     text("Sebuah sayap yang seakan terbuat dari es\n"+
       "dengan masing-masing sisinya terlihat tajam\n"+
       "dan padat walau kenyataannya sangat lentur.\n\n"+
-      "Walau terlihat tak meyakinkan, sayap ini\n"+
+      "Meskipun terlihat tak meyakinkan, sayap ini\n"+
       "dapat membawamu kemana saja.\n\n",
       0, 0);
   }
