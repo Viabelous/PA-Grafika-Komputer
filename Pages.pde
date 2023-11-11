@@ -352,6 +352,7 @@ class observe extends pages {
       rotX = 0;
       rotY = 0;
       light = false;
+      scaleFactor = 1.0;
       audioObserve.play();
     }
     if (light) {
@@ -391,12 +392,15 @@ class observe extends pages {
 
   void mouseWheel(MouseEvent e) {
     float delta = e.getCount() > 0 ? 1.05 : e.getCount() < 0 ? 1.0/1.05 : 1.0;
-    scaleFactor *= delta;
 
     if (scaleFactor >= scaleMin && scaleFactor <= scaleMax) {
       scaleFactor *= delta;
-    } else {
-      scaleFactor = 1.0;
+      
+      if (scaleFactor <= scaleMin) {
+        scaleFactor = scaleMin;
+      } else if (scaleFactor >= scaleMax) {
+        scaleFactor = scaleMax;
+      }
     }
 
     translateX = (delta*translateX) + mouseX * (1 - delta);
