@@ -688,7 +688,7 @@ class baseball extends countable {
       "pada rajutannya karena tergores oleh\n"+
       "ranting pepohonan yang jatuh.\n\n"+
       "Bola ini dapat membuat hewan peliharaanmu\n"+
-      "menjadi lebih sayang kepadamu :)", 0, 0);
+      "menjadi lebih sayang kepadamu", 0, 0);
     popMatrix();
   }
 }
