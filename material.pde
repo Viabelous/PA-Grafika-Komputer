@@ -214,7 +214,7 @@ class baseball extends countable {
 
   void build() {
     pushMatrix();
-    translate(-160, -170);
+    translate(-170, -170);
     scale(2);
     stroke(0);
     strokeWeight(4);
