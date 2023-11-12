@@ -52,7 +52,7 @@ class inventory extends pages {
       rect(250, 340, 220, 60);
       fill(255);
       textSize(40);
-      text("OBSERVE", 165, 350);
+      text("OBSERVE", 170, 353);
       textSize(12);
     }
 

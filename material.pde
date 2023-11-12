@@ -1123,10 +1123,10 @@ class pinkPrism extends countable {
   void desc() {
     pushMatrix();
     translate(0, 0);
-    text("Sebuah diamon berwarna pink yang\n"+
+    text("Sebuah diamond berwarna pink yang\n"+
       "mencerminkan kecantikan dan keanggunan.\n \n"+
       "Meski mendapatkanya perlu penantian yang\n"+
-      "sangat lama, diamon ini dapat\n"+
+      "sangat lama, diamond ini dapat\n"+
       "memberikan keberuntungan yang\n"+
       "luar biasa bagi pemiliknya.", 0, 0);
     popMatrix();

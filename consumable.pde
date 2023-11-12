@@ -206,9 +206,9 @@ class rawMeat extends countable {
   void desc() {
     pushMatrix();
     translate(0, -10);
-    text("Sumber nutrisi\n"+
-      "atau makanan yang dapat mengembalikan,\n"+
-      "energi, kesehatan, atau stamina.\n\n"+
+    text("Sumber nutrisi atau makanan yang dapat\n"+
+      "mengembalikan, energi, kesehatan,\n"+
+      "atau stamina.\n\n"+
       "ini sangat penting dalam situasi di mana\n"+
       "harus menghindari kematian atau kelelahan.", 0, 0);
     popMatrix();

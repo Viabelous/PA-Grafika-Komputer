@@ -1085,6 +1085,12 @@ class starmagisBook extends item {
     stroke(196, 147, 83);
     strokeWeight(4);
     rect(-79, -89, 156, 177);
+    stroke(0);
+    strokeWeight(2);
+    line(-81, -90, 80, -90);
+    line(-81, -90, -81, 90);
+    line(80, -90, 80, 88);
+    line(-81, 89, 81, 89);
 
     for (float i = 0; i < TWO_PI; i += TWO_PI / 6) {
       pushMatrix();
