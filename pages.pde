@@ -594,7 +594,7 @@ class command extends pages {
                 Cmd = "";
                 return;
               }
-              
+            
               int itemId = Integer.parseInt(splittedInp[2]);
               int quan = splittedInp.length == 4 ?
                 Integer.parseInt(splittedInp[3]) : 1;
@@ -627,10 +627,24 @@ class command extends pages {
         
         
         // --------------------------------------- KESALAHAN COMMAND ---------------------------------------
-        else {
+        
+        } else if (splittedInp[0].equals("/help")) {
+          logs += "> | Berikut command yang bisa diketikkan:\n"+
+            "> |\n" + "> | /add\n"+
+            "> | /add {id item} {jumlah opsional}\n"+
+            "> | *Menambah item dan jumlah item pada slot intenvory yang kosong\n"+
+            "> |\n" + "> | /del\n"+
+            "> | /del {slot number}\n"+
+            "> | *Menghapus item dari intenvory\n"+
+            "> |\n" + "> | /check\n"+
+            "> | /check {id item}\n"+
+            "> | *Mengecek nama item berdasarkan id item\n"+
+            "> |\n" + "> | /set\n"+
+            "> | /set {nomor slot} {id_item} {jumlah opsional}\n"+
+            "> | *Mengganti item pada slot diinput dengan item diinginkan\n";
+        } else {
           alert(1);
         }
-      }
       
       Cmd = ""; // Kosongkan command box
     } else if (key == '>' || Cmd.length() > 50) { // Jika command box lebih dari 50 huruf atau mencoba mengetik '>'

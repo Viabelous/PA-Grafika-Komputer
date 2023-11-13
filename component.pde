@@ -263,6 +263,8 @@ void alert(int num) {
     logs += "> HINT: Sesuaikan '/del {slot_num}'\n";
   } else if (num == 6) {
     logs += "> HINT: Sesuaikan '/set {slot_num} {item_id} {quantity<opsional>}'\n";
+  } else if (num == 7) {
+    logs += "> HINT: Sesuaikan '/check {item_id}'\n";
   }
 }
 
