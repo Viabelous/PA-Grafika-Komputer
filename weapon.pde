@@ -263,12 +263,11 @@ class mammonsBlade extends item {
 
 
   void desc() {
-    translate(0, -10);
     text("Pedang ini didapatkan di kedalaman\n"+
       "Dungeon of Avarice.\n\n"+
-      "Terbuat dari iron dan emas,\n"+
-      "meskipun terlihat biasa\n"+
-      "tapi memiliki damage yang luar biasa", 0, 0);
+      "Terbuat dari iron dan emas, meskipun\n"+
+      "terlihat biasa tapi memiliki damage yang\n"+
+      "luar biasa", 0, 0);
   }
 }
 

@@ -1472,7 +1472,7 @@ class starmagisBook extends item {
   void desc() {
     text("Sebuah buku ajaib yang berisikan\n"+
       "mantra-mantra yang dapat mempengaruhi\n"+
-      "dunia.", 0, 0);
+      "langit.", 0, 0);
   }
 }
 

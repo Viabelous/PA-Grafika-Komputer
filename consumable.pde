@@ -295,8 +295,8 @@ class happyCllate extends countable {
 
 
   void desc() {
-    text("Sumber energi dalam situasi di mana\n"+
-      "harus menghindari kematian atau kelelahan.\n\n", 0, 0);
+    text("Makanan manis yang telah manjadi salah\n"+
+    "satu cemilan populer di Benua Elzern.\n", 0, 0);
   }
 }
 

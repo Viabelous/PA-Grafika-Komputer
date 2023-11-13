@@ -171,17 +171,14 @@ class bombby extends countable {
 
   void desc() {
     pushMatrix();
-    translate(0, -20);
+    translate(0, 0);
     textSize(18);
-    text("alat untuk meledakkan atau menghancurkan\n"+
-      "objek. Biasanya digunakan untuk menciptakan\n"+
-      "efek ledakan yang dramatis, mengalahkan\n"+
-      "lawan, atau memecahkan teka-teki dalam\n"+
-      "dungeon. Penggunaan bom tidak selalu tanpa\n"+
-      "risiko. Penggunanya juga perlu berhati-hati agar\n"+
-      "tidak terkena ledakan dari bom mereka sendiri,\n"+
-      "yang dapat menyebabkan kerusakan.", 0, 0);
-    popMatrix();
+    text("Alat untuk meledakkan atau menghancurkan\n"+
+        "objek.\n\n"+
+        "Penggunanya perlu berhati-hati agar tidak\n"+
+        "terkena ledakan dari bom mereka sendiri\n"+
+        "yang dapat menyebabkan kerusakan.", 0, 0);
+      popMatrix();
   }
 }
 
