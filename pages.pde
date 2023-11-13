@@ -567,7 +567,7 @@ class command extends pages {
               int delIndex = Integer.parseInt(splittedInp[1]);
 
               if (items[slots[delIndex-1].itemIndex].getClass() == new air().getClass()) {
-                logs += "> ERROR: tidak ada item di slot " + delIndex;
+                logs += "> ERROR: tidak ada item di slot " + delIndex + "\n";
                 
               } else {
                 items[slots[delIndex-1].itemIndex] = addItem(0, delIndex-1);
@@ -625,10 +625,34 @@ class command extends pages {
           }
         }
         
+        // --------------------------------------- COMMAND /check ---------------------------------------
+        else if (splittedInp[0].equals("/check")) {
+          if (splittedInp.length == 1) {
+            alert(0);
+            alert(7);
+            Cmd = "";
+            return;
+          }
+
+          if (splittedInp.length == 2) {
+            try {
+              int itemId = Integer.parseInt(splittedInp[1]);
+
+              if (items[slots[itemId-1].itemIndex].getClass() == new air().getClass()) {
+                logs += "> ERROR: item dengan id " + itemId + " tidak ditemukan\n";
+               } else {
+                logs += "> Item " + itemId + " adalah " + items[slots[itemId-1].itemIndex].name + "\n";
+               }
+            }
+            catch(Exception e) {
+              alert(0);
+              alert(7);
+            }
+          }
+        }
         
-        // --------------------------------------- KESALAHAN COMMAND ---------------------------------------
-        
-        } else if (splittedInp[0].equals("/help")) {
+        // --------------------------------------- COMMAND /help ---------------------------------------
+         else if (splittedInp[0].equals("/help") && splittedInp.length == 1) {
           logs += "> | Berikut command yang bisa diketikkan:\n"+
             "> |\n" + "> | /add\n"+
             "> | /add {id item} {jumlah opsional}\n"+
@@ -642,10 +666,13 @@ class command extends pages {
             "> |\n" + "> | /set\n"+
             "> | /set {nomor slot} {id_item} {jumlah opsional}\n"+
             "> | *Mengganti item pada slot diinput dengan item diinginkan\n";
-        } else {
+        }
+        
+        // --------------------------------------- KESALAHAN COMMAND ---------------------------------------
+        else {
           alert(1);
         }
-      
+      }
       Cmd = ""; // Kosongkan command box
     } else if (key == '>' || Cmd.length() > 50) { // Jika command box lebih dari 50 huruf atau mencoba mengetik '>'
     } else if (key == CODED) {
