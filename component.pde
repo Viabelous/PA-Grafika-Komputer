@@ -260,7 +260,9 @@ void alert(int num) {
   } else if (num == 4) {
     logs += "> ERROR: Inventory penuh'\n";
   } else if (num == 5) {
-    logs += "> HINT: Sesuaikan '/del {item_id}'\n";
+    logs += "> HINT: Sesuaikan '/del {slot_num}'\n";
+  } else if (num == 6) {
+    logs += "> HINT: Sesuaikan '/set {slot_num} {item_id} {quantity<opsional>}'\n";
   }
 }
 
@@ -310,6 +312,7 @@ item addItem(int id, int ids, int quan) {
   return null;
 }
 
+// @overloading
 item addItem(int id, int ids) {
   return addItem(id, ids, 1);
 }

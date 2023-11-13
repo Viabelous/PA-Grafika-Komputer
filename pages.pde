@@ -167,10 +167,11 @@ class inventory extends pages {
         if (slot.getPos()) {
           int idxItem = slots[slotMSelected].itemIndex; // ambil index item sekarang
           boolean calculate = false;
-          if (items[idxItem].countable)
-            if (slot != slots[slotMSelected])
-              if (items[slot.itemIndex].getClass() == items[idxItem].getClass())
-                calculate = true;
+          if (items[idxItem].countable) // jika item dapat dihitung
+            if (slot != slots[slotMSelected]) // dan jika item tidak didrag ke slotnya sendiri
+              if (items[slot.itemIndex].getClass() == items[idxItem].getClass() && // dan item sama dengan item di slot tujuan
+              ((countable)items[slot.itemIndex]).quantity != 9999) // serta jumlah item tujuan bukan 9999
+                calculate = true; // jumlahkan barang
 
           if (!calculate) {
             slots[slotMSelected].itemIndex = slot.itemIndex;
@@ -490,30 +491,31 @@ class command extends pages {
   };
 
   void keyPressed() {
-    if (key == ESC) {
+    if (key == ESC) { // Mengganti fungsi tombol ESC menjadi TAB
       key = TAB;
     }
-
-    if (key == BACKSPACE) {
-      if (Cmd.length()>0) {
-        Cmd=Cmd.substring(0, Cmd.length()-1);
+    
+    if (key == BACKSPACE) { // Menghapus 1 huruf
+      if (Cmd.length() > 0) {
+        Cmd = Cmd.substring(0, Cmd.length()-1);
       }
-    } else if (key == TAB) {
+    } 
+    
+    else if (key == TAB) { // Keluar dari Command Mode
       Cmd = "";
       hal = new inventory();
-    } else if (key == ENTER) {
-      if (Cmd == "") return;
-      logs += Cmd + "\n";
-      String splittedInp[] = Cmd.split(" ", 0);
-      if (Cmd.charAt(0) == '/') {
+    } 
+    
+    else if (key == ENTER) { // Untuk Mengirim Command
+      if (Cmd == "") return; // Jika kosong maka anggap tidak ada command dikirim
+      logs += Cmd + "\n"; // Tambahkan command ke log
+      String splittedInp[] = Cmd.split(" ", 0); // Pisah command berdasarkan spasi
+      
+      if (Cmd.charAt(0) == '/') { // Deteksi Command
+      
+        // --------------------------------------- COMMAND /add ---------------------------------------
         if (splittedInp[0].equals("/add")) {
-          if (splittedInp.length <= 3) {
-            if (splittedInp.length == 1) {
-              alert(0);
-              alert(2);
-              Cmd = "";
-              return;
-            }
+          if (splittedInp.length > 1 && splittedInp.length <= 3) {
 
             try {
               int itemId = Integer.parseInt(splittedInp[1]);
@@ -521,15 +523,19 @@ class command extends pages {
                 Integer.parseInt(splittedInp[2]) : 1;
               int putInto = findEmptySlot();
 
+              if (addItem(itemId, putInto) == null) {
+                alert(3);
+                Cmd = "";
+                return;
+              }
+
               if (quan <= 0 || addItem(itemId, putInto).countable == false) {
                 quan = 1;
               } else if (quan > 9999) {
                 quan = 9999;
               }
 
-              if (addItem(itemId, putInto) == null) {
-                alert(3);
-              } else if (putInto == -1) {
+              if (putInto == -1) {
                 alert(4);
               } else {
                 items[slots[putInto].itemIndex] = addItem(itemId, putInto, quan);
@@ -545,7 +551,10 @@ class command extends pages {
             alert(0);
             alert(2);
           }
-        } else if (splittedInp[0].equals("/del")) {
+        }
+
+        // --------------------------------------- COMMAND /del ---------------------------------------
+        else if (splittedInp[0].equals("/del")) {
           if (splittedInp.length == 1) {
             alert(0);
             alert(5);
@@ -559,9 +568,9 @@ class command extends pages {
 
               if (items[slots[delIndex-1].itemIndex].getClass() == new air().getClass()) {
                 logs += "> ERROR: tidak ada item di slot " + delIndex;
+                
               } else {
                 items[slots[delIndex-1].itemIndex] = addItem(0, delIndex-1);
-
                 logs += "> Item di slot " + delIndex + " berhasil dihapus\n";
               }
             }
@@ -570,12 +579,61 @@ class command extends pages {
               alert(5);
             }
           }
-        } else {
+        }
+        
+        // --------------------------------------- COMMAND /set ---------------------------------------
+        else if (splittedInp[0].equals("/set")) {
+          if (splittedInp.length > 2 && splittedInp.length <= 4) {
+
+            try {
+              int slotNum = Integer.parseInt(splittedInp[1]);
+              
+              if (slotNum < 1 || slotNum > 30){
+                alert(0);
+                alert(6);
+                Cmd = "";
+                return;
+              }
+              
+              int itemId = Integer.parseInt(splittedInp[2]);
+              int quan = splittedInp.length == 4 ?
+                Integer.parseInt(splittedInp[3]) : 1;
+
+              if (addItem(itemId, 0) == null) {
+                alert(3);
+                Cmd = "";
+                return;
+              }
+
+              if (quan <= 0 || addItem(itemId, 0).countable == false) {
+                quan = 1;
+              } else if (quan > 9999) {
+                quan = 9999;
+              }
+
+              items[slots[slotNum-1].itemIndex] = addItem(itemId, slotNum-1, quan);
+              logs += "> Item " + itemId + " sebanyak " + quan +
+                " berhasil mengganti item pada slot " + slotNum + "\n";
+            }
+            catch (Exception e) {
+              alert(0);
+              alert(6);
+            }
+          } else {
+            alert(0);
+            alert(6);
+          }
+        }
+        
+        
+        // --------------------------------------- KESALAHAN COMMAND ---------------------------------------
+        else {
           alert(1);
         }
       }
-      Cmd = "";
-    } else if (key == '>') {
+      
+      Cmd = ""; // Kosongkan command box
+    } else if (key == '>' || Cmd.length() > 50) { // Jika command box lebih dari 50 huruf atau mencoba mengetik '>'
     } else if (key == CODED) {
     } else {
       Cmd += key;
