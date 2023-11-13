@@ -1004,6 +1004,10 @@ class goldOilLamp extends countable {
 }
 
 
+
+
+
+// ========================================= PINK PRISM ========================================= //
 class pinkPrism extends countable {
   pinkPrism(int xI, int yI, int quanI) {
     super(xI, yI,

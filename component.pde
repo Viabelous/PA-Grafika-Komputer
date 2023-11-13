@@ -302,8 +302,8 @@ item addItem(int id, int ids, int quan) {
   if (id == 21) return new letter(slots[ids].x, slots[ids].y);
   if (id == 22) return new panamaBerry(slots[ids].x, slots[ids].y, quan);
   if (id == 23) return new pinkPrism(slots[ids].x, slots[ids].y, quan);
-  if (id == 24) return new arrow(slots[ids].x, slots[ids].y, quan);
-  if (id == 25) return new bow(slots[ids].x, slots[ids].y);
+  if (id == 24) return new basicArrow(slots[ids].x, slots[ids].y, quan);
+  if (id == 25) return new eldisBow(slots[ids].x, slots[ids].y);
   if (id == 26) return new melancia(slots[ids].x, slots[ids].y, quan);
   if (id == 27) return new baseball(slots[ids].x, slots[ids].y, quan);
   if (id == 28) return new glacialWings(slots[ids].x, slots[ids].y);

@@ -1,3 +1,4 @@
+// ========================================= SWAMP HAMMER ========================================= //
 class swamp_hammer extends item {
   swamp_hammer(int xI, int yI) {
     super(xI, yI,
@@ -166,6 +167,10 @@ class kunai extends item {
 }
 
 
+
+
+
+// ========================================= MAMMONS BLADE ========================================= //
 class mammonsBlade extends item {
   mammonsBlade(int xI, int yI) {
     super(xI, yI,
@@ -268,7 +273,11 @@ class mammonsBlade extends item {
 }
 
 
-class stoneAxe extends item { // untuk item dengan jumlah, pakai consumable ketimbang item
+
+
+
+// ========================================= STONE AXE ========================================= //
+class stoneAxe extends item {
   stoneAxe(int xI, int yI) {
     super(xI, yI,
       "Stone Axe",
@@ -350,17 +359,6 @@ class stoneAxe extends item { // untuk item dengan jumlah, pakai consumable keti
   }
 
 
-  // buat fungsi di bawah ini jika dan hanya jika
-  // benda memiliki mode observe (3D)
-  void observe() {
-    pushMatrix();
-
-    // ... kodingan untuk tampilan 3D
-
-    popMatrix();
-  }
-
-
 
   void stats() {
     text(icon("atk", 0, 0) + "ATK 35", 0, 0);
@@ -382,10 +380,15 @@ class stoneAxe extends item { // untuk item dengan jumlah, pakai consumable keti
   }
 }
 
-class arrow extends countable {
-  arrow(int xI, int yI, int quanI) {
+
+
+
+
+// ========================================= BASIC ARROW ========================================= //
+class basicArrow extends countable {
+  basicArrow(int xI, int yI, int quanI) {
     super(xI, yI,
-      "Arrow",
+      "Basic Arrow",
       "common", quanI);
   }
 
@@ -460,18 +463,6 @@ class arrow extends countable {
   }
 
 
-  // buat fungsi di bawah ini jika dan hanya jika
-  // benda memiliki mode observe (3D)
-  void observe() {
-    pushMatrix();
-
-    // ... kodingan untuk tampilan 3D
-
-    popMatrix();
-  }
-
-
-
   void stats() {
     text(icon("atk", 0, 0) + "ATK +8", 0, 0);
   }
@@ -488,10 +479,15 @@ class arrow extends countable {
   }
 }
 
-class bow extends item {
-  bow(int xI, int yI) {
+
+
+
+
+// ========================================= ELDIS BOW ========================================= //
+class eldisBow extends item {
+  eldisBow(int xI, int yI) {
     super(xI, yI,
-      "Bow",
+      "Eldis Bow",
       "uncommon");
   }
 
@@ -566,17 +562,6 @@ class bow extends item {
   }
 
 
-  // buat fungsi di bawah ini jika dan hanya jika
-  // benda memiliki mode observe (3D)
-  void observe() {
-    pushMatrix();
-
-    // ... kodingan untuk tampilan 3D
-
-    popMatrix();
-  }
-
-
 
   void stats() {
     text(icon("atk", 0, 0) + "ATK 15\n\n" +
@@ -588,10 +573,10 @@ class bow extends item {
 
   void desc() {
     pushMatrix();
-    text("Busur panah yang berasak dari kerajaan Eldia\n"+
+    text("Busur panah yang berasal dari kerajaan Eldia\n"+
       "yang memiliki ciri unik di kayunya.\n\n"+
       "Terbuat dari kayu pohon yang diambil dari\n"+
-      "pegunungan mathil, membuatnya menjadi\n"+
+      "pegunungan Mathil, membuatnya menjadi\n"+
       "ringan dan kuat.", 0, 0);
     popMatrix();
   }

@@ -1049,6 +1049,9 @@ class kitsuneMask extends item {
 
 
 
+
+
+// ========================================= STARMAGIS BOOK ========================================= //
 class starmagisBook extends item {
   starmagisBook(int xI, int yI) {
     super(xI, yI,
