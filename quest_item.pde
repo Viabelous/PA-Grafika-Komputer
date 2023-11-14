@@ -1529,11 +1529,6 @@ class letter extends item {
     bezierVertex(coorX - 60, coorY - 10, coorX - 40, coorY - 60, coorX, coorY);
     endShape(CLOSE);
 
-    // Menambahkan tulisan "H.Y.N.A"
-    fill(#FFFFFF); // Warna putih untuk teks
-    textSize(30);
-    text("H.Y.N.A", coorX - 45, coorY - 60);
-
     popMatrix();
   };
 
@@ -1580,15 +1575,7 @@ class letter extends item {
     bezierVertex(coorX - 60, coorY - 10, coorX - 40, coorY - 60, coorX, coorY);
     endShape(CLOSE);
 
-    // Menambahkan tulisan "H.Y.N.A"
-    fill(#FFFFFF); // Warna putih untuk teks
-    textSize(30);
-    text("H.Y.N.A", coorX - 45, coorY - 60);
-
     popMatrix();
-  }
-
-  void observe() {
   }
 
 
