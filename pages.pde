@@ -170,7 +170,7 @@ class inventory extends pages {
           if (items[idxItem].countable) // jika item dapat dihitung
             if (slot != slots[slotMSelected]) // dan jika item tidak didrag ke slotnya sendiri
               if (items[slot.itemIndex].getClass() == items[idxItem].getClass() && // dan item sama dengan item di slot tujuan
-              ((countable)items[slot.itemIndex]).quantity != 9999) // serta jumlah item tujuan bukan 9999
+                ((countable)items[slot.itemIndex]).quantity != 9999) // serta jumlah item tujuan bukan 9999
                 calculate = true; // jumlahkan barang
 
           if (!calculate) {
@@ -244,11 +244,19 @@ class inventory extends pages {
           // Jika quantity adalah 0
           if (((countable)items[slots[idxSelected].itemIndex]).quantity == 0) {
             items[slots[idxSelected].itemIndex] = addItem(0, idxSelected);
+            audioRemove.amp(0.3);
+            audioRemove.play();
+          } else {
+            audioSwallow.play();
           }
-
-          audioSwallow.play();
         }
       } else if (items[slots[idxSelected].itemIndex].discardable && key == 't') {
+        // Jika quantity adalah 0
+        if (((countable)items[slots[idxSelected].itemIndex]).quantity == 0) {
+          audioRemove.amp(0.3);
+          audioRemove.play();
+        }
+
         items[slots[idxSelected].itemIndex] = addItem(0, idxSelected);
       }
     } else if (key == TAB) {
@@ -396,7 +404,7 @@ class observe extends pages {
 
     if (scaleFactor >= scaleMin && scaleFactor <= scaleMax) {
       scaleFactor *= delta;
-      
+
       if (scaleFactor <= scaleMin) {
         scaleFactor = scaleMin;
       } else if (scaleFactor >= scaleMax) {
@@ -494,25 +502,21 @@ class command extends pages {
     if (key == ESC) { // Mengganti fungsi tombol ESC menjadi TAB
       key = TAB;
     }
-    
+
     if (key == BACKSPACE) { // Menghapus 1 huruf
       if (Cmd.length() > 0) {
         Cmd = Cmd.substring(0, Cmd.length()-1);
       }
-    } 
-    
-    else if (key == TAB) { // Keluar dari Command Mode
+    } else if (key == TAB) { // Keluar dari Command Mode
       Cmd = "";
       hal = new inventory();
-    } 
-    
-    else if (key == ENTER) { // Untuk Mengirim Command
+    } else if (key == ENTER) { // Untuk Mengirim Command
       if (Cmd == "") return; // Jika kosong maka anggap tidak ada command dikirim
       logs += Cmd + "\n"; // Tambahkan command ke log
       String splittedInp[] = Cmd.split(" ", 0); // Pisah command berdasarkan spasi
-      
+
       if (Cmd.charAt(0) == '/') { // Deteksi Command
-      
+
         // --------------------------------------- COMMAND /add ---------------------------------------
         if (splittedInp[0].equals("/add")) {
           if (splittedInp.length > 1 && splittedInp.length <= 3) {
@@ -568,7 +572,6 @@ class command extends pages {
 
               if (items[slots[delIndex-1].itemIndex].getClass() == new air().getClass()) {
                 logs += "> ERROR: tidak ada item di slot " + delIndex + "\n";
-                
               } else {
                 items[slots[delIndex-1].itemIndex] = addItem(0, delIndex-1);
                 logs += "> Item di slot " + delIndex + " berhasil dihapus\n";
@@ -580,21 +583,21 @@ class command extends pages {
             }
           }
         }
-        
+
         // --------------------------------------- COMMAND /set ---------------------------------------
         else if (splittedInp[0].equals("/set")) {
           if (splittedInp.length > 2 && splittedInp.length <= 4) {
 
             try {
               int slotNum = Integer.parseInt(splittedInp[1]);
-              
-              if (slotNum < 1 || slotNum > 30){
+
+              if (slotNum < 1 || slotNum > 30) {
                 alert(0);
                 alert(6);
                 Cmd = "";
                 return;
               }
-            
+
               int itemId = Integer.parseInt(splittedInp[2]);
               int quan = splittedInp.length == 4 ?
                 Integer.parseInt(splittedInp[3]) : 1;
@@ -624,7 +627,7 @@ class command extends pages {
             alert(6);
           }
         }
-        
+
         // --------------------------------------- COMMAND /check ---------------------------------------
         else if (splittedInp[0].equals("/check")) {
           if (splittedInp.length == 1) {
@@ -640,9 +643,9 @@ class command extends pages {
 
               if (items[itemId-1].getClass() == new air().getClass()) {
                 logs += "> ERROR: item dengan id " + itemId + " tidak ditemukan\n";
-               } else {
+              } else {
                 logs += "> Item dengan id " + itemId + " adalah " + items[itemId-1].name + "\n";
-               }
+              }
             }
             catch(Exception e) {
               alert(0);
@@ -650,9 +653,9 @@ class command extends pages {
             }
           }
         }
-        
+
         // --------------------------------------- COMMAND /help ---------------------------------------
-         else if (splittedInp[0].equals("/help") && splittedInp.length == 1) {
+        else if (splittedInp[0].equals("/help") && splittedInp.length == 1) {
           logs += "> | Berikut command yang bisa diketikkan:\n"+
             "> |\n" + "> | /add\n"+
             "> | /add {id item} {jumlah opsional}\n"+
@@ -667,7 +670,7 @@ class command extends pages {
             "> | /set {nomor slot} {id_item} {jumlah opsional}\n"+
             "> | *Mengganti item pada slot diinput dengan item diinginkan\n";
         }
-        
+
         // --------------------------------------- KESALAHAN COMMAND ---------------------------------------
         else {
           alert(1);

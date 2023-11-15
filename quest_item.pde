@@ -658,50 +658,59 @@ class hynaPainting extends item {
   }
 
   void observe() {
-    // Deklarasi variabel posisi
-    float coorX = 250;
-    float coorY = 250;
+  // Deklarasi variabel posisi
+  float coorX = 250;
+  float coorY = 250;
 
-    // Menggambar Foto Love
-    strokeWeight(2);
+  // Menggambar Foto Love
+  strokeWeight(2);
 
-    // Gambar bingkai foto
-    fill(#6C2F2F); // Warna cokelat
-    box(450, 350, 10); // Menggunakan box untuk bingkai foto
+  // Gambar bingkai foto
+  fill(#6C2F2F); // Warna cokelat
+  box(450, 350, 10); // Menggunakan box untuk bingkai foto
 
-    // Gambar latar belakang foto
-    pushMatrix();
-    fill(#FFFFFF); // Warna putih
-    translate(0, 0, 10); // Geser ke depan
-    box(400, 300, 5); // Menggunakan box untuk latar belakang foto
-    popMatrix();
+  // Gambar latar belakang foto
+  pushMatrix();
+  fill(#FFFFFF); // Warna putih
+  translate(0, 0, 10); // Geser ke depan
+  box(400, 300, 5); // Menggunakan box untuk latar belakang foto
+  popMatrix();
 
-    // Menggambar Love
-    fill(#BC1B1B); // Warna merah tua
-    pushMatrix();
-    translate(coorX - 260, coorY - 270, 25); // Geser ke depan dan ke posisi yang benar
-    beginShape();
-    vertex(0, -50);
-    bezierVertex(100, -110, 140, -60, 0, 50);
-    bezierVertex(0, 50, -140, -60, 0, -50);
-    endShape(CLOSE);
-    popMatrix();
+  // Menggambar Love
+  fill(#BC1B1B); // Warna merah tua
+  pushMatrix();
+  translate(coorX - 260, coorY - 270, 25); // Geser ke depan dan ke posisi yang benar
+  beginShape();
+  vertex(0, -50);
+  bezierVertex(100, -110, 140, -60, 0, 50);
+  bezierVertex(0, 50, -140, -60, 0, -50);
+  endShape(CLOSE);
+  popMatrix();
 
-    // Menggambar Love (bayangan)
-    fill(#FF4343); // Warna merah
-    pushMatrix();
-    translate(coorX - 255, coorY - 250, 22); // Geser sedikit ke belakang
-    beginShape();
-    vertex(0, -50);
-    bezierVertex(100, -110, 140, -60, 0, 50);
-    bezierVertex(0, 50, -140, -60, 0, -50);
-    endShape(CLOSE);
+  // Menggambar Love (bayangan)
+  fill(#FF4343); // Warna merah
+  pushMatrix();
+  translate(coorX - 255, coorY - 250, 22); // Geser sedikit ke belakang
+  beginShape();
+  vertex(0, -50);
+  bezierVertex(100, -110, 140, -60, 0, 50);
+  bezierVertex(0, 50, -140, -60, 0, -50);
+  endShape(CLOSE);
+  popMatrix();
+  
+  // Menambahkan tulisan "H.Y.N.A"
+  fill(0); // Warna hitam untuk teks
+  textSize(60);
+  text("H.Y.N.A", coorX - 330, coorY - 130);
 
-    // Menambahkan tulisan "H.Y.N.A"
-    fill(0); // Warna hitam untuk teks
-    textSize(60);
-    text("H.Y.N.A", coorX - 330, coorY - 130);
-    popMatrix();
+  stroke(#FFFFFF); // warna putih untuk garis
+  strokeWeight(2);
+  
+  line(coorX + -469, coorY + -265, coorX + -258, coorY + -415, -103, -8);
+  line(coorX + -31, coorY + -265, coorX + -258, coorY + -81, -109, -8);
+
+  
+  line(coorX + -52, coorY + -163, coorX + -255, coorY + -453, 85, -8);
   }
 
   void stats() {
