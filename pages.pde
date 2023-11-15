@@ -638,10 +638,10 @@ class command extends pages {
             try {
               int itemId = Integer.parseInt(splittedInp[1]);
 
-              if (items[slots[itemId-1].itemIndex].getClass() == new air().getClass()) {
+              if (items[itemId-1].getClass() == new air().getClass()) {
                 logs += "> ERROR: item dengan id " + itemId + " tidak ditemukan\n";
                } else {
-                logs += "> Item " + itemId + " adalah " + items[slots[itemId-1].itemIndex].name + "\n";
+                logs += "> Item dengan id " + itemId + " adalah " + items[itemId-1].name + "\n";
                }
             }
             catch(Exception e) {
