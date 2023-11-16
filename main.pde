@@ -110,7 +110,7 @@ void setup() {
   audioRemove = new SoundFile(this, "./audio/audio-remove.wav");
   lightIcon = loadImage("./images/lightbulb-05.png");
 
-  audioTheme.amp(0.3);
+  audioTheme.amp(0.1);
   audioTheme.play();
 }
 
