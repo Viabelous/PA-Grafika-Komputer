@@ -242,22 +242,16 @@ class inventory extends pages {
           ((countable)items[slots[idxSelected].itemIndex]).quantity -= 1;
 
           // Jika quantity adalah 0
-          if (((countable)items[slots[idxSelected].itemIndex]).quantity == 0) {
+          if (((countable)items[slots[idxSelected].itemIndex]).quantity == 0)
             items[slots[idxSelected].itemIndex] = addItem(0, idxSelected);
-            audioRemove.amp(0.3);
-            audioRemove.play();
-          } else {
-            audioSwallow.play();
-          }
+            
+          audioSwallow.amp(0.4);
+          audioSwallow.play();
         }
       } else if (items[slots[idxSelected].itemIndex].discardable && key == 't') {
-        // Jika quantity adalah 0
-        if (((countable)items[slots[idxSelected].itemIndex]).quantity == 0) {
-          audioRemove.amp(0.3);
+          audioRemove.amp(0.1);
           audioRemove.play();
-        }
-
-        items[slots[idxSelected].itemIndex] = addItem(0, idxSelected);
+          items[slots[idxSelected].itemIndex] = addItem(0, idxSelected);
       }
     } else if (key == TAB) {
       hal = new command();
