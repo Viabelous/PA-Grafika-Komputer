@@ -164,7 +164,7 @@ class bombby extends countable {
   }
 
   void stats() {
-    text(icon("atk", 0, 0) + "ATK 100", 0, 0);
+    text(icon("atk", 0, 0) + "ATK 250", 0, 0);
   }
 
 

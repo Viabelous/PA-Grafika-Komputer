@@ -64,7 +64,7 @@ class swamp_hammer extends item {
   }
 
   void stats() {
-    text(icon("atk", 0, 0) + "ATK 30", 0, 0);
+    text(icon("atk", 0, 0) + "ATK 75", 0, 0);
   }
 
   void desc() {
@@ -152,11 +152,10 @@ class kunai extends item {
   }
 
   void stats() {
-    text(icon("atk", 0, 0) + "ATK 20", 0, 0);
+    text(icon("atk", 0, 0) + "ATK 50", 0, 0);
   }
 
   void desc() {
-    translate(0, -10);
     text("Pisau runcing multifungsi yang terbuat\n"+
       "dari mineral keras.\n\n"+
       "Saat dalam perkelahian, pengguna amatiran\n"+
@@ -257,7 +256,7 @@ class mammonsBlade extends item {
 
 
   void stats() {
-    text(icon("atk", 0, 0) + "ATK 77", 0, 0);
+    text(icon("atk", 0, 0) + "ATK 177", 0, 0);
   }
 
 
@@ -360,7 +359,7 @@ class stoneAxe extends item {
 
 
   void stats() {
-    text(icon("atk", 0, 0) + "ATK 35", 0, 0);
+    text(icon("atk", 0, 0) + "ATK 65", 0, 0);
   }
 
 
@@ -463,7 +462,7 @@ class basicArrow extends countable {
 
 
   void stats() {
-    text(icon("atk", 0, 0) + "ATK +8", 0, 0);
+    text(icon("atk", 0, 0) + "ATK +18", 0, 0);
   }
 
 
@@ -563,7 +562,7 @@ class eldisBow extends item {
 
 
   void stats() {
-    text(icon("atk", 0, 0) + "ATK 15\n\n" +
+    text(icon("atk", 0, 0) + "ATK 100\n\n" +
          "Hanya dapat dipakai bila terdapat anak\n"+
          "panah di inventory.", 0, 0);
   }
