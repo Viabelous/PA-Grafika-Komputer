@@ -696,12 +696,13 @@ class hynaPainting extends item {
   bezierVertex(100, -110, 140, -60, 0, 50);
   bezierVertex(0, 50, -140, -60, 0, -50);
   endShape(CLOSE);
-  popMatrix();
-  
+
   // Menambahkan tulisan "H.Y.N.A"
   fill(0); // Warna hitam untuk teks
   textSize(60);
   text("H.Y.N.A", coorX - 330, coorY - 130);
+  popMatrix();
+
 
   stroke(#FFFFFF); // warna putih untuk garis
   strokeWeight(2);
