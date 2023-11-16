@@ -641,10 +641,10 @@ class command extends pages {
             try {
               int itemId = Integer.parseInt(splittedInp[1]);
 
-              if (items[itemId-1].getClass() == new air().getClass()) {
+              if (addItem(itemId, 0).name == "") {
                 logs += "> ERROR: item dengan id " + itemId + " tidak ditemukan\n";
               } else {
-                logs += "> Item dengan id " + itemId + " adalah " + items[itemId-1].name + "\n";
+                logs += "> Item dengan id " + itemId + " adalah " + addItem(itemId, 0).name + "\n";
               }
             }
             catch(Exception e) {
