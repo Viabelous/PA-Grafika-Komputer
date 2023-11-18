@@ -64,7 +64,7 @@ class carrot extends countable {
 
 
   void stats() {
-    text(icon("heal", 0, 0) + "HP +10", 0, 0);
+    text(icon("heal", 0, 0) + "HP +25", 0, 0);
   }
 
   void desc() {
@@ -287,7 +287,7 @@ class happyCllate extends countable {
 
 
   void stats() {
-    text(icon("heal", 0, 0) + "HP +65", 0, 0);
+    text(icon("heal", 0, 0) + "HP +165", 0, 0);
   }
 
 
@@ -443,7 +443,7 @@ class healPotion extends countable {
 
   void stats() {
     text(icon("heal", 0, 0)+
-      "HP +100", 0, 0);
+      "HP +400", 0, 0);
   }
 
 
@@ -582,7 +582,7 @@ class panamaBerry extends countable {
 
   void stats() {
     text(icon("heal", 0, 0)+
-      "HP +5\n"+
+      "HP +15\n"+
       icon("speed", 0, 30)+
       "SPD +10\n\n"+
       "Dapat langsung dimakan atau dijadikan\n"+
@@ -663,7 +663,7 @@ class melancia extends countable {
 
 
   void stats() {
-    text(icon("heal", 0, 0)+"HP +45\n\n"+
+    text(icon("heal", 0, 0)+"HP +166\n\n"+
       "Dapat langsung dimakan atau dijadikan\n"+
       "bahan untuk memasak.", 0, 0);
   }
