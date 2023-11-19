@@ -91,7 +91,7 @@ boolean mousePos(int xLeft, int xRight, int yUp, int yDown) {
 
 class air extends item {
   air() {
-    super(-1, -1, "", "air");
+    super(-1, -1, "", "");
   }
 
   void preview() {
@@ -258,7 +258,7 @@ void alert(int num) {
   } else if (num == 3) {
     logs += "> ERROR: Item dengan ID tersebut tidak ditemukan'\n";
   } else if (num == 4) {
-    logs += "> ERROR: Inventory penuh'\n";
+    logs += "> ERROR: Inventory penuh\n";
   } else if (num == 5) {
     logs += "> HINT: Sesuaikan '/del {slot_num}'\n";
   } else if (num == 6) {
@@ -271,8 +271,8 @@ void alert(int num) {
 
 
 int findEmptySlot() {
-  for (int i = 0; i <= slots.length; i++) {
-    if (items[slots[i].itemIndex].getClass() == new air().getClass()) {
+  for (int i = 0; i < slots.length; i++) {
+    if (items[slots[i].itemIndex].name == "") {
       return i;
     }
   }
